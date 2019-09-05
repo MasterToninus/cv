@@ -1,2 +1,2 @@
-pyyaml
-Jinja2
+pyyaml ~> 4.2b1
+Jinja2 ~> 2.10.1
