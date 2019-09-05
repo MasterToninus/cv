@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.5cm]{geometry}
+% \addtolength{\topmargin}{-0.5cm}
+\usepackage{xcolor}
+
+\usepackage[backend=bibtex, style=nature]{biblatex}
+\addbibresource{../biblio.bib}
+
+\setlength\parindent{0pt}
+\pagenumbering{gobble}
+
+%barcharts
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\newcommand{\progbar}[4][black]{\crule[#1!10!white!90]{#2}{#4}\crule[#1]{#3}{#4}}
+
+%titles
+\newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+\newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+
+%voices
+\newcommand{\voice}[4]{\textbf{#1} \hfill #2 \\ \textit{#3} \\ {\small #4} \vspace{0.2cm} \\}
+\newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+\newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+\newcommand{\txt}[1]{#1\\}
+
+\begin{document}
+\begin{minipage}[t]{0.6\columnwidth}
+    ~{{ body1 }}~
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    
+    \Block{\hfill ~{{name.first}}~ ~{{name.last}}~\hfill}
+
+    \skill{Phone}{~{{phone}}~}
+    \skill{Mail}{~{{email}}~}
+    \skill{Site}{~{{site}}~}
+
+    ~{{ body2 }}~
+\end{minipage}
+
+\block{Selected publications}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\end{document}

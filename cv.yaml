@@ -1,0 +1,118 @@
+name:
+    first: Vittorio
+    last: Erba
+phone: +39~345~236~0130
+email: "erba.vittorio@gmail.com"
+site: "vittorioerba.gitlab.com"
+
+order:
+    - [Education, edu, voices, 1]
+    - [Schools, schools, voices, 1]
+    - [Work, work, voices, 1]
+    - [Languages, lang, skills, 2]
+    - [Computer Skills, comp, skills_bar, 2]
+    - [Honors \& Awards, awd, voices, 2]
+    - [Volunteering, volont, voices, 2]
+
+volont: 
+    - what: Migrant hosting facilities
+      when: 2017
+      where: Laveno (IT)
+      info: "\\vspace{-0.5cm}"
+    - what: Secretary of AISF
+      when: 2015 -- 2017
+      where: "AISF: Italian Association of Physics Students"
+      info: "\\vspace{-0.5cm}"
+    - what: PAPAP16 Organizer
+      when: 2016
+      where: "PAPAP: Particle and Astroparticle Physics Autumn Programme"
+      info: "Full organization of the visits to the Frascati INFN Labs and to the Gran Sasso LNGS Labs."
+
+awd:
+    - what: Excellence Scholarship
+      when: 2015 -- 2017
+      where: Università degli Studi di Milano
+      info: "\\vspace{-0.5cm}"
+    - what: 1st place "Valerio Filippini"
+      when: 04/2012
+      where: University of Pavia (IT)
+      info: "Contest in Physics for high school students."
+    - what: Guitar Studies Scholarship
+      when: "2005 \\& 2012"
+      where: Municipality of Besozzo (IT)
+      info: "\\vspace{-0.5cm}"
+    - what: Diplom in Solfege
+      when: 06/2008
+      where: Conservatory of Novara (IT)
+      info: "\\vspace{-0.5cm}"
+
+
+work:
+    - what: University Tutor
+      when: 03/2019 -- 09/2019
+      where: Universit\'a degli Studi di Milano
+      info: "Tutoring for Complex and Functional Analysis course."
+    - what: Supervisor for Junior Camps
+      when: 09/2014 -- 12/2017
+      where: "Sardinia Radio Telescope, Cagliari (IT) \\& Nus Observatory, Nus (IT)"
+      info: "Logistic and teaching support at 6 different Astrophysics Junior Camps organized by Sterrenlab."
+    - what: Physics Teacher
+      when: 10/2016 -- 06/2017
+      where: Istituto Professionale "L. Einaudi", Varese (IT)
+      info: "Physics teacher for the first year adult class of a professional secondary public school."
+    - what: Private Lecturer
+      when: 11/2013 -- 06/2018
+      where: Varese (IT)
+      info: "Private lectures in Maths and Physics up to universiatry education. Private lectures in Computer Science, Chemistry and Latin up to high school education."
+
+edu:
+    - what: Phd Student in Statistical Mechanics
+      when: 10/2018 -- present
+      where: Universit\'a degli Studi di Milano
+      info: "Supervisor: Sergio Caracciolo\\\\ Research topics: Combinatorial Optimization, Theoretical Data Science"
+    - what: University Student in Physics
+      when: 10/2013 -- 10/2018
+      where: Universit\'a degli Studi di Milano
+      info: "3 years of Physics (final grade 110/110 cum laude, supervisor Prof.~Luca Molinari)\\\\+ 2 years of Theoretical Physics (final grade 110/110 cum laude, supervisor Prof.~Sergio Caracciolo)" 
+
+schools:
+    - what: Winter School
+      when: 02/2019
+      where: Galileo Galilei Institute, Florence (IT)
+      info: "Lectures about Statistical Field Theory in Condensed Matter."
+    - what: Summer School 
+      when: 09/2015
+      where: European Syncrothron Radiation Facility, Grenoble (FR)
+      info: "Lectures about x-ray and neutron techniques in diffractometry and spectroscopy. Experimental project (Fluorescence Spectroscopy of Eu3+) with the \"Electronic structure, magnetism and dynamics\" group."
+    - what: Internship
+      when: 02/2013
+      where: European Joint Research Center, Ispra (IT)
+      info: "Activities with researchers on: nuclear decomissioning, radioprotection and EU community policies."
+    - what: Summer School
+      when: 06/2012
+      where: Scuola Normale Superiore, Pisa (IT)
+      info: "Lectures by experts on a wide variety of topics, from Literature to Physics."
+      
+lang:
+    - what: Italian
+      score: Mothetongue
+    - what: English
+      score: Certified CEFR C1
+
+comp:
+    - what: C++
+      score: 0.55
+    - what: Python
+      score: 0.50
+    - what: Julia
+      score: 0.25
+    - what: Mathematica
+      score: 0.65
+    - what: Bash
+      score: 0.35
+    - what: "\\LaTeX"
+      score: 0.75
+    - what: Office suites 
+      score: 0.75
+    - what: HTML, CSS 
+      score: 0.40
