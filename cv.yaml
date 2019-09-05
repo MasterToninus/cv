@@ -3,7 +3,7 @@ name:
     last: Erba
 phone: +39~345~236~0130
 email: "erba.vittorio@gmail.com"
-site: "vittorioerba.gitlab.com"
+site: "vittorioerba.github.com"
 
 order:
     - [Education, edu, voices, 1]
