@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 #
-# Generates LaTeX, markdown, and plaintext copies of my CV.
+# Generates LaTeX version of my CV.
 #
-# Vittorio Erba <site>
-# 2019.09.03
+# Credits: Vittorio Erba https://github.com/vittorioerba
+# 2019.12.06
 
 import yaml
 import sys
 
 from datetime import date
 from jinja2 import Environment, FileSystemLoader
+from getactivities import readmywebsite
 
 env = Environment(
         loader=FileSystemLoader("tmpl"),
@@ -21,13 +22,23 @@ env = Environment(
         comment_end_string      ="#}~"
         )
 
-f = open("cv.yaml", 'r')
+f = open("data/cv.yaml", 'r')
 yaml_contents = yaml.load(f)
+yaml_contents.update(readmywebsite())
 f.close()
+
+
+# Create output directory
+import os
+if not os.path.exists("gen"):
+    os.makedirs("gen")
+
+
 
 def generate(ext):
     body1 = ""
     body2 = ""
+    body3 = ""
     for section in yaml_contents['order']:
         name      = section[0]
         contents  = yaml_contents[section[1]]
@@ -40,19 +51,26 @@ def generate(ext):
             kind = kind
             )
 
+
         if column == 1:
             body1 += parsed
-        else:
+        elif column == 2:
             body2 += parsed
+        else:
+            body3 += parsed
 
-    f_cv = open("gen/cv." + ext, 'w')
+
+    f_cv = open("gen/cv." + ext, 'w+')
     f_cv.write(env.get_template("home_tmpl." + ext).render(
         name = yaml_contents['name'],
         phone = yaml_contents['phone'],
         email = yaml_contents['email'],
         site = yaml_contents['site'],
+        github = yaml_contents['github'],
+        currentposition = yaml_contents['currentposition'],
         body1 = body1,
         body2 = body2,
+        body3 = body3,
         today = date.today().strftime("%B %d, %Y"))
       )
     f_cv.close()

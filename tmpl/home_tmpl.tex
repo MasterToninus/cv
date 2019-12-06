@@ -6,12 +6,18 @@
 \usepackage[margin=1.5cm]{geometry}
 % \addtolength{\topmargin}{-0.5cm}
 \usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
 
 \usepackage[backend=bibtex, style=nature]{biblatex}
-\addbibresource{../biblio.bib}
+\addbibresource{../data/publications.bib}
 
 \setlength\parindent{0pt}
-\pagenumbering{gobble}
+
 
 %barcharts
 \newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
@@ -22,30 +28,50 @@
 \newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
 
 %voices
+%expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country
+\newcommand{\longvoice}[7]{
+    \textbf{\href{#3}{#2: #1}} \hfill #4 \\ \textit{#5, #6, #7;} \vspace{0.2cm} \\
+    }
 \newcommand{\voice}[4]{\textbf{#1} \hfill #2 \\ \textit{#3} \\ {\small #4} \vspace{0.2cm} \\}
 \newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
 \newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
 \newcommand{\txt}[1]{#1\\}
 
 \begin{document}
+%Header
+\begin{minipage}[t]{0.6\columnwidth}
+    \center{\huge \bf{~{{name.first}}~ ~{{name.last}}~}}
+    \\
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    \skill{Phone}{~{{phone}}~}
+    \skill{Mail}{~{{email}}~}
+    \skill{Site}{~{{site}}~}
+    \skill{Github}{~{{github}}~}    
+\end{minipage}
+~{{currentposition}}~
+
+
+
+%Splash Page
 \begin{minipage}[t]{0.6\columnwidth}
     ~{{ body1 }}~
 \end{minipage} 
 \hfill
 \begin{minipage}[t]{0.375\columnwidth}
-    
-    \Block{\hfill ~{{name.first}}~ ~{{name.last}}~\hfill}
-
-    \skill{Phone}{~{{phone}}~}
-    \skill{Mail}{~{{email}}~}
-    \skill{Site}{~{{site}}~}
-
     ~{{ body2 }}~
 \end{minipage}
 
+\newpage
+%Academic Page
 \block{Selected publications}
-
 \nocite{*}
 \printbibliography[heading=none]
+
+
+~{{ body3 }}~
+
 
 \end{document}

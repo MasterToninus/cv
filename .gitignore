@@ -1,0 +1,26 @@
+# Ignore output
+gen
+
+# Ignore pychace
+__pycache__
+
+## Generated Template
+tmpl/*.bib
+tmpl/*.aux
+tmpl/*.bbl
+tmpl/*.blg
+tmpl/*.fdb_latexmk
+tmpl/*.fls
+tmpl/*.log
+tmpl/*.out
+tmpl/*.pdf
+tmpl/*.xml
+tmpl/*.gz
+
+
+
+
+
+
+
+

@@ -1,0 +1,203 @@
+name:
+    first: Antonio Michele
+    last: Miti
+phone: +39~333~9825~418
+email: "antoniomichele.miti@gmail.com"
+site: "https://dmf.unicatt.it/miti/"
+github: MasterToninus
+currentposition: "Fourth year Ph.D. student in mathematics. Interested in multi-symplectic geometry and other (differential-) geometrical and homotopical structures inspired by theoretical physics."
+interests: 
+  -what: Differential Geometry
+  -what: Axiomatic Foundations of Physics
+  -what: Geometric Mechanics of Field Systems
+  -what: Geometric and Algebraic Quantization
+  -what: Categorical and cohomological methods in Physics
+
+
+order:
+    - [Education, edu, voices, 1]
+    - [Teaching, teach, voices, 1]
+    - [Departmental duties, dept, voices, 1]   
+    - [Work experiences, work, voices, 1]
+    - [Languages, lang, skills, 2]
+    - [Computer Skills, comp, skills_bar, 2]
+    - [Honors \& Awards, awd, voices, 2]
+    - [Affiliations, affil, voices, 2]  
+    - [Referees, ref, voices, 2]    
+    - [Post-Graduate Training, schools, detailed, 3]
+    - [Workshops \& Conferences, conferences, detailed, 3]
+    - [Talks \& Communications, talks, detailed, 3]    
+
+dept: 
+  - what: "Exams supervision"
+    when: "01/2020 -- 07/2020"
+    where: "KUL, Leuven, Belgium"
+    info: "\\vspace{-0.5cm}"
+    url: ""
+  - what: "Computer systems administration (helper)"
+    when: 03/2017 -- 10/2018
+    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy
+    info: "Assistence in the computer systems administrations of the department of Mathematics and Physics (DMF)"
+    url: https://dipartimenti.unicatt.it/dmf-home
+
+awd:
+    - what: Premio di Studio e Laurea
+      when: 12/2016
+      where: BCC di Carugate e Inzago
+      info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016.	\\vspace{-0.5cm}"
+      url:
+
+
+work:
+    - what: Java Programming Interhship
+      when: 03/2016  -- 07/2016
+      where: CST s.r.l, Milano, Italy
+      info: "Formation in Java Programming language and in professional software development tools."
+      url: https://www.csttech.it/
+    - what: Student collaboration to SysAdmin
+      when: "05/2014 -- 02/2015"
+      where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano"
+      info: "Collaboration in the configuration and administration of the Linux cluster in the computer laboratory of the department of Physics.Tech support: 	installation and configuration of linux OS.Tutoring to students of the courses in computational physics.	"
+      url: https://lcm.mi.infn.it/
+
+edu:
+    - what: Phd Student in Mathematics
+      when: 01/2017 -- present
+      where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven"
+      info: "Four years grant in the Joint International Doctoral Program in Science with the project
+            \\emph{Multi-symplectic geometry and applications to modern physics}.
+            \\par
+             I spent the first two years of my scolarship at UCSC. From October 2018 I am working at KU Leuven."
+      project: "
+        The project proposes the following mutually intermingled research paths 
+        mostly focussed towards symplectic geometry and its multisymplectic generalisations, 
+        together with applications to modern physics issues, 
+        both classical and quantum mechanical, with an emphasis on topological aspects."
+      project_url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
+      thesis:
+        - title: "Homotopy moment maps in multisymplectic geometry"
+          url: "https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry"
+      supervisors:
+        - name: Mauro Spera
+          institution: UCSC
+          url: "http://docenti.unicatt.it/ita/mauro_spera/"
+        - name: Marco Zambon
+          institution: KU Leuven
+          url: "https://perswww.kuleuven.be/~u0096206/"
+
+    - what: Master degree in Theoretical Physics
+      when: November 2015
+      where: "Universit\\'a degli Studi di Milano"
+      info: "(Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods)"
+      assessment: "final grade 110/110"
+      thesis:
+        - title: "Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets." 
+          url: "https://github.com/MasterToninus/MasterThesis/blob/master/Main.pdf"
+      supervisors:
+        - name: Claudio Dappiaggi
+          institution: Universit\'a di Pavia
+          url: "http://fisica.unipv.it/personale/Persona.php?ID=256"
+        - name: Livio Pizzocchero
+          institution: Universit\'a degli Studi di Milano
+          url: "http://users.mat.unimi.it/users/pizzocchero/ " 
+
+    - what: Bachelor degree in Physics
+      when: October 2010
+      where: "Universit\\'a degli Studi di Milano - Bicocca"
+      info: "(Theoretical Physics curriculum with emphases on:
+        Mathematical-Physics, Classical and Quantum Mechanics)"
+      assessment: "final grade 99/110"
+      thesis:
+        - title: Lie group theory and application to the rigid body mechanics
+          url: https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf
+      supervisors:
+        - name: Franco Magri
+          institution: Universit\'a degli Studi di Milano - Bicocca
+          url: http://staff.matapp.unimib.it/~/magri/
+
+
+
+      
+lang:
+    - what: Italian
+      score: Mothertongue
+    - what: English
+      score: "Toefl-IBT : 102/120 (apr-18)"
+    - what: French
+      score: Beginner
+      
+comp:
+        - what: C/C++
+          score: 0.4
+        - what: Python
+          score: 0.5
+        - what: Haskell
+          score: 0.25
+        - what: Cuda
+          score: 0.5
+        - what: Java
+          score: 0.5
+        - what: Mathematica
+          score: 0.5
+        - what: Bash script
+          score: 0.5
+        - what: "\\LaTeX"
+          score: 0.75
+        - what: Linux (Os admin)
+          score: 0.75
+        - what: Windows (Os admin)
+          score: 0.75
+        - what: Embedded electronics 
+          info: (Arduino, Rasp.Pi)
+          score: 0.25
+        - what: computer assembly
+          info: and modding
+          score: 0.5
+        - what: network infrastructure
+          score: 0.2
+
+
+affil:
+    - what: Ph.D. student
+      when: 01/2017
+      where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      url: https://dipartimenti.unicatt.it/dmf-staff-dottorandi#content 
+      info: "\\vspace{-0.5cm}"
+    - what: Member of GNSAGA - Differential Geometry
+      when: 01/2017
+      where: Istituto italiano di alta matematica (Indam)
+      url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
+      info: "\\vspace{-0.5cm}"
+    - what: Ph.D. student
+      when: 05/2018
+      where: Department of Mathematics - KU Leuven, Leuven, Belgium
+      url: https://www.kuleuven.be/wieiswie/en/person/00123013
+      info: "\\vspace{-0.5cm}"
+
+
+ref:
+  - what: Mauro Spera
+    rank: Full professor
+    where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
+    url: http://docenti.unicatt.it/ita/mauro_spera/
+    email: mauro.spera@unicatt.it
+    info: "\\vspace{-0.5cm}"
+  - what: Marco Zambon
+    rank: Associate professor
+    where: Department of Mathematics - KU Leuven, Leuven, Belgium
+    url: https://perswww.kuleuven.be/~u0096206/
+    email: marco.zambon@kuleuven.be
+    info: "\\vspace{-0.5cm}"
+
+
+teach:
+    - what: "Elements of Higher Geometry"
+      when: 10/2017 -- 01/2018
+      where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      info: "Exercise class in the course held by Prof: Mauro Spera."
+      url:  http://docenti.unicatt.it/web/html/index.html#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita
+    - what: "Exercise Class: Differential Topology and Geometry"
+      when: 03/2018 -- 6/2018
+      where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      info: "Exercise class in the course held by Prof: Mauro Spera."
+      url: http://docenti.unicatt.it/web/html/index.html#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita
