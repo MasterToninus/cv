@@ -1,11 +1,11 @@
 name:
     first: Antonio Michele
     last: Miti
-phone: +39~333~9825~418
-email: "antoniomichele.miti@gmail.com"
+phone: +39~333~****~***
+email: "am.miti@dmf.unicatt.it"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Fourth year Ph.D. student in mathematics. Interested in multi-symplectic geometry and other (differential-) geometrical and homotopical structures inspired by theoretical physics."
+currentposition: "Fourth year Ph.D. student in mathematics. Interested in multi-symplectic geometry and others (differential-) geometrical and homotopical structures inspired by theoretical physics."
 interests: 
   -what: Differential Geometry
   -what: Axiomatic Foundations of Physics
@@ -24,9 +24,10 @@ order:
     - [Honors \& Awards, awd, voices, 2]
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]    
+    - [Talks \& Communications, talks, detailed, 3]    
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
-    - [Talks \& Communications, talks, detailed, 3]    
+    
 
 dept: 
   - what: "Exams supervision"
@@ -45,7 +46,7 @@ awd:
       when: 12/2016
       where: BCC di Carugate e Inzago
       info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016.	\\vspace{-0.5cm}"
-      url:
+      url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
 
 
 work:
@@ -68,14 +69,13 @@ edu:
             \\emph{Multi-symplectic geometry and applications to modern physics}.
             \\par
              I spent the first two years of my scolarship at UCSC. From October 2018 I am working at KU Leuven."
-      project: "
-        The project proposes the following mutually intermingled research paths 
-        mostly focussed towards symplectic geometry and its multisymplectic generalisations, 
-        together with applications to modern physics issues, 
-        both classical and quantum mechanical, with an emphasis on topological aspects."
-      project_url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
+      url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
       thesis:
         - title: "Homotopy moment maps in multisymplectic geometry"
+          info: "The project proposes the following mutually intermingled research paths 
+            mostly focussed towards symplectic geometry and its multisymplectic generalisations, 
+            together with applications to modern physics issues, 
+            both classical and quantum mechanical, with an emphasis on topological aspects."
           url: "https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry"
       supervisors:
         - name: Mauro Spera
@@ -88,11 +88,12 @@ edu:
     - what: Master degree in Theoretical Physics
       when: November 2015
       where: "Universit\\'a degli Studi di Milano"
-      info: "(Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods)"
+      info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods."
       assessment: "final grade 110/110"
+      url: "https://fisica-lm.cdl.unimi.it/it"
       thesis:
         - title: "Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets." 
-          url: "https://github.com/MasterToninus/MasterThesis/blob/master/Main.pdf"
+          url: "https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets"
       supervisors:
         - name: Claudio Dappiaggi
           institution: Universit\'a di Pavia
@@ -104,9 +105,10 @@ edu:
     - what: Bachelor degree in Physics
       when: October 2010
       where: "Universit\\'a degli Studi di Milano - Bicocca"
-      info: "(Theoretical Physics curriculum with emphases on:
-        Mathematical-Physics, Classical and Quantum Mechanics)"
+      info: "Theoretical Physics curriculum with emphases on:
+        Mathematical-Physics, Classical and Quantum Mechanics."
       assessment: "final grade 99/110"
+      url: "https://www.fisica.unimib.it/en"
       thesis:
         - title: Lie group theory and application to the rigid body mechanics
           url: https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf
@@ -128,32 +130,32 @@ lang:
       
 comp:
         - what: C/C++
-          score: 0.4
+          score: 0.3
         - what: Python
-          score: 0.5
+          score: 0.45
         - what: Haskell
           score: 0.25
         - what: Cuda
-          score: 0.5
+          score: 0.45
         - what: Java
-          score: 0.5
+          score: 0.4
         - what: Mathematica
-          score: 0.5
+          score: 0.3
         - what: Bash script
-          score: 0.5
+          score: 0.3
         - what: "\\LaTeX"
           score: 0.75
         - what: Linux (Os admin)
-          score: 0.75
+          score: 0.65
         - what: Windows (Os admin)
-          score: 0.75
+          score: 0.65
         - what: Embedded electronics 
           info: (Arduino, Rasp.Pi)
           score: 0.25
-        - what: computer assembly
+        - what: Computer assembly
           info: and modding
           score: 0.5
-        - what: network infrastructure
+        - what: Network infrastructure
           score: 0.2
 
 
@@ -161,7 +163,7 @@ affil:
     - what: Ph.D. student
       when: 01/2017
       where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      url: https://dipartimenti.unicatt.it/dmf-staff-dottorandi#content 
+      url: "https://dipartimenti.unicatt.it/dmf-staff-dottorandi\\#content" 
       info: "\\vspace{-0.5cm}"
     - what: Member of GNSAGA - Differential Geometry
       when: 01/2017
@@ -195,9 +197,9 @@ teach:
       when: 10/2017 -- 01/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
       info: "Exercise class in the course held by Prof: Mauro Spera."
-      url:  http://docenti.unicatt.it/web/html/index.html#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita
-    - what: "Exercise Class: Differential Topology and Geometry"
+      url:  "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
+    - what: "Differential Topology and Geometry"
       when: 03/2018 -- 6/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
       info: "Exercise class in the course held by Prof: Mauro Spera."
-      url: http://docenti.unicatt.it/web/html/index.html#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita
+      url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
