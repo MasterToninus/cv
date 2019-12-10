@@ -3,6 +3,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{fontawesome}
 \usepackage[margin=1.5cm]{geometry}
 % \addtolength{\topmargin}{-0.5cm}
 \usepackage{xcolor}
@@ -11,8 +12,9 @@
 \usepackage{lastpage}
 \pagestyle{fancy}
 \fancyhf{}
-%\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
-\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Automatically generated on ~{{today}}~} }
+\rhead{Antonio Michele Miti}
+\lhead{Curriculum Vitae}
+\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Generated on ~{{today}}~} }
 \rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
 
 \usepackage[backend=bibtex, style=nature]{biblatex}
@@ -23,16 +25,22 @@
 
 %barcharts
 \newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
-\newcommand{\progbar}[4][black]{\crule[#1!10!white!90]{#2}{#4}\crule[#1]{#3}{#4}}
+\newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
 
 %titles
 \newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
 \newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+\newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
 
 %longvoice
 %expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country
 \newcommand{\longvoice}[7]{
-    \textbf{\href{#3}{#2: #1}} \hfill #4 \\ \textit{#5, #6, #7;} \vspace{0.2cm} \\
+    \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
+        \textbf{\href{#3}{#2: #1}} & #4 
+        \\ 
+        \textit{#5, #6, #7;} &
+    \end{tabular}
+    \vspace{.5em}
     }
 %voice
 %expected: what, when, where, url, info
@@ -50,9 +58,9 @@
 \end{minipage} 
 \hfill
 \begin{minipage}[t]{0.375\columnwidth}
-    \skill{Phone}{~{{phone}}~}
-    \skill{Mail}{\href{mailto:~{{email}}~}{~{{email}}~}}
-    \skill{Site}{\href{~{{site}}~}{~{{site}}~}}
+    \skill{\faPhone~ Phone}{~{{phone}}~}
+    \skill{\faEnvelope~ Mail}{\href{mailto:~{{email}}~}{~{{email}}~}}
+    \skill{\faGlobe~ Website}{\href{~{{site}}~}{~{{site}}~}}
     %\skill{Github}{~{{github}}~}    
 \end{minipage}
 \textit{~{{currentposition}}~}

@@ -1,5 +1,8 @@
 all: gen/cv.pdf
 
+clean: 
+	rm gen/*
+
 gen/cv.tex: data/cv.yaml generate.py \
 	tmpl/home_tmpl.tex tmpl/section_tmpl.tex
 	./generate.py

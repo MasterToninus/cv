@@ -71,7 +71,7 @@ def generate(ext):
         body1 = body1,
         body2 = body2,
         body3 = body3,
-        today = date.today().strftime("%B %d, %Y"))
+        today = date.today().strftime("%d/%m/%y"))
       )
     f_cv.close()
 
