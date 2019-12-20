@@ -3,6 +3,7 @@ gen
 
 # Ignore pychace
 __pycache__
+*pyc
 
 ## Generated Template
 tmpl/*.bib
