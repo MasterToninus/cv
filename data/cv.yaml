@@ -45,9 +45,12 @@ awd:
     - what: Premio di Studio e Laurea
       when: 12/2016
       where: BCC di Carugate e Inzago
-      info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016.	\\vspace{-0.5cm}"
+      info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016."
       url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
-
+    - what: PhD scholarship
+      when: 01/2017 -- 31/2020
+      where: Universit\'a Cattolica del Sacro Cuore  
+      info: "\\vspace{-0.5cm}"      
 
 work:
     - what: Java Programming Interhship

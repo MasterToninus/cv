@@ -10,4 +10,4 @@ gen/cv.tex: data/cv.yaml generate.py \
 gen/cv.pdf: gen/cv.tex
 	cd gen && \
 	latexmk --pdf  && \
-	latexmk -c
+ 	latexmk -c

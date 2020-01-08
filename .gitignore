@@ -18,7 +18,8 @@ tmpl/*.pdf
 tmpl/*.xml
 tmpl/*.gz
 
-
+## Log
+.log
 
 
 
