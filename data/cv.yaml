@@ -5,7 +5,7 @@ phone: +39~333~****~***
 email: "am.miti@dmf.unicatt.it"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Fourth year Ph.D. student in mathematics. Interested in multi-symplectic geometry and others (differential-) geometrical and homotopical structures inspired by theoretical physics."
+currentposition: "Ph.D. candidate in mathematics (expected to defend in December 2020). Interested in multi-symplectic geometry and others (differential-) geometrical and homotopical structures inspired by theoretical physics."
 interests: 
   -what: Differential Geometry
   -what: Axiomatic Foundations of Physics
@@ -38,7 +38,7 @@ dept:
   - what: "Computer systems administration (helper)"
     when: 03/2017 -- 10/2018
     where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy
-    info: "Assistence in the computer systems administrations of the department of Mathematics and Physics (DMF)"
+    info: "Assistence in the computer systems administrations of the department of Mathematics and Physics (DMF)."
     url: https://dipartimenti.unicatt.it/dmf-home
 
 awd:
@@ -148,9 +148,9 @@ comp:
           score: 0.3
         - what: "\\LaTeX"
           score: 0.75
-        - what: Linux (Os admin)
+        - what: Linux (Sysadmin)
           score: 0.65
-        - what: Windows (Os admin)
+        - what: Windows (Sysadmin)
           score: 0.65
         - what: Embedded electronics 
           info: (Arduino, Rasp.Pi)
