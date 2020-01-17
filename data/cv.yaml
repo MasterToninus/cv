@@ -5,13 +5,15 @@ phone: +39~333~****~***
 email: "am.miti@dmf.unicatt.it"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Ph.D. candidate in mathematics (expected to defend in December 2020). Interested in multi-symplectic geometry and others (differential-) geometrical and homotopical structures inspired by theoretical physics."
-interests: 
-  -what: Differential Geometry
-  -what: Axiomatic Foundations of Physics
-  -what: Geometric Mechanics of Field Systems
-  -what: Geometric and Algebraic Quantization
-  -what: Categorical and cohomological methods in Physics
+currentposition: "Ph.D. candidate in mathematics (geometry).\\ Expected to defend in December 2020."
+coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
+keywords: 
+  - Differential Geometry
+  - Multisymplectic Geometry
+  - Axiomatic Foundations of Physics
+  - Geometric Mechanics of Field Systems
+  - Geometric and Algebraic Quantization
+  - Categorical and cohomological methods in geometry and theoretical physics
 
 
 order:
@@ -71,7 +73,13 @@ edu:
       info: "Four years grant in the Joint International Doctoral Program in Science with the project
             \\emph{Multi-symplectic geometry and applications to modern physics}.
             \\par
-             I spent the first two years of my scolarship at UCSC. From October 2018 I am working at KU Leuven."
+             I spent the first two years of my scolarship at UCSC. From October 2018 I am working at KU Leuven.
+            \\par
+            Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, 
+            \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}.
+            \\par
+            Thesis: \\href{https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry}{Homotopy moment maps in multisymplectic geometry}.
+            "
       url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
       thesis:
         - title: "Homotopy moment maps in multisymplectic geometry"
@@ -91,7 +99,13 @@ edu:
     - what: Master degree in Theoretical Physics
       when: November 2015
       where: "Universit\\'a degli Studi di Milano"
-      info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods."
+      info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods.
+            \\par
+            Supervisors: \\href{http://fisica.unipv.it/personale/Persona.php?ID=256}{Claudio Dappiaggi}, 
+            \\href{http://users.mat.unimi.it/users/pizzocchero/}{Livio Pizzocchero}.
+            \\par
+            Thesis: \\href{https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets}{Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets}.
+            "
       assessment: "final grade 110/110"
       url: "https://fisica-lm.cdl.unimi.it/it"
       thesis:
@@ -103,13 +117,18 @@ edu:
           url: "http://fisica.unipv.it/personale/Persona.php?ID=256"
         - name: Livio Pizzocchero
           institution: Universit\'a degli Studi di Milano
-          url: "http://users.mat.unimi.it/users/pizzocchero/ " 
+          url: "http://users.mat.unimi.it/users/pizzocchero/" 
 
     - what: Bachelor degree in Physics
       when: October 2010
       where: "Universit\\'a degli Studi di Milano - Bicocca"
       info: "Theoretical Physics curriculum with emphases on:
-        Mathematical-Physics, Classical and Quantum Mechanics."
+        Mathematical-Physics, Classical and Quantum Mechanics.
+        \\par
+        Supervisor: \\href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}.
+        \\par
+        Thesis: \\href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}.
+        "
       assessment: "final grade 99/110"
       url: "https://www.fisica.unimib.it/en"
       thesis:
@@ -183,7 +202,7 @@ affil:
 ref:
   - what: Mauro Spera
     rank: Full professor
-    where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
+    where: Department of Mathematics and Physics - UCSC, Brescia, Italy
     url: http://docenti.unicatt.it/ita/mauro_spera/
     email: mauro.spera@unicatt.it
     info: "\\vspace{-0.5cm}"
@@ -193,7 +212,12 @@ ref:
     url: https://perswww.kuleuven.be/~u0096206/
     email: marco.zambon@kuleuven.be
     info: "\\vspace{-0.5cm}"
-
+  - what: Luca Vitagliano
+    rank: Associate professor
+    where: Department of Mathematics - Università degli studi di Salerno, Fisciano, Italy
+    url: http://www.dipmat2.unisa.it/people/vitagliano/www/
+    email: lvitagliano@unisa.it
+    info: "\\vspace{-0.5cm}"
 
 teach:
     - what: "Elements of Higher Geometry"

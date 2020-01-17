@@ -59,6 +59,12 @@ def generate(ext):
         else:
             body3 += parsed
 
+    #Generate cover paper on research interest
+    coverstatement = yaml_contents['coverstatement'] + "\\vspace{0.25em}\n\n\\textbf{Kewywords: }\\it "
+    for line in yaml_contents['keywords']:
+        coverstatement = coverstatement + line +", "
+    coverstatement = coverstatement[:-2]+"."
+
 
     f_cv = open("gen/cv." + ext, 'w+')
     f_cv.write(env.get_template("home_tmpl." + ext).render(
@@ -68,6 +74,7 @@ def generate(ext):
         site = yaml_contents['site'],
         github = yaml_contents['github'],
         currentposition = yaml_contents['currentposition'],
+        coverstatement = coverstatement,
         body1 = body1,
         body2 = body2,
         body3 = body3,

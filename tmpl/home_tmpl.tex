@@ -53,8 +53,9 @@
 \begin{document}
 %Header
 \begin{minipage}[c]{0.6\columnwidth}
-    \centering
-    \huge \textbf{~{{name.first}}~ ~{{name.last}}~}
+    \center{\huge \textbf{~{{name.first}}~ ~{{name.last}}~}}
+    \\
+    \flushleft{\normalsize \textit{~{{currentposition}}~}}
 \end{minipage} 
 \hfill
 \begin{minipage}[t]{0.375\columnwidth}
@@ -63,7 +64,8 @@
     \skill{\faGlobe~ Website}{\href{~{{site}}~}{~{{site}}~}}
     %\skill{Github}{~{{github}}~}    
 \end{minipage}
-\textit{~{{currentposition}}~}
+%\textit{~{{currentposition}}~}
+\vspace{-0.25em}
 
 
 
@@ -78,6 +80,11 @@
 
 \newpage
 %Academic Page
+\block{Research interests}
+
+{~{{coverstatement}}~}
+\vspace{0.25em}
+
 \block{Selected publications}
 \nocite{*}
 \printbibliography[heading=none]
