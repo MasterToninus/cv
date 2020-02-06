@@ -9,6 +9,6 @@ gen/cv.tex: data/cv.yaml generate.py \
 
 gen/cv.pdf: gen/cv.tex
 	cd gen && \
-	pdflatex.exe cv -interaction=batchmode && \
+	pdflatex cv -interaction=batchmode && \
 	bibtex cv && \
-	pdflatex.exe cv -interaction=batchmode
+	pdflatex cv -interaction=batchmode
