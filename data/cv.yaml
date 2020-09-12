@@ -10,6 +10,8 @@ coverstatement: "I am a differential geometer mainly working with higher geometr
 keywords: 
   - Differential Geometry
   - Multisymplectic Geometry
+  - L-Infinity Algebras
+  - Higher Structures
   - Axiomatic Foundations of Physics
   - Geometric Mechanics of Field Systems
   - Geometric and Algebraic Quantization
@@ -62,7 +64,8 @@ awd:
     - what: PhD scholarship
       when: 01/2017 -- 31/2020
       where: Universit\'a Cattolica del Sacro Cuore  
-      info: "\\vspace{-0.5cm}"      
+      info: "\\vspace{-0.5cm}"
+      url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
 
 work:
     - what: Java Programming Interhship
