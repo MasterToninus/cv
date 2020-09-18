@@ -35,6 +35,16 @@ order:
     
 
 dept: 
+  - what: "Organizator: online workshop on Multisymplectic Geoemtry"
+    when: "02/2020 -- 09/2020"
+    where: "Universit\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    info: "\\vspace{-0.5cm}"
+    url: "https://wis.kuleuven.be/events/multisymplectic"
+  - what: "Exams supervision"
+    when: "06/2020 -- 09/2020"
+    where: "Universit\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    info: "\\vspace{-0.5cm}"
+    url: ""
   - what: "Exams supervision"
     when: "01/2020 -- 07/2020"
     where: "KUL, Leuven, Belgium"
