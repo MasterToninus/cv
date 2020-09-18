@@ -29,6 +29,7 @@ order:
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]    
     - [Talks \& Communications, talks, detailed, 3]    
+    - [Event Organization, org, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
     
@@ -233,3 +234,10 @@ teach:
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
       info: "Exercise class in the course held by Prof: Mauro Spera."
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
+
+org:
+    - what: "Workshop on multisymplectic geometry"
+      when: "18 - 19 June, 2020"
+      where: "KU Leuven, Leuven, Belgium"
+      info: " "
+      url: https://wis.kuleuven.be/events/multisymplectic
