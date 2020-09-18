@@ -37,12 +37,12 @@ order:
 dept: 
   - what: "Organizator: online workshop on Multisymplectic Geoemtry"
     when: "02/2020 -- 09/2020"
-    where: "Universit\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
     info: "\\vspace{-0.5cm}"
     url: "https://wis.kuleuven.be/events/multisymplectic"
   - what: "Exams supervision"
     when: "06/2020 -- 09/2020"
-    where: "Universit\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
     info: "\\vspace{-0.5cm}"
     url: ""
   - what: "Exams supervision"
@@ -52,7 +52,7 @@ dept:
     url: ""
   - what: "Computer systems administration (helper)"
     when: 03/2017 -- 10/2018
-    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy
+    where: Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy
     info: "Assistence in the computer systems administrations of the department of Mathematics and Physics (DMF)."
     url: https://dipartimenti.unicatt.it/dmf-home
 
