@@ -8,6 +8,8 @@ import csv
 import urllib.request
 import codecs
 import warnings
+import datetime
+
 
 def readmywebsite():
     # Stream the csv from my website to a Dict
@@ -22,20 +24,26 @@ def readmywebsite():
     talks = []
     unused = set()
 
+    # Limit date
+    limitdate = datetime.datetime.now() + datetime.timedelta(days=21)
+
     for line in csvfile:
         event = line.get('Type')
+        date = datetime.datetime.strptime(line.get('Start_Date'), '%d-%b-%y')
         # Escaping % for use in latex
         url   = line.get('Url').replace('%','\%').replace('#','\#')
         line.update({'Url':url})
 
-        if event in ('Workshop','Conference'):
-            conferences.append(line)
-        elif event in ('Training Course','Ph.D. Course','School','Summer school','Master Course','Reading Course','Industry Course'):
-            schools.append(line)
-        elif event in ('Invited Talk','Contributed Talk','Poster'):
-            talks.append(line)    
-        else:
-            unused.add(event)
+        #Do not add events in the distant future
+        if (date < limitdate):
+            if event in ('Workshop','Conference'):
+                conferences.append(line)
+            elif event in ('Training Course','Ph.D. Course','School','Summer school','Master Course','Reading Course','Industry Course'):
+               schools.append(line)
+            elif event in ('Invited Talk','Contributed Talk','Poster'):
+              talks.append(line)    
+            else:
+                unused.add(event)
             
     #
     msg = "Unused keys:"+ str(unused)
