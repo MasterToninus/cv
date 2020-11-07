@@ -21,6 +21,8 @@ tmpl/*.gz
 ## Log
 .log
 
+## Texmaker folder
+*build*
 
 
 

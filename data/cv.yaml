@@ -5,7 +5,7 @@ phone: +39~333~****~***
 email: "am.miti@dmf.unicatt.it"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Ph.D. candidate in mathematics (geometry).\\ Expected to defend in February 2021."
+currentposition: "Ph.D. candidate in mathematics (geometry).\\newline Expected to defend in February 2021."
 coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
 keywords: 
   - Differential Geometry
@@ -72,10 +72,10 @@ work:
     - what: Student collaboration to SysAdmin
       when: "05/2014 -- 02/2015"
       where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano"
-      info: "Maintenance of the LCM computers clusters. Tutoring: installation and configuration of linux OS, computational physics courses.\vspace{-0.5cm}"
+      info: "Maintenance of the LCM computers clusters. Tutoring: installation and configuration of linux OS, computational physics courses.\\vspace{-0.5cm}"
       infoE: "Collaboration to the configuration and administration of the Linux cluster in the computer laboratory of the department of Physics.
       Tech support: 	installation and configuration of linux OS.
-      Tutoring to students of the courses in computational physics.\vspace{-0.5cm}"
+      Tutoring to students of the courses in computational physics.\\vspace{-0.5cm}"
       url: https://lcm.mi.infn.it/
 
 edu:
