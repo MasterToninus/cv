@@ -5,7 +5,7 @@ phone: +39~333~****~***
 email: "am.miti@dmf.unicatt.it"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Ph.D. candidate in mathematics (geometry).\\ Expected to defend in December 2020."
+currentposition: "Ph.D. candidate in mathematics (geometry).\\newline Expected to defend in February 2021."
 coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
 keywords: 
   - Differential Geometry
@@ -21,7 +21,7 @@ keywords:
 order:
     - [Education, edu, voices, 1]
     - [Teaching, teach, voices, 1]
-    - [Departmental duties, dept, voices, 1]   
+    - [Departmental duties, dept, voices, 1] 
     - [Work experiences, work, voices, 1]
     - [Languages, lang, skills, 2]
     - [Computer Skills, comp, skills_bar, 2]
@@ -29,16 +29,12 @@ order:
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]    
     - [Talks \& Communications, talks, detailed, 3]    
+    - [Events Organization, org, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
     
 
 dept: 
-  - what: "Organizator: online workshop on Multisymplectic Geometry"
-    when: "02/2020 -- 09/2020"
-    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
-    info: "\\vspace{-0.5cm}"
-    url: "https://wis.kuleuven.be/events/multisymplectic"
   - what: "Exams supervision"
     when: "06/2020 -- 09/2020"
     where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
@@ -49,11 +45,11 @@ dept:
     where: "KUL, Leuven, Belgium"
     info: "\\vspace{-0.5cm}"
     url: ""
-  - what: "Computer systems administration (helper)"
-    when: 03/2017 -- 10/2018
-    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy
-    info: "Assistence in the computer systems administrations of the department of Mathematics and Physics (DMF)."
-    url: https://dipartimenti.unicatt.it/dmf-home
+  - what: "Computer systems administration (assistant)"
+    when: "03/2017 -- 10/2018"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    info: "Maintenance of IT systems of the department of Mathematics and Physics."
+    url: "https://dipartimenti.unicatt.it/dmf-home"
 
 awd:
     - what: Premio di Studio e Laurea
@@ -76,7 +72,10 @@ work:
     - what: Student collaboration to SysAdmin
       when: "05/2014 -- 02/2015"
       where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano"
-      info: "Collaboration in the configuration and administration of the Linux cluster in the computer laboratory of the department of Physics.Tech support: 	installation and configuration of linux OS.Tutoring to students of the courses in computational physics.	"
+      info: "Maintenance of the LCM computers clusters. Tutoring: installation and configuration of linux OS, computational physics courses.\\vspace{-0.5cm}"
+      infoE: "Collaboration to the configuration and administration of the Linux cluster in the computer laboratory of the department of Physics.
+      Tech support: 	installation and configuration of linux OS.
+      Tutoring to students of the courses in computational physics.\\vspace{-0.5cm}"
       url: https://lcm.mi.infn.it/
 
 edu:
@@ -243,3 +242,10 @@ teach:
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
       info: "Exercise class in the course held by Prof: Mauro Spera."
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
+
+org:
+    - what: "Workshop on multisymplectic geometry"
+      when: "10 - 11 September, 2020"
+      where: "KU Leuven, Leuven, Belgium"
+      info: " "
+      url: https://wis.kuleuven.be/events/multisymplectic
