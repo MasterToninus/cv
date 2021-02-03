@@ -2,10 +2,10 @@ name:
     first: Antonio Michele
     last: Miti
 phone: +39~333~****~***
-email: "am.miti@dmf.unicatt.it"
+email: "antoniomichele.miti@gmail.com"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Ph.D. candidate in mathematics (geometry).\\newline Expected to defend in February 2021."
+currentposition: "Ph.D. candidate in mathematics (differential geometry).\\newline He expects to obtain the title on April 1st, 2021."
 coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
 keywords: 
   - Differential Geometry
@@ -235,12 +235,12 @@ teach:
     - what: "Elements of Higher Geometry"
       when: 10/2017 -- 01/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      info: "Exercise class in the course held by Prof: Mauro Spera."
+      info: "Exercise class for the course held by Prof: Mauro Spera."
       url:  "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
     - what: "Differential Topology and Geometry"
       when: 03/2018 -- 6/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      info: "Exercise class in the course held by Prof: Mauro Spera."
+      info: "Exercise class for the course held by Prof: Mauro Spera."
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
 org:
