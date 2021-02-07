@@ -23,7 +23,7 @@ tmpl/*.gz
 
 ## Texmaker folder
 *build*
-
+data/**.bak
 
 
 
