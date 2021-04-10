@@ -52,16 +52,16 @@ dept:
     url: "https://dipartimenti.unicatt.it/dmf-home"
 
 awd:
-    - what: Premio di Studio e Laurea
-      when: 12/2016
-      where: BCC di Carugate e Inzago
-      info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016."
-      url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
-    - what: PhD scholarship
-      when: 01/2017 -- 31/2020
-      where: Universit\'a Cattolica del Sacro Cuore  
-      info: "\\vspace{-0.5cm}"
-      url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
+  - what: Premio di Studio e Laurea
+    when: 12/2016
+    where: BCC di Carugate e Inzago
+    info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016."
+    url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
+  - what: PhD scholarship
+    when: 01/2017 -- 31/2020
+    where: Universit\'a Cattolica del Sacro Cuore  
+    info: "\\vspace{-0.5cm}"
+    url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
 
 work:
     - what: Java Programming Interhship
@@ -79,8 +79,8 @@ work:
       url: https://lcm.mi.infn.it/
 
 edu:
-    - what: Phd Student in Mathematics
-      when: 01/2017 -- present
+    - what: "PhD in Science: Mathematics"
+      when: "01/2017 -- 04/2021"
       where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven"
       info: "Four years grant in the Joint International Doctoral Program in Science with the project
             \\emph{Multi-symplectic geometry and applications to modern physics}.
@@ -90,8 +90,7 @@ edu:
             Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, 
             \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}.
             \\par
-            Thesis: \\href{https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry}{Homotopy moment maps in multisymplectic geometry}.
-            "
+            Thesis: \\href{https://www.dropbox.com/s/jl3vg0rbml7e8dd/Miti-PhDThesis-Final.pdf?dl=0}{Homotopy comomentum maps in multisymplectic geometry}."
       url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
       thesis:
         - title: "Homotopy comomentum maps in multisymplectic geometry"
@@ -175,8 +174,6 @@ comp:
           score: 0.4
         - what: Mathematica
           score: 0.3
-        - what: Bash script
-          score: 0.3
         - what: "\\LaTeX"
           score: 0.75
         - what: Linux (Sysadmin)
@@ -194,11 +191,6 @@ comp:
 
 
 affil:
-    - what: Ph.D. student
-      when: 01/2017
-      where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      url: "https://dipartimenti.unicatt.it/dmf-staff-dottorandi\\#content" 
-      info: "\\vspace{-0.5cm}"
     - what: Member of GNSAGA - Differential Geometry
       when: 01/2017
       where: Istituto italiano di alta matematica (Indam)
@@ -209,6 +201,15 @@ affil:
       where: Department of Mathematics - KU Leuven, Leuven, Belgium
       url: https://www.kuleuven.be/wieiswie/en/person/00123013
       info: "\\vspace{-0.5cm}"
+
+
+old:
+    - what: Ph.D. student
+      when: 01/2017
+      where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      url: "https://dipartimenti.unicatt.it/dmf-staff-dottorandi\\#content" 
+      info: "\\vspace{-0.5cm}"
+
 
 
 ref:
@@ -229,6 +230,12 @@ ref:
     where: Department of Mathematics - Università degli studi di Salerno, Fisciano, Italy
     url: http://www.dipmat2.unisa.it/people/vitagliano/www/
     email: lvitagliano@unisa.it
+    info: "\\vspace{-0.5cm}"
+  - what: Tilmann Wurzbacher
+    rank: Full  professor
+    where: Institut \'Elie Cartan - Universit\'e de Lorraine, Metz, France
+    url: https://iecl.univ-lorraine.fr/membre-iecl/wurzbacher-tilmann/
+    email: tilmann.wurzbacher@univ-lorraine.fr
     info: "\\vspace{-0.5cm}"
 
 teach:
