@@ -79,18 +79,18 @@ work:
       url: https://lcm.mi.infn.it/
 
 edu:
-    - what: Phd Student in Mathematics
-      when: 01/2017 -- present
+    - what: "Doctoral Degree in Science: Mathematics"
+      when: April 2021
       where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven"
       info: "Four years grant in the Joint International Doctoral Program in Science with the project
             \\emph{Multi-symplectic geometry and applications to modern physics}.
             \\par
-             I spent the first two years of my scolarship at UCSC. From October 2018 I am working at KU Leuven.
+             I spent the first two years of my scholarship at UCSC and the last two years working at KU Leuven
             \\par
             Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, 
             \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}.
             \\par
-            Thesis: \\href{https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry}{Homotopy moment maps in multisymplectic geometry}.
+            Thesis: \\href{https://tesionline.unicatt.it/handle/10280/94031}{Homotopy comomentum maps in multisymplectic geometry}.
             "
       url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
       thesis:
