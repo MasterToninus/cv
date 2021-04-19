@@ -25,7 +25,8 @@ def readmywebsite():
     unused = set()
 
     # Limit date
-    limitdate = datetime.datetime.now() + datetime.timedelta(days=21)
+    todaydate = datetime.datetime.now()
+    limitdate = todaydate + datetime.timedelta(days=63)
 
     for line in csvfile:
         event = line.get('Type')
@@ -33,6 +34,9 @@ def readmywebsite():
         # Escaping % for use in latex
         url   = line.get('Url').replace('%','\%').replace('#','\#')
         line.update({'Url':url})
+        if (date > todaydate):
+            scheduled = line.get('Approx_Date')+" (scheduled)"
+            line.update({'Approx_Date':scheduled})
 
         #Do not add events in the distant future
         if (date < limitdate):
