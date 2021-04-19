@@ -34,9 +34,11 @@ def readmywebsite():
         # Escaping % for use in latex
         url   = line.get('Url').replace('%','\%').replace('#','\#')
         line.update({'Url':url})
+
+        # Mark planned event as "scheduled"
+        line.update( {'Scheduled' : ""} )
         if (date > todaydate):
-            scheduled = line.get('Approx_Date')+" (scheduled)"
-            line.update({'Approx_Date':scheduled})
+            line.update( {'Scheduled' : "(scheduled)"} )
 
         #Do not add events in the distant future
         if (date < limitdate):

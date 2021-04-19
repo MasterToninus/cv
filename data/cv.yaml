@@ -5,8 +5,9 @@ phone: +39~333~****~***
 email: "antoniomichele.miti@gmail.com"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
-currentposition: "Ph.D. candidate in mathematics (differential geometry).\\newline He expects to obtain the title on April 1st, 2021."
-coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
+currentposition: "Ph.D. in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics."
+coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. 
+  I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
 keywords: 
   - Differential Geometry
   - Multisymplectic Geometry
@@ -79,7 +80,7 @@ work:
       url: https://lcm.mi.infn.it/
 
 edu:
-    - what: "PhD in Science: Mathematics"
+    - what: "Doctoral degree in Science: Mathematics"
       when: April 2021
       where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven"
       info: "Four years grant in the Joint International Doctoral Program in Science with the project
