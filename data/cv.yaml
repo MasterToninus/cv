@@ -59,13 +59,13 @@ awd:
     info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016."
     url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
   - what: PhD scholarship
-    when: 01/2017 -- 31/2020
+    when: 01/2017 -- 03/2021
     where: Universit\'a Cattolica del Sacro Cuore  
     info: "\\vspace{-0.5cm}"
     url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
 
 work:
-    - what: Java Programming Interhship
+    - what: Java Programming Internship
       when: 03/2016  -- 07/2016
       where: CST s.r.l, Milano, Italy
       info: "Formation in Java Programming language and in professional software development tools."

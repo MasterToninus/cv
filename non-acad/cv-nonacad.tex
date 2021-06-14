@@ -1,0 +1,339 @@
+%=======================================================================%
+%      CV - non accademico
+%=======================================================================%
+%  --- NON GENERATO AUTOMATICAMENTE ---
+%
+%   non ha senso automatizzarlo per adesso, le cose da aggiungere sono poche per ora.
+%
+%
+%
+%=======================================================================%
+
+
+
+
+
+\documentclass[a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+% \addtolength{\topmargin}{-0.5cm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Antonio Michele Miti}
+\lhead{Curriculum Vitae}
+\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Generated on 14/06/21} }
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+%\usepackage[backend=bibtex, style=nature]{biblatex}
+%\addbibresource{../data/publications.bib}
+
+\setlength\parindent{0pt}
+
+
+%barcharts
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
+
+%titles
+\newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+\newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+\newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
+
+%longvoice
+%expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country
+\newcommand{\longvoice}[8]{
+    \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
+        \textbf{\href{#3}{#2: #1}} & #4 
+        \\ 
+        \textit{#5, #6, #7;} & {\small\emph{#8}}
+    \end{tabular}
+    \vspace{.5em}
+    }
+%voice
+%expected: what, when, where, url, info
+\newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+\newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+\newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+\newcommand{\txt}[1]{#1\\}
+
+%---------- Document -----------
+\begin{document}
+%Header
+\begin{minipage}[c]{0.6\columnwidth}
+    \center{\huge \textbf{Antonio Michele Miti}}
+    \\
+    \flushleft{\normalsize \textit{PhD researcher in pure mathematics. Interested in functional programming, high performance computing, scientific programming and numerical simulations.}}
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    %\skill{\faPhone~ Phone}{+39~333~****~***}
+    \skill{\faEnvelope~ Mail}{\href{mailto:antoniomichele.miti@gmail.com}{antoniomichele.miti@gmail.com}}
+    \skill{\faGlobe~ Website}{\href{https://dmf.unicatt.it/miti/}{https://dmf.unicatt.it/miti/}}
+    \skill{\faGithub~ GitHub}{\href{https://github.com/MasterToninus}{MasterToninus}}    
+\end{minipage}
+%\textit{PhD in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics.}
+\vspace{-0.25em}
+
+
+
+%Splash Page
+\begin{minipage}[t]{0.6\columnwidth}
+
+    \block{Work Experiences}
+   
+ 
+    \voice{Doctoral Researcher}
+    	{01/2017 -- 06/2021}
+    	{Università Cattolica del Sacro Cuore, Brescia, Italy \\ KU Leuven, Leuven, Belgium}
+    	{https://scuoledidottorato.unicatt.it/phdschools/science-10574.html}
+    	{Spent 27 months at each institution.
+		Publication of several papers in \href{https://orcid.org/0000-0002-8829-1943}{peer-reviewed journals}. 
+		Invited and contributed talks in more than 10 international events. 
+		Organization of an \href{https://wis.kuleuven.be/events/multisymplectic}{international conference}.
+		Teaching assistant in master levels courses in mathematics.
+		Collaboration to the maintenance of IT systems of the DMF departmental network.}	
+    \voice{Java Developer - Internship}
+        {03/2016  -- 07/2016}
+        {CST s.r.l, Milano, Italy}
+        {https://www.csttech.it/}       
+        {Formation in Java Programming language and in professional software development tools.}
+    \voice{Student collaboration to SysAdmin}
+        {05/2014 -- 02/2015}
+        {LCM - Laboratorio di Calcolo e Multimedia, Universit\'a degli studi di Milano, Milano, Italy}
+        {https://lcm.mi.infn.it/}       
+        {Maintenance of the LCM computers cluster. Tutoring: installation and configuration of linux OS, computational physics courses.\vspace{-0.25cm}}
+ 
+
+    \block{Academic Track}
+
+    
+    \voice{Doctoral degree in Science: Mathematics}
+        {April 2021}
+        {Universit\'a Cattolica del Sacro Cuore and KU Leuven}
+        {https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects}       
+        {Four years grant in the Joint International Doctoral Program in Science on the project \emph{Multi-symplectic geometry and applications to modern physics}. }
+    \voice{Master degree in Theoretical Physics}
+        {November 2015}
+        {Universit\'a degli Studi di Milano}
+        {https://fisica-lm.cdl.unimi.it/it}       
+        {Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Computational Methods.}
+    \voice{Bachelor degree in Physics}
+        {October 2010}
+        {Universit\'a degli Studi di Milano - Bicocca}
+        {https://www.fisica.unimib.it/en}       
+        {Theoretical Physics curriculum with emphases on: Mathematical-Physics, Classical and Quantum Mechanics.\vspace{-0.25cm}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    
+
+    \block{Languages} 
+    
+    
+    \skill{Italian}{Mothertongue}
+    \skill{English}{Toefl-IBT : 102/120 (apr-18)}
+    \skill{French}{Beginner}
+        
+
+
+
+
+
+    \block{Computer Skills} 
+    
+    
+    \skillbar{C/C++}
+    {1.4cm}
+    {0.6cm}
+    {0.25cm}
+    \skillbar{Python}
+    {1.1cm}
+    {0.9cm}
+    {0.25cm}
+    \skillbar{Haskell}
+    {1.5cm}
+    {0.5cm}
+    {0.25cm}
+    \skillbar{Cuda}
+    {1.1cm}
+    {0.9cm}
+    {0.25cm}
+    \skillbar{Java}
+    {1.2cm}
+    {0.8cm}
+    {0.25cm}
+    \skillbar{Mathematica}
+    {1.4cm}
+    {0.6cm}
+    {0.25cm}
+    \skillbar{\LaTeX}
+    {0.5cm}
+    {1.5cm}
+    {0.25cm}
+    \skillbar{Linux (Sysadmin)}
+    {0.7cm}
+    {1.3cm}
+    {0.25cm}
+    \skillbar{Windows (Sysadmin)}
+    {0.7cm}
+    {1.3cm}
+    {0.25cm}
+    \skillbar{Embedded electronics}
+    {1.5cm}
+    {0.5cm}
+    {0.25cm}
+    \skillbar{Computer assembly}
+    {1.0cm}
+    {1.0cm}
+    {0.25cm}
+    \skillbar{Network infrastructure}
+    {1.6cm}
+    {0.4cm}
+    {0.25cm}
+
+
+
+
+
+    \block{Honors \& Awards}
+    
+    \voice{Research stays fundings}
+    		{2017 -- 2020}
+    		{Istituto Italiano di Alta Matematica}
+    		{https://www.altamatematica.it/gnsaga/attivita/partecipazione-a-convegni-scuole-e-workshop-missioni/}
+    		{Grant for 4 research stays abroad.}
+    %
+    \voice{PhD scholarship}
+        {01/2017 -- 03/2021}
+        {Universit\'a Cattolica del Sacro Cuore}
+        {https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0}       
+        {51 months PhD scholarship with an integration for relocating abroad.}
+    %
+    \voice{Premio di Studio e Laurea}
+        {12/2016}
+        {BCC di Carugate e Inzago}
+        {https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411}       
+        {Money prize (1200 euros) awarded to STEM graduated with full marks in the academic year 2015--2016.}
+
+
+
+
+    
+%    \voice{Member of GNSAGA - Differential Geometry}
+%        {01/2017}
+%        {Istituto italiano di alta matematica (Indam)}
+%        {https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23}       
+%        {\vspace{-0.5cm}}
+%    \voice{PhD student}
+%        {05/2018}
+%        {Department of Mathematics - KU Leuven, Leuven, Belgium}
+%        {https://www.kuleuven.be/wieiswie/en/person/00123013}       
+%        {\vspace{-0.5cm}}
+
+
+
+
+
+
+
+
+
+\end{minipage}
+
+
+
+
+    \block{Post-Graduate Training}
+   
+    \longvoice{Functional Programming and Domain-Specific Languages}
+        {Industry Course}
+        {https://dtai.cs.kuleuven.be/events/fpcourse/}
+        {October 2019}
+        {KU Leuven}
+        {Leuven}
+        {Belgium}
+        {}
+    \longvoice{Scientific computing with Python}
+        {PhD Course}
+        {https://web.archive.org/web/20180604081514/http://dmf.unicatt.it/~della/pythoncourse18/}
+        {June 2018}
+        {Universita' Cattolica del Sacro Cuore}
+        {Brescia}
+        {Italy}
+        {}
+    \longvoice{Computational methods for the solution of Differential Equations}
+        {PhD Course}
+        {https://www.dropbox.com/s/q2rapau2k49n5t7/1802-Course-NumericalPdeAvella.pdf?dl=0}
+        {February 2018}
+        {Universita' Cattolica del Sacro Cuore}
+        {Brescia}
+        {Italy}
+        {}
+    \longvoice{Python for computational science}
+        {Training Course}
+        {https://web.archive.org/web/20170623170252/https://eventi.cineca.it/en/hpc/python-computational-science}
+        {February 2017}
+        {CINECA-SCAI}
+        {Milan}
+        {Italy}
+        {}
+    \longvoice{Introduction to Scientific and Technical Computing in C++}
+        {Training Course}
+        {https://web.archive.org/save/http://www.hpc.cineca.it/content/introduction-object-oriented}
+        {March 2016}
+        {CINECA-SCAI}
+        {Milan}
+        {Italy}
+        {}
+    \longvoice{B2 General English Intensive course}
+        {Training Course}
+        {https://www.britishcouncil.it/en/english/courses-adults/general}
+        {January 2016}
+        {British Council Milano}
+        {Milan}
+        {Italy}
+        {}
+    \longvoice{Introduction to Scientific Programming using GPGPU and CUDA}
+        {Training Course}
+        {https://web.archive.org/web/20170623171128/http://www.hpc.cineca.it/content/introduction-to-gpu}
+        {March 2014}
+        {CINECA-SCAI}
+        {Milan}
+        {Italy}
+        {}
+    
+
+
+
+
+
+
+
+
+
+\end{document}
