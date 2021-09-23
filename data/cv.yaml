@@ -20,10 +20,10 @@ keywords:
 
 
 order:
+    - [Research experiences,postdoc,voices,1]
     - [Education, edu, voices, 1]
     - [Teaching, teach, voices, 1]
     - [Departmental duties, dept, voices, 1] 
-    - [Work experiences, work, voices, 1]
     - [Languages, lang, skills, 2]
     - [Computer Skills, comp, skills_bar, 2]
     - [Honors \& Awards, awd, voices, 2]
@@ -33,6 +33,7 @@ order:
     - [Events Organization, org, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
+    - [Work experiences, work, voices, 3]
     
 
 dept: 
@@ -78,6 +79,14 @@ work:
       Tech support: 	installation and configuration of linux OS.
       Tutoring to students of the courses in computational physics.\\vspace{-0.5cm}"
       url: https://lcm.mi.infn.it/
+
+postdoc:
+    - what: MPIM postdoctoral fellow
+      when: 10/2021  -- 09/2022
+      where: Max Planck Institute for Mathematics, Bonn, Germany
+      info: "Research project intermingling higher structures with applications to multisymplectic geometry."
+      url: https://www.mpim-bonn.mpg.de/
+
 
 edu:
     - what: "Doctoral degree in Science: Mathematics"
