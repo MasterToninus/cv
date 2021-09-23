@@ -20,10 +20,10 @@ keywords:
 
 
 order:
+    - [Postodoctoral experiences, postdoc, voices, 1]
     - [Education, edu, voices, 1]
     - [Teaching, teach, voices, 1]
     - [Departmental duties, dept, voices, 1] 
-    - [Work experiences, work, voices, 1]
     - [Languages, lang, skills, 2]
     - [Computer Skills, comp, skills_bar, 2]
     - [Honors \& Awards, awd, voices, 2]
@@ -33,7 +33,7 @@ order:
     - [Events Organization, org, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
-    
+    - [Professional experiences, work, voices, 3]
 
 dept: 
   - what: "Exams supervision"
