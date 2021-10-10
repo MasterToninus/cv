@@ -249,6 +249,11 @@ ref:
     info: "\\vspace{-0.5cm}"
 
 teach:
+    - what: "An introduction to symplectic and multisymplectic geometry"
+      when: (planned) Spring 2022
+      where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      info: "PhD course organized with Prof: Mauro Spera."
+      url:  " "
     - what: "Elements of Higher Geometry"
       when: 10/2017 -- 01/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
