@@ -206,10 +206,10 @@ affil:
       where: Istituto italiano di alta matematica (Indam)
       url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
       info: "\\vspace{-0.5cm}"
-    - what: Ph.D. student
-      when: 05/2018
-      where: Department of Mathematics - KU Leuven, Leuven, Belgium
-      url: https://www.kuleuven.be/wieiswie/en/person/00123013
+    - what: Postdoctoral researcher
+      when: 10/2021
+      where: Max Planck Institute for MathematicsDepartment of Mathematics - Bonn, Germany
+      url: https://www.mpim-bonn.mpg.de/peoplelist?pltype=0&plcount=0&plgroup=postdocs&plkeyword=miti
       info: "\\vspace{-0.5cm}"
 
 
