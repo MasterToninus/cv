@@ -23,7 +23,7 @@ env = Environment(
         )
 
 f = open("data/cv.yaml", 'r')
-yaml_contents = yaml.load(f)
+yaml_contents = yaml.safe_load(f)
 yaml_contents.update(readmywebsite())
 f.close()
 
