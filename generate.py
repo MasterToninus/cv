@@ -60,7 +60,7 @@ def generate(ext):
             body3 += parsed
 
     #Generate cover paper on research interest
-    coverstatement = yaml_contents['coverstatement'] + "\\vspace{0.25em}\n\n\\textbf{Kewywords: }\\it "
+    coverstatement = yaml_contents['coverstatement'] + "\\vspace{0.25em}\n\n\\textbf{Keywords: }\\it "
     for line in yaml_contents['keywords']:
         coverstatement = coverstatement + line +", "
     coverstatement = coverstatement[:-2]+"."
