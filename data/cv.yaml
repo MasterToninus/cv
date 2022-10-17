@@ -23,16 +23,17 @@ order:
     - [Research experiences,postdoc,voices,1]
     - [Education, edu, voices, 1]
     - [Teaching, teach, voices, 1]
-    - [Departmental duties, dept, voices, 1] 
     - [Languages, lang, skills, 2]
     - [Computer Skills, comp, skills_bar, 2]
-    - [Honors \& Awards, awd, voices, 2]
+    - [Honors \& Awards, awd, voices, 3]
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]    
     - [Talks \& Communications, talks, detailed, 3]    
     - [Events Organization, org, voices, 3]
+    - [Visitings, visit, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
+    - [Departmental duties, dept, voices, 3] 
     - [Professional experiences, work, voices, 3]
 
 dept: 
@@ -64,6 +65,25 @@ awd:
     info: "\\vspace{-0.5cm}"
     url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
 
+awd2:
+  - what: PhD scholarship in Mathematics (declined)
+    when: 10/2016
+    where: Universit\'a degli Studi di Udine
+    info: "\\vspace{-0.5cm}"
+    url: " " 
+  - what: PhD scholarship in Mathematics and Applications (declined)
+    when: 10/2016
+    where: University of Minho
+    url: "https://map-pdma.up.pt/students-area/20162017-1st-edition/" 
+  - what: Junior Postdoctoral Fellowship (declined)
+    when: 02/2021
+    where: Leonhard Euler International Mathematical Institute in Saint Petersburg
+    url: "https://eimi.ru/"  
+  - what: Junior Postdoctoral Fellowship (declined)
+    when: 05/2021
+    where: Polish Academy of Science, Institute of Mathematics
+    url: "https://www.impan.pl/en/events/competitions"  
+
 work:
     - what: Java Programming Internship
       when: 03/2016  -- 07/2016
@@ -80,6 +100,11 @@ work:
       url: https://lcm.mi.infn.it/
 
 postdoc:
+    - what: Postdoctoral fellow (Assegno di ricerca)
+      when: 10/2022  -- Now
+      where: Università Cattolica del Sacro Cuore, Brescia, Italy
+      info: "Research project on symplectic and multisymplectic geometry with applications."
+      url: https://dipartimenti.unicatt.it/dmf-home
     - what: MPIM postdoctoral fellow
       when: 10/2021  -- 09/2022
       where: Max Planck Institute for Mathematics, Bonn, Germany
@@ -206,10 +231,10 @@ affil:
       where: Istituto italiano di alta matematica (Indam)
       url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
       info: "\\vspace{-0.5cm}"
-    - what: Postdoctoral researcher
-      when: 10/2021
-      where: Max Planck Institute for MathematicsDepartment of Mathematics - Bonn, Germany
-      url: https://www.mpim-bonn.mpg.de/peoplelist?pltype=0&plcount=0&plgroup=postdocs&plkeyword=miti
+    - what: Postdoctoral researcher (assegnista)
+      when: 10/2022
+      where: Università Cattolica del Sacro Cuore, Department of Mathematics and Physics - Brescia, Italy
+      url: https://dipartimenti.unicatt.it/dmf-staff-assegnisti-e-post-doc
       info: "\\vspace{-0.5cm}"
 
 
@@ -235,6 +260,12 @@ ref:
     url: https://perswww.kuleuven.be/~u0096206/
     email: marco.zambon@kuleuven.be
     info: "\\vspace{-0.5cm}"
+  - what: Christian Blohmann
+    rank: Researcher (permanent)
+    where: Max Planck Institute for Mathematics, Bonn, Germany
+    url: http://people.mpim-bonn.mpg.de/blohmann/
+    email: blohmann@@mpim-bonn..mpg..de
+    info: "\\vspace{-0.5cm}"
   - what: Luca Vitagliano
     rank: Associate professor
     where: Department of Mathematics - Università degli studi di Salerno, Fisciano, Italy
@@ -249,20 +280,20 @@ ref:
     info: "\\vspace{-0.5cm}"
 
 teach:
-    - what: "An introduction to symplectic and multisymplectic geometry"
-      when: (planned) Spring 2022
+    - what: "Elements of Higher Geometry"
+      when: 10/2022 -- 12/2022
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      info: "PhD course organized with Prof: Mauro Spera."
-      url:  " "
+      info: "Teaching assistant for the course held by Prof: Mauro Spera."
+      url:  "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
     - what: "Elements of Higher Geometry"
       when: 10/2017 -- 01/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      info: "Exercise class for the course held by Prof: Mauro Spera."
+      info: "Teaching assistant for the course held by Prof: Mauro Spera."
       url:  "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
     - what: "Differential Topology and Geometry"
       when: 03/2018 -- 6/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      info: "Exercise class for the course held by Prof: Mauro Spera."
+      info: "Teaching assistant for for the course held by Prof: Mauro Spera."
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
 org:
@@ -271,3 +302,10 @@ org:
       where: "KU Leuven, Leuven, Belgium"
       info: " "
       url: https://wis.kuleuven.be/events/multisymplectic
+
+visit:
+    - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
+      when: "21 - 28 August, 2022"
+      where: Vienna, Austria
+      info: "Thematic Programme: Higher Structures and Field Theory"
+      url: https://www.esi.ac.at/events/e430/
