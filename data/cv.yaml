@@ -1,7 +1,7 @@
 name:
     first: Antonio Michele
     last: Miti
-phone: +39~333~****~***
+phone: +39~333~9825~***
 email: "antoniomichele.miti@gmail.com"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
@@ -28,9 +28,9 @@ order:
     - [Honors \& Awards, awd, voices, 3]
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]    
-    - [Talks \& Communications, talks, detailed, 3]    
+    - [Talks \& Communications, talks, detailed, 3]   
+    - [Research Stays, visit, voices, 3] 
     - [Events Organization, org, voices, 3]
-    - [Visitings, visit, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
     - [Departmental duties, dept, voices, 3] 
@@ -119,7 +119,7 @@ edu:
       info: "Four years grant in the Joint International Doctoral Program in Science with the project
             \\emph{Multi-symplectic geometry and applications to modern physics}.
             \\par
-             I spent the first two years of my scholarship at UCSC and the last two years working at KU Leuven
+             I spent the first 21 months of my scholarship at UCSC and the following 30 months working at KU Leuven.
             \\par
             Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, 
             \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}.
@@ -293,7 +293,7 @@ teach:
     - what: "Differential Topology and Geometry"
       when: 03/2018 -- 6/2018
       where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
-      info: "Teaching assistant for for the course held by Prof: Mauro Spera."
+      info: "Teaching assistant for the course held by Prof: Mauro Spera."
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
 org:
@@ -309,3 +309,13 @@ visit:
       where: Vienna, Austria
       info: "Thematic Programme: Higher Structures and Field Theory"
       url: https://www.esi.ac.at/events/e430/
+    - what: "Camille Jordan Institute, Université Lyon 1 (Planned)"
+      when: "5 - 12 December, 2022"
+      where: Lyon, France
+      info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop."
+      url:       
+    - what: "Department of Mathematics, KU Leuven (Planned)"
+      when: "20 - 31 March, 2023"
+      where: Leuven, Belgium
+      info: "Scientific collaboration with G. Sevestre and GMC workshop."
+      url:       
