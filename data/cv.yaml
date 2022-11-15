@@ -27,7 +27,8 @@ order:
     - [Computer Skills, comp, skills_bar, 2]
     - [Honors \& Awards, awd, voices, 3]
     - [Affiliations, affil, voices, 2]  
-    - [Referees, ref, voices, 2]    
+    - [Referees, ref, voices, 2]
+    - [Habilitations,habil,voices,1]    
     - [Talks \& Communications, talks, detailed, 3]   
     - [Research Stays, visit, voices, 3] 
     - [Events Organization, org, voices, 3]
@@ -304,10 +305,15 @@ org:
       url: https://wis.kuleuven.be/events/multisymplectic
 
 visit:
+    - what: "Department of Mathematics, Università degli studi di Salerno"
+      when: "17 - 22 March, 2019"
+      where: Fisciano, Italy
+      info: "Scientific collaboration with the Geometry research group and talk."
+      url: http://geometria.dipmat.unisa.it/events.html
     - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
       when: "21 - 28 August, 2022"
       where: Vienna, Austria
-      info: "Thematic Programme: Higher Structures and Field Theory"
+      info: "Thematic Programme: Higher Structures and Field Theory."
       url: https://www.esi.ac.at/events/e430/
     - what: "Camille Jordan Institute, Université Lyon 1 (Planned)"
       when: "5 - 12 December, 2022"
@@ -319,3 +325,10 @@ visit:
       where: Leuven, Belgium
       info: "Scientific collaboration with G. Sevestre and GMC workshop."
       url:       
+
+habil:
+    - what: "Maître de conférences (section 25)"
+      when: "February, 2022"
+      where: "\\vspace{-0.5cm}"
+      info: "Habilitation to become assistant professor of mathematics in the French university system - nr. 22225373453."
+      url: https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf
