@@ -5,6 +5,7 @@ phone: +39~333~9825~***
 email: "antoniomichele.miti@gmail.com"
 site: "https://dmf.unicatt.it/miti/"
 github: MasterToninus
+orcid: "0000-0002-8829-1943"
 currentposition: "Ph.D. in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics."
 coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. 
   I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
@@ -20,7 +21,7 @@ keywords:
 
 
 order:
-    - [Research experiences,postdoc,voices,1]
+    - [Research Experiences,postdoc,voices,1]
     - [Education, edu, voices, 1]
     - [Teaching, teach, voices, 1]
     - [Languages, lang, skills, 2]
@@ -34,47 +35,55 @@ order:
     - [Events Organization, org, voices, 3]
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
-    - [Departmental duties, dept, voices, 3] 
-    - [Professional experiences, work, voices, 3]
+    - [Departmental Duties, dept, voices, 3] 
+    - [Professional Experiences, work, voices, 3]
 
 dept: 
   - what: "Exams supervision"
     when: "06/2020 -- 09/2020"
-    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy;"
     info: "\\vspace{-0.5cm}"
     url: ""
   - what: "Exams supervision"
     when: "01/2020 -- 07/2020"
-    where: "KUL, Leuven, Belgium"
+    where: "KUL, Leuven, Belgium;"
     info: "\\vspace{-0.5cm}"
     url: ""
   - what: "Computer systems administration (assistant)"
     when: "03/2017 -- 10/2018"
-    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy;"
     info: "Maintenance of IT systems of the department of Mathematics and Physics."
     url: "https://dipartimenti.unicatt.it/dmf-home"
 
 awd:
   - what: Premio di Studio e Laurea
-    when: 12/2016
-    where: BCC di Carugate e Inzago
-    info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 2015-2016."
+    when: 12/2015
+    where: BCC di Carugate e Inzago;
+    info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 15-16."
     url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
   - what: PhD scholarship
     when: 01/2017 -- 03/2021
-    where: Universit\'a Cattolica del Sacro Cuore  
+    where: Universit\'a Cattolica del Sacro Cuore;  
     info: "\\vspace{-0.5cm}"
     url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
+  - what: PhD scholarships 
+    when: 10/2016
+    where: Universit\'a degli studi di Udine, University of Minho (Map-PDMA);
+    info: "Declined due to incompatibilities."
+  - what: Research Fellowships 
+    when: 05/2021
+    where: Polish academy of Sciences, EIMI Saint Petersburg;
+    info: "Declined due to incompatibilities."
 
 awd2:
   - what: PhD scholarship in Mathematics (declined)
     when: 10/2016
-    where: Universit\'a degli Studi di Udine
+    where: Universit\'a degli Studi di Udine;
     info: "\\vspace{-0.5cm}"
     url: " " 
   - what: PhD scholarship in Mathematics and Applications (declined)
     when: 10/2016
-    where: University of Minho
+    where: University of Minho;
     url: "https://map-pdma.up.pt/students-area/20162017-1st-edition/" 
   - what: Junior Postdoctoral Fellowship (declined)
     when: 02/2021
@@ -82,18 +91,18 @@ awd2:
     url: "https://eimi.ru/"  
   - what: Junior Postdoctoral Fellowship (declined)
     when: 05/2021
-    where: Polish Academy of Science, Institute of Mathematics
+    where: Polish Academy of Science, Institute of Mathematics;
     url: "https://www.impan.pl/en/events/competitions"  
 
 work:
     - what: Java Programming Internship
       when: 03/2016  -- 07/2016
-      where: CST s.r.l, Milano, Italy
+      where: CST s.r.l, Milano, Italy;
       info: "Formation in Java Programming language and in professional software development tools."
       url: https://www.csttech.it/
     - what: Student collaboration to SysAdmin
       when: "05/2014 -- 02/2015"
-      where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano"
+      where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano;"
       info: "Maintenance of the LCM computers clusters. Tutoring: installation and configuration of linux OS, computational physics courses.\\vspace{-0.5cm}"
       infoE: "Collaboration to the configuration and administration of the Linux cluster in the computer laboratory of the department of Physics.
       Tech support: 	installation and configuration of linux OS.
@@ -103,12 +112,12 @@ work:
 postdoc:
     - what: Postdoctoral fellow (Assegno di ricerca)
       when: 10/2022  -- Now
-      where: Università Cattolica del Sacro Cuore, Brescia, Italy
+      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       info: "Research project on symplectic and multisymplectic geometry with applications."
       url: https://dipartimenti.unicatt.it/dmf-home
     - what: MPIM postdoctoral fellow
       when: 10/2021  -- 09/2022
-      where: Max Planck Institute for Mathematics, Bonn, Germany
+      where: Max Planck Institute for Mathematics, Bonn, Germany;
       info: "Research project intermingling higher structures with applications to multisymplectic geometry."
       url: https://www.mpim-bonn.mpg.de/
 
@@ -116,7 +125,7 @@ postdoc:
 edu:
     - what: "Doctoral degree in Science: Mathematics"
       when: April 2021
-      where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven"
+      where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven;"
       info: "Four years grant in the Joint International Doctoral Program in Science with the project
             \\emph{Multi-symplectic geometry and applications to modern physics}.
             \\par
@@ -145,7 +154,7 @@ edu:
 
     - what: Master degree in Theoretical Physics
       when: November 2015
-      where: "Universit\\'a degli Studi di Milano"
+      where: "Universit\\'a degli Studi di Milano;"
       info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods.
             \\par
             Supervisors: \\href{http://fisica.unipv.it/personale/Persona.php?ID=256}{Claudio Dappiaggi}, 
@@ -168,7 +177,7 @@ edu:
 
     - what: Bachelor degree in Physics
       when: October 2010
-      where: "Universit\\'a degli Studi di Milano - Bicocca"
+      where: "Universit\\'a degli Studi di Milano - Bicocca;"
       info: "Theoretical Physics curriculum with emphases on:
         Mathematical-Physics, Classical and Quantum Mechanics.
         \\par
@@ -229,12 +238,12 @@ comp:
 affil:
     - what: Member of GNSAGA - Differential Geometry
       when: 01/2017
-      where: Istituto italiano di alta matematica (Indam)
+      where: Istituto italiano di alta matematica (Indam);
       url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
       info: "\\vspace{-0.5cm}"
     - what: Postdoctoral researcher (assegnista)
       when: 10/2022
-      where: Università Cattolica del Sacro Cuore, Department of Mathematics and Physics - Brescia, Italy
+      where: Universit\'a Cattolica del Sacro Cuore, Department of Mathematics and Physics - Brescia, Italy;
       url: https://dipartimenti.unicatt.it/dmf-staff-assegnisti-e-post-doc
       info: "\\vspace{-0.5cm}"
 
@@ -242,7 +251,7 @@ affil:
 old:
     - what: Ph.D. student
       when: 01/2017
-      where: Department of Mathematics and Physics - Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      where: Department of Mathematics and Physics - Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       url: "https://dipartimenti.unicatt.it/dmf-staff-dottorandi\\#content" 
       info: "\\vspace{-0.5cm}"
 
@@ -251,31 +260,31 @@ old:
 ref:
   - what: Mauro Spera
     rank: Full professor
-    where: Department of Mathematics and Physics - UCSC, Brescia, Italy
+    where: Department of Mathematics and Physics - UCSC, Brescia, Italy;
     url: http://docenti.unicatt.it/ita/mauro_spera/
     email: mauro.spera@unicatt.it
     info: "\\vspace{-0.5cm}"
   - what: Marco Zambon
     rank: Associate professor
-    where: Department of Mathematics - KU Leuven, Leuven, Belgium
+    where: Department of Mathematics - KU Leuven, Leuven, Belgium;
     url: https://perswww.kuleuven.be/~u0096206/
     email: marco.zambon@kuleuven.be
     info: "\\vspace{-0.5cm}"
   - what: Christian Blohmann
     rank: Researcher (permanent)
-    where: Max Planck Institute for Mathematics, Bonn, Germany
+    where: Max Planck Institute for Mathematics, Bonn, Germany;
     url: http://people.mpim-bonn.mpg.de/blohmann/
     email: blohmann@@mpim-bonn..mpg..de
     info: "\\vspace{-0.5cm}"
   - what: Luca Vitagliano
     rank: Associate professor
-    where: Department of Mathematics - Università degli studi di Salerno, Fisciano, Italy
+    where: Department of Mathematics - Universit\'a degli studi di Salerno, Fisciano, Italy;
     url: http://www.dipmat2.unisa.it/people/vitagliano/www/
     email: lvitagliano@unisa.it
     info: "\\vspace{-0.5cm}"
   - what: Tilmann Wurzbacher
     rank: Full  professor
-    where: Institut \'Elie Cartan - Universit\'e de Lorraine, Metz, France
+    where: Institut \'Elie Cartan - Universit\'e de Lorraine, Metz, France;
     url: https://iecl.univ-lorraine.fr/membre-iecl/wurzbacher-tilmann/
     email: tilmann.wurzbacher@univ-lorraine.fr
     info: "\\vspace{-0.5cm}"
@@ -283,46 +292,46 @@ ref:
 teach:
     - what: "Elements of Higher Geometry"
       when: 10/2022 -- 12/2022
-      where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       info: "Teaching assistant for the course held by Prof: Mauro Spera."
       url:  "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
     - what: "Elements of Higher Geometry"
       when: 10/2017 -- 01/2018
-      where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       info: "Teaching assistant for the course held by Prof: Mauro Spera."
       url:  "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
     - what: "Differential Topology and Geometry"
       when: 03/2018 -- 6/2018
-      where: Universita' Cattolica del Sacro Cuore, Brescia, Italy
+      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       info: "Teaching assistant for the course held by Prof: Mauro Spera."
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
 org:
     - what: "Workshop on multisymplectic geometry"
       when: "10 - 11 September, 2020"
-      where: "KU Leuven, Leuven, Belgium"
-      info: " "
+      where: "KU Leuven, Leuven, Belgium;"
       url: https://wis.kuleuven.be/events/multisymplectic
+      info: "\\vspace{-0.5cm}"
 
 visit:
-    - what: "Department of Mathematics, Università degli studi di Salerno"
+    - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
       when: "17 - 22 March, 2019"
-      where: Fisciano, Italy
+      where: Fisciano, Italy;
       info: "Scientific collaboration with the Geometry research group and talk."
       url: http://geometria.dipmat.unisa.it/events.html
     - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
       when: "21 - 28 August, 2022"
-      where: Vienna, Austria
+      where: Vienna, Austria;
       info: "Thematic Programme: Higher Structures and Field Theory."
       url: https://www.esi.ac.at/events/e430/
     - what: "Camille Jordan Institute, Université Lyon 1 (Planned)"
       when: "5 - 12 December, 2022"
-      where: Lyon, France
+      where: Lyon, France;
       info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop."
       url:       
     - what: "Department of Mathematics, KU Leuven (Planned)"
       when: "20 - 31 March, 2023"
-      where: Leuven, Belgium
+      where: Leuven, Belgium;
       info: "Scientific collaboration with G. Sevestre and GMC workshop."
       url:       
 
