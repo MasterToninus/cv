@@ -324,16 +324,23 @@ visit:
       where: Vienna, Austria;
       info: "Thematic Programme: Higher Structures and Field Theory."
       url: https://www.esi.ac.at/events/e430/
-    - what: "Camille Jordan Institute, Université Lyon 1 (Planned)"
+    - what: "Camille Jordan Institute, Université Lyon 1"
       when: "5 - 12 December, 2022"
       where: Lyon, France;
       info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop."
-      url:       
-    - what: "Department of Mathematics, KU Leuven (Planned)"
+      url:  
+    - what: "Camille Jordan Institute, Université Lyon 1"
+      when: "1 - 28 February, 2023"
+      where: Lyon, France;
+      info: "Scientific collaboration with hte ICJ mathematical physics group."
+      url:
+      tbc: (scheduled)                     
+    - what: "Department of Mathematics, KU Leuven"
       when: "20 - 31 March, 2023"
       where: Leuven, Belgium;
       info: "Scientific collaboration with G. Sevestre and GMC workshop."
-      url:       
+      url:     
+      tbc: (scheduled)    
 
 habil:
     - what: "Maître de conférences (section 25)"
