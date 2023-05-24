@@ -74,6 +74,11 @@ awd:
     when: 05/2021
     where: Polish academy of Sciences, EIMI Saint Petersburg;
     info: "Declined due to incompatibilities."
+  - what: Research Abroad Grant  
+    when: 05/2023
+    where: Istituto Nazionale di Alta Matematica (INDAM);
+    url: https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf
+    info: "Research Grant covering a 1-month research stay in France."    
 
 awd2:
   - what: PhD scholarship in Mathematics (declined)
@@ -291,6 +296,11 @@ ref:
 
 teach:
     - what: "Elements of Higher Geometry"
+      when: 10/2023 -- 12/2023
+      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
+      info: "Teaching assistant for the course held by Prof: Mauro Spera."
+      url:  "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
+    - what: "Elements of Higher Geometry"
       when: 10/2022 -- 12/2022
       where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       info: "Teaching assistant for the course held by Prof: Mauro Spera."
@@ -334,13 +344,20 @@ visit:
       where: Lyon, France;
       info: "Scientific collaboration with hte ICJ mathematical physics group."
       url:
-      tbc: (scheduled)                     
+      tbc:                   
     - what: "Department of Mathematics, KU Leuven"
       when: "20 - 31 March, 2023"
       where: Leuven, Belgium;
       info: "Scientific collaboration with G. Sevestre and GMC workshop."
       url:     
-      tbc: (scheduled)    
+      tbc: 
+    - what: "Camille Jordan Institute, Université Lyon 1"
+      when: "1 January - 28 February, 2024"
+      where: Lyon, France;
+      info: "Scientific collaboration with hte ICJ mathematical physics group."
+      url:
+      tbc: (scheduled)                     
+
 
 habil:
     - what: "Maître de conférences (section 25)"
