@@ -334,7 +334,7 @@ visit:
     - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
       when: "17 - 22 March, 2019"
       where: Fisciano, Italy;
-      info: "Scientific collaboration with the Geometry research group and talk."
+      info: "Scientific collaboration with the Geometry research group and research seminar."
       url: http://geometria.dipmat.unisa.it/events.html
     - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
       when: "21 - 28 August, 2022"
@@ -349,7 +349,7 @@ visit:
     - what: "Camille Jordan Institute, Université Lyon 1"
       when: "1 - 28 February, 2023"
       where: Lyon, France;
-      info: "Scientific collaboration with hte ICJ mathematical physics group."
+      info: "Scientific collaboration with the ICJ mathematical physics group."
       url:
       tbc:                   
     - what: "Department of Mathematics, KU Leuven"
@@ -359,9 +359,21 @@ visit:
       url:     
       tbc: 
     - what: "Camille Jordan Institute, Université Lyon 1"
+      when: "9 June - 19 June, 2023"
+      where: Lyon, France;
+      info: "Scientific collaboration with the ICJ mathematical physics group and research seminar."
+      url:
+      tbc: (scheduled)  
+    - what: "Department of Mathematics, University of Göttingen "
+      when: "10 July - 15 July, 2023"
+      where: Lyon, France;
+      info: "Scientific collaboration with F. Zanello and research seminar."
+      url:
+      tbc: (scheduled)       
+    - what: "Camille Jordan Institute, Université Lyon 1"
       when: "1 January - 28 February, 2024"
       where: Lyon, France;
-      info: "Scientific collaboration with hte ICJ mathematical physics group."
+      info: "Scientific collaboration with the ICJ mathematical physics group."
       url:
       tbc: (scheduled)                     
 
