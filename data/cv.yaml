@@ -29,7 +29,7 @@ order:
     - [Honors \& Awards, awd, voices, 3]
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]
-    - [Habilitations,habil,voices,1]    
+    - [Habilitations,habil,voices,3]    
     - [Talks \& Communications, talks, detailed, 3]   
     - [Research Stays, visit, voices, 3] 
     - [Events Organization, org, voices, 3]
@@ -57,28 +57,28 @@ dept:
 
 awd:
   - what: Premio di Studio e Laurea
-    when: 12/2015
+    when: December 2015
     where: BCC di Carugate e Inzago;
     info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 15-16."
     url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
   - what: PhD scholarship
-    when: 01/2017 -- 03/2021
+    when: January 2017 -- March 2021
     where: Universit\'a Cattolica del Sacro Cuore;  
     info: "\\vspace{-0.5cm}"
     url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
   - what: PhD scholarships 
-    when: 10/2016
+    when: October 2016
     where: Universit\'a degli studi di Udine, University of Minho (Map-PDMA);
     info: "Declined due to incompatibilities."
   - what: Research Fellowships 
-    when: 05/2021
+    when:  May 2021
     where: Polish academy of Sciences, EIMI Saint Petersburg;
     info: "Declined due to incompatibilities."
   - what: Research Abroad Grant  
-    when: 05/2023
+    when: May 2023
     where: Istituto Nazionale di Alta Matematica (INDAM);
     url: https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf
-    info: "Research Grant covering a 1-month research stay in France."    
+    info: "Research Grant (3000 euros) supporting a research stay in France."    
 
 awd2:
   - what: PhD scholarship in Mathematics (declined)
@@ -380,7 +380,7 @@ visit:
 
 habil:
     - what: "Maître de conférences (section 25)"
-      when: "February, 2022"
+      when: "February 2022"
       where: "\\vspace{-0.5cm}"
       info: "Habilitation to become assistant professor of mathematics in the French university system - nr. 22225373453."
       url: https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf
