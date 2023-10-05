@@ -363,17 +363,17 @@ visit:
       where: Lyon, France;
       info: "Scientific collaboration with the ICJ mathematical physics group and research seminar."
       url:
-      tbc: (scheduled)  
+      tbc:  
     - what: "Department of Mathematics, University of Göttingen "
       when: "10 July - 15 July, 2023"
       where: Lyon, France;
       info: "Scientific collaboration with F. Zanello and research seminar."
       url:
-      tbc: (scheduled)       
+      tbc:       
     - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "1 January - 28 February, 2024"
+      when: "1 January - 1 February, 2024"
       where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group."
+      info: "Scientific collaboration with the ICJ mathematical physics group within the \"INDAM research abroad\" grant."
       url:
       tbc: (scheduled)                     
 
