@@ -13,7 +13,7 @@ import datetime
 
 def readmywebsite():
     # Stream the csv from my website to a Dict
-    url = 'http://dmf.unicatt.it/miti/data/activities.csv'
+    url = 'http://antoniomiti.it/data/activities.csv'
     ftpstream = urllib.request.urlopen(url)
     csvfile = csv.DictReader(codecs.iterdecode(ftpstream, 'utf-8'),delimiter=";")
 

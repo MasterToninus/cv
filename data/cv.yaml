@@ -3,7 +3,7 @@ name:
     last: Miti
 phone: +39~333~9825~***
 email: "antoniomichele.miti@gmail.com"
-site: "https://dmf.unicatt.it/miti/"
+site: "https://www.antoniomiti.it/"
 github: MasterToninus
 orcid: "0000-0002-8829-1943"
 currentposition: "Ph.D. in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics."
@@ -56,11 +56,16 @@ dept:
     url: "https://dipartimenti.unicatt.it/dmf-home"
 
 awd:
-  - what: Premio di Studio e Laurea
-    when: December 2015
-    where: BCC di Carugate e Inzago;
-    info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 15-16."
-    url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
+
+  - what: Research Abroad Grant  
+    when: May 2023
+    where: Istituto Nazionale di Alta Matematica (INDAM);
+    url: https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf
+    info: "Research Grant (3000 euros) supporting a research stay in France." 
+  - what: Research Fellowships 
+    when:  May 2021
+    where: Polish academy of Sciences, EIMI Saint Petersburg;
+    info: "Declined due to incompatibilities."
   - what: PhD scholarship
     when: January 2017 -- March 2021
     where: Universit\'a Cattolica del Sacro Cuore;  
@@ -69,16 +74,13 @@ awd:
   - what: PhD scholarships 
     when: October 2016
     where: Universit\'a degli studi di Udine, University of Minho (Map-PDMA);
-    info: "Declined due to incompatibilities."
-  - what: Research Fellowships 
-    when:  May 2021
-    where: Polish academy of Sciences, EIMI Saint Petersburg;
-    info: "Declined due to incompatibilities."
-  - what: Research Abroad Grant  
-    when: May 2023
-    where: Istituto Nazionale di Alta Matematica (INDAM);
-    url: https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf
-    info: "Research Grant (3000 euros) supporting a research stay in France."    
+    info: "Declined due to incompatibilities."    
+  - what: Premio di Studio e Laurea
+    when: December 2015
+    where: BCC di Carugate e Inzago;
+    info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 15-16."
+    url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
+   
 
 awd2:
   - what: PhD scholarship in Mathematics (declined)
@@ -115,8 +117,13 @@ work:
       url: https://lcm.mi.infn.it/
 
 postdoc:
+    - what: Marie Skłodowska-Curie fellow
+      when: 02/2024  -- Now
+      where: Universit\'a di Roma la Sapienza, Rome, Italy;
+      info: "Research project (CIVIS-3i cofund) on multisymplectic geometry and classical field theories."
+      url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
     - what: Postdoctoral fellow (Assegno di ricerca)
-      when: 10/2022  -- Now
+      when: 10/2022  -- 01/2024
       where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
       info: "Research project on symplectic and multisymplectic geometry with applications."
       url: https://dipartimenti.unicatt.it/dmf-home
@@ -241,26 +248,30 @@ comp:
 
 
 affil:
-    - what: Member of GNSAGA - Differential Geometry
-      when: 01/2017
-      where: Istituto italiano di alta matematica (Indam);
-      url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
-      info: "\\vspace{-0.5cm}"
-    - what: Postdoctoral researcher (assegnista)
-      when: 10/2022
-      where: Universit\'a Cattolica del Sacro Cuore, Department of Mathematics and Physics - Brescia, Italy;
-      url: https://dipartimenti.unicatt.it/dmf-staff-assegnisti-e-post-doc
+    - what: MSCA researcher (assegnista)
+      when: 02/2024
+      where: Universit\'a di Roma la Sapienza, Department of Mathematics - Rome, Italy;
+      url: https://www.mat.uniroma1.it/persone/miti
       info: "\\vspace{-0.5cm}"
     - what: "Member of \\emph{Project \\'emergent: Higher structures in differential geometry}"
       when: 01/2023
       where: Labex MiLyon, Lyon, France;
       url: https://www.dropbox.com/s/36kh0vre45r38b2/2301-MiLyon-HigherGeometry.pdf?dl=0
       info: "\\vspace{-0.5cm}"
-
+    - what: Member of GNSAGA - Differential Geometry
+      when: 01/2017
+      where: Istituto italiano di alta matematica (Indam);
+      url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
+      info: "\\vspace{-0.5cm}"
 
 
 
 old:
+    - what: Postdoctoral researcher (assegnista)
+      when: 10/2022
+      where: Universit\'a Cattolica del Sacro Cuore, Department of Mathematics and Physics - Brescia, Italy;
+      url: https://dipartimenti.unicatt.it/dmf-staff-assegnisti-e-post-doc
+      info: "\\vspace{-0.5cm}"
     - what: Ph.D. student
       when: 01/2017
       where: Department of Mathematics and Physics - Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
@@ -324,6 +335,11 @@ teach:
       url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
 org:
+    - what: "Workshop on Multisymplectic Structures in Geometry and Physics"
+      when: "10 January, 2024"
+      where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
+      url: https://math.gmu.edu/~cblacke/lyon.html
+      info: "\\vspace{-0.5cm}"
     - what: "Workshop on multisymplectic geometry"
       when: "10 - 11 September, 2020"
       where: "KU Leuven, Leuven, Belgium;"
@@ -331,52 +347,52 @@ org:
       info: "\\vspace{-0.5cm}"
 
 visit:
-    - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
-      when: "17 - 22 March, 2019"
-      where: Fisciano, Italy;
-      info: "Scientific collaboration with the Geometry research group and research seminar."
-      url: http://geometria.dipmat.unisa.it/events.html
-    - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
-      when: "21 - 28 August, 2022"
-      where: Vienna, Austria;
-      info: "Thematic Programme: Higher Structures and Field Theory."
-      url: https://www.esi.ac.at/events/e430/
+   
     - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "5 - 12 December, 2022"
+      when: "12 December 2023 - 31 January, 2024"
       where: Lyon, France;
-      info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop."
-      url:  
-    - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "1 - 28 February, 2023"
-      where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group."
+      info: "Scientific collaboration with the ICJ mathematical physics group within the \"INDAM research abroad\" grant."
       url:
-      tbc:                   
-    - what: "Department of Mathematics, KU Leuven"
-      when: "20 - 31 March, 2023"
-      where: Leuven, Belgium;
-      info: "Scientific collaboration with G. Sevestre and GMC workshop."
-      url:     
-      tbc: 
-    - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "9 June - 19 June, 2023"
-      where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group and research seminar."
-      url:
-      tbc:  
+      tbc:
     - what: "Department of Mathematics, University of Göttingen "
       when: "10 July - 15 July, 2023"
       where: Lyon, France;
       info: "Scientific collaboration with F. Zanello and research seminar."
       url:
-      tbc:       
+      tbc:  
     - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "1 January - 1 February, 2024"
+      when: "9 June - 19 June, 2023"
       where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group within the \"INDAM research abroad\" grant."
+      info: "Scientific collaboration with the ICJ mathematical physics group and research seminar."
       url:
-      tbc: (scheduled)                     
-
+      tbc:
+    - what: "Department of Mathematics, KU Leuven"
+      when: "20 - 31 March, 2023"
+      where: Leuven, Belgium;
+      info: "Scientific collaboration with G. Sevestre and GMC workshop."
+      url:     
+      tbc:                                   
+    - what: "Camille Jordan Institute, Université Lyon 1"
+      when: "1 - 28 February, 2023"
+      where: Lyon, France;
+      info: "Scientific collaboration with the ICJ mathematical physics group."
+      url:
+      tbc:   
+    - what: "Camille Jordan Institute, Université Lyon 1"
+      when: "5 - 12 December, 2022"
+      where: Lyon, France;
+      info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop."
+      url:        
+    - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
+      when: "21 - 28 August, 2022"
+      where: Vienna, Austria;
+      info: "Thematic Programme: Higher Structures and Field Theory."
+      url: https://www.esi.ac.at/events/e430/      
+    - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
+      when: "17 - 22 March, 2019"
+      where: Fisciano, Italy;
+      info: "Scientific collaboration with the Geometry research group and research seminar."
+      url: http://geometria.dipmat.unisa.it/events.html
 
 habil:
     - what: "Maître de conférences (section 25)"
