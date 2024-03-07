@@ -117,10 +117,10 @@ work:
       url: https://lcm.mi.infn.it/
 
 postdoc:
-    - what: Marie Skłodowska-Curie fellow
+    - what: CIVIS-3i postdoctoral fellow
       when: 02/2024  -- Now
-      where: Universit\'a di Roma la Sapienza, Rome, Italy;
-      info: "Research project (CIVIS-3i cofund) on multisymplectic geometry and classical field theories."
+      where: Universit\\'a di Roma la Sapienza, Rome, Italy;
+      info: "Research project (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories."
       url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
     - what: Postdoctoral fellow (Assegno di ricerca)
       when: 10/2022  -- 01/2024
