@@ -23,16 +23,16 @@ keywords:
 order:
     - [Research Experiences,postdoc,voices,1]
     - [Education, edu, voices, 1]
-    - [Teaching, teach, voices, 1]
+    - [Habilitations,habil,voices,1]        
     - [Languages, lang, skills, 2]
     - [Computer Skills, comp, skills_bar, 2]
-    - [Honors \& Awards, awd, voices, 3]
     - [Affiliations, affil, voices, 2]  
     - [Referees, ref, voices, 2]
-    - [Habilitations,habil,voices,3]    
+    - [Teaching, teach, voices, 3]
     - [Talks \& Communications, talks, detailed, 3]   
     - [Research Stays, visit, voices, 3] 
     - [Events Organization, org, voices, 3]
+    - [Honors \& Awards, awd, voices, 3]    
     - [Post-Graduate Training, schools, detailed, 3]
     - [Workshops \& Conferences, conferences, detailed, 3]
     - [Departmental Duties, dept, voices, 3] 
@@ -313,6 +313,11 @@ ref:
     info: "\\vspace{-0.5cm}"
 
 teach:
+    - what: "Reduction of (multi)-symplectic observables"
+      when: 05/2024
+      where: Universit\'a degli Studi di Salerno, Fisciano, Italy;
+      info: "Conference mini-course, joint with Prof: Leonid Ryvkin."
+      url:  "https://www.antoniomiti.it/teaching/Obs-Constraint-2024/"
     - what: "Elements of Higher Geometry"
       when: 10/2023 -- 12/2023
       where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
