@@ -24,7 +24,17 @@ tmpl/*.gz
 ## Texmaker folder
 *build*
 data/**.bak
-
+data/*.bib
+data/*.aux
+data/*.bbl
+data/*.blg
+data/*.fdb_latexmk
+data/*.fls
+data/*.log
+data/*.out
+data/*.pdf
+data/*.xml
+data/*.gz
 
 
 

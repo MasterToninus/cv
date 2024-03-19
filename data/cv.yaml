@@ -119,7 +119,7 @@ work:
 postdoc:
     - what: CIVIS-3i postdoctoral fellow
       when: 02/2024  -- Now
-      where: Universit\\'a di Roma la Sapienza, Rome, Italy;
+      where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
       info: "Research project (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories."
       url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
     - what: Postdoctoral fellow (Assegno di ricerca)
