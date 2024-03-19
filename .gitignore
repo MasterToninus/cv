@@ -37,4 +37,16 @@ data/*.xml
 data/*.gz
 
 
+FR/**.bak
+FR/**.bib
+FR/**.aux
+FR/**.bbl
+FR/**.blg
+FR/**.fdb_latexmk
+FR/**.fls
+FR/**.log
+FR/**.out
+FR/**.pdf
+FR/**.xml
+FR/**.gz
 
