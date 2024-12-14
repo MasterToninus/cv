@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+% \addtolength{\topmargin}{-0.5cm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Antonio Michele Miti}
+\lhead{Teaching Activities}
+\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Generated on 13/11/24} }
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+\usepackage[backend=bibtex, style=nature]{biblatex}
+\addbibresource{../data/publications.bib}
+
+
+\usepackage{academicons}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+
+
+\setlength\parindent{0pt}
+
+
+%barcharts
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
+
+%titles
+\newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+\newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+\newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
+
+%longvoice
+%expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country, Scheduled
+\newcommand{\longvoice}[8]{
+    \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
+        \textbf{\href{#3}{#2: #1}} & #4 
+        \\ 
+        \textit{#5, #6, #7;} & {\small\emph{#8}}
+    \end{tabular}
+    \vspace{.5em}
+    }
+%voice
+%expected: what, when, where, url, info
+\newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+\newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+\newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+\newcommand{\txt}[1]{#1\\}
+
+%---------- Document -----------
+\begin{document}
+%Header
+\begin{minipage}[c]{0.6\columnwidth}
+    \center{\huge \textbf{Antonio Michele Miti}}
+    \\
+    \flushleft{\normalsize \textit{Ph.D. in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics.}}
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    \skill{\faPhone~ Phone}{+39~333~9825~***}
+    \skill{\faEnvelope~ Mail}{\href{mailto:antoniomichele.miti@gmail.com}{antoniomichele.miti@gmail.com}}
+    \skill{\faGlobe~ Website}{\href{https://www.antoniomiti.it/}{https://www.antoniomiti.it/}}
+ %   \skill{\faGithubSquare ~ Github}{\href{https://github.com/MasterToninus}{MasterToninus}}
+ %   \skill{\orcidlink{} ~ Orcid}{\href{https://orcid.org/}{}}   
+\end{minipage}
+%\textit{Ph.D. in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics.}
+\vspace{-0.25em}
+
+ 
+
+\vspace{1em}
+
+    \block{Teaching}
+
+    
+    \voice{Reduction of (multi)-symplectic observables}
+        {05/2024}
+        {Universit\'a degli Studi di Salerno, Fisciano, Italy;}
+        {https://www.antoniomiti.it/teaching/Obs-Constraint-2024/}       
+        {Conference mini-course, joint with Prof: Leonid Ryvkin.}
+    \voice{Elements of Higher Geometry}
+        {10/2023 -- 12/2023}
+        {Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;}
+        {https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/}       
+        {Teaching assistant for the course held by Prof: Mauro Spera.}
+    \voice{Elements of Higher Geometry}
+        {10/2022 -- 12/2022}
+        {Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;}
+        {https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/}       
+        {Teaching assistant for the course held by Prof: Mauro Spera.}
+    \voice{Elements of Higher Geometry}
+        {10/2017 -- 01/2018}
+        {Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;}
+        {http://docenti.unicatt.it/web/html/index.html\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita}       
+        {Teaching assistant for the course held by Prof: Mauro Spera.}
+    \voice{Differential Topology and Geometry}
+        {03/2018 -- 6/2018}
+        {Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;}
+        {http://docenti.unicatt.it/web/html/index.html\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita}       
+        {Teaching assistant for the course held by Prof: Mauro Spera.}
+
+        
+
+
+
+
+
+
+
+\end{document}
