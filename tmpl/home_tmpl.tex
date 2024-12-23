@@ -1,11 +1,16 @@
-\documentclass[a4paper]{article}
+% ------------------------------------------------------
+% LaTeX CV Template
+% Author: Antonio Miti
+% Description: Template for CV sections.
+% Last Updated: 2024-12-23
+% ------------------------------------------------------
 
+\documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fontawesome}
 \usepackage[margin=1.5cm]{geometry}
-% \addtolength{\topmargin}{-0.5cm}
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
@@ -20,26 +25,36 @@
 \usepackage[backend=bibtex, style=nature]{biblatex}
 \addbibresource{../data/publications.bib}
 
-
 \usepackage{academicons}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 
-
-
 \setlength\parindent{0pt}
 
-
 %barcharts
+% Command to create a colored rule
+% Usage: \crule[color]{width}{height}
 \newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+% Command to create a progress bar
+% Usage: \progbar[color]{total_width}{filled_width}{height}
 \newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
 
 %titles
+% Command to create a section block with a horizontal rule
+% Usage: \block{Title}
 \newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+
+% Command to create a larger section block with a horizontal rule
+% Usage: \Block{Title}
 \newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+
+% Command to create a new page section block without a horizontal rule
+% Usage: \blockNp{Title}
 \newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
 
 %longvoice
-%expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country, Scheduled
+% Command to create a long voice entry
+% Usage: \longvoice{Event_Title}{Type}{Url}{Approx_Date}{Organization}{Location}{Country}{Scheduled}
 \newcommand{\longvoice}[8]{
     \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
         \textbf{\href{#3}{#2: #1}} & #4 
@@ -47,13 +62,45 @@
         \textit{#5, #6, #7;} & {\small\emph{#8}}
     \end{tabular}
     \vspace{.5em}
-    }
+}
+
 %voice
-%expected: what, when, where, url, info
+% Command to create a short voice entry
+% Usage: \voice{what}{when}{where}{url}{info}
 \newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+
+% Command to create a skill entry
+% Usage: \skill{Skill}{Level}
 \newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+
+% Command to create a skill entry with a progress bar
+% Usage: \skillbar{Skill}{total_width}{filled_width}{height}
 \newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+
+% Command to create a text entry
+% Usage: \txt{Text}
 \newcommand{\txt}[1]{#1\\}
+
+%countbox
+% Command to create a count box
+% Usage: \countbox{Title}{Content}
+\newcommand{\countbox}[2]{
+    \begin{center}
+        \setlength{\fboxsep}{10pt}  % Padding inside the box
+        \setlength{\fboxrule}{1pt}  % Thickness of the box border
+        \begin{minipage}{0.8\textwidth}
+            \fbox{
+                \begin{minipage}{\textwidth}
+                    \textbf{#1:} \\
+                    \begin{tabular}{rl}
+                        #2
+                    \end{tabular}
+                \end{minipage}
+            }
+        \end{minipage}
+    \end{center}
+    \vspace{0.3cm}
+}
 
 %---------- Document -----------
 \begin{document}
@@ -74,8 +121,6 @@
 %\textit{~{{currentposition}}~}
 \vspace{-0.25em}
 
-
-
 %Splash Page
 \begin{minipage}[t]{0.6\columnwidth}
     ~{{ body1 }}~
@@ -85,11 +130,28 @@
     ~{{ body2 }}~
 \end{minipage}
 
-
 %Academic Page
 \blockNp{Research Interests}
 
 {~{{coverstatement}}~}
+
+\vspace{0.3cm}
+
+% Publication Counts Box
+\countbox{Publication Counts}{
+    Published Papers: & ~{{ entry_counts['Published Papers'] }}~ \\
+    Preprints: & ~{{ entry_counts['Preprints'] }}~ \\
+    Drafts: & ~{{ entry_counts['Drafts'] }}~ \\
+}
+
+% Dissemination Activity Counts Box
+\countbox{Dissemination Activity Counts}{
+    Invited Talks: & ~{{ dissemination_counts['Invited Talk'] }}~ \\
+    Contributed Talks: & ~{{ dissemination_counts['Contributed Talk'] }}~ \\
+    Posters: & ~{{ dissemination_counts['Poster'] }}~ \\
+    Workshops: & ~{{ dissemination_counts['Workshop'] }}~ \\
+    Conferences: & ~{{ dissemination_counts['Conference'] }}~ \\
+}
 
 \vspace{0.3cm}
 
@@ -101,6 +163,5 @@
 \vspace{.5em}
 
 ~{{ body3 }}~
-
 
 \end{document}
