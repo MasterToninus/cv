@@ -25,9 +25,9 @@ order:
     - [Education, edu, voices, 1]
     - [Habilitations,habil,voices,1]        
     - [Languages, lang, skills, 2]
+    - [Pubblications overview, pubsnum,numbers,2]
     - [Computer Skills, comp, skills_bar, 2]
-    - [Affiliations, affil, voices, 2]  
-    - [Referees, ref, voices, 2]
+    - [Affiliations, affil, voices, 3]  
     - [Teaching, teach, voices, 3]
     - [Talks \& Communications, talks, detailed, 3]   
     - [Research Stays, visit, voices, 3] 
@@ -37,6 +37,7 @@ order:
     - [Workshops \& Conferences, conferences, detailed, 3]
     - [Departmental Duties, dept, voices, 3] 
     - [Professional Experiences, work, voices, 3]
+    - [Referees, ref, voices, 3]
 
 dept: 
   - what: "Exams supervision"
@@ -352,7 +353,18 @@ org:
       info: "\\vspace{-0.5cm}"
 
 visit:
-   
+    - what: "Institut Mittag-Leffler"
+      when: "10 March 2025 - 28 March, 2025"
+      where: Djursholm, Sweden;
+      info: "Thematic Programme: Cohomological Aspects of Quantum Field Theory"
+      url: "https://www.mittag-leffler.se/activities/cohomological-aspects-of-quantum-field-theory/"
+      tbc:
+    - what: "Camille Jordan Institute, Université Lyon 1"
+      when: "15 October 2024 - 20 December, 2024"
+      where: Lyon, France;
+      info: "cientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period."
+      url:
+      tbc:   
     - what: "Camille Jordan Institute, Université Lyon 1"
       when: "12 December 2023 - 31 January, 2024"
       where: Lyon, France;

@@ -12,10 +12,12 @@ import codecs
 import warnings
 import datetime
 from pybtex.database import parse_file
+from pybliometrics.scopus import AuthorRetrieval
 
 # Global variables
 CSV_URL = 'http://antoniomiti.it/data/activities.csv'
 BIBTEX_FILEPATH = 'data/publications.bib'
+SCOPUS_AUTHOR_ID = '57218509273'
 
 def readmywebsite():
     """
@@ -99,30 +101,50 @@ def readmybibfile():
     Reads publications from a BibTeX file and counts the number of each type.
 
     Returns:
-        dict: A dictionary containing counts of different types of publications.
+        list: A list of dictionaries containing counts of different types of publications.
     """
     # Parse the BibTeX file
     bib_data = parse_file(BIBTEX_FILEPATH)
 
     # Initialize counts
-    entry_counts = {
-        'Published Papers': 0,
-        'Preprints': 0,
-        'Drafts': 0
-    }
+    pubsnum = [
+        {'type': 'Published Papers', 'value': 0},
+        {'type': 'Preprints', 'value': 0},
+        {'type': 'Drafts', 'value': 0}
+    ]
 
     # Categorize entries based on type
     for entry in bib_data.entries.values():
         entry_type = entry.type.lower()
 
         if entry_type in ('article', 'book', 'inproceedings', 'proceedings'):
-            entry_counts['Published Papers'] += 1
+            pubsnum[0]['value'] += 1
         elif entry_type in ('unpublished', 'preprint'):
-            entry_counts['Preprints'] += 1
+            pubsnum[1]['value'] += 1
         elif entry_type == 'draft':
-            entry_counts['Drafts'] += 1
+            pubsnum[2]['value'] += 1
 
-    return entry_counts
+    return pubsnum
+
+def readmyscopus():
+    """
+    Reads author information from Scopus using the pybliometrics API.
+
+    Returns:
+        dict: A dictionary containing author information and metrics.
+    """
+    author = AuthorRetrieval(SCOPUS_AUTHOR_ID)
+
+    scopus_data = {
+        'name': author.given_name + ' ' + author.surname,
+        'affiliation': author.affiliation_current[0]['name'],
+        'documents': author.document_count,
+        'citations': author.citation_count,
+        'h_index': author.h_index,
+        'subjects': [subject['name'] for subject in author.subject_areas]
+    }
+
+    return scopus_data
 
 # Example usage:
 # bibtex_counts = parse_bibtex_and_count()

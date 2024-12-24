@@ -5,53 +5,52 @@ A customizable, data-driven LaTeX CV generator built with Python and Jinja2. Thi
 ---
 
 ## Features
-- **Dynamic Content Integration**:
-  - Automatically updates activities from online CSV files.
-  - Parses and integrates publication data from BibTeX files.
-- **Customizable Layout**:
-  - Multi-column LaTeX templates powered by Jinja2.
-- **Automation**:
-  - Simple `make` command compiles everything into a polished PDF.
-- **Extensible**:
-  - Easily add new sections or customize templates to suit your needs.
+- **Dynamic Content Integration**: Automatically updates activities from online CSV files and integrates publication data from BibTeX files.
+- **Web Scraping**: Fetches author information and metrics from Scopus using the pybliometrics API.
+- **Customizable Layout**: Multi-column LaTeX templates powered by Jinja2.
+- **Automation**: Simple `make` command compiles everything into a polished PDF.
+- **Extensible**: Easily add new sections or customize templates to suit your needs.
 
 ---
 
 ## Installation
 
-1. Clone the repository:
+1. **Clone the repository**:
     ```bash
     git clone https://github.com/username/latex-cv-generator.git
     cd latex-cv-generator
     ```
 
-2. Install the required Python packages:
+2. **Install the required Python packages**:
     ```bash
     pip3 install -r requirements.txt
     ```
 
-3. Prepare your data:
+    The `requirements.txt` file includes:
+    - `pyyaml>=5.4`
+    - `Jinja2>=3.1.4`
+    - `pybtex>=0.24.0,<1.0`
+    - `pybliometrics>=3.4.0`
+
+3. **Configure pybliometrics**:
+    Follow the instructions in the [pybliometrics documentation](https://pybliometrics.readthedocs.io/en/stable/configuration.html) to set up your API key.
+
+4. **Prepare your data**:
     - Edit `data/cv.yaml` with your personal details, sections, and layout.
     - Place your publications in `data/publications.bib`.
     - Host your activities CSV file online or adjust the URL in `getactivities.py`.
 
-s---
+---
 
 ## LaTeX Templates Documentation
 
-### **`section_tmpl.tex`**
+### `section_tmpl.tex`
 This template renders individual sections of the CV, such as "Education," "Work Experience," or "Publications."
 
 #### Features
 - **Customizable Section Headers**: Dynamically inserts section titles.
 - **Flexible Layout**: Supports list and table formats.
 - **LaTeX Compatibility**: Escapes special characters.
-
-#### Template Usage
-The template uses placeholders for:
-- `name`: Title of the section.
-- `contents`: Items to display in the section.
-- `kind`: Determines the layout ("list" or "table").
 
 #### Example Snippet
 ```tex
@@ -71,23 +70,13 @@ The template uses placeholders for:
 \fi
 ```
 
----
-
-### **`home_tmpl.tex`**
+### `home_tmpl.tex`
 This template creates the main structure of the CV, including metadata, a cover statement, and a three-column layout.
 
 #### Features
 - **Dynamic Metadata**: Automatically fills in name, contact details, and links.
 - **Three-Column Layout**: Organizes CV sections across three columns.
 - **Customizable Keywords**: Includes keywords for emphasis.
-
-#### Template Usage
-The template uses placeholders for:
-- `name`: Candidate's name.
-- `phone`, `email`, `site`, `github`: Contact information.
-- `currentposition`: Current job/academic position.
-- `coverstatement`: Introductory statement.
-- `body1`, `body2`, `body3`: Content for each column.
 
 #### Example Snippet
 ```tex
@@ -139,16 +128,77 @@ The template uses placeholders for:
 ---
 
 ## Roadmap
-- Improve readability and speed of the generated CV.
-- Add ATS-friendly formatting.
-- Develop a localized Italian version.
-- Introduce summary tables for teaching and other activities.
-- Autogenerate `publications.tex` from the BibTeX file with a CV-compatible style.
+- [ ] Improve readability and speed of the generated CV.
+- [ ] Add ATS-friendly formatting.
+- [ ] Develop a localized Italian version.
+- [ ] Introduce summary tables for teaching and other activities.
+    - [ ] Publications: published, preprints, in preparations
+    - [ ] Dissemination: invited, contributed, posters, organizations
+    - [ ] Teaching: corsi, ore di frontale
+- [ ] Autogenerate `publications.tex` from the BibTeX file with a CV-compatible style, import as a standalone in `gen`.
+- [ ] Create a splashpage with "at glance" numeric information.
+    - [ ] Move affiliation and awards.
+- [ ] Suitable entry for career break 2010-2013.
+- [ ] Scrape bibliometrics through APIs.
+    - [ ] Scopus
+    - [ ] Researchgate: https://laccei.org/LEIRD2024-VirtualEdition/papers/Contribution_721_a.pdf
+- [ ] Secret with signatures (Italy format)
 
 ---
 
 ## Acknowledgments
 - Inspired by [bamos/cv](https://github.com/bamos/cv). Special thanks for sharing the inspiration for this project.
 - Thanks to **ChatGPT** for helping to improve the project documentation and providing suggestions for better code structuring and clarity.
+
+---
+
+## Troubleshooting
+
+### Scopus 401 Error
+
+If you encounter the following error:
+```
+pybliometrics.scopus.exception.Scopus401Error: The requestor is not authorized to access the requested view or fields of the resource
+```
+This indicates that the API key you are using does not have the necessary permissions to access the requested data from Scopus.
+
+To resolve this issue, follow these steps:
+
+1. **Verify API Key**:
+   Ensure that you have a valid API key from Scopus. You can obtain an API key by registering on the [Elsevier Developer Portal](https://dev.elsevier.com/).
+
+2. **Check API Key Permissions**:
+   Make sure that your API key has the necessary permissions to access the Scopus data. Some API keys may have restricted access based on the subscription level.
+
+3. **Configure pybliometrics**:
+   Ensure that you have correctly configured `pybliometrics` with your API key. You can do this by creating a configuration file as described in the [pybliometrics documentation](https://pybliometrics.readthedocs.io/en/stable/configuration.html).
+
+   Here is an example of how to configure `pybliometrics`:
+
+   - Create a file named `config.ini` in the `.pybliometrics` directory in your home directory.
+   - Add the following content to the `config.ini` file:
+
+     ```ini
+     [Authentication]
+     API_KEY = your_api_key_here
+     ```
+
+4. **Check API Usage Limits**:
+   Ensure that you have not exceeded the usage limits for your API key. The Scopus API has rate limits, and exceeding these limits can result in authorization errors.
+
+5. **Test API Key**:
+   Test your API key with a simple request to ensure that it is working correctly. You can use the following code snippet to test your API key:
+
+   ```python
+   from pybliometrics.scopus import AuthorRetrieval
+
+   author_id = '57218509273'
+   author = AuthorRetrieval(author_id)
+   print(author.given_name, author.surname)
+   ```
+
+If you have verified all the above steps and are still encountering the error, you may need to contact Elsevier support for further assistance with your API key and permissions.
+
+For more detailed information, refer to the [pybliometrics access documentation](https://pybliometrics.readthedocs.io/en/stable/access.html).
 
 ---

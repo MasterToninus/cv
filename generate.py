@@ -12,7 +12,11 @@ import yaml
 import os
 from datetime import date
 from jinja2 import Environment, FileSystemLoader
-from getactivities import readmywebsite, readmybibfile
+from getactivities import readmywebsite, readmybibfile, readmyscopus
+from pybliometrics.scopus import init
+
+# Initialize pybliometrics configuration
+init()
 
 # Initialize the Jinja2 environment with custom delimiters for LaTeX compatibility
 env = Environment(
@@ -32,8 +36,14 @@ with open("data/cv.yaml", 'r', encoding='utf-8') as f:
 # Merge activities from the website into the YAML data
 activities = readmywebsite()
 yaml_contents.update(activities)
-entry_counts = readmybibfile()
-yaml_contents.update(entry_counts)
+
+# Read and update publication counts from the BibTeX file
+pubsnum = readmybibfile()
+yaml_contents.update({'pubsnum': pubsnum})
+
+# Optionally read and update Scopus data
+# scopus_data = readmyscopus()
+# yaml_contents.update(scopus_data)
 
 # Ensure the output directory exists
 if not os.path.exists("gen"):
@@ -92,7 +102,7 @@ def generate(ext):
             body1=body1,
             body2=body2,
             body3=body3,
-            entry_counts=entry_counts,
+            pubsnum=pubsnum,
             dissemination_counts=activities['entry_counts'],
             today=date.today().strftime("%d/%m/%y")
         ))
