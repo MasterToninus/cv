@@ -20,6 +20,7 @@ CSV_URL = 'http://antoniomiti.it/data/activities.csv'
 BIBTEX_FILEPATH = 'data/publications.bib'
 SCOPUS_AUTHOR_ID = '57218509273'
 YAML_FILEPATH = 'data/cv.yaml'
+PHD_DEFENSE_DATE = datetime.datetime(2021, 4, 1)
 
 def readmywebsite():
     """
@@ -134,6 +135,13 @@ def readmybibfile():
         elif entry_type == 'draft':
             pubsnum[2]['value'] += 1
 
+    # Calculate postdoctoral experience in years
+    today_date = datetime.datetime.now()
+    postdoc_years = (today_date - PHD_DEFENSE_DATE).days // 365
+
+    # Add postdoctoral experience to pubsnum
+    pubsnum.append({'type': 'Postdoctoral experience (years)', 'value': postdoc_years})
+
     return pubsnum
 
 def readmyscopus():
@@ -182,7 +190,7 @@ def readmyconfigurations():
     teachnum = [
         {'type': 'Conferences Organized', 'value': conferences_organized},
         {'type': 'Courses Taught', 'value': courses_taught},
-        {'type': 'Total Frontal Teaching Load', 'value': total_frontal_teaching_load}
+        {'type': 'Frontal Teaching (hours)', 'value': total_frontal_teaching_load}
     ]
 
     return teachnum
