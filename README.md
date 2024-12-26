@@ -80,16 +80,16 @@ latex-cv-generator/
 ---
 
 ## Roadmap
-- [ ] Improve readability and speed of the generated CV.
 - [ ] Add ATS-friendly formatting.
 - [ ] Develop a localized Italian version.
-- [ ] Introduce summary tables for teaching and other activities.
-    - [ ] Publications: published, preprints, in preparations
-    - [ ] Dissemination: invited, contributed, posters, organizations
-    - [ ] Teaching: corsi, ore di frontale
+- [x] Introduce summary tables for teaching and other activities.
+    - [x] Publications: published, preprints, in preparations
+    - [x] Dissemination: invited, contributed, posters, organizations
+    - [x] Teaching: corsi, ore di frontale
+    - [ ] Others: supervised students, citations, h-index, referee reports, research stay,commitees/jury
 - [ ] Autogenerate `publications.tex` from the BibTeX file with a CV-compatible style, import as a standalone in `gen`.
-- [ ] Create a splashpage with "at glance" numeric information.
-    - [ ] Move affiliation and awards.
+- [x] Create a splashpage with "at glance" numeric information.
+    - [x] Move affiliation and awards.
 - [ ] Suitable entry for career break 2010-2013.
 - [ ] Scrape bibliometrics through APIs.
     - [ ] Scopus

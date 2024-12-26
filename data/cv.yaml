@@ -11,39 +11,46 @@ email: "antoniomichele.miti@gmail.com"
 site: "https://www.antoniomiti.it/"
 github: MasterToninus
 orcid: "0000-0002-8829-1943"
-currentposition: "Ph.D. in mathematics with a focus on differential geometry (multisymplectic) and its applications to physics."
+currentposition: "Postdoctoral researcher in mathematics with a focus on differential geometry, higher structures (up to homotopies), and their applications to physics."
 coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
+sectors: 
+  - Geometry
+  - Mathematical-Physics
+  - Algebra
+ssd:
+  - "Mat/03"
 keywords: 
-  - Differential Geometry
   - Multisymplectic Geometry
   - L-Infinity Algebras
   - Higher Structures
   - Axiomatic Foundations of Physics
   - Geometric Mechanics of Field Systems
   - Geometric and Algebraic Quantization
-  - Categorical and cohomological methods in geometry and theoretical physics
+  - Categorical and cohomological methods
 
 # Order of sections in the CV
 order:
     - [Research Experiences, postdoc, voices, 1]
     - [Education, edu, voices, 1]
     - [Professional Experiences, work, voices, 1] 
-    - [Languages, lang, skills, 2]
+    - [Reserch keywords,keywords,plainlist,2]
     - [Publications overview, pubsnum, numbers, 2]
     - [Communications overview, talksnum, numbers, 2]
     - [Teaching overview, teachnum, numbers, 2]
-    - [Computer Skills, comp, skills_bar, 2]
-    - [Habilitations, habil, voices, 2]     
+    - [Habilitations, habil, voices, 2]  
+    - [Languages, lang, skills, 2]
+    - [Computer Skills, comp, skills_bar, 2]   
     - [Affiliations, affil, voices, 3]  
     - [Teaching, teach, voices, 3]
     - [Honors \& Awards, awd, voices, 3]    
     - [Research Stays, visit, voices, 3] 
     - [Events Organization, org, voices, 3]
     - [Departmental Duties, dept, voices, 3] 
+    - [Referees, ref, voices, 3]
     - [Talks \& Communications, talks, detailed, 3]    
     - [Workshops \& Conferences, conferences, detailed, 3]  
     - [Post-Graduate Training, schools, detailed, 3]
-    - [Referees, ref, voices, 3]
+
 
 
 
@@ -157,10 +164,10 @@ edu:
       - name: Livio Pizzocchero
         institution: Universit\'a degli Studi di Milano
         url: "http://users.mat.unimi.it/users/pizzocchero/" 
-  - what: Career break due to health reasons
-    when: 01/2010 -- 09/2013
-    where: 
-    info: "Took a career break due to health reasons."
+  - what: Career/education break
+    when: 01/2011 -- 09/2013
+    where:  due to health related reasons.
+    info: "\\vspace{-0.25cm}"
     url: ""
   - what: Bachelor degree in Physics
     when: 10/2010
@@ -403,3 +410,17 @@ habil:
     where: "\\vspace{-0.5cm}"
     info: "Habilitation to become assistant professor of mathematics in the French university system - nr. 22225373453."
     url: https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf
+
+# Supervised students
+students:
+  - who: "John Doe"
+    when: "09/2023 -- 06/2024"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    info: "Master's thesis on multisymplectic geometry."
+    url: "https://www.unicatt.it/"
+
+  - who: "Jane Smith"
+    when: "10/2022 -- 07/2023"
+    where: "KU Leuven, Leuven, Belgium"
+    info: "Bachelor's thesis on geometric mechanics."
+    url: "https://www.kuleuven.be/"

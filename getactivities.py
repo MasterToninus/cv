@@ -110,30 +110,40 @@ def readmywebsite():
 def readmybibfile():
     """
     Reads publications from a BibTeX file and counts the number of each type.
+    Also stores publication citation keys and their type.
 
     Returns:
-        list: A list of dictionaries containing counts of different types of publications.
+        dict: A dictionary containing counts of different types of publications and their details.
     """
     # Parse the BibTeX file
     bib_data = parse_file(BIBTEX_FILEPATH)
 
-    # Initialize counts
+    # Initialize counts and details
     pubsnum = [
         {'type': 'Published Papers', 'value': 0},
         {'type': 'Preprints', 'value': 0},
         {'type': 'Drafts in Preparation', 'value': 0}
     ]
+    pub_details = []
 
     # Categorize entries based on type
-    for entry in bib_data.entries.values():
+    for entry_key, entry in bib_data.entries.items():
         entry_type = entry.type.lower()
+        pub_detail = {'key': entry_key, 'type': entry_type}
 
         if entry_type in ('article', 'book', 'inproceedings', 'proceedings'):
             pubsnum[0]['value'] += 1
+            pub_detail['type'] = 'published'
         elif entry_type in ('unpublished', 'preprint'):
             pubsnum[1]['value'] += 1
+            pub_detail['type'] = 'preprints'
         elif entry_type == 'draft':
             pubsnum[2]['value'] += 1
+            pub_detail['type'] = 'drafts'
+        elif entry_type == 'phdthesis' or entry_type == 'mastersthesis':
+            pub_detail['type'] = 'thesis'
+
+        pub_details.append(pub_detail)
 
     # Calculate postdoctoral experience in years
     today_date = datetime.datetime.now()
@@ -142,7 +152,7 @@ def readmybibfile():
     # Add postdoctoral experience to pubsnum
     pubsnum.append({'type': 'Postdoctoral experience (years)', 'value': postdoc_years})
 
-    return pubsnum
+    return {'pubsnum': pubsnum, 'pub_details': pub_details}
 
 def readmyscopus():
     """

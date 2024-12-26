@@ -15,6 +15,8 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{enumitem}
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Antonio Michele Miti}
@@ -73,6 +75,10 @@
 % Usage: \skill{Skill}{Level}
 \newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
 
+
+
+
+
 % Command to create a skill entry with a progress bar
 % Usage: \skillbar{Skill}{total_width}{filled_width}{height}
 \newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
@@ -81,26 +87,7 @@
 % Usage: \txt{Text}
 \newcommand{\txt}[1]{#1\\}
 
-%countbox
-% Command to create a count box
-% Usage: \countbox{Title}{Content}
-\newcommand{\countbox}[2]{
-    \begin{center}
-        \setlength{\fboxsep}{10pt}  % Padding inside the box
-        \setlength{\fboxrule}{1pt}  % Thickness of the box border
-        \begin{minipage}{0.8\textwidth}
-            \fbox{
-                \begin{minipage}{\textwidth}
-                    \textbf{#1:} \\
-                    \begin{tabular}{rl}
-                        #2
-                    \end{tabular}
-                \end{minipage}
-            }
-        \end{minipage}
-    \end{center}
-    \vspace{0.3cm}
-}
+
 
 %---------- Document -----------
 \begin{document}
@@ -130,24 +117,27 @@
     ~{{ body2 }}~
 \end{minipage}
 
-%Academic Page
-\blockNp{Research Interests}
+
+
+%Boring and Detailed list
+\blockNp{Detailed Resume}
 
 {~{{coverstatement}}~}
+\vspace{1em}
 
-\vspace{0.3cm}
+%Publications
+{~{{publications_page}}~}
 
+\vspace{1em}
 
-
-\block{Selected publications}
+%\block{Selected publications}
 %\nocite{*} put everything
 %\nocite{Miti2022,Blacker2022,Miti2021,Miti2019,Miti2019a}
-\nocite{Blacker2022,Miti2022,Miti2019,Miti2019a}
-\printbibliography[heading=none]
-\vspace{.5em}
+%\nocite{Blacker2022,Miti2022,Miti2019,Miti2019a}
+%\printbibliography[heading=none]
+%\vspace{.5em}
 
-%Academic Page
-\blockNp{Detailed Resume}
+%Boring and Detailed list
 ~{{ body3 }}~
 
 \end{document}

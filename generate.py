@@ -37,9 +37,11 @@ with open("data/cv.yaml", 'r', encoding='utf-8') as f:
 activities = readmywebsite()
 yaml_contents.update(activities)
 
-# Read and update publication counts from the BibTeX file
-pubsnum = readmybibfile()
-yaml_contents.update({'pubsnum': pubsnum})
+# Read and update publication counts and details from the BibTeX file
+bib_data = readmybibfile()
+pubsnum = bib_data['pubsnum']
+pub_details = bib_data['pub_details']
+yaml_contents.update({'pubsnum': pubsnum, 'pub_details': pub_details})
 
 # Read and update teaching counts from the YAML file
 teachnum = readmyconfigurations()
@@ -94,11 +96,38 @@ def generate(ext):
         else:
             body3 += parsed
 
-    # Generate the cover statement
-    coverstatement = yaml_contents['coverstatement'] + "\\vspace{0.25em}\n\n\\textbf{Keywords: }\\it "
-    for line in yaml_contents['keywords']:
-        coverstatement += line + ", "
-    coverstatement = coverstatement[:-2] + "."
+ #   # Generate the cover statement
+    coverstatement = yaml_contents['coverstatement'] 
+    coverstatement += "\\vspace{0.25em}"
+#   coverstatement += \n\n\\textbf{Keywords: }\\it "
+ #   for line in yaml_contents['keywords']:
+ #       coverstatement += line + ", "
+ #   coverstatement = coverstatement[:-2] + "."
+
+    # Generate the Publications Page
+
+    publications_page = "\\block{Publications}"
+    #publications_page += coverstatement
+#    publications_page +="""
+#    The following publications can retrieved online at:
+#    \\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+#        \item[-] {dropbox: \\url{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}},
+#        \item[-] {orcid: \\href{https://orcid.org/0000-0002-8829-1943}{0000-0002-8829-1943}}.
+#    \\end{itemize}
+#    """
+    publication_types = {
+        'published': 'Published',
+        'thesis': 'Theses',
+        'preprints': 'Preprints',
+        'drafts': 'In preparation'
+    }
+
+    for pub_type, section_title in publication_types.items():
+        publications_page += f"\\subsection*{{{section_title}}}\n\\begin{{itemize}}\n"
+        for pub in pub_details:
+            if pub['type'] == pub_type:
+                publications_page += f"\\item \\fullcite{{{pub['key']}}}\n"
+        publications_page += "\\end{itemize}\n"
 
     # Write the CV to the output file
     with open(f"gen/cv.{ext}", 'w+', encoding='utf-8') as f_cv:
@@ -114,9 +143,11 @@ def generate(ext):
             body2=body2,
             body3=body3,
             pubsnum=pubsnum,
+            pub_details=pub_details,
             talksnum=activities['talksnum'],
             teachnum=teachnum,
-            today=date.today().strftime("%d/%m/%y")
+            today=date.today().strftime("%d/%m/%y"),
+            publications_page=publications_page
         ))
 
 # Generate the CV in LaTeX format
