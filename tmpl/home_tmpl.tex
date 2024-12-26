@@ -139,17 +139,6 @@
 
 
 
-% Dissemination Activity Counts Box
-\countbox{Dissemination Activity Counts}{
-    Invited Talks: & ~{{ dissemination_counts['Invited Talk'] }}~ \\
-    Contributed Talks: & ~{{ dissemination_counts['Contributed Talk'] }}~ \\
-    Posters: & ~{{ dissemination_counts['Poster'] }}~ \\
-    Workshops: & ~{{ dissemination_counts['Workshop'] }}~ \\
-    Conferences: & ~{{ dissemination_counts['Conference'] }}~ \\
-}
-
-\vspace{0.3cm}
-
 \block{Selected publications}
 %\nocite{*} put everything
 %\nocite{Miti2022,Blacker2022,Miti2021,Miti2019,Miti2019a}
@@ -157,6 +146,8 @@
 \printbibliography[heading=none]
 \vspace{.5em}
 
+%Academic Page
+\blockNp{Detailed Resume}
 ~{{ body3 }}~
 
 \end{document}

@@ -11,6 +11,7 @@ import urllib.request
 import codecs
 import warnings
 import datetime
+import yaml
 from pybtex.database import parse_file
 from pybliometrics.scopus import AuthorRetrieval
 
@@ -18,6 +19,7 @@ from pybliometrics.scopus import AuthorRetrieval
 CSV_URL = 'http://antoniomiti.it/data/activities.csv'
 BIBTEX_FILEPATH = 'data/publications.bib'
 SCOPUS_AUTHOR_ID = '57218509273'
+YAML_FILEPATH = 'data/cv.yaml'
 
 def readmywebsite():
     """
@@ -36,8 +38,12 @@ def readmywebsite():
     talks = []
     unused = set()
 
-    # Dictionary to count occurrences of each event type
-    entry_counts = {}  # Tracks the count of each event type encountered in the CSV file
+    # List to count occurrences of each event type
+    talksnum = [
+        {'type': 'Invited Talks', 'value': 0},
+        {'type': 'Contributed Talks and Posters', 'value': 0},
+        {'type': 'Attended Conferences', 'value': 0}
+    ]
 
     # Define date limits to filter future events
     todaydate = datetime.datetime.now()
@@ -61,10 +67,14 @@ def readmywebsite():
         line.update({'Approx_Date': approx_date})
 
         # Update the event type count
-        if event in entry_counts:
-            entry_counts[event] += 1
+        if event in ('Invited Talk'):
+            talksnum[0]['value'] += 1
+        elif event in ('Contributed Talk', 'Poster'):
+            talksnum[1]['value'] += 1
+        elif event in ('Workshop', 'Conference', 'School'):
+            talksnum[2]['value'] += 1
         else:
-            entry_counts[event] = 1
+            unused.add(event)
 
         # Categorize events based on type and date limits
         if date < limitdate:
@@ -91,7 +101,7 @@ def readmywebsite():
         "schools": schools,
         "conferences": conferences,
         "talks": talks,
-        "entry_counts": entry_counts  # Includes counts of each event type
+        "talksnum": talksnum  # Includes counts of each event type
     }
     # Final structured output ready for further processing or export
     return yamlcontents
@@ -110,7 +120,7 @@ def readmybibfile():
     pubsnum = [
         {'type': 'Published Papers', 'value': 0},
         {'type': 'Preprints', 'value': 0},
-        {'type': 'Drafts', 'value': 0}
+        {'type': 'Drafts in Preparation', 'value': 0}
     ]
 
     # Categorize entries based on type
@@ -146,6 +156,39 @@ def readmyscopus():
 
     return scopus_data
 
+def readmyconfigurations():
+    """
+    Reads the YAML file and counts the number of conferences organized, courses taught, and total frontal teaching load.
+
+    Returns:
+        list: A list of dictionaries containing the counts of conferences organized, courses taught, and total frontal teaching load.
+    """
+    with open(YAML_FILEPATH, 'r', encoding='utf-8') as f:
+        yaml_contents = yaml.safe_load(f)
+
+    conferences_organized = 0
+    courses_taught = 0
+    total_frontal_teaching_load = 0
+
+    # Count conferences organized
+    if 'org' in yaml_contents:
+        conferences_organized = len(yaml_contents['org'])
+
+    # Count courses taught and sum the total frontal teaching load
+    if 'teach' in yaml_contents:
+        courses_taught = len(yaml_contents['teach'])
+        total_frontal_teaching_load = sum(course.get('load', 0) for course in yaml_contents['teach'])
+
+    teachnum = [
+        {'type': 'Conferences Organized', 'value': conferences_organized},
+        {'type': 'Courses Taught', 'value': courses_taught},
+        {'type': 'Total Frontal Teaching Load', 'value': total_frontal_teaching_load}
+    ]
+
+    return teachnum
+
 # Example usage:
 # bibtex_counts = parse_bibtex_and_count()
 # print(bibtex_counts)
+# teachnum = readmyconfigurations()
+# print(teachnum)
