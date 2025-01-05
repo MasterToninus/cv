@@ -48,7 +48,7 @@ def readmywebsite():
 
     # Define date limits to filter future events
     todaydate = datetime.datetime.now()
-    limitdate = todaydate + datetime.timedelta(days=63)
+    limitdate = todaydate + datetime.timedelta(days=200)
 
     for line in csvfile:
         event = line.get('Type')

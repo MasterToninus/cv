@@ -2,6 +2,8 @@
 
 A customizable, data-driven LaTeX CV generator built with Python and Jinja2. This project streamlines CV creation by combining structured data sources with LaTeX templates to produce a professional, dynamic CV.
 
+- [Link to my Cv](https://www.dropbox.com/scl/fi/fy1xy3re0xixm8ejwhitt/cv.pdf?rlkey=jtdw6jw8bmh3ctr7u0xwj0kzh&dl=0)
+
 ---
 
 ## Features
@@ -80,6 +82,7 @@ latex-cv-generator/
 ---
 
 ## Roadmap
+Perspective features:
 - [ ] Add ATS-friendly formatting.
 - [ ] Develop a localized Italian version.
 - [x] Introduce summary tables for teaching and other activities.
@@ -90,17 +93,26 @@ latex-cv-generator/
 - [ ] Autogenerate `publications.tex` from the BibTeX file with a CV-compatible style, import as a standalone in `gen`.
 - [x] Create a splashpage with "at glance" numeric information.
     - [x] Move affiliation and awards.
-- [ ] Suitable entry for career break 2010-2013.
+- [x] Suitable entry for career break 2010-2013.
 - [ ] Scrape bibliometrics through APIs.
     - [ ] Scopus
     - [ ] Researchgate: https://laccei.org/LEIRD2024-VirtualEdition/papers/Contribution_721_a.pdf
-- [ ] Secret with signatures (Italy format)
+- [ ] [Secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) with signatures and phone number (Italy format) 
+- [ ] [Github action](https://github.com/marketplace/actions/github-action-for-latex) to generate last version
+
+Suggestions:
+- Remove "departmental duties"
+- Remove the meaningless, keep the meaningful. (e.g. don't need to specify KU Leuven, Leuven, Belgium.)
+
+
+
 
 ---
 
 ## Acknowledgments
-- Inspired by [bamos/cv](https://github.com/bamos/cv). Special thanks for sharing the inspiration for this project.
-- Thanks to **ChatGPT** for helping to improve the project documentation and providing suggestions for better code structuring and clarity.
+- Early versions due to [VittorioErba](https://github.com/vittorioerba).
+- Inspired by [bamos/cv](https://github.com/bamos/cv).
+- Thanks to **ChatGPT** for helping to improve the project documentation and providing suggestions for better code structuring.
 
 ---
 
