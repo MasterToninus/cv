@@ -34,7 +34,7 @@ order:
     - [Research Experiences, postdoc, voices, 1]
     - [Education, edu, voices, 1]
     - [Professional Experiences, work, voices, 1] 
-    - [Reserch keywords,keywords,plainlist,2]
+    - [Research keywords,keywords,plainlist,2]
     - [Publications overview, pubsnum, numbers, 2]
     - [Communications overview, talksnum, numbers, 2]
     - [Teaching overview, teachnum, numbers, 2]

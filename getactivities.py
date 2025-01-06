@@ -13,7 +13,7 @@ import warnings
 import datetime
 import yaml
 from pybtex.database import parse_file
-from pybliometrics.scopus import AuthorRetrieval
+#from pybliometrics.scopus import AuthorRetrieval
 
 # Global variables
 CSV_URL = 'http://antoniomiti.it/data/activities.csv'
@@ -154,25 +154,25 @@ def readmybibfile():
 
     return {'pubsnum': pubsnum, 'pub_details': pub_details}
 
-def readmyscopus():
-    """
-    Reads author information from Scopus using the pybliometrics API.
-
-    Returns:
-        dict: A dictionary containing author information and metrics.
-    """
-    author = AuthorRetrieval(SCOPUS_AUTHOR_ID)
-
-    scopus_data = {
-        'name': author.given_name + ' ' + author.surname,
-        'affiliation': author.affiliation_current[0]['name'],
-        'documents': author.document_count,
-        'citations': author.citation_count,
-        'h_index': author.h_index,
-        'subjects': [subject['name'] for subject in author.subject_areas]
-    }
-
-    return scopus_data
+#def readmyscopus():
+#    """
+#    Reads author information from Scopus using the pybliometrics API.
+#
+#    Returns:
+#        dict: A dictionary containing author information and metrics.
+#    """
+#    author = AuthorRetrieval(SCOPUS_AUTHOR_ID)
+#
+#    scopus_data = {
+#        'name': author.given_name + ' ' + author.surname,
+#        'affiliation': author.affiliation_current[0]['name'],
+#        'documents': author.document_count,
+#        'citations': author.citation_count,
+#        'h_index': author.h_index,
+#        'subjects': [subject['name'] for subject in author.subject_areas]
+#    }
+#
+#    return scopus_data
 
 def readmyconfigurations():
     """

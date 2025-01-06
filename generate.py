@@ -12,7 +12,7 @@ import yaml
 import os
 from datetime import date
 from jinja2 import Environment, FileSystemLoader
-from getactivities import readmywebsite, readmybibfile, readmyscopus, readmyconfigurations
+from getactivities import readmywebsite, readmybibfile, readmyconfigurations
 from pybliometrics.scopus import init
 
 # Initialize pybliometrics configuration
