@@ -176,10 +176,10 @@ def readmybibfile():
 
 def readmyconfigurations():
     """
-    Reads the YAML file and counts the number of conferences organized, courses taught, and total frontal teaching load.
+    Reads the YAML file and counts the number of conferences organized, courses taught, total frontal teaching load, and research stays.
 
     Returns:
-        list: A list of dictionaries containing the counts of conferences organized, courses taught, and total frontal teaching load.
+        list: A list of dictionaries containing the counts of conferences organized, courses taught, total frontal teaching load, and research stays.
     """
     with open(YAML_FILEPATH, 'r', encoding='utf-8') as f:
         yaml_contents = yaml.safe_load(f)
@@ -187,6 +187,7 @@ def readmyconfigurations():
     conferences_organized = 0
     courses_taught = 0
     total_frontal_teaching_load = 0
+    research_stays = 0
 
     # Count conferences organized
     if 'org' in yaml_contents:
@@ -197,10 +198,15 @@ def readmyconfigurations():
         courses_taught = len(yaml_contents['teach'])
         total_frontal_teaching_load = sum(course.get('load', 0) for course in yaml_contents['teach'])
 
+    # Count research stays
+    if 'visit' in yaml_contents:
+        research_stays = len(yaml_contents['visit'])
+
     teachnum = [
         {'type': 'Conferences Organized', 'value': conferences_organized},
         {'type': 'Courses Taught', 'value': courses_taught},
-        {'type': 'Frontal Teaching (hours)', 'value': total_frontal_teaching_load}
+        {'type': 'Teaching hours', 'value': total_frontal_teaching_load},
+        {'type': 'Research Stays', 'value': research_stays}
     ]
 
     return teachnum

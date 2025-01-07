@@ -12,7 +12,7 @@ import yaml
 import os
 from datetime import date
 from jinja2 import Environment, FileSystemLoader
-from getactivities import readmywebsite, readmybibfile, readmyconfigurations
+from getactivities import readmywebsite, readmybibfile, readmyconfigurations #, readmyscopus
 from pybliometrics.scopus import init
 
 # Initialize pybliometrics configuration
@@ -47,12 +47,11 @@ yaml_contents.update({'pubsnum': pubsnum, 'pub_details': pub_details})
 teachnum = readmyconfigurations()
 yaml_contents.update({'teachnum': teachnum})
 
-# Move "Conferences Organized" from teachnum to talksnum
+# Move "Conferences Organized" and "Research Stays" from teachnum to talksnum
 for item in teachnum:
-    if item['type'] == 'Conferences Organized':
+    if item['type'] == 'Conferences Organized' or item['type'] == 'Research Stays':
         yaml_contents['talksnum'].append(item)
         teachnum.remove(item)
-        break
 
 # Optionally read and update Scopus data
 # scopus_data = readmyscopus()
@@ -137,7 +136,7 @@ def generate(ext):
             email=yaml_contents['email'],
             site=yaml_contents['site'],
             github=yaml_contents['github'],
-            currentposition=yaml_contents['currentposition'],
+            titleinfo=yaml_contents['titleinfo'],
             coverstatement=coverstatement,
             body1=body1,
             body2=body2,
