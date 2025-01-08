@@ -1,10 +1,12 @@
-"""
-CV Data Processor
-Author: Antonio Miti
-Description:
-    Processes online CSV data and BibTeX publications to prepare structured data for LaTeX CV.
-Last Updated: 2024-12-23
-"""
+#!/usr/bin/env python3
+
+###############################################################
+# CV Data Processor
+# Author: Antonio Miti
+# Description:
+#    Processes online CSV data and BibTeX publications to prepare structured data for LaTeX CV.
+# Last Updated: 2024-12-23
+###############################################################
 
 import csv
 import urllib.request
@@ -55,7 +57,7 @@ def readmywebsite():
         date = datetime.datetime.strptime(line.get('Start_Date'), '%d-%b-%y')
         
         # Escape LaTeX special characters in URLs
-        url = line.get('Url').replace('%', '\%').replace('#', '\#')
+        url = line.get('Url').replace('%', '\\%').replace('#', '\\#')
         line.update({'Url': url})
 
         # Mark future events as "scheduled"
@@ -88,9 +90,10 @@ def readmywebsite():
             else:
                 unused.add(event)
 
-    # Warn about any uncategorized event types
-    msg = "Unused keys: " + str(unused)
-    warnings.warn(msg)  # This warning highlights uncategorized event types but does not affect program output
+    if unused:
+        msg = f"The following event types are not categorized: {', '.join(sorted(unused))}. "
+        msg += "Please review and categorize these event types."
+        warnings.warn(msg, category=UserWarning)
 
     # Reverse lists to ensure events are in anti-chronological order
     schools.reverse()

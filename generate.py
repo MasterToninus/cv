@@ -1,22 +1,23 @@
-"""
-Generate CV Script
-Author: Antonio Miti
-Description:
-    Combines YAML, website activities, and publications data to produce a professional LaTeX CV.
-Last Updated: 2024-12-23
-"""
-
 #!/usr/bin/env python3
+
+###############################################################Generate CV Script
+# Author: Antonio Miti
+# Description:
+#    Combines YAML, website activities, and publications data to produce a professional LaTeX CV.
+#
+###############################################################
+
+
 
 import yaml
 import os
 from datetime import date
 from jinja2 import Environment, FileSystemLoader
 from getactivities import readmywebsite, readmybibfile, readmyconfigurations #, readmyscopus
-from pybliometrics.scopus import init
+#from pybliometrics.scopus import init
 
 # Initialize pybliometrics configuration
-init()
+#init()
 
 # Initialize the Jinja2 environment with custom delimiters for LaTeX compatibility
 env = Environment(
