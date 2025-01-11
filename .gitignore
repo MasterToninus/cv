@@ -4,6 +4,8 @@ gen
 # Ignore pychace
 __pycache__
 *pyc
+Pipfile.lock
+
 
 ## Generated Template
 tmpl/*.bib
