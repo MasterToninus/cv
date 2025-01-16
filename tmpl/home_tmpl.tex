@@ -1,15 +1,22 @@
-\documentclass[a4paper]{article}
+% ------------------------------------------------------
+% LaTeX CV Template
+% Author: Antonio Miti
+% Description: Template for CV sections.
+% Last Updated: 2024-12-23
+% ------------------------------------------------------
 
+\documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fontawesome}
 \usepackage[margin=1.5cm]{geometry}
-% \addtolength{\topmargin}{-0.5cm}
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{enumitem}
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Antonio Michele Miti}
@@ -20,26 +27,36 @@
 \usepackage[backend=bibtex, style=nature]{biblatex}
 \addbibresource{../data/publications.bib}
 
-
 \usepackage{academicons}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 
-
-
 \setlength\parindent{0pt}
 
-
 %barcharts
+% Command to create a colored rule
+% Usage: \crule[color]{width}{height}
 \newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+% Command to create a progress bar
+% Usage: \progbar[color]{total_width}{filled_width}{height}
 \newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
 
 %titles
+% Command to create a section block with a horizontal rule
+% Usage: \block{Title}
 \newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+
+% Command to create a larger section block with a horizontal rule
+% Usage: \Block{Title}
 \newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+
+% Command to create a new page section block without a horizontal rule
+% Usage: \blockNp{Title}
 \newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
 
 %longvoice
-%expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country, Scheduled
+% Command to create a long voice entry
+% Usage: \longvoice{Event_Title}{Type}{Url}{Approx_Date}{Organization}{Location}{Country}{Scheduled}
 \newcommand{\longvoice}[8]{
     \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
         \textbf{\href{#3}{#2: #1}} & #4 
@@ -47,13 +64,30 @@
         \textit{#5, #6, #7;} & {\small\emph{#8}}
     \end{tabular}
     \vspace{.5em}
-    }
+}
+
 %voice
-%expected: what, when, where, url, info
+% Command to create a short voice entry
+% Usage: \voice{what}{when}{where}{url}{info}
 \newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+
+% Command to create a skill entry
+% Usage: \skill{Skill}{Level}
 \newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+
+
+
+
+
+% Command to create a skill entry with a progress bar
+% Usage: \skillbar{Skill}{total_width}{filled_width}{height}
 \newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+
+% Command to create a text entry
+% Usage: \txt{Text}
 \newcommand{\txt}[1]{#1\\}
+
+
 
 %---------- Document -----------
 \begin{document}
@@ -61,20 +95,17 @@
 \begin{minipage}[c]{0.6\columnwidth}
     \center{\huge \textbf{~{{name.first}}~ ~{{name.last}}~}}
     \\
-    \flushleft{\normalsize \textit{~{{currentposition}}~}}
+    \flushleft{\normalsize \textit{~{{titleinfo}}~}}
 \end{minipage} 
 \hfill
-\begin{minipage}[t]{0.375\columnwidth}
-    \skill{\faPhone~ Phone}{~{{phone}}~}
-    \skill{\faEnvelope~ Mail}{\href{mailto:~{{email}}~}{~{{email}}~}}
-    \skill{\faGlobe~ Website}{\href{~{{site}}~}{~{{site}}~}}
+\begin{minipage}[t]{0.35\columnwidth}
+    \skill{\faPhone~}{~{{phone}}~}
+    \skill{\faEnvelope~}{\href{mailto:~{{email}}~}{~{{email}}~}}
+    \skill{\faGlobe~}{\href{~{{site}}~}{~{{site}}~}}
  %   \skill{\faGithubSquare ~ Github}{\href{https://github.com/~{{github}}~}{~{{github}}~}}
  %   \skill{\orcidlink{~{{orcid}}~} ~ Orcid}{\href{https://orcid.org/~{{orcid}}~}{~{{orcid}}~}}   
 \end{minipage}
-%\textit{~{{currentposition}}~}
 \vspace{-0.25em}
-
-
 
 %Splash Page
 \begin{minipage}[t]{0.6\columnwidth}
@@ -86,21 +117,28 @@
 \end{minipage}
 
 
-%Academic Page
-\blockNp{Research Interests}
 
+
+%Boring and Detailed list
+\blockNp{Detailed Resume}
+\addcontentsline{toc}{section}{Detailed Resume}
+
+%Publications page
 {~{{coverstatement}}~}
+\vspace{1em}
+%Publications
+{~{{publications_page}}~}
 
-\vspace{0.3cm}
+\vspace{1em}
 
-\block{Selected publications}
+%\block{Selected publications}
 %\nocite{*} put everything
 %\nocite{Miti2022,Blacker2022,Miti2021,Miti2019,Miti2019a}
-\nocite{Blacker2022,Miti2021,Miti2019,Miti2019a}
-\printbibliography[heading=none]
-\vspace{.5em}
+%\nocite{Blacker2022,Miti2022,Miti2019,Miti2019a}
+%\printbibliography[heading=none]
+%\vspace{.5em}
 
+%Boring and Detailed list
 ~{{ body3 }}~
-
 
 \end{document}

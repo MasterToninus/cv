@@ -1,6 +1,22 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
-\usepackage[a4paper, total={6in, 10in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Antonio Michele Miti}
+\lhead{Publication list}
+\lfoot{}
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+\setlength\parindent{0pt}
+
 
 \usepackage{bibentry}
 \usepackage{natbib}
@@ -25,12 +41,12 @@
 	\\
 	%Max Planck Institute for Mathematics
 	Department of Mathematics,\\
-	Sapienza Universit\'a di Roma
+	Sapienza Universit\'a di Roma.
 }
 
 
 \begin{document}
-  \nobibliography{publications}
+  \nobibliography{../data/publications}
   \bibliographystyle{plainnat}
 
 	\maketitle
@@ -43,12 +59,17 @@
 
 
   \section*{Published}
-	  \begin{itemize}
+	  \begin{enumerate}
+ 	   \item \bibentry{Miti2022};	  
 	   \item \bibentry{Blacker2022};		
  	   \item \bibentry{Miti2021};
  	   \item \bibentry{Miti2019};
- 	   \item \bibentry{Miti2019a};
- 	   \item \bibentry{Miti2020a}.
+ 	   \item \bibentry{Miti2019a}.
+	  \end{enumerate}
+
+  \section*{Theses}
+	  \begin{itemize}
+ 	   \item[6.] \bibentry{Miti2020a}.
 	  \end{itemize}
 
 %  \section*{Accepted for Publication}
@@ -58,13 +79,13 @@
 
   \section*{Submitted to Peer-review}
 	  \begin{itemize}
- 	   \item \bibentry{Miti2022}.
-	  \end{itemize}
-
-  \section*{Preprints}
-	  \begin{itemize}
     	   \item \bibentry{Luongo2024}.
 	  \end{itemize}
+
+%  \section*{Preprints}
+%	  \begin{itemize}
+%    	   \item \bibentry{Luongo2024}.
+%	  \end{itemize}
   
   \section*{In Preparation}
 	  \begin{itemize}

@@ -1,8 +1,12 @@
-# FILE: elenco Pubblicazioni
-(serve per applications!)
+# Publications List / Configurations
 
-Sarebbe piu' indicato metterlo nella repository CV!
+This folder contains the list of publications. It is recommended to include this in the CV repository.
 
+## Contents
 
-Tool per ripulire i bibtex
-https://flamingtempura.github.io/bibtex-tidy/
+- `cv.yaml`: Contains configurations and general data.
+- `publications.bib`: Contains bibliographic references of the publications.
+
+## Tools
+
+- [BibTeX Tidy](https://flamingtempura.github.io/bibtex-tidy/): A tool to clean up BibTeX files.

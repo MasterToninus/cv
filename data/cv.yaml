@@ -1,52 +1,81 @@
+# CV Configuration File
+# Author: Antonio Miti
+# Description: This file contains the structured data for generating a professional LaTeX CV.
+# Last Updated: 08-01-2025
+
 name:
     first: Antonio Michele
     last: Miti
-phone: +39~333~9825~***
+phone: +39~333~9825~418
 email: "antoniomichele.miti@gmail.com"
+maritalstatus: "single"
+birthplace: "Milano, Italy"
+birthdate: "12/04/1986"
+nationality: "Italian"
+#children: 1 son (2000), 1 daughter (2040)
 site: "https://www.antoniomiti.it/"
 github: MasterToninus
 orcid: "0000-0002-8829-1943"
-currentposition: "Ph.D. in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics."
-coverstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. 
-  I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and homotopical structures inspired by theoretical physics."
+titleinfo: "MSCA fellow in mathematics focussing on differential geometry, higher structures, and their applications to physics."
+coverstatement: "I am a differential geometer specializing in higher geometric methods, particularly in symplectic and multisymplectic geometry. My research interests include geometric mechanics, classical field theories, quantization, and homotopical algebra, with a focus on exploring geometric and up-to-homotopy structures inspired by theoretical physics."
+oldstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and structures up to homotopy inspired by theoretical physics."
+sectors: 
+  - Geometry
+  - Mathematical-Physics
+  - Algebra
+ssd:
+  - "Mat/03"
 keywords: 
-  - Differential Geometry
   - Multisymplectic Geometry
   - L-Infinity Algebras
   - Higher Structures
   - Axiomatic Foundations of Physics
   - Geometric Mechanics of Field Systems
   - Geometric and Algebraic Quantization
-  - Categorical and cohomological methods in geometry and theoretical physics
+  - Categorical and cohomological methods
 
-
+# Order of sections in the CV
+# 1= large column splash page
+# 2= right column splash page
+# 3= main resume (long boring list)
+# 4= Administration
+# 5= Teaching
+# 6= Research
 order:
-    - [Research Experiences,postdoc,voices,1]
-    - [Education, edu, voices, 1]
-    - [Habilitations,habil,voices,1]        
+    - [Current Position, currentjobs, voices, 1] 
+    - [Work Experience, previousjobs, voices, 1]
+    - [Education, edublended, voices, 1]
+    - [Research keywords,keywords,plainlist,2]
+    - [Publications overview, pubsnum, numbers, 2]
+    - [Communications overview, talksnum, numbers, 2]
+    - [Teaching overview, teachnum, numbers, 2]
+    - [Habilitations, habil, voices, 2]  
     - [Languages, lang, skills, 2]
-    - [Computer Skills, comp, skills_bar, 2]
-    - [Affiliations, affil, voices, 2]  
-    - [Referees, ref, voices, 2]
+    - [Computer Skills, comp, skills_bar, 2]   
+    - [Affiliations, affil, voices, 3]  
     - [Teaching, teach, voices, 3]
-    - [Talks \& Communications, talks, detailed, 3]   
+    - [Honors \& Awards, awd, voices, 3]    
     - [Research Stays, visit, voices, 3] 
     - [Events Organization, org, voices, 3]
-    - [Honors \& Awards, awd, voices, 3]    
+    - [Other Departmental Duties, dept, voices, 3] 
+    - [Referees, ref, voices, 3]
+    - [Talks \& Communications, talks, detailed, 3]    
+    - [Workshops \& Conferences, conferences, detailed, 3]  
     - [Post-Graduate Training, schools, detailed, 3]
-    - [Workshops \& Conferences, conferences, detailed, 3]
-    - [Departmental Duties, dept, voices, 3] 
-    - [Professional Experiences, work, voices, 3]
 
+
+
+
+# Departmental duties
 dept: 
-  - what: "Exams supervision"
-    when: "06/2020 -- 09/2020"
-    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy;"
-    info: "\\vspace{-0.5cm}"
+  - what: "Peer-reviewer"
+    when: "06/2023 -- Now"
+    where: "Referee for:"
+    info: "SIGMA. Symmetry, Integrability and Geometry: Methods and Applications (ISSN 1815-0659),Geometriae Dedicata (ISSN 0046-5755)."
     url: ""
   - what: "Exams supervision"
-    when: "01/2020 -- 07/2020"
-    where: "KUL, Leuven, Belgium;"
+    when: "01/2020 -- 09/2020"
+    where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven"
     info: "\\vspace{-0.5cm}"
     url: ""
   - what: "Computer systems administration (assistant)"
@@ -55,231 +84,251 @@ dept:
     info: "Maintenance of IT systems of the department of Mathematics and Physics."
     url: "https://dipartimenti.unicatt.it/dmf-home"
 
+# Honors and awards
 awd:
-
   - what: Research Abroad Grant  
-    when: May 2023
+    when: 05/2023
     where: Istituto Nazionale di Alta Matematica (INDAM);
     url: https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf
     info: "Research Grant (3000 euros) supporting a research stay in France." 
   - what: Research Fellowships 
-    when:  May 2021
+    when: 05/2021
     where: Polish academy of Sciences, EIMI Saint Petersburg;
     info: "Declined due to incompatibilities."
   - what: PhD scholarship
-    when: January 2017 -- March 2021
+    when: 01/2017 -- 03/2021
     where: Universit\'a Cattolica del Sacro Cuore;  
     info: "\\vspace{-0.5cm}"
     url: "https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0" 
   - what: PhD scholarships 
-    when: October 2016
+    when: 10/2016
     where: Universit\'a degli studi di Udine, University of Minho (Map-PDMA);
     info: "Declined due to incompatibilities."    
   - what: Premio di Studio e Laurea
-    when: December 2015
+    when: 12/2015
     where: BCC di Carugate e Inzago;
     info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 15-16."
     url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
-   
 
-awd2:
-  - what: PhD scholarship in Mathematics (declined)
-    when: 10/2016
-    where: Universit\'a degli Studi di Udine;
-    info: "\\vspace{-0.5cm}"
-    url: " " 
-  - what: PhD scholarship in Mathematics and Applications (declined)
-    when: 10/2016
-    where: University of Minho;
-    url: "https://map-pdma.up.pt/students-area/20162017-1st-edition/" 
-  - what: Junior Postdoctoral Fellowship (declined)
-    when: 02/2021
-    where: Leonhard Euler International Mathematical Institute in Saint Petersburg
-    url: "https://eimi.ru/"  
-  - what: Junior Postdoctoral Fellowship (declined)
-    when: 05/2021
-    where: Polish Academy of Science, Institute of Mathematics;
-    url: "https://www.impan.pl/en/events/competitions"  
-
-work:
-    - what: Java Programming Internship
-      when: 03/2016  -- 07/2016
-      where: CST s.r.l, Milano, Italy;
-      info: "Formation in Java Programming language and in professional software development tools."
-      url: https://www.csttech.it/
-    - what: Student collaboration to SysAdmin
-      when: "05/2014 -- 02/2015"
-      where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano;"
-      info: "Maintenance of the LCM computers clusters. Tutoring: installation and configuration of linux OS, computational physics courses.\\vspace{-0.5cm}"
-      infoE: "Collaboration to the configuration and administration of the Linux cluster in the computer laboratory of the department of Physics.
-      Tech support: 	installation and configuration of linux OS.
-      Tutoring to students of the courses in computational physics.\\vspace{-0.5cm}"
-      url: https://lcm.mi.infn.it/
-
-postdoc:
-    - what: CIVIS-3i postdoctoral fellow
-      when: 02/2024  -- Now
-      where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
-      info: "Research project (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories."
-      url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
-    - what: Postdoctoral fellow (Assegno di ricerca)
-      when: 10/2022  -- 01/2024
-      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-      info: "Research project on symplectic and multisymplectic geometry with applications."
-      url: https://dipartimenti.unicatt.it/dmf-home
-    - what: MPIM postdoctoral fellow
-      when: 10/2021  -- 09/2022
-      where: Max Planck Institute for Mathematics, Bonn, Germany;
-      info: "Research project intermingling higher structures with applications to multisymplectic geometry."
-      url: https://www.mpim-bonn.mpg.de/
+# Current position
+currentjobs:
+  - what: Postdoctoral fellow (CIVIS-3i)
+    when: 02/2024 -- Now
+    where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
+    info: "Research project (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories.\\vspace{-0.25cm}"
+    url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
 
 
+#Professional Experiences (work and postdoc)  (Hint Scinawa: postdocs are jobs, merge work and postdoc together)
+previousjobs:
+#postdoc: # Postdoctoral experiences 
+  - what: Postdoctoral fellow (Assegno di ricerca)
+    when: 10/2022 -- 01/2024
+    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
+    info: "Research project on symplectic and multisymplectic geometry with applications."
+    url: https://dipartimenti.unicatt.it/dmf-home
+  - what: Postdoctoral fellow (MPIM)
+    when: 10/2021 -- 09/2022
+    where: Max Planck Institute for Mathematics, Bonn, Germany;
+    info: "Research project intermingling higher structures with applications to multisymplectic geometry."
+    url: https://www.mpim-bonn.mpg.de/
+#work: # Professional experiences
+  - what: Java Programming Internship
+    when: 03/2016 -- 07/2016
+    where: CST s.r.l, Milano, Italy;
+    info: "Formation in Java Programming language and in professional software development tools."
+    url: https://www.csttech.it/
+  - what: Student collaboration to SysAdmin
+    when: "05/2014 -- 02/2015"
+    where: "LCM - Laboratorio di Calcolo e Multimedia, Universit\\'a degli studi di Milano;"
+    info: "Maintenance of the LCM computers clusters. Tutoring: installation and configuration of linux OS, computational physics courses.\\vspace{-0.25cm}"
+    url: https://lcm.mi.infn.it/
+
+#Diplomas
+diplomas:
+  - what: "Doctoral degree in Science: Mathematics"
+    when: 04/2021
+    where: "(Double Degree) Universit\\'a Cattolica del Sacro Cuore and KU Leuven ;"
+    info: "Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}. \\par Thesis: \\href{https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS3408626&context=L&vid=KULeuven&search_scope=ALL_CONTENT&tab=all_content_tab&lang=en_US}{Homotopy comomentum maps in multisymplectic geometry}."
+    url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
+    thesis:
+      - title: "Homotopy comomentum maps in multisymplectic geometry"
+        info: "The project proposes the following mutually intermingled research paths mostly focussed towards symplectic geometry and its multisymplectic generalisations, together with applications to modern physics issues, both classical and quantum mechanical, with an emphasis on topological aspects."
+        url: "https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry"
+    supervisors:
+      - name: Mauro Spera
+        institution: UCSC
+        url: "http://docenti.unicatt.it/ita/mauro_spera/"
+      - name: Marco Zambon
+        institution: KU Leuven
+        url: "https://perswww.kuleuven.be/~u0096206/"
+  - what: Master degree in Theoretical Physics
+    when: 11/2015
+    where: "Universit\\'a degli Studi di Milano;"
+    info: "Supervisors: \\href{http://fisica.unipv.it/personale/Persona.php?ID=256}{Claudio Dappiaggi}, \\href{http://users.mat.unimi.it/users/pizzocchero/}{Livio Pizzocchero}. \\par Thesis: \\href{https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets}{Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets}."
+    assessment: "final grade 110/110"
+    url: "https://fisica-lm.cdl.unimi.it/it"
+    thesis:
+      - title: "Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets." 
+        url: "https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets"
+    supervisors:
+      - name: Claudio Dappiaggi
+        institution: Universit\'a di Pavia
+        url: "http://fisica.unipv.it/personale/Persona.php?ID=256"
+      - name: Livio Pizzocchero
+        institution: Universit\'a degli Studi di Milano
+        url: "http://users.mat.unimi.it/users/pizzocchero/" 
+  - what: Bachelor degree in Physics
+    when: 10/2010
+    where: "Universit\\'a degli Studi di Milano - Bicocca;"
+    info: "Supervisor: \\href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}. \\par Thesis: \\href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}."
+    assessment: "final grade 99/110"
+    url: "https://www.fisica.unimib.it/en"
+    thesis:
+      - title: Lie group theory and application to the rigid body mechanics
+        url: https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf
+    supervisors:
+      - name: Franco Magri
+        institution: Universit\'a degli Studi di Milano - Bicocca
+        url: http://staff.matapp.unimib.it/~/magri/
+
+# Education (meant as study experiences)
 edu:
-    - what: "Doctoral degree in Science: Mathematics"
-      when: April 2021
-      where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven;"
-      info: "Four years grant in the Joint International Doctoral Program in Science with the project
-            \\emph{Multi-symplectic geometry and applications to modern physics}.
-            \\par
-             I spent the first 21 months of my scholarship at UCSC and the following 30 months working at KU Leuven.
-            \\par
-            Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, 
-            \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}.
-            \\par
-            Thesis: \\href{https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS3408626&context=L&vid=KULeuven&search_scope=ALL_CONTENT&tab=all_content_tab&lang=en_US}{Homotopy comomentum maps in multisymplectic geometry}.
-            "
-      url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
-      thesis:
-        - title: "Homotopy comomentum maps in multisymplectic geometry"
-          info: "The project proposes the following mutually intermingled research paths 
-            mostly focussed towards symplectic geometry and its multisymplectic generalisations, 
-            together with applications to modern physics issues, 
-            both classical and quantum mechanical, with an emphasis on topological aspects."
-          url: "https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry"
-      supervisors:
-        - name: Mauro Spera
-          institution: UCSC
-          url: "http://docenti.unicatt.it/ita/mauro_spera/"
-        - name: Marco Zambon
-          institution: KU Leuven
-          url: "https://perswww.kuleuven.be/~u0096206/"
+  - what: "PhD in Science: Mathematics"
+    when: 10/2018 -- 04/2021
+    where: "KU Leuven, Belgium;"
+    info: "Double degree: International Doctoral Program in Science."
+    url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
+  - what: "PhD in Science: Mathematics"
+    when: 11/2016 -- 09/2018
+    where: "Universit\\'a Cattolica del Sacro Cuore, Italy;"
+    info: "Four years grants with extension due to COVID."
+    url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"    
+  - what: Master in Physics
+    when: 10/2013 -- 11/2015
+    where: "Universit\\'a degli Studi di Milano, Italy;"
+    info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods."
+  - what: Education break
+    when: 01/2011 -- 09/2013
+    where:  due to health related reasons.
+    info: "\\vspace{-0.25cm}"
+    url: ""
+  - what: Bachelor in Physics
+    when: 10/2005 -- 10/2010
+    where: "Universit\\'a degli Studi di Milano - Bicocca;"
+    info: "Theoretical Physics curriculum with emphases on: Mathematical-Physics, Classical and Quantum Mechanics."
 
-    - what: Master degree in Theoretical Physics
-      when: November 2015
-      where: "Universit\\'a degli Studi di Milano;"
-      info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods.
-            \\par
-            Supervisors: \\href{http://fisica.unipv.it/personale/Persona.php?ID=256}{Claudio Dappiaggi}, 
-            \\href{http://users.mat.unimi.it/users/pizzocchero/}{Livio Pizzocchero}.
-            \\par
-            Thesis: \\href{https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets}{Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets}.
-            "
-      assessment: "final grade 110/110"
-      url: "https://fisica-lm.cdl.unimi.it/it"
-      thesis:
-        - title: "Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets." 
-          url: "https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets"
-      supervisors:
-        - name: Claudio Dappiaggi
-          institution: Universit\'a di Pavia
-          url: "http://fisica.unipv.it/personale/Persona.php?ID=256"
-        - name: Livio Pizzocchero
-          institution: Universit\'a degli Studi di Milano
-          url: "http://users.mat.unimi.it/users/pizzocchero/" 
+# Education (old style blended with diplomas)
+edublended:
+  - what: "Doctoral degree in Science: Mathematics"
+    when: 04/2021
+    where: "Universit\\'a Cattolica del Sacro Cuore and KU Leuven;"
+    info: "Four years grant in the Joint International Doctoral Program in Science with the project \\emph{Multi-symplectic geometry and applications to modern physics}. \\par I spent the first 21 months of my scholarship at UCSC and the following 30 months working at KU Leuven. \\par Supervisors: \\href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, \\href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}. \\par Thesis: \\href{https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS3408626&context=L&vid=KULeuven&search_scope=ALL_CONTENT&tab=all_content_tab&lang=en_US}{Homotopy comomentum maps in multisymplectic geometry}."
+    url: "https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects"
+    thesis:
+      - title: "Homotopy comomentum maps in multisymplectic geometry"
+        info: "The project proposes the following mutually intermingled research paths mostly focussed towards symplectic geometry and its multisymplectic generalisations, together with applications to modern physics issues, both classical and quantum mechanical, with an emphasis on topological aspects."
+        url: "https://www.researchgate.net/project/Homotopy-moment-maps-in-multisymplectic-geometry"
+    supervisors:
+      - name: Mauro Spera
+        institution: UCSC
+        url: "http://docenti.unicatt.it/ita/mauro_spera/"
+      - name: Marco Zambon
+        institution: KU Leuven
+        url: "https://perswww.kuleuven.be/~u0096206/"
+  - what: Master degree in Theoretical Physics
+    when: 11/2015
+    where: "Universit\\'a degli Studi di Milano;"
+    info: "Theoretical Physics curriculum with emphases on: Foundations and Mathematical Methods in Physics, Geometric Mechanics, Algebraic Quantum Field Theory, Computational Methods. \\par Supervisors: \\href{http://fisica.unipv.it/personale/Persona.php?ID=256}{Claudio Dappiaggi}, \\href{http://users.mat.unimi.it/users/pizzocchero/}{Livio Pizzocchero}. \\par Thesis: \\href{https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets}{Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets}."
+    assessment: "final grade 110/110"
+    url: "https://fisica-lm.cdl.unimi.it/it"
+    thesis:
+      - title: "Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets." 
+        url: "https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets"
+    supervisors:
+      - name: Claudio Dappiaggi
+        institution: Universit\'a di Pavia
+        url: "http://fisica.unipv.it/personale/Persona.php?ID=256"
+      - name: Livio Pizzocchero
+        institution: Universit\'a degli Studi di Milano
+        url: "http://users.mat.unimi.it/users/pizzocchero/" 
+  - what: Career/education break
+    when: 01/2011 -- 09/2013
+    where:  due to health related reasons.
+    info: "\\vspace{-0.25cm}"
+    url: ""
+  - what: Bachelor degree in Physics
+    when: 10/2010
+    where: "Universit\\'a degli Studi di Milano - Bicocca;"
+    info: "Theoretical Physics curriculum with emphases on: Mathematical-Physics, Classical and Quantum Mechanics. \\par Supervisor: \\href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}. \\par Thesis: \\href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}."
+    assessment: "final grade 99/110"
+    url: "https://www.fisica.unimib.it/en"
+    thesis:
+      - title: Lie group theory and application to the rigid body mechanics
+        url: https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf
+    supervisors:
+      - name: Franco Magri
+        institution: Universit\'a degli Studi di Milano - Bicocca
+        url: http://staff.matapp.unimib.it/~/magri/
 
-    - what: Bachelor degree in Physics
-      when: October 2010
-      where: "Universit\\'a degli Studi di Milano - Bicocca;"
-      info: "Theoretical Physics curriculum with emphases on:
-        Mathematical-Physics, Classical and Quantum Mechanics.
-        \\par
-        Supervisor: \\href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}.
-        \\par
-        Thesis: \\href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}.
-        "
-      assessment: "final grade 99/110"
-      url: "https://www.fisica.unimib.it/en"
-      thesis:
-        - title: Lie group theory and application to the rigid body mechanics
-          url: https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf
-      supervisors:
-        - name: Franco Magri
-          institution: Universit\'a degli Studi di Milano - Bicocca
-          url: http://staff.matapp.unimib.it/~/magri/
 
-
-
-      
+# Languages
 lang:
-    - what: Italian
-      score: Mothertongue
-    - what: English
-      score: "Toefl-IBT : 102/120 (apr-18)"
-    - what: French
-      score: Beginner
-      
+  - what: Italian
+    score: Mothertongue
+  - what: English
+    score: "Toefl-IBT : 102/120 (apr-18)"
+  - what: French
+    score: Beginner
+
+# Computer skills
 comp:
-        - what: C/C++
-          score: 0.3
-        - what: Python
-          score: 0.45
-        - what: Haskell
-          score: 0.25
-        - what: Cuda
-          score: 0.45
-        - what: Java
-          score: 0.4
-        - what: Mathematica
-          score: 0.3
-        - what: "\\LaTeX"
-          score: 0.75
-        - what: Linux (Sysadmin)
-          score: 0.65
-        - what: Windows (Sysadmin)
-          score: 0.65
-        - what: Embedded electronics 
-          info: (Arduino, Rasp.Pi)
-          score: 0.25
-        - what: Computer assembly
-          info: and modding
-          score: 0.5
-        - what: Network infrastructure
-          score: 0.2
+  - what: C/C++
+    score: 0.3
+  - what: Python
+    score: 0.45
+  - what: Haskell
+    score: 0.25
+  - what: Cuda
+    score: 0.45
+  - what: Java
+    score: 0.4
+  - what: Mathematica
+    score: 0.3
+  - what: "\\LaTeX"
+    score: 0.75
+  - what: Linux (Sysadmin)
+    score: 0.65
+  - what: Windows (Sysadmin)
+    score: 0.65
+  - what: Embedded electronics 
+    info: (Arduino, Rasp.Pi)
+    score: 0.25
+  - what: Computer assembly
+    info: and modding
+    score: 0.5
+  - what: Network infrastructure
+    score: 0.2
 
-
+# Affiliations
 affil:
-    - what: MSCA researcher (assegnista)
-      when: 02/2024
-      where: Universit\'a di Roma la Sapienza, Department of Mathematics - Rome, Italy;
-      url: https://www.mat.uniroma1.it/persone/miti
-      info: "\\vspace{-0.5cm}"
-    - what: "Member of \\emph{Project \\'emergent: Higher structures in differential geometry}"
-      when: 01/2023
-      where: Labex MiLyon, Lyon, France;
-      url: https://www.dropbox.com/s/36kh0vre45r38b2/2301-MiLyon-HigherGeometry.pdf?dl=0
-      info: "\\vspace{-0.5cm}"
-    - what: Member of GNSAGA - Differential Geometry
-      when: 01/2017
-      where: Istituto italiano di alta matematica (Indam);
-      url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
-      info: "\\vspace{-0.5cm}"
+  - what: MSCA researcher (assegnista)
+    when: 02/2024
+    where: Universit\'a di Roma la Sapienza, Department of Mathematics - Rome, Italy;
+    url: https://www.mat.uniroma1.it/persone/miti
+    info: "\\vspace{-0.5cm}"
+  - what: "Member of \\emph{Project \\'emergent: Higher structures in differential geometry}"
+    when: 01/2023
+    where: Labex MiLyon, Lyon, France;
+    url: https://www.dropbox.com/s/36kh0vre45r38b2/2301-MiLyon-HigherGeometry.pdf?dl=0
+    info: "\\vspace{-0.5cm}"
+  - what: Member of GNSAGA - Differential Geometry
+    when: 01/2017
+    where: Istituto italiano di alta matematica (Indam);
+    url: https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23
+    info: "\\vspace{-0.5cm}"
 
-
-
-old:
-    - what: Postdoctoral researcher (assegnista)
-      when: 10/2022
-      where: Universit\'a Cattolica del Sacro Cuore, Department of Mathematics and Physics - Brescia, Italy;
-      url: https://dipartimenti.unicatt.it/dmf-staff-assegnisti-e-post-doc
-      info: "\\vspace{-0.5cm}"
-    - what: Ph.D. student
-      when: 01/2017
-      where: Department of Mathematics and Physics - Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-      url: "https://dipartimenti.unicatt.it/dmf-staff-dottorandi\\#content" 
-      info: "\\vspace{-0.5cm}"
-
-
-
+# Referees
 ref:
   - what: Mauro Spera
     rank: Full professor
@@ -306,102 +355,160 @@ ref:
     email: lvitagliano@unisa.it
     info: "\\vspace{-0.5cm}"
   - what: Tilmann Wurzbacher
-    rank: Full  professor
+    rank: Full professor
     where: Institut \'Elie Cartan - Universit\'e de Lorraine, Metz, France;
     url: https://iecl.univ-lorraine.fr/membre-iecl/wurzbacher-tilmann/
     email: tilmann.wurzbacher@univ-lorraine.fr
     info: "\\vspace{-0.5cm}"
+  - what: Domenico Fiorenza
+    rank: Full professor
+    where: Università di Roma La Sapienza, Rome, Italy;
+    url: https://www1.mat.uniroma1.it/~fiorenza/
+    email: fiorenza@uniroma1.it
+    info: "\\vspace{-0.5cm}"
 
+# Teaching experiences
 teach:
-    - what: "Reduction of (multi)-symplectic observables"
-      when: 05/2024
-      where: Universit\'a degli Studi di Salerno, Fisciano, Italy;
-      info: "Conference mini-course, joint with Prof: Leonid Ryvkin."
-      url:  "https://www.antoniomiti.it/teaching/Obs-Constraint-2024/"
-    - what: "Elements of Higher Geometry"
-      when: 10/2023 -- 12/2023
-      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-      info: "Teaching assistant for the course held by Prof: Mauro Spera."
-      url:  "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
-    - what: "Elements of Higher Geometry"
-      when: 10/2022 -- 12/2022
-      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-      info: "Teaching assistant for the course held by Prof: Mauro Spera."
-      url:  "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
-    - what: "Elements of Higher Geometry"
-      when: 10/2017 -- 01/2018
-      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-      info: "Teaching assistant for the course held by Prof: Mauro Spera."
-      url:  "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
-    - what: "Differential Topology and Geometry"
-      when: 03/2018 -- 6/2018
-      where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-      info: "Teaching assistant for the course held by Prof: Mauro Spera."
-      url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
+  - what: "Reduction of (multi)-symplectic observables"
+    when: 05/2024
+    where: Universit\'a degli Studi di Salerno, Fisciano, Italy;
+    info: "Conference mini-course, joint with Prof: Leonid Ryvkin."
+    load: 8
+    url: "https://www.antoniomiti.it/teaching/Obs-Constraint-2024/"
+  - what: "Elements of Higher Geometry"
+    when: 10/2023 -- 12/2023
+    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
+    info: "Teaching assistant for the master-level course led by Prof. Mauro Spera."
+    load: 15
+    url: "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
+  - what: "Elements of Higher Geometry"
+    when: 10/2022 -- 12/2022
+    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
+    info: "Teaching assistant for the master-level course led by Prof. Mauro Spera."
+    load: 15
+    url: "https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/"
+  - what: "Elements of Higher Geometry"
+    when: 10/2017 -- 01/2018
+    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
+    info: "Teaching assistant for the master-level course led by Prof. Mauro Spera."
+    load: 5
+    url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
+  - what: "Differential Topology and Geometry"
+    when: 03/2018 -- 6/2018
+    where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
+    info: "Teaching assistant for the master-level course led by Prof. Mauro Spera."
+    load: 15
+    url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
+# Events organization
 org:
-    - what: "Workshop on Multisymplectic Structures in Geometry and Physics"
-      when: "10 January, 2024"
-      where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
-      url: https://math.gmu.edu/~cblacke/lyon.html
-      info: "\\vspace{-0.5cm}"
-    - what: "Workshop on multisymplectic geometry"
-      when: "10 - 11 September, 2020"
-      where: "KU Leuven, Leuven, Belgium;"
-      url: https://wis.kuleuven.be/events/multisymplectic
-      info: "\\vspace{-0.5cm}"
+  - what: "Diffeological structure of Lagrangian field theories"
+    when: "11/2024 -- 12/2024"
+    date: "06/11/2024 -- 12/12/2024"
+    where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
+    url: https://www.antoniomiti.it/teaching/LFT-2024/
+    info: "2 months local seminar series."
+  - what: "Workshop on Multisymplectic Structures in Geometry and Physics"
+    when: "01/2024"
+    date: "10/01/2024"
+    where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
+    url: https://math.gmu.edu/~cblacke/lyon.html
+    info: "1 day international workshop."
+  - what: "Workshop on multisymplectic geometry"
+    when: "09/2020"
+    date: "10/09/2020 -- 11/09/2020"
+    where: "KU Leuven, Leuven, Belgium;"
+    url: https://wis.kuleuven.be/events/multisymplectic
+    info: "2 days international workshop, held online due to COVID."
 
+# Research stays
 visit:
-   
-    - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "12 December 2023 - 31 January, 2024"
-      where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group within the \"INDAM research abroad\" grant."
-      url:
-      tbc:
-    - what: "Department of Mathematics, University of Göttingen "
-      when: "10 July - 15 July, 2023"
-      where: Lyon, France;
-      info: "Scientific collaboration with F. Zanello and research seminar."
-      url:
-      tbc:  
-    - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "9 June - 19 June, 2023"
-      where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group and research seminar."
-      url:
-      tbc:
-    - what: "Department of Mathematics, KU Leuven"
-      when: "20 - 31 March, 2023"
-      where: Leuven, Belgium;
-      info: "Scientific collaboration with G. Sevestre and GMC workshop."
-      url:     
-      tbc:                                   
-    - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "1 - 28 February, 2023"
-      where: Lyon, France;
-      info: "Scientific collaboration with the ICJ mathematical physics group."
-      url:
-      tbc:   
-    - what: "Camille Jordan Institute, Université Lyon 1"
-      when: "5 - 12 December, 2022"
-      where: Lyon, France;
-      info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop."
-      url:        
-    - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
-      when: "21 - 28 August, 2022"
-      where: Vienna, Austria;
-      info: "Thematic Programme: Higher Structures and Field Theory."
-      url: https://www.esi.ac.at/events/e430/      
-    - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
-      when: "17 - 22 March, 2019"
-      where: Fisciano, Italy;
-      info: "Scientific collaboration with the Geometry research group and research seminar."
-      url: http://geometria.dipmat.unisa.it/events.html
+  - what: "Institut Mittag-Leffler"
+    when: "03/2025"
+    date: "10/03/2025 - 28/03/2025"
+    where: Djursholm, Sweden;
+    info: "Thematic Programme: Cohomological Aspects of Quantum Field Theory (1 month)."
+    url: "https://www.mittag-leffler.se/activities/cohomological-aspects-of-quantum-field-theory/"
+    tbc:
+  - what: "Camille Jordan Institute, Université Lyon 1"
+    when: "10/2024 - 12/2024"
+    date: "15/10/2024 - 20/12/2024"
+    where: Lyon, France;
+    info: "Scientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period (2 months)."
+    url:
+    tbc:   
+  - what: "Camille Jordan Institute, Université Lyon 1"
+    when: "12/2023 - 01/2024"
+    date: "12/12/2023 - 31/01/2024"
+    where: Lyon, France;
+    info: "Scientific collaboration with the ICJ mathematical physics group within the \"INDAM research abroad\" grant (2 months)."
+    url:
+    tbc:
+  - what: "Department of Mathematics, University of Göttingen "
+    when: "07/2023"
+    date: "10/07/2023 - 15/07/2023"
+    where: Göttingen, Germany;
+    info: "Scientific collaboration with F. Zanello and research seminar (1 week)."
+    url:
+    tbc:  
+  - what: "Camille Jordan Institute, Université Lyon 1"
+    when: "06/2023"
+    date: "09/06/2023 - 19/06/2023"
+    where: Lyon, France;
+    info: "Scientific collaboration with the ICJ mathematical physics group and research seminar (2 weeks)."
+    url:
+    tbc:
+  - what: "Department of Mathematics, KU Leuven"
+    when: "03/2023"
+    date: "20/03/2023 - 31/03/2023"
+    where: Leuven, Belgium;
+    info: "Scientific collaboration with G. Sevestre and GMC workshop (2 weeks)."
+    url:     
+    tbc:                                   
+  - what: "Camille Jordan Institute, Université Lyon 1"
+    when: "02/2023"
+    date: "01/02/2023 - 28/02/2023"
+    where: Lyon, France;
+    info: "Scientific collaboration with the ICJ mathematical physics group (1 month)."
+    url:
+    tbc:   
+  - what: "Camille Jordan Institute, Université Lyon 1"
+    when: "12/2022"
+    date: "05/12/2022 - 12/12/2022"
+    where: Lyon, France;
+    info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop (1 week)."
+    url:        
+  - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
+    when: "08/2022"
+    date: "21/08/2022 - 28/08/2022"
+    where: Vienna, Austria;
+    info: "Thematic Programme: Higher Structures and Field Theory (1 week)."
+    url: https://www.esi.ac.at/events/e430/      
+  - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
+    when: "03/2019"
+    date: "17/03/2019 - 22/03/2019"
+    where: Fisciano, Italy;
+    info: "Scientific collaboration with the Geometry research group and research seminar (1 week)."
+    url: http://geometria.dipmat.unisa.it/events.html
 
+# Habilitations
 habil:
-    - what: "Maître de conférences (section 25)"
-      when: "February 2022"
-      where: "\\vspace{-0.5cm}"
-      info: "Habilitation to become assistant professor of mathematics in the French university system - nr. 22225373453."
-      url: https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf
+  - what: "Maître de conférences (section 25)"
+    when: "02/2022"
+    where: "\\vspace{-0.5cm}"
+    info: "French qualification for an assistant professorship in pure mathematics.  (nr. 22225373453)"
+    url: https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf
+
+# Supervised students
+students:
+  - who: "John Doe"
+    when: "09/2023 -- 06/2024"
+    where: "Universit\\'a Cattolica del Sacro Cuore, Brescia, Italy"
+    info: "Master's thesis on multisymplectic geometry."
+    url: "https://www.unicatt.it/"
+
+  - who: "Jane Smith"
+    when: "10/2022 -- 07/2023"
+    where: "KU Leuven, Leuven, Belgium"
+    info: "Bachelor's thesis on geometric mechanics."
+    url: "https://www.kuleuven.be/"

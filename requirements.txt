@@ -1,2 +1,7 @@
-pyyaml ~> 4.2b1
-Jinja2 ~> 2.10.1
+# Python package dependencies for LaTeX CV Generator
+# Install with: pip3 install -r requirements.txt
+
+pyyaml>=5.4
+Jinja2>=3.1.4
+pybtex>=0.24.0,<1.0
+pybliometrics>=3.4.0

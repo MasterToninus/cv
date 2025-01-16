@@ -4,6 +4,8 @@ gen
 # Ignore pychace
 __pycache__
 *pyc
+Pipfile.lock
+
 
 ## Generated Template
 tmpl/*.bib
@@ -17,6 +19,7 @@ tmpl/*.out
 tmpl/*.pdf
 tmpl/*.xml
 tmpl/*.gz
+tmpl/**.synctex*
 
 ## Log
 .log
@@ -35,18 +38,22 @@ data/*.out
 data/*.pdf
 data/*.xml
 data/*.gz
+data/**.synctex*
 
+hand-tailored/**.bak
+hand-tailored/**.bib
+hand-tailored/**.aux
+hand-tailored/**.bbl
+hand-tailored/**.blg
+hand-tailored/**.fdb_latexmk
+hand-tailored/**.fls
+hand-tailored/**.log
+hand-tailored/**.out
+hand-tailored/**.pdf
+hand-tailored/**.xml
+hand-tailored/**.gz
+hand-tailored/**.toc
+hand-tailored/**.synctex*
 
-FR/**.bak
-FR/**.bib
-FR/**.aux
-FR/**.bbl
-FR/**.blg
-FR/**.fdb_latexmk
-FR/**.fls
-FR/**.log
-FR/**.out
-FR/**.pdf
-FR/**.xml
-FR/**.gz
+.vscode
 
