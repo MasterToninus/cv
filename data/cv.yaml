@@ -115,7 +115,7 @@ currentjobs:
   - what: Postdoctoral fellow (CIVIS-3i)
     when: 02/2024 -- Now
     where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
-    info: "Research project (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories.\\vspace{-0.25cm}"
+    info: "Research grant (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories.\\vspace{-0.25cm}"
     url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
 
 
@@ -125,12 +125,12 @@ previousjobs:
   - what: Postdoctoral fellow (Assegno di ricerca)
     when: 10/2022 -- 01/2024
     where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
-    info: "Research project on symplectic and multisymplectic geometry with applications."
+    info: "Research grant on symplectic and multisymplectic geometry with applications."
     url: https://dipartimenti.unicatt.it/dmf-home
   - what: Postdoctoral fellow (MPIM)
     when: 10/2021 -- 09/2022
     where: Max Planck Institute for Mathematics, Bonn, Germany;
-    info: "Research project intermingling higher structures with applications to multisymplectic geometry."
+    info: "Research grant on higher structures with applications to multisymplectic geometry."
     url: https://www.mpim-bonn.mpg.de/
 #work: # Professional experiences
   - what: Java Programming Internship
