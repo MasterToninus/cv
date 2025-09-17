@@ -18,7 +18,7 @@ gen/cv.tex: data/cv.yaml generate.py \
 # Target to compile the LaTeX file to PDF
 gen/cv.pdf: gen/cv.tex
 	cd gen && \
-	pdflatex cv.tex -interaction=batchmode && \
-	bibtex cv && \
-	pdflatex cv.tex -interaction=batchmode && \
-	pdflatex cv.tex -interaction=batchmode
+	latexmk cv.tex -interaction=batchmode && \
+	biber cv && \
+	latexmk cv.tex -interaction=batchmode && \
+	latexmk cv.tex -interaction=batchmode
