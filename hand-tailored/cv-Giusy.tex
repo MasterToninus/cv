@@ -1,0 +1,328 @@
+%=======================================================================%
+%      CV - non accademico
+%=======================================================================%
+%  --- NON GENERATO AUTOMATICAMENTE ---
+%
+%   non ha senso automatizzarlo per adesso, le cose da aggiungere sono poche per ora.
+%
+%
+%
+%=======================================================================%
+
+
+
+
+
+\documentclass[a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+% \addtolength{\topmargin}{-0.5cm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Giuseppa Simioli}
+\lhead{Curriculum Vitae}
+\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Generated on \today} }
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+%\usepackage[backend=bibtex, style=nature]{biblatex}
+%\addbibresource{../data/publications.bib}
+
+\setlength\parindent{0pt}
+
+
+%barcharts
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
+
+%titles
+\newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+\newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+\newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
+
+%longvoice
+%expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country
+\newcommand{\longvoice}[8]{
+    \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
+        \textbf{\href{#3}{#2: #1}} & #4 
+        \\ 
+        \textit{#5, #6, #7;} & {\small\emph{#8}}
+    \end{tabular}
+    \vspace{.5em}
+    }
+%voice
+%expected: what, when, where, url, info
+\newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+\newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+\newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+\newcommand{\txt}[1]{#1\\}
+
+
+
+
+%---------- Document -----------
+\begin{document}
+
+
+%Header
+\begin{minipage}[c]{0.6\columnwidth}
+    \center{\huge \textbf{Giuseppa SIMIOLI}}
+    \\
+    \flushleft{\normalsize \textit{\color{orange}Postdoctoral researcher in pure mathematics. Interested in functional programming, quantum algorithms, high performance computing, scientific programming and numerical simulations.}}
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    \vspace{-1.5em}
+    \skill{\faPhone~ Phone (ita)}{+39~}
+    \skill{\faPhone~ Phone (fra)}{+32~}
+    \skill{\faEnvelope~ Mail}{\href{mailto:g.simioli@live.it}{g.simioli@live.it}}
+    %\skill{\faGlobe~ Website}{\href{https://dmf.unicatt.it/miti/}{https://dmf.unicatt.it/miti/}}
+    %\skill{\faGithub~ GitHub}{\href{https://github.com/MasterToninus}{MasterToninus}}    
+\end{minipage}
+%\textit{PhD in mathematics with a focus  on  differential geometry (multisymplectic) and its applications to physics.}
+\vspace{-0.25em}
+
+
+
+%Splash Page
+\begin{minipage}[t]{0.6\columnwidth}
+
+	\block{Posizione Attuale}
+
+    	\voice{Postdoctoral fellow (CIVIS-3i)}
+			{02/2024 -- Now}
+			{Sapienza Universit\'a di Roma, Italy;}
+			{https://civis3i.univ-amu.fr/en/civis3i-alliance-programme}       
+			{Development of advanced mathematical models and scientific computing tools within a large European research consortium. Strong focus on interdisciplinary collaboration and project coordination.}
+
+    \block{Esperienze Professionali}
+
+    \voice{Fisioterapista (Libera professione)}
+    {12/2017 -- 09/2018}
+    {Istituto geriatrico Milanese (IGM), Milano (MI)}
+    {}
+    {Responsabile di un intero piano di degenza geriatrica (57 pazienti circa). dovendomi dividere tra la riabilitazione, le loro cartelle e tutta la burocrazia annessa.}
+    \voice{Fisioterapista (Libera professione)}
+    {06/2014 -– 12/2017}
+    {Centro I.R.M.I. (Istituto riabilitativo del mezzogiorno d'Italia), Giugliano in Campania (NA)}
+    {}
+    {Fisioterapista e terapista occupazionale per pazienti in convitto ex articolo 26.}
+    \voice{Fisioterapista (Collaborazione occasionale)}
+    {07/2014 -- 08/2014}
+    {Clinic Center, Fuorigrotta (NA)}
+    {}
+    {In questo periodo ho lavorato come sotituzione estiva in questa clinica di riabilitazione,
+avendo la possibilità di lavorare con i pazienti in piena libertà e in qualsiasi campo riabilitativo.
+Questa per  me è stata la prima esperienza in una vera clinica riabilitativa.}
+    %
+    \voice{Fisioterapista (Collaborazione occasionale)}
+    {02/2014 -- 04/2015}
+    {Centro Golia , Aversa (CE)}
+    {}
+    {Il centro è convenzionato con l'Asl e si occupa di tutte le patologie ortopediche.
+    In questo periodo ho avuto la possibilità di acquisire ulteriore esperienza nell'ambito ortopedico e con i  mezzi fisici utilizzati in riabilitazione: Tecar, magneto, tutti i tipi di correnti, laser, ultrasuoni.
+    Le patologie trattate sono tutte quelle di tipo ortopedico.}
+    %
+    \voice{Fisioterapista}
+    {10/2013 -- 11/2013}
+    {Centro Aequilibrium , Caserta (CE)}
+    {}
+    {In questo periodo ho fatto un po' d'esperienza all'interno di questo studio di riabilitazione diretto dal dott. Bruno. Le problematiche trattate erano diverse anche se quasi tutte incentrate nell'ambito ortopedico e posturale:  gonartrosi, coxartrosi, ernie, lesioni muscolarie  e tendinee, scoliosi ecc...
+Per quanto riguarda i mezzi fisici, ho utilizzato : Tecarterapia, correnti Tens, magnetoterapia, laser e ultrasuoni.\vspace{-0.25cm}}
+ 
+
+    \block{Formazione Accademica}
+
+    
+\voice{Laurea in Fisioterapia – Fisioterapista}
+{02/11/2008 – 23/04/2012}
+{Università degli Studi di Napoli Federico II, Facoltà di Medicina e Chirurgia}
+{}
+{
+Tirocinio per la tesi finale presso la \textbf{Fondazione Istituto Antoniano}, Ercolano (Napoli).\\
+Esperienza diretta con pazienti affetti da autismo, sindrome di Down e ritardo mentale.\\
+\textbf{Tesi:} “Autismo e dorso curvo posturale. Un percorso riabilitativo tra attività fisica e musicoterapia”.\\
+Votazione: \textbf{107/110}.\\
+Iscrizione al corso di laurea in Fisioterapia (a.a. 2008/2009) presso il Policlinico Universitario Federico II.
+}
+    \voice{Bachelor degree in Physics}
+        {October 2010}
+        {Universit\'a degli Studi di Milano - Bicocca}
+        {https://www.fisica.unimib.it/en}       
+        {Theoretical Physics curriculum with emphases on: Mathematical-Physics, Classical and Quantum Mechanics.\vspace{-0.25cm}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+   
+    \block{Bio}
+
+	\skill{Nascita}{1987, Mugnano di Napoli}
+	\skill{Cittadinanza}{Italiana}
+	\skill{Stato Civile}{Sposata con 1 figlia}
+
+
+
+    \block{Lingue} 
+        
+    \skill{Italian}{Madrelingua}
+    \skill{Francese}{Professionale Completo}
+    \skill{Inglese}{Professionale Intermedio}
+        
+
+   \block{Competenze Riabilitative} 
+    
+    \skillbar{Pacchetto Office}
+    {1cm}
+    {1cm}
+    {0.25cm}
+
+
+
+
+    \block{Competenze Informatiche} 
+      
+    \skillbar{Pacchetto Office}
+    {1cm}
+    {1cm}
+    {0.25cm}
+
+
+    \block{Risultati Professionali}
+
+    \skill{Anni di esperienza}{8 }
+    \skill{Corsi di formazione}{6 (50+ hours) }
+    \skill{Boh??}{20+ }
+
+    
+\block{Albo Professionali}
+
+\voice{French Habilitation to Assistant Professor }
+  {02/2022}
+  {Minist\'ere français de l'Enseignement sup\'erieur et de la Recherche}
+  {https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf}
+  {National qualification in pure mathematics for university-level teaching and research positions. (Maitre de conf\'erences, Section 25)}
+\voice{Albo Italiano Abroad Grant}
+  {05/2023}
+  {Istituto Nazionale di Alta Matematica}
+  {https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf}
+  {Sospeso perchè non riconosceva i corsi di formazione fatti in Francia.}
+
+
+
+
+\end{minipage}
+
+
+\clearpage
+
+    \block{Corsi di Formazione}
+
+    \voice{Drenaggio Autogeno (tecnica Chevalier) con Hugues Gauchez}
+    {05/2024 – 09/2024}
+    {P2R-Formation, Lyon, Francia}
+    {}
+    {
+    Corso intensivo su tre weekend sul \textbf{drenaggio autogeno} nella gestione delle patologie respiratorie ostruttive.\\
+    Tecnica validata dalla \emph{Airways Clearance Technique Review (IPGCF)} per fibrosi cistica e asma.\\
+    Approccio centrato sulla consapevolezza respiratoria e sull’aderenza terapeutica del paziente.
+    }
+    %
+    %
+    \voice{Diploma Universitario in Fisioterapia Respiratoria e Cardiovascolare}
+    {09/2022 – 05/2023}
+    {Université Claude Bernard Lyon 1, Francia}
+    {}
+    {
+    Percorso annuale di riabilitazione cardiorespiratoria basato su evidenze cliniche.\\
+    \textbf{Corsi collegati:}\\
+    06/12/21 – 09/12/21: Fisioterapia respiratoria in rianimazione e ventilazione invasiva/non invasiva – Alister, Mulhouse.\\
+    01/12/20 – 03/12/20: Corso pratico di fisioterapia respiratoria in rianimazione – Alister, Mulhouse.\\
+    Temi principali: diagnosi fisioterapica, gestione della ventilazione meccanica, decondizionamento e ossigenoterapia.
+    }
+    %
+    %
+    \voice{Metodo Ticchi e Trigger Point}
+    {10/2016 -- 12/2016}
+    {Istituto, luogo???}
+    {}
+    {
+    Formazione sul riconoscimento e trattamento delle zone di iper-irritabilità muscolare.\\
+    Approccio clinico basato su casi reali e valutazione funzionale mirata.\\
+    Sviluppo di competenze analitiche e relazionali nel contesto terapeutico.
+    }
+    %
+    %
+    \voice{Corso di Ginnastica Ortopedica Morfologica Mézières (GOMM)}
+    {02/2016}
+    {Scuola di Formazione Jean-Marc Cittone}
+    {}
+    {
+    Formazione sanitaria-riabilitativa basata sul metodo Mézières.\\
+    Applicazioni per il mantenimento posturale e il benessere fisico personale.
+    }
+    %
+    %
+    \voice{Master Mézières Plus}
+    {01/2016}
+    {Scuola di Formazione Jean-Marc Cittone}
+    {}
+    {
+    Corso avanzato di perfezionamento (5° stage).\\
+    Approfondimenti su scoliosi e problematiche cervicali, con focus su tecniche complementari.
+    }
+    %
+    %
+    \voice{Corso Mézières Plus}
+    {05/2015 –- 11/2015}
+    {Scuola di Formazione Jean-Marc Cittone}
+    {}
+    {
+    Apprendimento delle tecniche per il riequilibrio morfologico (bacino, spalle, mandibola).\\
+    Applicazioni in traumatologia, ortopedia, neurologia e medicina sportiva.
+    }
+    %
+    %
+
+    \longvoice{Introduction to Scientific Programming using GPGPU and CUDA}
+        {Training Course}
+        {https://web.archive.org/web/20170623171128/http://www.hpc.cineca.it/content/introduction-to-gpu}
+        {March 2014}
+        {CINECA-SCAI}
+        {Milan}
+        {Italy}
+        {}
+    
+
+
+
+
+
+
+
+
+
+\end{document}
