@@ -2,17 +2,15 @@
 # Author: Antonio Miti
 # Description: This file contains the structured data for generating a professional LaTeX CV.
 # Last Updated: 08-01-2025
-
 name:
     first: Antonio Michele
     last: Miti
 phone: +39~333~9825~418
 email: "antoniomichele.miti@gmail.com"
-maritalstatus: "Married, 1 daughter"
+maritalstatus: "Married, 1 child (2025)"
 birthplace: "Milano, Italy"
 birthdate: "12/04/1986"
 nationality: "Italian"
-#children: 1 son (2000), 1 daughter (2040)
 site: "https://www.antoniomiti.it/"
 github: MasterToninus
 orcid: "0000-0002-8829-1943"
@@ -423,6 +421,20 @@ org:
 
 # Research stays
 visit:
+  - what: "Camille Jordan Institute, Université Lyon 1"
+    when: "03/2026 - 04/2026"
+    date: "01/03/2026 - 30/04/2026"
+    where: Lyon, France;
+    info: "Scientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period (2 months)."
+    url: https://physmath.pages.math.cnrs.fr/
+    tbc: "(Scheduled)"
+  - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
+    when: "02/2026"
+    date: "09/02/2026 - 15/02/2026"
+    where: Fisciano, Italy;
+    info: "Scientific collaboration with the Geometry research group and workshop (1 week)."
+    url: http://geometria.dipmat.unisa.it/events.html
+    tbc: "(Scheduled)"
   - what: "Institut Mittag-Leffler"
     when: "03/2025"
     date: "10/03/2025 - 28/03/2025"
@@ -435,49 +447,49 @@ visit:
     date: "15/10/2024 - 20/12/2024"
     where: Lyon, France;
     info: "Scientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period (2 months)."
-    url:
+    url: https://physmath.pages.math.cnrs.fr/
     tbc:   
   - what: "Camille Jordan Institute, Université Lyon 1"
     when: "12/2023 - 01/2024"
     date: "12/12/2023 - 31/01/2024"
     where: Lyon, France;
     info: "Scientific collaboration with the ICJ mathematical physics group within the \"INDAM research abroad\" grant (2 months)."
-    url:
+    url:  https://physmath.pages.math.cnrs.fr/
     tbc:
   - what: "Department of Mathematics, University of Göttingen "
     when: "07/2023"
     date: "10/07/2023 - 15/07/2023"
     where: Göttingen, Germany;
     info: "Scientific collaboration with F. Zanello and research seminar (1 week)."
-    url:
+    url: https://www.uni-goettingen.de/en/606540.html
     tbc:  
   - what: "Camille Jordan Institute, Université Lyon 1"
     when: "06/2023"
     date: "09/06/2023 - 19/06/2023"
     where: Lyon, France;
     info: "Scientific collaboration with the ICJ mathematical physics group and research seminar (2 weeks)."
-    url:
+    url:  https://physmath.pages.math.cnrs.fr/
     tbc:
   - what: "Department of Mathematics, KU Leuven"
     when: "03/2023"
     date: "20/03/2023 - 31/03/2023"
     where: Leuven, Belgium;
     info: "Scientific collaboration with G. Sevestre and GMC workshop (2 weeks)."
-    url:     
+    url:  https://wis.kuleuven.be/meetkunde/research
     tbc:                                   
   - what: "Camille Jordan Institute, Université Lyon 1"
     when: "02/2023"
     date: "01/02/2023 - 28/02/2023"
     where: Lyon, France;
     info: "Scientific collaboration with the ICJ mathematical physics group (1 month)."
-    url:
+    url: https://physmath.pages.math.cnrs.fr/
     tbc:   
   - what: "Camille Jordan Institute, Université Lyon 1"
     when: "12/2022"
     date: "05/12/2022 - 12/12/2022"
     where: Lyon, France;
     info: "Scientific collaboration with L. Ryvkin and Higher Geometry workshop (1 week)."
-    url:        
+    url:   https://physmath.pages.math.cnrs.fr/     
   - what: "Erwin Schrödinger International Institute for Mathematics and Physics"
     when: "08/2022"
     date: "21/08/2022 - 28/08/2022"
