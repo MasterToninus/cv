@@ -82,8 +82,13 @@ dept:
     info: "Maintenance of IT systems of the department of Mathematics and Physics."
     url: "https://dipartimenti.unicatt.it/dmf-home"
 
-# Honors and awards
+# Honors and awards (Grants, scholarships, prizes)
 awd:
+  - what: "Progetti avvio alla ricerca "03/2025"
+    when: 03/2025
+    where: Sapienza Universit\'a di Roma;
+    url: https://www.uniroma1.it/sites/default/files/field_file_allegati/proposte_finanziate_progetti_avvio_alla_ricerca.pdf
+    info: "Research Grant (2800 euros) supporting the GroCO research project."
   - what: Research Abroad Grant  
     when: 05/2023
     where: Istituto Nazionale di Alta Matematica (INDAM);
