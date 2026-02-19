@@ -84,10 +84,15 @@ dept:
 
 # Honors and awards (Grants, scholarships, prizes)
 awd:
+  - what: "MSCA Seal of Excellence 2026"
+    when: 02/2026
+    where: European Commission, Horizon Europe;
+    url: https://www.dropbox.com/scl/fi/zr05hlqz8rpq4d9j51b7q/2602-MSCA-SealofExcellence.pdf?rlkey=ovu5ad8hmdjh9nkaqy8rmq3lb&st=wbag5jwb&dl=0
+    info: "Project proposal \emph{GROCOMO-CFT – Groupoid Covariance and Multilocal Observables in Classical Field Theories on Curved Backgrounds} (Horizon Europe MSCA-PF-2025, Univ. Lyon 1) recognised by the European Commission as a high-quality submission and recommended for funding."
   - what: "Progetti avvio alla ricerca "03/2025"
-    when: 03/2025
+    when: 02/2026
     where: Sapienza Universit\'a di Roma;
-    url: https://www.uniroma1.it/sites/default/files/field_file_allegati/proposte_finanziate_progetti_avvio_alla_ricerca.pdf
+    url: https://www.dropbox.com/scl/fi/sgragjrgzdtfesdmhm4bv/2602-AvvioRicerca-Grant.pdf?rlkey=6iplpssiva66zkdw7qna4wl0c&st=x8jty2x7&dl=0
     info: "Research Grant (2800 euros) supporting the GroCO research project."
   - what: Research Abroad Grant  
     when: 05/2023
@@ -427,10 +432,10 @@ org:
 # Research stays
 visit:
   - what: "Camille Jordan Institute, Université Lyon 1"
-    when: "03/2026 - 04/2026"
-    date: "01/03/2026 - 30/04/2026"
+    when: "03/2026 - 07/2026"
+    date: "01/03/2026 - 30/07/2026"
     where: Lyon, France;
-    info: "Scientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period (2 months)."
+    info: "Scientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period (5 months)."
     url: https://physmath.pages.math.cnrs.fr/
     tbc: "(Scheduled)"
   - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
