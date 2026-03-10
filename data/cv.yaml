@@ -84,7 +84,7 @@ dept:
 
 # Honors and awards (Grants, scholarships, prizes)
 awd:
-  - what: "Progetti avvio alla ricerca "03/2025"
+  - what: "Progetto avvio alla ricerca 2025"
     when: 03/2025
     where: Sapienza Universit\'a di Roma;
     url: https://www.uniroma1.it/sites/default/files/field_file_allegati/proposte_finanziate_progetti_avvio_alla_ricerca.pdf
@@ -405,6 +405,12 @@ teach:
 
 # Events organization
 org:
+  - what: "Introduction to pAQFT on flat spacetime"
+    when: "12/2025"
+    date: "01/12/2025 -- 19/12/2025"
+    where: "Dipartimento di Matematica, Sapienza Università di Roma, Ialy;" 
+    url: https://www.antoniomiti.it/teaching/aqft-2025/
+    info: "Co-organization of a 1 month phd-level course by Fabrizio Zanello."
   - what: "Diffeological structure of Lagrangian field theories"
     when: "11/2024 -- 12/2024"
     date: "06/11/2024 -- 12/12/2024"
