@@ -25,6 +25,7 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{tabularx}
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Antonio Michele Miti}
@@ -50,12 +51,11 @@
 %longvoice
 %expected: Event_Title,Type,Url, Approx_Date, Organization, Location, Country
 \newcommand{\longvoice}[8]{
-    \begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
-        \textbf{\href{#3}{#2: #1}} & #4 
-        \\ 
-        \textit{#5, #6, #7;} & {\small\emph{#8}}
-    \end{tabular}
-    \vspace{.5em}
+    \voice{#2: #1}
+        {#4}
+        {#5, #6, #7}
+        {#3}
+        {#8 \vspace{-\baselineskip}}
     }
 %voice
 %expected: what, when, where, url, info
@@ -227,9 +227,9 @@
 
     \block{Academic Track}
 
-    \skill{Scientific Pubblications}{8 }
-    \skill{Courses Taught}{6 (50+ hours) }
-    \skill{Conference Talks}{20+ }
+    \skill{Scientific Pubblications}{\href{https://scholar.google.com/citations?user=DWKPuJYAAAAJ&hl=it&oi=ao}{8 }}
+    \skill{Courses Taught}{\href{https://www.antoniomiti.it/teaching/}{6 (50+ hours) }}
+    \skill{Conference Talks}{\href{https://www.antoniomiti.it/research/\#presentations}{20+ }}
     \skill{Conference Organized}{3 }
     \skill{Research Stays Abroad}{10+ }
     \skill{Research Grants Won}{15} %phd brescia, minho, udine, napoli. postdoc stpeter, varsavia,bonn,brescia, roma, unimib. indam: 4 viaggi, 1 mensilità estero
@@ -263,27 +263,27 @@
 \block{Honors \& Awards}
 
 \voice{MSCA Seal of Excellence 2026}
-        {02/2026}
+        {February 2026}
         {European Commission, Horizon Europe;}
         {https://www.dropbox.com/scl/fi/zr05hlqz8rpq4d9j51b7q/2602-MSCA-SealofExcellence.pdf?rlkey=ovu5ad8hmdjh9nkaqy8rmq3lb&st=wbag5jwb&dl=0}       
         {Project proposal \emph{GROCOMO-CFT – Groupoid Covariance and Multilocal Observables in Classical Field Theories on Curved Backgrounds} (Horizon Europe MSCA-PF-2025, Univ. Lyon 1) recognised by the European Commission as a high-quality submission and recommended for funding.}
 \voice{Progetto avvio alla ricerca 2025}
-        {02/2026}
+        {February 2026}
         {Sapienza Universit\'a di Roma;}
         {https://www.dropbox.com/scl/fi/sgragjrgzdtfesdmhm4bv/2602-AvvioRicerca-Grant.pdf?rlkey=6iplpssiva66zkdw7qna4wl0c&st=x8jty2x7&dl=0}       
         {Research Grant (2800 euros) supporting the GroCO research project.}
 \voice{French Habilitation to Assistant Professor }
-  {02/2022}
+  {February 2022}
   {Minist\'ere français de l'Enseignement sup\'erieur et de la Recherche}
   {https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf}
   {National qualification in pure mathematics for university-level teaching and research positions. (Maitre de conf\'erences, Section 25)}
 \voice{Research Abroad Grant}
-  {05/2023}
+  {May 2023}
   {Istituto Nazionale di Alta Matematica}
   {https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf}
   {Competitive research grant (€3,000) supporting an international research stay.}
 \voice{Merit Award}
-  {12/2015}
+  {December 2015}
   {BCC di Carugate e Inzago, Italy}
   {https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411}
   {Award and monetary prize for outstanding academic performance at graduation.}
