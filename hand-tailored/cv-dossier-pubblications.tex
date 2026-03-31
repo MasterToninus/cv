@@ -57,7 +57,7 @@
 % Command to create a long voice entry
 % Usage: \longvoice{Event_Title}{Type}{Url}{Approx_Date}{Organization}{Location}{Country}{Scheduled}
 \newcommand{\longvoice}[8]{
-	\begin{tabular}{p{0.83\linewidth} p{0.17\linewidth} }
+	\begin{tabular}{p{0.9\textwidth} p{0.1\textwidth} }
 		\textbf{\href{#3}{#2: #1}} & #4 
 		\\ 
 		\textit{#5, #6, #7;} & {\small\emph{#8}}
@@ -69,6 +69,8 @@
 % Command to create a short voice entry
 % Usage: \voice{what}{when}{where}{url}{info}
 \newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+
+
 
 % Command to create a skill entry
 % Usage: \skill{Skill}{Level}
@@ -544,7 +546,7 @@
 	Drafts in Preparation & 2 \\
 	\hline
 	
-	Postdoctoral experience (years) & 4 \\
+	Postdoctoral experience (years) & 5 \\
 	\hline
 	
 	\end{tabularx}
