@@ -1,0 +1,1595 @@
+% ------------------------------------------------------
+% CV LaTeX -
+% Auteur : Antonio Miti @mastertoninus
+% Description : Style Ale Frab, utile pour les postes en France
+% ------------------------------------------------------
+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Antonio Michele MITI}
+\lhead{Curriculum Vitae}
+\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Généré le \today} }
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+\usepackage[backend=biber, style=nature]{biblatex}
+\addbibresource{../data/publications.bib}
+
+\usepackage{academicons}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+\setlength\parindent{0pt}
+
+%barcharts
+% Commande pour créer une règle colorée
+% Usage : \crule[color]{width}{height}
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+% Commande pour créer une barre de progression
+% Usage : \progbar[color]{total_width}{filled_width}{height}
+\newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
+
+%titles
+% Commande pour créer un bloc de section avec une ligne horizontale
+% Usage : \block{Title}
+\newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+
+% Commande pour créer un bloc de section plus grand avec une ligne horizontale
+% Usage : \Block{Title}
+\newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+
+% Commande pour créer un bloc de section sur une nouvelle page sans ligne horizontale
+% Usage : \blockNp{Title}
+\newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
+
+%longvoice
+% Commande pour créer une entrée longue
+% Usage : \longvoice{Event_Title}{Type}{Url}{Approx_Date}{Organization}{Location}{Country}{Scheduled}
+\newcommand{\longvoice}[8]{
+	\begin{tabular}{p{0.9\textwidth} p{0.1\textwidth} }
+		\textbf{\href{#3}{#2 : #1}} & #4
+		\\
+		\textit{#5, #6, #7;} & {\small\emph{#8}}
+	\end{tabular}
+	\vspace{.5em}
+}
+
+%voice
+% Commande pour créer une entrée courte
+% Usage : \voice{what}{when}{where}{url}{info}
+\newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+
+% Commande pour créer une compétence
+% Usage : \skill{Skill}{Level}
+\newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+
+% Commande pour créer une compétence avec barre de progression
+% Usage : \skillbar{Skill}{total_width}{filled_width}{height}
+\newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+
+% Commande pour créer une entrée texte
+% Usage : \txt{Text}
+\newcommand{\txt}[1]{#1\\}
+
+% HAND-Tailored stuff
+\usepackage{tcolorbox}
+\usepackage{orcidlink}
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\bf\Large\scshape}{\thesection}{1em}{}
+
+\title{Dossier de candidature à un poste de maître de conférences}
+\author{\vspace{-1em}}
+\date{\today}
+
+%---------- Document -----------
+\begin{document}
+
+\maketitle
+
+	\vfill
+
+	\begin{tcolorbox}
+		\begin{center}
+			\huge \textbf{Antonio Michele MITI}
+		\end{center}
+		\vspace{1em}
+
+		\begin{minipage}[t]{0.45\columnwidth}
+			Dipartimento di Matematica Guido Castelnuovo,\\
+			Sapienza Università di Roma,\\
+			Piazzale Aldo Moro, 5,\\
+			00185 Roma RM, Italie.\\
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.45\columnwidth}
+			\skill{\faPhone~ Téléphone}{+39~333~9825~418}
+			\skill{\faEnvelope~ Courriel}{\href{mailto:antoniomichele.miti@gmail.com}{antoniomichele.miti@gmail.com}}
+			\skill{\faGlobe~ Site web}{\href{https://www.antoniomiti.it/}{https://www.antoniomiti.it/}}
+			\skill{\faGithubSquare ~ Github}{\href{https://github.com/MasterToninus}{MasterToninus}}
+			\skill{\orcidlink{0000-0002-8829-1943}~ Orcid}{\href{https://orcid.org/}{0000-0002-8829-1943}}
+		\end{minipage}
+	\end{tcolorbox}
+
+	\vfill
+
+	\begin{tcolorbox}
+		\begin{minipage}[t]{0.2\columnwidth}
+			\textbf{MOTS-CLÉS :}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.75\columnwidth}
+			\textbf{Géométrie différentielle et physique mathématique}
+		\begin{itemize}[leftmargin=*, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+			\item[$\cdot$] Géométrie (multi-)symplectique
+			\item[$\cdot$] Algèbres $L_\infty$
+			\item[$\cdot$] Structures supérieures
+			\item[$\cdot$] Fondements axiomatiques de la physique
+			\item[$\cdot$] Mécanique géométrique des systèmes de champs
+			\item[$\cdot$] Quantification géométrique et algébrique
+			\item[$\cdot$] Méthodes catégoriques et cohomologiques en géométrie et en physique théorique
+		\end{itemize}
+		\end{minipage}
+	\end{tcolorbox}
+
+	\vfill
+
+	\tableofcontents
+
+	\vfill
+
+	\clearpage
+
+%Header
+	\begin{minipage}[c]{0.6\columnwidth}
+		\center{\huge \textbf{Antonio Michele MITI}}
+		\\
+		\flushleft{\normalsize \textit{Lauréat MSCA en mathématiques, travaillant sur la géométrie différentielle, les structures supérieures et leurs applications à la physique.}}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.37\columnwidth}
+		\skill{Né}{1986 à Milan, Italie}
+		\skill{Nationalité}{Italienne}
+		\skill{État civil}{Marié, 1 fille}
+	\end{minipage}
+	\vspace{-0.25em}
+
+%Splash Page
+	\begin{minipage}[t]{0.6\columnwidth}
+
+		\block{Poste actuel}
+
+		\voice{Chercheur postdoctoral (CIVIS-3i)}
+			{02/2024 -- Aujourd'hui}
+			{Sapienza Universit\'a di Roma, Rome, Italie;}
+			{https://civis3i.univ-amu.fr/en/civis3i-alliance-programme}
+			{Projet de recherche \href{https://civis3i.univ-amu.fr/en/antonio-michele-miti}{MultiSymORI} - Géométrie multisymplectique : observables, réduction et intégrateurs numériques (MSCA-H2020 cofund).\vspace{-0.25cm}}
+
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.375\columnwidth}
+
+		\block{Langues}
+
+		\skill{Italien}{Langue maternelle}
+		\skill{Anglais}{Toefl-IBT : 102/120 (avr.-18)}
+		\skill{Français}{Débutant}
+
+		\block{Compétences informatiques}
+
+		\skillbar{C++}
+			{1.4cm}
+			{0.6cm}
+			{0.25cm}
+		\skillbar{Python}
+			{1.1cm}
+			{0.9cm}
+			{0.25cm}
+		\skillbar{Haskell}
+			{1.5cm}
+			{0.5cm}
+			{0.25cm}
+		\skillbar{Cuda}
+			{1.1cm}
+			{0.9cm}
+			{0.25cm}
+		\skillbar{Java}
+			{1.2cm}
+			{0.8cm}
+			{0.25cm}
+		\skillbar{Linux (administration système)}
+			{0.7cm}
+			{1.3cm}
+			{0.25cm}
+		\skillbar{Électronique embarquée}
+			{1.5cm}
+			{0.5cm}
+			{0.25cm}
+		\skillbar{Infrastructure réseau}
+			{1.6cm}
+			{0.4cm}
+			{0.25cm}
+	\end{minipage}
+
+	\phantomsection
+	\addcontentsline{toc}{section}{Résumé}
+
+	\block{Expérience professionnelle}
+
+	\voice{Chercheur postdoctoral (assegno di ricerca)}
+		{10/2022 -- 01/2024}
+		{Universit\'a Cattolica del Sacro Cuore, Brescia, Italie;}
+		{https://dipartimenti.unicatt.it/dmf-home}
+		{Projet de recherche en géométrie symplectique et multisymplectique avec applications.}
+	\voice{Chercheur postdoctoral (MPIM)}
+		{10/2021 -- 09/2022}
+		{Max Planck Institute for Mathematics, Bonn, Allemagne;}
+		{https://www.mpim-bonn.mpg.de/}
+		{Projet de recherche mêlant structures supérieures et applications à la géométrie multisymplectique.}
+	\voice{Stage en programmation Java}
+		{03/2016 -- 07/2016}
+		{CST s.r.l, Milano, Italie;}
+		{https://www.csttech.it/}
+		{Formation au langage de programmation Java et aux outils professionnels de développement logiciel.}
+	\voice{Collaboration étudiante en administration système}
+		{05/2014 -- 02/2015}
+		{LCM - Laboratorio di Calcolo e Multimedia, Universit\'a degli studi di Milano;}
+		{https://lcm.mi.infn.it/}
+		{Maintenance des clusters informatiques du LCM. Tutorat : installation et configuration du système Linux, cours de physique computationnelle.\vspace{-0.25cm}}
+
+	\block{Formation}
+
+	\voice{Doctorat en sciences : mathématiques}
+		{10/2018 -- 04/2021}
+		{KU Leuven, Belgique;}
+		{https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects}
+		{Double diplôme : programme doctoral international en sciences.}
+	\voice{Doctorat en sciences : mathématiques}
+		{11/2016 -- 09/2018}
+		{Universit\'a Cattolica del Sacro Cuore, Italie;}
+		{https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects}
+		{Bourse de quatre ans avec prolongation liée au COVID.}
+	\voice{Master en physique}
+		{10/2013 -- 11/2015}
+		{Universit\'a degli Studi di Milano, Italie;}
+		{https://www.unimi.it/en/education/master-programme/physics-master-programme}
+		{Parcours de physique théorique avec accent sur : fondements et méthodes mathématiques en physique, mécanique géométrique, théorie quantique algébrique des champs, méthodes computationnelles.}
+	\voice{Interruption d'études}
+		{01/2011 -- 09/2013}
+		{pour raisons de santé.}
+		{}
+		{\vspace{-0.25cm}}
+	\voice{Licence en physique}
+		{10/2005 -- 10/2010}
+		{Universit\'a degli Studi di Milano - Bicocca;}
+		{https://www.fisica.unimib.it/en/teaching/degree-courses/bachelor-three-year-laurea-physics}
+		{Parcours de physique théorique avec accent sur : physique mathématique, mécanique classique et quantique.}
+
+	\block{Diplômes}
+
+	\voice{Doctorat en sciences : mathématiques}
+		{04/2021}
+		{(Double diplôme) Universit\'a Cattolica del Sacro Cuore et KU Leuven ;}
+		{https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-research-projects}
+		{Directeurs : \href{http://docenti.unicatt.it/ita/mauro_spera/}{Mauro Spera}, \href{https://perswww.kuleuven.be/~u0096206/}{Marco Zambon}. \par Thèse : \href{https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS3408626&context=L&vid=KULeuven&search_scope=ALL_CONTENT&tab=all_content_tab&lang=en_US}{Homotopy comomentum maps in multisymplectic geometry}.}
+	\voice{Master en physique théorique}
+		{11/2015}
+		{Universit\'a degli Studi di Milano;}
+		{https://fisica-lm.cdl.unimi.it/it}
+		{Directeurs : \href{http://fisica.unipv.it/personale/Persona.php?ID=256}{Claudio Dappiaggi}, \href{http://users.mat.unimi.it/users/pizzocchero/}{Livio Pizzocchero}. \par Mémoire : \href{https://www.researchgate.net/publication/295548746_Algebraic_quantization_of_Jacobi_fields_and_geometric_approach_to_Peierls_brackets}{Algebraic quantization of Jacobi Fields and geometric approach to Peierls brackets}.}
+	\voice{Licence en physique}
+		{10/2010}
+		{Universit\'a degli Studi di Milano - Bicocca;}
+		{https://www.fisica.unimib.it/en}
+		{Directeur : \href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}. \par Mémoire : \href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}.}
+
+	\block{Qualifications}
+
+	\voice{Maître de conférences (section 25)}
+		{02/2022}
+		{\vspace{-0.5cm}}
+		{https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/qualification/Resultats_2022/qualifies_MCF_2022.pdf}
+		{Qualification française aux fonctions de maître de conférences en mathématiques pures. (n° 22225373453)}
+
+	\block{Distinctions et prix}
+
+    \voice{MSCA Seal of Excellence 2026}
+        {02/2026}
+        {Commission européenne, Horizon Europe;}
+        {https://www.dropbox.com/scl/fi/zr05hlqz8rpq4d9j51b7q/2602-MSCA-SealofExcellence.pdf?rlkey=ovu5ad8hmdjh9nkaqy8rmq3lb&st=wbag5jwb&dl=0}
+        {Proposition de projet \emph{GROCOMO-CFT – Groupoid Covariance and Multilocal Observables in Classical Field Theories on Curved Backgrounds} (Horizon Europe MSCA-PF-2025, Univ. Lyon 1), reconnue par la Commission européenne comme une candidature de grande qualité et recommandée pour financement.}
+    \voice{Progetto avvio alla ricerca 2025}
+        {02/2026}
+        {Sapienza Universit\'a di Roma;}
+        {https://www.dropbox.com/scl/fi/sgragjrgzdtfesdmhm4bv/2602-AvvioRicerca-Grant.pdf?rlkey=6iplpssiva66zkdw7qna4wl0c&st=x8jty2x7&dl=0}
+        {Financement de recherche (2800 euros) soutenant le projet de recherche GroCO.}
+	\voice{Bourse de recherche à l'étranger}
+		{05/2023}
+		{Istituto Nazionale di Alta Matematica (INDAM);}
+		{https://www.altamatematica.it/wp-content/uploads/2022/12/bando-estero-2022-2023-1.pdf}
+		{Financement de recherche (3000 euros) soutenant un séjour de recherche en France.}
+	\voice{Bourses de recherche}
+		{05/2021}
+		{Académie polonaise des sciences, EIMI Saint Petersburg;}
+		{}
+		{Deux ans, refusées pour incompatibilités.}
+	\voice{Bourse doctorale}
+		{11/2016}
+		{Universit\'a Cattolica del Sacro Cuore;}
+		{https://www.dropbox.com/s/pmsg20xsxd6x5yf/External_Scholarship.pdf?dl=0}
+		{Quatre ans, prolongée en raison du COVID.}
+	\voice{Bourses doctorales}
+		{10/2016}
+		{Universit\'a degli studi di Udine, University of Minho (Map-PDMA);}
+		{}
+		{Quatre ans, refusées pour incompatibilités.}
+	\voice{Premio di Studio e Laurea}
+		{12/2015}
+		{BCC di Carugate e Inzago;}
+		{https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411}
+		{Prix en argent (1200 euros) attribué aux membres de la banque BCC diplômés avec la note maximale durant l'année académique 15-16.}
+
+	\clearpage
+	\section*{Activités d'enseignement et administratives}
+	\phantomsection
+	\addcontentsline{toc}{section}{Activités d'enseignement et administratives}
+
+		\begin{center}
+	\begin{tabularx}{.5\linewidth}{|X|c|}
+	\hline
+
+	Cours assurés aux niveaux master et doctorat & 5 \\
+	\hline
+
+	Heures d'enseignement & 58 \\
+	\hline
+
+	Conférences organisées & 3 \\
+	\hline
+
+	\end{tabularx}
+		\end{center}
+	\vspace{1em}
+
+	\block{Enseignement}
+
+	\voice{Reduction of (multi)-symplectic observables}
+		{05/2024}
+		{Universit\'a degli Studi di Salerno, Fisciano, Italie;}
+		{https://www.antoniomiti.it/teaching/Obs-Constraint-2024/}
+		{Mini-cours de conférence, conjointement avec le Prof. Leonid Ryvkin.}
+	\voice{Elements of Higher Geometry}
+		{10/2023 -- 12/2023}
+		{Universit\'a Cattolica del Sacro Cuore, Brescia, Italie;}
+		{https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/}
+		{Assistant d'enseignement pour le cours assuré par le Prof. Mauro Spera.}
+	\voice{Elements of Higher Geometry}
+		{10/2022 -- 12/2022}
+		{Universit\'a Cattolica del Sacro Cuore, Brescia, Italie;}
+		{https://dmf.unicatt.it/miti/teaching/IstGeoSup-22-23/}
+		{Assistant d'enseignement pour le cours assuré par le Prof. Mauro Spera.}
+	\voice{Elements of Higher Geometry}
+		{10/2017 -- 01/2018}
+		{Universit\'a Cattolica del Sacro Cuore, Brescia, Italie;}
+		{http://docenti.unicatt.it/web/html/index.html\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita}
+		{Assistant d'enseignement pour le cours assuré par le Prof. Mauro Spera.}
+	\voice{Differential Topology and Geometry}
+		{03/2018 -- 6/2018}
+		{Universit\'a Cattolica del Sacro Cuore, Brescia, Italie;}
+		{http://docenti.unicatt.it/web/html/index.html\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita}
+		{Assistant d'enseignement pour le cours assuré par le Prof. Mauro Spera.}
+
+	\block{Affiliations}
+
+	\voice{Chercheur MSCA (assegnista)}
+		{02/2024}
+		{Universit\'a di Roma la Sapienza, Department of Mathematics - Rome, Italie;}
+		{https://www.mat.uniroma1.it/persone/miti}
+		{\vspace{-0.5cm}}
+	\voice{Membre du \emph{Project \'emergent: Higher structures in differential geometry}}
+		{01/2023}
+		{Labex MiLyon, Lyon, France;}
+		{https://www.dropbox.com/s/36kh0vre45r38b2/2301-MiLyon-HigherGeometry.pdf?dl=0}
+		{\vspace{-0.5cm}}
+	\voice{Membre du GNSAGA - Géométrie différentielle}
+		{01/2017}
+		{Istituto italiano di alta matematica (Indam);}
+		{https://web.archive.org/web/20170924125645/http://www.altamatematica.it/gnsaga/node/23}
+		{\vspace{-0.5cm}}
+
+	\block{Organisation d'événements}
+
+
+  \voice{Introduction to pAQFT on flat spacetime}
+        {12/2025}
+        {Dipartimento di Matematica, Sapienza Università di Roma, Italie;}
+        {https://www.antoniomiti.it/teaching/aqft-2025/}
+        {Co-organisation d'un cours doctoral d'un mois par Fabrizio Zanello.}
+	\voice{Diffeological structure of Lagrangian field theories}
+		{11/2024 -- 12/2024}
+		{Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;}
+		{https://www.antoniomiti.it/teaching/LFT-2024/}
+		{(2 mois)}
+	\voice{Workshop on Multisymplectic Structures in Geometry and Physics}
+		{01/2024}
+		{Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;}
+		{https://math.gmu.edu/~cblacke/lyon.html}
+		{(1 jour)}
+	\voice{Workshop on multisymplectic geometry}
+		{09/2020}
+		{KU Leuven, Leuven, Belgique;}
+		{https://wis.kuleuven.be/events/multisymplectic}
+		{(2 jours)}
+
+	\block{Autres responsabilités départementales}
+
+	\voice{Rapporteur scientifique}
+		{06/2023 -- Aujourd'hui}
+		{Rapporteur pour : SIGMA - Symmetry, Integrability and Geometry: Methods and Applications (ISSN 1815-0659), Geometriae Dedicata (ISSN 0046-5755).}
+		{}
+        {\vspace{-0.5cm}}
+	\voice{Surveillance d'examens}
+		{01/2020 -- 09/2020}
+		{Universit\'a Cattolica del Sacro Cuore and KU Leuven}
+		{}
+		{\vspace{-0.5cm}}
+	\voice{Administration des systèmes informatiques (assistant)}
+		{03/2017 -- 10/2018}
+		{Universit\'a Cattolica del Sacro Cuore, Brescia, Italie;}
+		{https://dipartimenti.unicatt.it/dmf-home}
+		{Maintenance des systèmes informatiques du département de mathématiques et de physique.}
+
+	\clearpage
+	\section*{Activités de recherche}
+	\phantomsection
+	\addcontentsline{toc}{section}{Activités de recherche}
+
+	\txt{Je suis géomètre différentiel, spécialisé dans les méthodes géométriques supérieures, en particulier en géométrie symplectique et multisymplectique. Mes intérêts de recherche comprennent la mécanique géométrique, les théories classiques des champs, la quantification et l'algèbre homotopique, avec une attention particulière portée aux structures géométriques et à homotopie près inspirées par la physique théorique. }
+
+		\begin{minipage}[t]{0.45\columnwidth}
+		\center
+	\begin{tabularx}{\linewidth}{|X|c|}
+	\hline
+
+	Articles publiés & 7 \\
+	\hline
+
+	Prépublications & 2 \\
+	\hline
+
+	Travaux en préparation & 2 \\
+	\hline
+
+	Expérience postdoctorale (années) & 5 \\
+	\hline
+
+	\end{tabularx}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.45\columnwidth}
+		\center
+	\begin{tabularx}{\linewidth}{|X|c|}
+	\hline
+
+	Exposés invités & 16 \\
+	\hline
+
+	Exposés contributifs et posters & 20 \\
+	\hline
+
+	Conférences suivies & 62 \\
+	\hline
+
+	Séjours de recherche & 12 \\
+	\hline
+
+	\end{tabularx}
+		\end{minipage}
+	\vspace{1em}
+
+	{\block{Publications}
+
+	Toutes mes publications sont disponibles en ligne sur :
+	\begin{itemize}[leftmargin=*, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+		\item[$\cdot$] \textbf{Dropbox}: \url{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}
+		\item[$\cdot$] \textbf{ORCID}: \href{https://orcid.org/0000-0002-8829-1943}{0000-0002-8829-1943}
+	\end{itemize}
+
+	\subsection*{Publiés}
+\begin{itemize}
+\item \fullcite{Miti2020}
+\item \fullcite{Miti2021a}
+\item \fullcite{Miti2021c}
+\item \fullcite{Miti2024}
+\item \fullcite{Blacker2024}
+\item \fullcite{Miti2025}
+\item \fullcite{Luongo2025}
+\end{itemize}
+\subsection*{Thèses}
+\begin{itemize}
+\item \fullcite{Miti2010}
+\item \fullcite{Miti2015}
+\item \fullcite{Miti2021b}
+\end{itemize}
+\subsection*{Prépublications}
+\begin{itemize}
+\item \fullcite{Luongo2024}
+\item \fullcite{Fiorenza2026}
+\end{itemize}
+\subsection*{En préparation}
+\begin{itemize}
+\item \fullcite{DAgostino2026}
+\item \fullcite{Miti2026}
+\end{itemize}	}
+
+\vspace{1em}
+
+	\block{Séjours de recherche}
+
+    \voice{Institut Camille Jordan, Université Lyon 1}
+        {03/2026 - 07/2026}
+        {Lyon, France;}
+        {https://physmath.pages.math.cnrs.fr/}
+        {Collaboration scientifique avec le groupe de physique mathématique de l'ICJ dans le cadre de la période de secondement « CIVIS-3i » (5 mois).}
+    \voice{Department of Mathematics, Universit\'a degli studi di Salerno}
+        {02/2026}
+        {Fisciano, Italie;}
+        {http://geometria.dipmat.unisa.it/events.html}
+        {Collaboration scientifique avec le groupe de recherche en géométrie et workshop (1 semaine).}
+    \voice{Institut Mittag-Leffler}
+        {03/2025}
+        {Djursholm, Suède;}
+        {https://www.mittag-leffler.se/activities/cohomological-aspects-of-quantum-field-theory/}
+        {Programme thématique : Cohomological Aspects of Quantum Field Theory (1 mois).}
+    \voice{Institut Camille Jordan, Université Lyon 1}
+        {10/2024 - 12/2024}
+        {Lyon, France;}
+        {https://physmath.pages.math.cnrs.fr/}
+        {Collaboration scientifique avec le groupe de physique mathématique de l'ICJ dans le cadre de la période de secondement « CIVIS-3i » (2 mois).}
+	\voice{Institut Camille Jordan, Université Lyon 1}
+		{12/2023 - 01/2024}
+		{Lyon, France;}
+		{None}
+		{Collaboration scientifique avec le groupe de physique mathématique de l'ICJ dans le cadre de la bourse « INDAM research abroad » (2 mois).}
+	\voice{Department of Mathematics, University of Göttingen }
+		{07/2023}
+		{Göttingen, Allemagne;}
+		{None}
+		{Collaboration scientifique avec F. Zanello et séminaire de recherche (1 semaine).}
+	\voice{Institut Camille Jordan, Université Lyon 1}
+		{06/2023}
+		{Lyon, France;}
+		{None}
+		{Collaboration scientifique avec le groupe de physique mathématique de l'ICJ et séminaire de recherche (2 semaines).}
+	\voice{Department of Mathematics, KU Leuven}
+		{03/2023}
+		{Leuven, Belgique;}
+		{None}
+		{Collaboration scientifique avec G. Sevestre et workshop GMC (2 semaines).}
+	\voice{Institut Camille Jordan, Université Lyon 1}
+		{02/2023}
+		{Lyon, France;}
+		{None}
+		{Collaboration scientifique avec le groupe de physique mathématique de l'ICJ (1 mois).}
+	\voice{Institut Camille Jordan, Université Lyon 1}
+		{12/2022}
+		{Lyon, France;}
+		{None}
+		{Collaboration scientifique avec L. Ryvkin et workshop Higher Geometry (1 semaine).}
+	\voice{Erwin Schrödinger International Institute for Mathematics and Physics}
+		{08/2022}
+		{Vienne, Autriche;}
+		{https://www.esi.ac.at/events/e430/}
+		{Programme thématique : Higher Structures and Field Theory (1 semaine).}
+	\voice{Department of Mathematics, Universit\'a degli studi di Salerno}
+		{03/2019}
+		{Fisciano, Italie;}
+		{http://geometria.dipmat.unisa.it/events.html}
+		{Collaboration scientifique avec le groupe de recherche en géométrie et séminaire de recherche (1 semaine).}
+
+	\block{Exposés et communications}
+
+    \longvoice{Construction and Reduction of the Lie infinity Algebra of Observables associated with a BV-Module}
+        {Exposé invité}
+        {https://www.mat.uniroma2.it/~ricerca/algebr/page-AREA_files/page-AREA-2_files/talks.html}
+        {10/2025}
+        {Tor Vergata, Università di Roma 2}
+        {Rome}
+        {Italie}
+        {}
+    \longvoice{A canonical morphism between twisted and untwisted higher Courant Lie infinity algebras}
+        {Exposé invité}
+        {https://www.mat.uniroma2.it/~kowalzig/ws.html}
+        {07/2025}
+        {Indam}
+        {Rome}
+        {Italie}
+        {}
+    \longvoice{Canonical $L_\infty$-morphisms between twisted Courant $r$-Lie algebras and untwisted Courant $(r+1)$-Lie algebras}
+        {Exposé invité}
+        {https://iecl.univ-lorraine.fr/events/antonio-miti-rome-titre-a-venir/}
+        {06/2025}
+        {Institut Elie Cartan Lorraine}
+        {Metz}
+        {France}
+        {}
+	\longvoice{Symmetries and Reduction of Multisymplectic Manifolds}
+		{Exposé contributif}
+		{https://sites.google.com/view/xix-yrw-verona/home}
+		{01/2025}
+		{Università di Verona}
+		{Verona}
+		{Italie}
+		{}
+	\longvoice{Symmetries and reduction of multisymplectic manifolds}
+		{Exposé invité}
+		{https://indico.math.cnrs.fr/event/12743/contributions/12152/}
+		{09/2024}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{Multisymplectic approach to LFT and the Stress-Energy tensor}
+		{Exposé invité}
+		{https://www.researchgate.net/publication/381297576_Multisymplectic_approach_to_LFT_the_Stress-Energy_tensor}
+		{05/2024}
+		{Università di Torino}
+		{Turin}
+		{Italie}
+		{}
+	\longvoice{Multisymplectic observables and higher Courant algebroids}
+		{Exposé invité}
+		{https://sites.google.com/view/poisson2024/seminars-workshops?authuser=0}
+		{05/2024}
+		{Università di Napoli Federico II}
+		{Napoli}
+		{Italie}
+		{}
+	\longvoice{Multisymplectic observables and higher Courant algebroids}
+		{Exposé invité}
+		{http://wpage.unina.it/francesco.dandrea/Caprarola2024/speakers.html}
+		{03/2024}
+		{INFN}
+		{Caprarola}
+		{Italie}
+		{}
+	\longvoice{Multisymplectic observables and higher Courant algebroids}
+		{Exposé invité}
+		{https://www.mathematik.uni-wuerzburg.de/mathematicalphysics/forschung/veranstaltungen/workshops-und-konferenzen/single/news/poisson-geometry-higher-structures-and-deformation-theory/}
+		{09/2023}
+		{University of Würzburg}
+		{Würzburg}
+		{Allemagne}
+		{}
+	\longvoice{Multisymplectic observables and higher Courant algebroids}
+		{Exposé invité}
+		{https://www.uni-goettingen.de/de/50226.html?cid=844690}
+		{07/2023}
+		{University of Göttingen}
+		{Göttingen}
+		{Allemagne}
+		{}
+	\longvoice{The multisymplectic structure of Lagrangian field theories}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/lsaqjhq6g0rmagw/2307-Gottingen-MsLFT.pdf?dl=0}
+		{07/2023}
+		{University of Göttingen}
+		{Göttingen}
+		{Allemagne}
+		{}
+	\longvoice{Symmetries and reduction of multisymplectic manifolds}
+		{Exposé invité}
+		{https://mathematicalphysicspavia.wordpress.com/2023/04/04/antonio-michele-miti-28-04-2023-symmetries-and-reduction-of-multisymplectic-manifoldsantonio-michele-miti/}
+		{04/2023}
+		{University of Pavia}
+		{Pavia}
+		{Italie}
+		{}
+	\longvoice{Symmetries and reduction of multisymplectic manifolds}
+		{Exposé contributif}
+		{https://wis.kuleuven.be/events/young-researchers-workshop2023/abstractsforcontributedtalks}
+		{03/2023}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{On the Lie infinity algebra associated to higher Courant algebroids}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/whusmg6kj8dbqd7/2302-Lyon-HigherGeoWorkgroup.pdf?dl=0}
+		{02/2023}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{First steps in geometric quantum mechanics}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/oqd6psmeiexwhnt/2301-Brescia-PhdSeminar.pdf?dl=0}
+		{01/2023}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Multisymplectic observables and higher Courant algebroids}
+		{Exposé invité}
+		{https://indico.math.cnrs.fr/event/8621/}
+		{12/2022}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{Symmetries and reduction of multisymplectic manifolds}
+		{Exposé invité}
+		{https://www.esi.ac.at/events/t1028/}
+		{08/2022}
+		{ESI}
+		{Wien}
+		{Autriche}
+		{}
+	\longvoice{Symmetries and reduction of multisymplectic manifolds}
+		{Exposé invité}
+		{https://www.dropbox.com/s/2elzcczx7m0o9zf/2206-Brescia-YoungPeople4Math.pdf?dl=0}
+		{06/2022}
+		{University of Brescia}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Lie infinity structures via the Nijenhuis-Richardson algebra}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/lq862vynwme0eyn/2206-Online-GoodMorningSfars.pdf?dl=0}
+		{06/2022}
+		{University of Göttingen}
+		{En ligne}
+		{-}
+		{}
+	\longvoice{Symmetries and reduction of multisymplectic manifolds}
+		{Exposé contributif}
+		{https://www.mpim-bonn.mpg.de/node/11285}
+		{04/2022}
+		{MPIM}
+		{Bonn}
+		{Allemagne}
+		{}
+	\longvoice{Morphisms and Yoneda lemma for stacks}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/rfu7cw1plq0wpzb/2203-Bonn-StackMorphisms.pdf?dl=0}
+		{03/2022}
+		{MPIM}
+		{Bonn}
+		{Allemagne}
+		{}
+	\longvoice{Gauge transformations of multisymplectic manifolds and L-infinity observables}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/x267gvrge9xghq1/2112-Bonn-HigherSeminar.pdf?dl=0}
+		{12/2021}
+		{MPIM}
+		{Bonn}
+		{Allemagne}
+		{}
+	\longvoice{Gauge transformations of multisymplectic manifolds and L-infinity observables}
+		{Exposé contributif}
+		{https://www.researchgate.net/publication/353463068_Gauge_transformations_of_multisymplectic_manifolds_and_L_observables}
+		{07/2021}
+		{EIMI}
+		{En ligne}
+		{-}
+		{}
+	\longvoice{What is... Geometric Mechanics?}
+		{Exposé contributif}
+		{https://wis.kuleuven.be/agenda/PhdColloquia/ay20-21/copy4_of_PhD-coll-Molag}
+		{04/2021}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Homotopy co-moment maps for compact actions on spheres}
+		{Exposé contributif}
+		{https://www.researchgate.net/publication/344220375_Homotopy_co-moment_maps_for_compact_actions_on_spheres}
+		{09/2020}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Gauge transformations of multisymplectic manifolds and $L_\infty$ observables}
+		{Exposé contributif}
+		{https://www.researchgate.net/publication/344044689_Gauge_transformations_of_multisymplectic_manifolds_and_L_infinity_observables}
+		{05/2020}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{MultiSymplectic manifolds and homotopy co-momentum maps}
+		{Poster}
+		{https://www.researchgate.net/publication/338019063_Multisymplectic_manifolds_and_Homotopy_co-momentum_maps}
+		{12/2019}
+		{University of Luxembourg}
+		{Luxembourg}
+		{Luxembourg}
+		{}
+	\longvoice{Multisymplectic Geometry and Knots}
+		{Exposé invité}
+		{https://www.researchgate.net/publication/331939491_Multisymplectic_aspects_of_link_invariants}
+		{03/2019}
+		{Universita' degli Studi di Salerno}
+		{Fisciano}
+		{Italie}
+		{}
+	\longvoice{(An introduction to )MultiSymplectic Geometry and Classical Field systems}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/q68uv6hbbej8d09/1902-Talk-MultisymplecticFields.pdf?dl=0}
+		{02/2019}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{A Homotopy co-momentum Map in Hydrodynamics}
+		{Exposé contributif}
+		{https://www.researchgate.net/publication/329572409_Homotopy_co-momentum_Map_in_Hydrodynamics}
+		{12/2018}
+		{University of Coimbra}
+		{Coimbra}
+		{Portugal}
+		{}
+	\longvoice{On some (multi)symplectic aspects of link invariants}
+		{Exposé invité}
+		{https://web.archive.org/web/20180424133109/https://wis.kuleuven.be/agenda/sem-geometry/academic-year-2017-2018/seminar_differential_geometry_Miti}
+		{05/2018}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{On the Convenient Category of Diffeological Spaces}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/thm6unntpduynh3/1801-Talk-ConvenientDiffeological.pdf?dl=0}
+		{01/2018}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{An Invitation to Geometric Mechanics}
+		{Exposé contributif}
+		{https://www.dropbox.com/s/k066hn2ubovhaop/1711-talk-invitationGeoMec.pdf?dl=0}
+		{11/2017}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Multi-symplectic Geometry and Covariant Phase Space}
+		{Poster}
+		{https://www.researchgate.net/publication/319301416_Multi-symplectic_Geometry_and_Covariant_Phase_Space}
+		{06/2017}
+		{ICMAT}
+		{Madrid}
+		{Espagne}
+		{}
+	\longvoice{Covariant Phase Space Via Multysimplectic Geometry}
+		{Exposé contributif}
+		{https://www.researchgate.net/publication/319301194_Notes_on_Covariant_Phase_Space_via_MultiSymplectic_Geometry}
+		{05/2017}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Runde Summer 2016: Demystifying the Peierls' Brackets Construction}
+		{Exposé invité}
+		{https://www.dropbox.com/s/slk28t877e2nxtq/1607-Liepzig-RundeSummer.PDF?dl=0}
+		{07/2016}
+		{IMPRS, Mathematics in the Sciences}
+		{Leipzig}
+		{Allemagne}
+		{}
+
+	\block{Workshops et conférences}
+
+    \longvoice{Higher Structures in Rome}
+        {Workshop}
+        {https://www.mat.uniroma2.it/~kowalzig/operads/op.html}
+        {09/2026}
+        {Indam}
+        {Rome}
+        {Italie}
+        {(prévu)}
+    \longvoice{Field theory and higher geometric structures}
+        {Workshop}
+        {https://wis.kuleuven.be/events/2026_poisson/workshop_field_theory}
+        {06/2026}
+        {KU Leuven}
+        {Leuven}
+        {Belgique}
+        {(prévu)}
+    \longvoice{Higher Structures in Pavia}
+        {Workshop}
+        {http://wpage.unina.it/francesco.dandrea/Pavia2026/index.html}
+        {06/2026}
+        {University of Pavia}
+        {Pavia}
+        {Italie}
+        {(prévu)}
+    \longvoice{Super Geometry}
+        {Workshop}
+        {https://ryvkin.eu/conferences/sg2026/}
+        {06/2026}
+        {Université Lyon 1}
+        {Lyon}
+        {France}
+        {(prévu)}
+    \longvoice{Higher Differential Geometry}
+        {Workshop}
+        {https://www.wiko-greifswald.de/en/registrations/higher-differential-geometry}
+        {05/2026}
+        {University of Greifswald}
+        {Greifswald}
+        {Allemagne}
+        {(prévu)}
+    \longvoice{Bari-Salerno Differential Geometry Days}
+        {Workshop}
+        {https://www.dipmat2.unisa.it/people/vitagliano/www/workshop_BA-SA.html}
+        {02/2026}
+        {University of Salerno}
+        {Fisciano}
+        {Italie}
+        {}
+    \longvoice{QFT at the crossroads between mathematics and physics}
+        {Workshop}
+        {https://sites.google.com/view/qft-at-the-crossroads/home?authuser=0}
+        {09/2025}
+        {Sapienza Università di Roma}
+        {Rome}
+        {Italie}
+        {}
+    \longvoice{61st Seminar Sophus Lie}
+        {Conférence}
+        {https://sites.google.com/view/slw61/home-page?authuser=0}
+        {09/2025}
+        {University of Rome Tor Vergata}
+        {Rome}
+        {Italie}
+        {}
+    \longvoice{Geometry and Topology in Rome}
+        {Workshop}
+        {https://www.mat.uniroma2.it/~kowalzig/ws.html}
+        {07/2025}
+        {Indam}
+        {Rome}
+        {Italie}
+        {}
+	\longvoice{Cohomological Aspects of Quantum Field Theory}
+		{Workshop}
+		{https://www.mittag-leffler.se/activities/cohomological-aspects-of-quantum-field-theory/}
+		{03/2025}
+		{Institut Mittag-Leffler}
+		{Djursholm}
+		{Suède}
+		{}
+	\longvoice{XIX Young Researchers Workshop in Geometry, Dynamics and Field Theory}
+		{Workshop}
+		{https://sites.google.com/view/xix-yrw-verona/program?authuser=0}
+		{01/2025}
+		{Università di Verona}
+		{Verona}
+		{Italie}
+		{}
+	\longvoice{High Performance Computing and Quantum Computing – Seventh Edition}
+		{Workshop}
+		{https://eventi.cineca.it/en/hpc/high-performance-computing-and-quantum-computing-seventh-edition/bologna-20241212}
+		{12/2024}
+		{CINECA}
+		{Bologna}
+		{Italie}
+		{}
+	\longvoice{Journées Physique-Mathématique}
+		{Workshop}
+		{https://indico.math.cnrs.fr/event/12743/overview}
+		{09/2024}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{GAP XIX: Moduli spaces and higher structures}
+		{Workshop}
+		{https://www1.mat.uniroma1.it/~fiorenza/GAP-Rome/GAP-XIX-2024-Rome.html}
+		{09/2024}
+		{Sapienza Università di Roma}
+		{Rome}
+		{Italie}
+		{}
+	\longvoice{Focus Program on Poisson Geometry}
+		{Conférence}
+		{https://sites.google.com/view/poisson2024/poisson-2024?authuser=0}
+		{07/2024}
+		{Università di Napoli Federico II}
+		{Napoli}
+		{Italie}
+		{}
+	\longvoice{Geometric conservation laws in physics}
+		{Workshop}
+		{https://www.dropbox.com/scl/fi/j54tl4m10fl2scbrtc4sx/2405-Torino-Conservationlaws.pdf?rlkey=ay7nrxda4fg8lklvox578g6yj\&st=9t3jx47r\&dl=0}
+		{05/2024}
+		{Università di Torino}
+		{Turin}
+		{Italie}
+		{}
+	\longvoice{Symmetry and Reduction in Poisson and Related Geometries}
+		{Workshop}
+		{https://sites.google.com/view/poisson2024/seminars-workshops/symmetry-reduction?authuser=0}
+		{05/2024}
+		{Università di Salerno}
+		{Fisciano}
+		{Italie}
+		{}
+	\longvoice{Higher structures in Caprarola}
+		{Workshop}
+		{http://wpage.unina.it/francesco.dandrea/Caprarola2024/index.html}
+		{02/2024}
+		{INFN}
+		{Caprarola}
+		{Italie}
+		{}
+	\longvoice{Workshop on Multisymplectic Structures in Geometry and Physics}
+		{Workshop}
+		{https://math.gmu.edu/~cblacke/lyon.html}
+		{01/2024}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{Atelier on Higher Structures in Differential Geometry}
+		{Workshop}
+		{https://ryvkin.eu/hs2023/index.html}
+		{10/2023}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{Poisson Geometry, Higher Structures, and Deformation Theory}
+		{Workshop}
+		{https://www.mathematik.uni-wuerzburg.de/mathematicalphysics/forschung/veranstaltungen/workshops-und-konferenzen/single/news/poisson-geometry-higher-structures-and-deformation-theory/}
+		{09/2023}
+		{University of Würzburg}
+		{Würzburg}
+		{Allemagne}
+		{}
+	\longvoice{Dg-manifolds in Geometry and Physics}
+		{Workshop}
+		{https://indico.math.cnrs.fr/event/7885/}
+		{07/2023}
+		{IHP}
+		{Paris}
+		{France}
+		{}
+	\longvoice{17th YOUNG RESEARCHERS WORKSHOP on Geometry, Mechanics and Control}
+		{Workshop}
+		{https://wis.kuleuven.be/events/young-researchers-workshop2023/young-researchers-workshop2023}
+		{03/2023}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Atelier on higher structures in differential geometry}
+		{Workshop}
+		{https://ryvkin.eu/atelier2022/}
+		{12/2022}
+		{Université Claude-Bernard Lyon 1}
+		{Lyon}
+		{France}
+		{}
+	\longvoice{Higher structures and field theory}
+		{Workshop}
+		{https://www.esi.ac.at/events/e430/}
+		{08/2022}
+		{ESI}
+		{Wien}
+		{Autriche}
+		{}
+	\longvoice{YoungPeople4Math}
+		{Workshop}
+		{https://www.dropbox.com/s/2elzcczx7m0o9zf/2206-Brescia-YoungPeople4Math.pdf?dl=0}
+		{06/2022}
+		{University of Brescia}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Workshop on Foundations and Constructive Aspects of Quantum Field Theory}
+		{Workshop}
+		{https://en.www.math.fau.de/mathematical-physics/gandalf-lechner/events10056/workshop-lqp46/}
+		{06/2022}
+		{FAU-Erlangen-Nurnberg}
+		{Erlangen}
+		{Allemagne}
+		{}
+	\longvoice{Young Researchers' Virtual Multisymplectic Geometry Conference}
+		{Workshop}
+		{https://public.eimi.ru/~cblacker/yrvmgc_21.html}
+		{07/2021}
+		{EIMI}
+		{En ligne}
+		{-}
+		{}
+	\longvoice{Workshop on Multisymplectic Geometry}
+		{Workshop}
+		{https://wis.kuleuven.be/events/archive/multisymplectic}
+		{09/2020}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Higher Spin Gauge Theories, Topological Field Theory and Deformation Quantization}
+		{Workshop}
+		{http://www.solvayinstitutes.be/event/workshop/higher_spin_2020/higher_spin_2020.html}
+		{02/2020}
+		{ULB}
+		{Bruxelles}
+		{Belgique}
+		{}
+	\longvoice{Supergeometry, supersymmetry and quantization}
+		{Conférence}
+		{http://math.uni.lu/SuperWork/SuperConference.html}
+		{12/2019}
+		{University of Luxembourg}
+		{Luxembourg}
+		{Luxembourg}
+		{}
+	\longvoice{Souriau 2019}
+		{Conférence}
+		{https://web.archive.org/web/20190831102558/http://souriau2019.fr/?page_id=2}
+		{05/2019}
+		{Universite' Paris-Diderot}
+		{Paris}
+		{France}
+		{}
+	\longvoice{Workshop on Singular foliations}
+		{Workshop}
+		{https://wis.kuleuven.be/agenda/sem-geometry/sem-geometry-upcoming}
+		{05/2019}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Higher Homotopy Algebras in Topology}
+		{Conférence}
+		{https://web.archive.org/web/20190831103619/https://www.mpim-bonn.mpg.de/node/9245}
+		{05/2019}
+		{MPIM-Bonn}
+		{Bonn}
+		{Allemagne}
+		{}
+	\longvoice{Higher Geometric Structures along the Lower Rhine XII}
+		{Workshop}
+		{https://web.archive.org/web/20190831103524/https://www.math.ru.nl/~sagave/higher-structures-XII/}
+		{01/2019}
+		{Radboud University Nijmegen}
+		{Nijmegen}
+		{Pays-Bas}
+		{}
+	\longvoice{The Noether Theorems, a hundred years later}
+		{Workshop}
+		{https://web.archive.org/web/20190831105634/http://noether.iecl.univ-lorraine.fr/noether_en.html}
+		{01/2019}
+		{Institut Henri Poincare'}
+		{Paris}
+		{France}
+		{}
+	\longvoice{13th International YOUNG RESEARCHERS WORKSHOP on Geometry, Mechanics and Control}
+		{Workshop}
+		{https://web.archive.org/web/20190831103121/http://www.uc.pt/en/congressos/13yrw/programa}
+		{12/2018}
+		{University of Coimbra}
+		{Coimbra}
+		{Portugal}
+		{}
+	\longvoice{Symplectic techniques in differential geometry}
+		{Workshop}
+		{https://www.uantwerpen.be/nl/personeel/sonja-hohloch/private-webpage/excellence-of-scienc/minicourses/}
+		{11/2018}
+		{ULB}
+		{Bruxelles}
+		{Belgique}
+		{}
+	\longvoice{Symplectic techniques in differential geometry}
+		{Workshop}
+		{https://www.uantwerpen.be/nl/personeel/sonja-hohloch/private-webpage/excellence-of-scienc/minicourses/}
+		{11/2018}
+		{UAntwerpen}
+		{Antwerpen}
+		{Belgique}
+		{}
+	\longvoice{Weekly Poisson Workshops}
+		{Workshop}
+		{https://wis.kuleuven.be/meetkunde/PoissonWorkingGroup}
+		{10/2018}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Poisson Geometry and Higher Structures}
+		{Workshop}
+		{https://web.archive.org/web/20190831103317/http://www1.mat.uniroma1.it/ricerca/convegni/2018/hippo2018/index.html}
+		{09/2018}
+		{Istituto Nazionale di Alta Matematica}
+		{Rome}
+		{Italie}
+		{}
+	\longvoice{Workshop on MultiSymplecitc Geometry and Applications}
+		{Workshop}
+		{https://web.archive.org/web/20180704152639/http://www.math.univ-metz.fr/~wurzbacher/GEMSA.html}
+		{09/2018}
+		{Institut Elie Cartan Lorraine}
+		{Metz}
+		{France}
+		{}
+	\longvoice{Focus Program on Poisson Geometry and Physics}
+		{Conférence}
+		{https://web.archive.org/web/20190831105328/http://www.fields.utoronto.ca/activities/18-19/poisson-2018}
+		{07/2018}
+		{Fields Institute for Research in Mathematical Sciences}
+		{Toronto}
+		{Canada}
+		{}
+	\longvoice{12th International YOUNG RESEARCHERS WORKSHOP on Geometry, Mechanics and Control}
+		{Workshop}
+		{http://events.math.unipd.it/12YRW/}
+		{01/2018}
+		{Universita' degli Studi di Padova}
+		{Padova}
+		{Italie}
+		{}
+	\longvoice{Physics and Geometry}
+		{Workshop}
+		{https://agenda.infn.it/conferenceDisplay.py?confId=14261}
+		{11/2017}
+		{Universita' degli Studi di Bologna}
+		{Bologna}
+		{Italie}
+		{}
+	\longvoice{Formal Theory of PDEs}
+		{Workshop}
+		{http://www.dipmat2.unisa.it/people/vitagliano/www/micro-workshop.html}
+		{11/2017}
+		{Universita' degli Studi di Salerno}
+		{Fisciano}
+		{Italie}
+		{}
+	\longvoice{PADGE 2017}
+		{Conférence}
+		{https://web.archive.org/web/20170924130155/https://wis.kuleuven.be/events/padge2017}
+		{08/2017}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{QFT Day}
+		{Workshop}
+		{https://web.archive.org/web/20170924130005/http://www.matematica.unimi.it/extfiles/unimidire/66001/attachment/qft-day-2017-1.pdf}
+		{04/2017}
+		{Universita' degli Studi di Milano}
+		{Milan}
+		{Italie}
+		{}
+
+	\block{Formation post-universitaire}
+
+    \longvoice{Summer School on Homotopy Colimits}
+        {École}
+        {https://sites.google.com/view/reginahomotopy}
+        {06/2026}
+        {University of Regina}
+        {Regina}
+        {Canada}
+        {(prévu)}
+    \longvoice{Model Categories and Abstract Homotopy Theory}
+        {Cours de doctorat}
+        {https://eugeniolandi.github.io/homotopy}
+        {03/2026}
+        {Sapienza Università di Roma}
+        {Rome}
+        {Italie}
+        {}
+    \longvoice{Introduction to pAQFT on flat spacetimes}
+        {Cours de doctorat}
+        {https://www.antoniomiti.it/teaching/aqft-2025/}
+        {12/2025}
+        {Sapienza Università di Roma}
+        {Rome}
+        {Italie}
+        {}
+    \longvoice{Higher Structures in Geometry and Mathematical Physics}
+        {École}
+        {https://conferences.cirm-math.fr/2697.html}
+        {04/2023}
+        {CIRM}
+        {Marseille}
+        {France}
+        {}
+    \longvoice{Interactions between Poisson Geometry and Quantisation}
+        {École}
+        {https://sites.google.com/view/poissonquantisation2023}
+        {03/2023}
+        {University of Gottingen}
+        {Gottingen}
+        {Allemagne}
+        {}
+    \longvoice{Bicategories, categorification and quantum theory}
+        {École}
+        {https://conferences.leeds.ac.uk/bcqt2022/}
+        {07/2022}
+        {University of Leeds}
+        {Leeds}
+        {Royaume-Uni}
+        {}
+	\longvoice{Reading Seminar on Differentiable Stacks}
+		{Cours de lecture}
+		{https://www.dropbox.com/s/a9tmw4g8m58ymkf/2203-Bonn-StackReadingSeminar.pdf?dl=0}
+		{03/2022}
+		{MPIM}
+		{Bonn}
+		{Allemagne}
+		{}
+	\longvoice{Toposes as Bridges - a short course}
+		{Cours de doctorat}
+		{https://warwick.ac.uk/fac/sci/maths/research/events/events2021-22/toposesasbridges/}
+		{02/2022}
+		{Warwick University}
+		{En ligne}
+		{-}
+		{}
+	\longvoice{Functional Programming and Domain-Specific Languages}
+		{Cours professionnel}
+		{https://dtai.cs.kuleuven.be/events/fpcourse/}
+		{10/2019}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Summer School in Algebra and Topology}
+		{École}
+		{https://web.archive.org/save/https://uclouvain.be/en/research-institutes/irmp/summer-school-in-algebra-and-topology-2019.html}
+		{09/2019}
+		{UCLouvain}
+		{Louvain la Neuve}
+		{Belgique}
+		{}
+	\longvoice{XXII Summer Diffiety School}
+		{École}
+		{https://sites.google.com/site/levicivitainstitute/Activities/DiffietySchools/xxii-summer-diffiety-school}
+		{07/2019}
+		{Diffiety Institute association and Levi-Civita association}
+		{Lizzano in Belvedere}
+		{Italie}
+		{}
+	\longvoice{Mirror symmetry seminar}
+		{Cours de lecture}
+		{https://wis.kuleuven.be/algebra/mirror-symmetry-seminar}
+		{02/2019}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Introduction to Motivic Homotopy Theory}
+		{Cours de doctorat}
+		{https://www.dropbox.com/s/fpqd1xsz4g8ecu4/1902-Verona-MotivicHomotopy.pdf?dl=0}
+		{02/2019}
+		{Universita' di Verona}
+		{Verona}
+		{Italie}
+		{}
+	\longvoice{Cartan's theory of local symmetries}
+		{Cours de doctorat}
+		{https://wis.kuleuven.be/methusalem-pure-math/methusalem-lecture-series/methusalem-lecture-series}
+		{11/2018}
+		{KU Leuven}
+		{Leuven}
+		{Belgique}
+		{}
+	\longvoice{Symplectic and Poisson geometry}
+		{Cours de doctorat}
+		{https://web.archive.org/web/20190831102514/http://homepages.ulb.ac.be/~rklaasse/symplecticpoissongeometry.html}
+		{10/2018}
+		{ULB}
+		{Bruxelles}
+		{Belgique}
+		{}
+	\longvoice{Summer School on Poisson Geometry}
+		{École}
+		{https://web.archive.org/web/20190831105310/http://www.fields.utoronto.ca/activities/18-19/poisson-summer-school}
+		{07/2018}
+		{Fields Institute for Research in Mathematical Sciences}
+		{Toronto}
+		{Canada}
+		{}
+	\longvoice{Diffeology, Categories and Toposes and Non-commutative Geometry}
+		{École}
+		{https://web.archive.org/web/20171123204026/http://www.nesinkoyleri.org/eng/events-detail.php?egitimkod=203\#icerikler}
+		{06/2018}
+		{Nesin Mathematics Village}
+		{Sirince}
+		{Turquie}
+		{}
+	\longvoice{Scientific computing with Python}
+		{Cours de doctorat}
+		{https://web.archive.org/web/20180604081514/http://dmf.unicatt.it/~della/pythoncourse18/}
+		{06/2018}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Tools making research easy}
+		{Cours de doctorat}
+		{https://web.archive.org/web/20180604080852/http://www.dmf.unicatt.it/kropf/scientifictools18.html}
+		{05/2018}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Control of biological functions mediated by nanostructured materials}
+		{Cours de doctorat}
+		{https://www.dropbox.com/s/8udz4zmfaxr9xb8/1805-Course-Ciofani.pdf?dl=0}
+		{05/2018}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Classical and Quantum Knots}
+		{Cours de doctorat}
+		{https://www.dropbox.com/s/stqvkes58o410zk/1802-Course-RiccaKnots.pdf?dl=0}
+		{02/2018}
+		{Universita' degli Studi di Milano Bicocca, Università degli Studi di Pavia}
+		{Milan}
+		{Italie}
+		{}
+	\longvoice{Computational methods for the solution of Differential Equations}
+		{Cours de doctorat}
+		{https://www.dropbox.com/s/q2rapau2k49n5t7/1802-Course-NumericalPdeAvella.pdf?dl=0}
+		{02/2018}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Category Theory}
+		{Cours de master}
+		{https://web.archive.org/web/20190831103757/http://www.mat.unimi.it/users/mantovani/}
+		{09/2017}
+		{Universita' degli Studi di Milano}
+		{Milan}
+		{Italie}
+		{}
+	\longvoice{11th International Summer School on Geometry, Mechanics and Control}
+		{École}
+		{https://web.archive.org/web/20170623165825/http://gmcnet.webs.ull.es/?q=activity-detaill/1812}
+		{06/2017}
+		{ICMAT}
+		{Madrid}
+		{Espagne}
+		{}
+	\longvoice{Graduate School: Introduction To Geometric Analysis: The Atiyah-Singer Index Theorem}
+		{École}
+		{https://web.archive.org/web/20170623165642/http://www.bcamath.org/es/workshops/bcam-upv-ehu-graduate-school-geometry}
+		{06/2017}
+		{BCAM}
+		{Bilbao}
+		{Espagne}
+		{}
+	\longvoice{Complex Geometry mod 1}
+		{Cours de master}
+		{http://www.ccdmat.unimi.it/it/corsiDiStudio/2015/F4Yof1/F4Y-A/F4Y-114/F4Y-114.15.1/programma_it.html}
+		{03/2017}
+		{Universita' degli Studi di Milano}
+		{Milan}
+		{Italie}
+		{}
+	\longvoice{Differential Topology and Geometry}
+		{Cours de master}
+		{http://docenti.unicatt.it/web/html/index.html\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita}
+		{03/2017}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Python for computational science}
+		{Formation}
+		{https://web.archive.org/web/20170623170252/https://eventi.cineca.it/en/hpc/python-computational-science}
+		{02/2017}
+		{CINECA-SCAI}
+		{Milan}
+		{Italie}
+		{}
+	\longvoice{Topics in Symplectic and Multi-symplectic Geometry}
+		{Cours de doctorat}
+		{https://web.archive.org/save/http://scuoledidottorato.unicatt.it/phdschools/science-10545.html}
+		{01/2017}
+		{Universita' Cattolica del Sacro Cuore}
+		{Brescia}
+		{Italie}
+		{}
+	\longvoice{Geometric Cauchy problems on Lorentzian manifolds}
+		{École}
+		{https://web.archive.org/web/20170623170457/http://www-app.uni-regensburg.de/Fakultaeten/MAT/GK/index.php/Summer_School_2016}
+		{07/2016}
+		{University of Regensburg}
+		{Regensburg}
+		{Allemagne}
+		{}
+	\longvoice{XIX Summer Diffiety School}
+		{École}
+		{https://web.archive.org/web/20170623170547/https://sites.google.com/site/levicivitainstitute//Activities/DiffietySchools/xix-summer-diffiety-school}
+		{07/2016}
+		{Diffiety Institute association and Levi-Civita association}
+		{Lizzano in Belvedere}
+		{Italie}
+		{}
+	\longvoice{Causal Fermion Systems}
+		{École}
+		{https://web.archive.org/web/20170623170718/http://www.uni-regensburg.de/mathematics/causal-fermion-systems/}
+		{03/2016}
+		{University of Regensburg}
+		{Regensburg}
+		{Allemagne}
+		{}
+	\longvoice{Introduction to Scientific and Technical Computing in C++}
+		{Formation}
+		{https://web.archive.org/save/http://www.hpc.cineca.it/content/introduction-object-oriented}
+		{03/2016}
+		{CINECA-SCAI}
+		{Milan}
+		{Italie}
+		{}
+	\longvoice{B2 General English Intensive course}
+		{Formation}
+		{https://www.britishcouncil.it/en/english/courses-adults/general}
+		{01/2016}
+		{British Council Milano}
+		{Milan}
+		{Italie}
+		{}
+	\longvoice{Introduction to Scientific Programming using GPGPU and CUDA}
+		{Formation}
+		{https://web.archive.org/web/20170623171128/http://www.hpc.cineca.it/content/introduction-to-gpu}
+		{03/2014}
+		{CINECA-SCAI}
+		{Milan}
+		{Italie}
+		{}
+
+
+
+
+
+
+
+	\clearpage
+	\section*{Résumé des travaux (Research statement)}
+	\phantomsection
+	\addcontentsline{toc}{section}{Résumé des travaux (Research statement)}
+
+
+
+
+
+	\clearpage
+	\section*{Projet de recherche (Research proposal)}
+	\phantomsection
+	\addcontentsline{toc}{section}{Projet de recherche (Research proposal)}
+
+
+
+
+
+
+
+
+
+
+
+    
+
+\end{document}
