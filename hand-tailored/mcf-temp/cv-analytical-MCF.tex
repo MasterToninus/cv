@@ -10,6 +10,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontawesome}
 \usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{multicol}
+
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
@@ -23,8 +26,9 @@
 \lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Généré le \today} }
 \rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
 
-\usepackage[backend=biber, style=nature]{biblatex}
-\addbibresource{../data/publications.bib}
+\usepackage[backend=biber, style=nature, maxcitenames=4]{biblatex}
+\addbibresource{../../../data/publications.bib}
+\addbibresource{./biblio-old.bib}
 
 \usepackage{academicons}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
@@ -187,40 +191,7 @@
 		\skill{Anglais}{Toefl-IBT : 102/120 (avr.-18)}
 		\skill{Français}{Débutant}
 
-		\block{Compétences informatiques}
 
-		\skillbar{C++}
-			{1.4cm}
-			{0.6cm}
-			{0.25cm}
-		\skillbar{Python}
-			{1.1cm}
-			{0.9cm}
-			{0.25cm}
-		\skillbar{Haskell}
-			{1.5cm}
-			{0.5cm}
-			{0.25cm}
-		\skillbar{Cuda}
-			{1.1cm}
-			{0.9cm}
-			{0.25cm}
-		\skillbar{Java}
-			{1.2cm}
-			{0.8cm}
-			{0.25cm}
-		\skillbar{Linux (administration système)}
-			{0.7cm}
-			{1.3cm}
-			{0.25cm}
-		\skillbar{Électronique embarquée}
-			{1.5cm}
-			{0.5cm}
-			{0.25cm}
-		\skillbar{Infrastructure réseau}
-			{1.6cm}
-			{0.4cm}
-			{0.25cm}
 	\end{minipage}
 
 	\phantomsection
@@ -1573,6 +1544,68 @@
 
 
 
+\subsection*{Aperçu général}
+
+Mes travaux se situent à l’interface de la géométrie différentielle et de la physique mathématique. Ils portent principalement sur la géométrie multisymplectique, l’algèbre homotopique supérieure et leurs applications à la formulation mathématique des théories classiques des champs. Le fil directeur de mes recherches consiste à étudier, dans un cadre géométrique unifié, les structures algébriques et homotopiques sous-jacentes aux observables, aux quantités conservées et aux procédures de quantification.
+
+Ma formation initiale en physique théorique, avec un accent particulier sur la théorie quantique algébrique des champs, m’a donné une base solide en géométrie, en algèbre et en physique mathématique. Par ailleurs, mon expérience en programmation et en administration système, acquise avant mon engagement complet dans la recherche académique, m’a permis de développer des compétences techniques utiles en calcul scientifique et en traitement explicite de structures algébriques complexes.
+
+Depuis plusieurs années, mes travaux se concentrent sur le développement de la géométrie multisymplectique et sur ses interactions avec la théorie classique des champs. Je m’intéresse en particulier aux structures homotopiques associées aux observables, aux tenseurs énergie-impulsion, aux quantités conservées et aux questions de préquantification. Cette activité s’inscrit dans une perspective de long terme : contribuer à établir la géométrie multisymplectique comme un cadre conceptuel naturel pour l’étude géométrique des théories classiques des champs, de leurs symétries et de leurs structures algébriques associées.
+
+\subsection*{Travaux doctoraux}
+
+La plus grande partie de mes travaux doctoraux \cite{Miti2021b} a porté sur les algèbres d’observables \(L_\infty\) et sur les applications co-moment homotopiques, avec une attention particulière accordée à la construction d’exemples explicites issus à la fois des mathématiques et de la physique. Les principaux résultats obtenus sont les suivants :
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Application co-moment homotopique pour les difféomorphismes préservant le volume.}
+J’ai construit une telle application sur les variétés riemanniennes orientées ; en dimension trois, elle se transgresse en l’application co-moment hydrodynamique classique.
+Nous avons également proposé une interprétation de cette application en termes d’espace des phases covariant des fluides parfaits, en présence de vortex enlacés, et appliqué les quantités conservées multisymplectiques aux nombres d’enlacement d’ordre supérieur de Massey \cite{Miti2021a}.
+Comme conséquence, nous avons aussi proposé une interprétation semi-classique du polynôme HOMFLYPT, à partir de l’approche hydrodynamique de Liu-Ricca \cite{LiuRicca15} et de l’approche symplectique de Besana-Spera \cite{BesanaSpera06}, via la variété de Brylinski des liens faiblement singuliers \cite{Miti2021c}.
+
+\item \textbf{Applications co-moment homotopiques sur les sphères.}
+J’ai résolu des problèmes d’existence pour des actions compactes effectives de groupes sur des sphères de dimension élevée, et fourni des constructions explicites dans plusieurs cas particuliers \cite{Miti2020}.
+
+\item \textbf{Plongements supérieurs d’algèbres multisymplectiques.}
+J’ai généralisé le plongement 2-plectique dans les algébroïdes de Courant tordus au cas \(n\)-plectique supérieur, en assurant l’invariance de jauge en présence d’applications co-moment homotopiques.
+Ce travail prolonge des résultats fondamentaux de Rogers \cite{Rogers2013} et de Ritter \cite{Ritter2015a}.
+Une construction explicite complète apparaît dans \cite{Miti2024}.
+\end{itemize}
+
+\subsection*{Travaux postdoctoraux et résultats récents}
+
+Depuis ma thèse, j’ai obtenu plusieurs financements sur projets rédigés de manière indépendante. J’ai effectué un séjour postdoctoral au Max Planck Institute for Mathematics de Bonn, puis un second séjour à l’Università Cattolica del Sacro Cuore. Je suis actuellement bénéficiaire d’une bourse MSCA Cofund (CIVIS-3i) à Rome. Dans ce cadre, mes principaux résultats récents sont les suivants :
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item \textbf{Réduction symplectique et multisymplectique.}
+Avec C. Blacker et L. Ryvkin, nous avons développé un schéma de réduction pour l’algèbre \(L_\infty\) des observables sur les variétés multisymplectiques, qui prolonge des cadres classiques, notamment ceux de Dirac et de Śniatycki--Weinstein \cite{SniatyckiWeinstein83}, et s’applique à des exemples comme les fibrés multicotangents et les espaces multiphases \cite{Blacker2024}.
+
+\item \textbf{Tenseur énergie-impulsion en théorie classique des champs.}
+Avec F. Zanello, nous avons caractérisé le tenseur énergie-impulsion à l’aide d’une application co-moment homotopique.
+Ce travail met en relation les structures « à homotopie près » avec les quantités conservées dans le cadre multisymplectique, et fournit une nouvelle lecture géométrique de l’énergie et de l’impulsion dans les systèmes de champs \cite{Miti2026}.
+
+\item \textbf{Algèbres de contraintes pour les observables multisymplectiques.}
+Avec L. Ryvkin, nous avons formulé un schéma de réduction fondé sur le cadre des algèbres de contraintes développé par Dippel, Esposito et Waldmann \cite{Dippell2023, dippelkern, dippelespositowaldmann}.
+Cette approche relie les structures multisymplectiques à des méthodes algébriques avancées et fournit un cadre unifié pour la réduction des observables \cite{Miti2025}.
+
+\item \textbf{Algorithmes quantiques pour l’arithmétique modulaire.}
+Dans le cadre d’une collaboration avec un groupe de l’Université de Singapour, nous avons développé des outils de \emph{measurement-based uncomputation} pour l’arithmétique modulaire.
+Ce travail ouvre la voie à un programme plus large à l’interface entre géométrie et calcul quantique \cite{Luongo2024,Luongo2025}.
+
+\item \textbf{Cadres algébriques pour les observables.}
+Avec D. Fiorenza, nous avons engagé un programme visant à approfondir la compréhension algébrique des observables en géométrie multisymplectique.
+Il s’agit notamment d’étudier des morphismes entre algèbres \(L_\infty\), en particulier un analogue algébrique des observables de Rogers et leur relation avec les structures de type Courant supérieur, formulées au niveau du complexe de Chevalley--Eilenberg.
+
+Dans notre prépublication récente\cite{Fiorenza2026}, nous proposons une construction conceptuelle de morphismes \(L_\infty\) entre algèbres de type Courant tordues et non tordues, interprétée en termes de propriétés universelles homotopiques. Plus précisément, nous montrons que ces morphismes peuvent être réalisés comme des objets universels associés à des carrés homotopiquement commutatifs, mettant en évidence le rôle fondamental des cônes (au sens de Fiorenza--Manetti\cite{Fiorenza2014a}) et des constructions de type crochet dérivé à la Getzler. Cette approche permet d’unifier et de systématiser des constructions auparavant ad hoc, tout en clarifiant le passage entre différentes descriptions des observables multisymplectiques.
+
+Les travaux en cours portent sur le calcul explicite d’extensions \(L_\infty\) de l’algèbre dg-Leibniz des observables, sur la construction et la caractérisation de morphismes naturels entre ces structures, ainsi que sur leur interprétation en termes de fibrés homotopiques. Un objectif central est d’intégrer ces constructions dans un cadre catégorique plus global, notamment via des algèbres \(L_\infty\) faibles et des modèles dérivés, afin de mieux comprendre la fonctorialité des observables et leur comportement vis-à-vis des opérations géométriques (réduction, changement de fond, préquantification).
+\end{itemize}
+
+\subsection*{Perspectives}
+
+À moyen et long terme, mon programme de recherche vise à développer de manière systématique le rôle de la géométrie multisymplectique dans la théorie classique des champs. Cela comprend l’étude des observables, des structures de réduction, des procédures de préquantification et des liens avec certaines EDP issues de la physique mathématique. Je souhaite également poursuivre le développement des aspects algébriques et homotopiques de ces questions, en particulier à travers l’étude des algèbres \(L_\infty\), des structures de type Courant et des cadres catégoriques adaptés.
+
+Une autre direction importante consiste à consolider les interactions entre géométrie multisymplectique, quantités conservées et théorie des champs, notamment à travers l’analyse géométrique du tenseur énergie-impulsion et de ses généralisations. Enfin, une perspective complémentaire de mon travail porte sur l’utilisation de méthodes issues de la géométrie supérieure dans des contextes plus appliqués, en particulier dans certaines questions émergentes liées au calcul quantique et à l’information quantique.
+
 
 
 	\clearpage
@@ -1582,12 +1615,168 @@
 
 
 
+	\begin{abstract}
+		This project proposes the development of a geometric framework for the pre-quantum Standard Model on curved spacetimes by integrating multisymplectic geometry, higher gauge theory, and $L_\infty$-algebras. The objective is to formulate a covariant, finite-dimensional model capturing the interplay between electroweak interactions and gravitation, extending prequantization techniques to gauge theories on generic backgrounds. Central to this effort is the construction of a Poincaré groupoid as a curved-spacetime generalization of the Poincaré group, formalizing translations as parallel transports and local Lorentz transformations via groupoid symmetries. This will enable the definition of multilocal observables within multisymplectic geometry, informed by Poisson algebra bundles, and clarify their algebraic and geometric structures. By systematically bridging finite- and infinite-dimensional formulations, the project aims to provide a rigorous geometric description of classical field theories, paving the way for a covariant quantization framework compatible with general relativity.
+	\end{abstract}
+
+	
+
+This research proposal aims to develop a comprehensive geometric framework for the pre-quantum Standard Model on curved spacetime, addressing significant gaps in the geometric understanding of fundamental interactions. By leveraging advances in multisymplectic geometry, higher gauge theory, and $L_\infty$-algebras, this work seeks to formulate a unified geometric description of the electroweak interaction and gravitation, extend prequantization methods to gauge theories on curved spacetimes, and explore the geometric foundations of the Higgs mechanism. These efforts aim to bridge the divide between finite-dimensional manifold techniques and the infinite-dimensional spaces of field theories, potentially illuminating the interplay between quantum theory and general relativity.
+
+
+\paragraph{Overall Context and Motivation}
+
+A persistent challenge in classical field theory is the development of a fully covariant canonical formalism that avoids relying on a decomposition of the spacetime manifold into time-slices. Achieving such a framework would enable a rigorous covariant quantization of relativistic field theories, such as Yang-Mills theory, providing an alternative to restoring covariance post-canonical quantization.
+
+The underlying variational principles led, in the 1970s, to the formulation of a geometric approach based on the multisymplectic formalism, as introduced by Gaw\k{e}dzki \cite{Gawedzki-1972} and Kijowski \cite{Kijowski-1973}, and later extended by Gotay, Isenberg, Marsden, and Montgomery \cite{Gotay-1991, Gimmsy1}. Concurrently, the 1980s saw the emergence of the covariant functional approach to relativistic and gauge theories, developed by Crnkovic-Witten \cite{Crnkovic-Witten:1987} and Zuckerman \cite{Zuckerman:1987}.
+
+While the covariant functional approach, primarily applied to Lagrangian field theories through functional calculus, naturally led to quantization (formalized within the perturbative Algebraic Quantum Field Theory framework, cf. Brunetti-Fredenhagen-Verch \cite{Brunetti-Fredenhagen-Verch-2003} and Rejzner \cite{Rejzner-2016}), the multisymplectic approach remains incomplete, particularly regarding the description of the algebra of multilocal observables and their quantization.
+
+Bridges between these two methodologies have been proposed. For example, Hélein \cite{Helein:2011} and Sevestre-Wurzbacher \cite{Sevestre2021} introduced geometric prequantization schemes within the multisymplectic formalism, while Forger-Romero \cite{Forger2005} demonstrated that the Peierls bracket of relativistic field theories could be derived from multisymplectic data. A comprehensive exposition of these connections is provided by Gieres \cite{Gieres:2021}.
+
+Nonetheless, the geometric characterization of the full algebra of observables and its quantization—encompassing the deformation quantization of interacting fields—remains an unresolved and fundamental problem.
+
+The pre-quantum Standard Model on curved spacetime offers a compelling context for testing a comprehensive geometric framework for classical field theory. By bridging the gap between finite-dimensional manifold techniques and the infinite-dimensional spaces of field theories, this approach aims to illuminate the nature of quantum fields and their interactions, providing critical insights into reconciling quantum theory with general relativity. A unified geometric description of the electroweak interaction and gravitation, currently lacking a cohesive interpretation, would address significant gaps in our understanding of fundamental interactions.
+
+\paragraph{Objectives of the Project}
+This research proposal is divided into two primary research lines:
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+	\item \hyperref[wp:PoincareGroupoid]{\textbf{Poincar'{e} Groupoid on Curved Spacetime}}: Exploring the extension of the Poincaré group to curved spacetimes via groupoid structures, addressing symmetry generalization and interactions with gravitation for classical field theories.
+	\item \hyperref[wp:MultiLocObs]{\textbf{Multilocal Observables in Multisymplectic Geometry}}: Developing the notion of multilocal observables for interacting classical fields within the framework of multisymplectic geometry, drawing inspiration from recent advancements in Poisson algebra bundles over configuration spaces.
+\end{itemize}
+ 
+
+
+ 
 
 
 
 
+%------------------------------------------------------------------------
+\subsection{Poincaré Groupoid on Curved Spacetime}
+\label{wp:PoincareGroupoid}
+%------------------------------------------------------------------------
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\paragraph{State-of-the-art}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+The Poincaré group, $\mathrm{ISO}(1,3)$, represents the affine transformations on Minkowski spacetime that preserve the metric. It combines spacetime translations $\mathbb{R}^{1,3}$ and Lorentz transformations $\mathrm{O}(1,3)$ in a semidirect product structure: $\mathrm{ISO}(1,3) \cong \mathbb{R}^{1,3} \rtimes \mathrm{O}(1,3)$. This 10-dimensional Lie group defines the isometries of Minkowski spacetime and underpins the symmetries of special relativity. Central to quantum field theory, the Poincaré group provides the framework for classifying elementary particles by mass and spin through Wigner's classification \cite{horowitz2021}. Its Lie algebra, the Poincaré algebra, encodes commutation relations that govern the interplay between translations and Lorentz transformations, reflecting the structure of Minkowski spacetime.
+
+In the Standard Model (see \cite{Hamilton2017} for a modern account), the Lorentz group $\mathrm{SO}(1,3)$ governs spacetime symmetries, while the internal gauge symmetries $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ dictate the interactions of the strong, weak, and electromagnetic forces. This separation between spacetime and internal symmetries is a foundational aspect of the Standard Model's structure.
+
+In curved spacetimes, the situation differs fundamentally: the tangent bundle is not diffeomorphic to $M \times \mathbb{R}^n$, precluding a global analogue to the Poincaré group. This prevents defining global particle states as irreducible representations of a universal isometry group. Instead, particle classification relies on local symmetries and representations of local isometry groups, which vary across the manifold. Local Lorentz invariance ensures that in small regions of spacetime, physical laws resemble those of special relativity, enabling local Lorentz transformations to approximate phenomena.
+
+Groupoids provide a flexible framework for encoding local symmetries, generalizing groups to account for symmetries acting on specific regions \cite{vistoli2011groupoids}. For example, in tiling patterns, groupoids model transformations preserving tiling locally, even if not globally \cite{weinstein1996groupoids}. A Lie groupoid formalizes this concept by defining a category where objects and morphisms are smooth manifolds, and all operations (e.g., source and target maps, composition) are smooth. The source and target maps must be submersions, ensuring smooth morphism spaces \cite{bursztyn2023lie}. For a Lie group \( G \) acting on a manifold \( M \), an action Lie groupoid consists of objects as points of \( M \), morphisms as pairs \( (g, x) \), source \( x \), target \( g \cdot x \), and composition \( (h, g \cdot x) \circ (g, x) = (hg, x) \), embedding group actions into the Lie groupoid framework \cite{bursztyn2023lie}.
+
+Costa, Forger, and Pêgas extend this framework to classical field theory, replacing traditional Lie groups with Lie groupoids to unify spacetime and internal gauge symmetries. In \cite{Costa2018}, they reformulate Noether's theorem, linking symmetries and conservation laws in this generalized setting. In \cite{Costa2021}, they apply this approach to gauge theories, proving Utiyama's theorem and exploring geometric structures underlying minimal coupling. They demonstrate that in curved spacetimes, where the isometry group (e.g., the Poincaré group) can collapse under small metric perturbations, the orthonormal frame groupoid remains stable even under large perturbations. This introduces holonomous and non-holonomous subgroupoids of jet groupoids, absent in traditional group theory but crucial for understanding field theory symmetries over curved spacetimes.
+
+This work package aims to define a Poincaré groupoid as a generalization of the Poincaré group, representing translations as parallel transports on the tangent bundle and rotations acting locally. Building on the orthogonal frame groupoid, this approach aims to recover the principle of covariance from groupoid symmetries (inspired by Forger’s work), extend to symplectic groupoids, and study interactions with gravity.
 
 
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\paragraph{Research questions}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]
+    \item How can the Poincaré group be generalized to curved spacetime? Does the action of the corresponding Poincaré groupoid reduce to that of the Poincaré group in the special case of Minkowski spacetime?
+    \item The transition from the Lorentz group to the spin group involves constructing a double cover of the Lorentz group within the Clifford algebra framework, enabling the consistent treatment of spinors. What is the analogous Poincaré groupoid corresponding to the spin group?
+    \item How can direct connections (as discussed in unpublished notes by Frabetti \cite{Azzali2022} and proceedings by Teleman \cite{Teleman2007, Teleman2004} and Kubarski \cite{Kubarski2008, Kubarski2007}) be characterized on the Poincaré groupoid? Is it possible to formalize the gravitational interaction of a classical field with a curved background using direct connections?
+\end{itemize}
+
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\paragraph{Goals}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]
+    \item \it Establish the Poincaré groupoid as the curved spacetime analogue of the Poincaré group, and describe the analogous construction for spin structures.
+    \item Define a stronger principle of covariance using groupoid actions. Following Forger's work, demonstrate how the group of metric-preserving diffeomorphisms can be recovered as the groupoid's bisections.
+    \item Explicitly compute the structure of the Poincaré groupoid and its associated Lie algebroid. Analyze and compare the actions of the algebroid on \( M \) and \( TM \).
+\end{itemize}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\paragraph{Innovative perspectives}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]
+    \item \it This research builds on cutting-edge developments, drawing from unpublished notes by Frabetti and collaborators \cite{Azzali2022}.
+    \item The ultimate aim is to codify gravitational interaction as a groupoid gauge theory by leveraging the correspondence between the metric, tetrads, and direct connections.
+    \item This work represents an initial step, with further exploration required to understand how the integer spin of the graviton emerges, possibly through the spin-lifting of the Lorentz group and an appropriate weight representation.
+    \item Follow-up opportunities include developing the dynamics of the graviton, investigating the spin groupoid and its relation to spin representations, deriving the inertial part of the fermionic field as a coupling with the graviton, and formalizing a prequantum structure for the graviton alongside its algebraic quantization.
+\end{itemize}
+
+
+
+
+%========================================================================%
+\subsection{Multilocal Observables in Multisymplectic Geometry}
+\label{wp:MultiLocObs}
+%========================================================================%
+
+\paragraph{State-of-the-art}
+
+The interplay between observables, symmetries, and reduction has been a cornerstone of symplectic geometry and classical mechanics. The Marsden–Weinstein–Meyer reduction theorem provides a foundational framework for simplifying mechanical systems while preserving their geometric and algebraic structures. Similarly, the "quantization commutes with reduction" programme, initiated by the Guillemin–Sternberg conjecture, has significantly influenced the development of geometric quantization.
+
+In multisymplectic geometry, which generalizes symplectic structures to encompass field theories, these principles are less fully understood. Observables in this setting are encoded in the $L_\infty$-algebras of observables introduced by Rogers \cite{Rogers2010}, offering a powerful, though abstract, framework for measurable quantities in higher geometry. Recent advancements, such as homotopy moment map theory \cite{Callies2016}, have further enriched this perspective. However, systematic approaches to reduction and prequantization in the multisymplectic context remain nascent. Blacker \cite{Blacker2020} extended symplectic reduction to multisymplectic settings, and prequantization in the 2-plectic case has been explored \cite{Rogers2013, Sevestre2021}, but comprehensive higher-order constructions and their connections to field theory remain unresolved. Multicotangent bundles and higher prequantum structures present promising avenues for addressing these challenges.
+
+Let $E \to M$ denote the configuration bundle of a classical field theory. The multicotangent bundle $\Lambda^n_2T^*E \to E$ admits a closed $n+1$-form, an instance of an $n$-plectic form, characterized by its non-degenerate contraction with any non-zero tangent vector \cite{Ryvkin2018, Roman-Roy09}. In the Hamiltonian formalism of classical field theory, such forms are crucial for formulating covariant equations of motion for fields, analogous to their role in particle systems, and for reducing infinite-dimensional problems to finite-dimensional models. While the higher structure of local observables is well understood, a rigorous framework for the algebra of multilocal observables, essential for establishing Noether-type conservation laws and enabling geometric or deformation quantization, remains an open problem.
+
+Recently, Frabetti, Kravchenko, and Ryvkin \cite{Frabetti2024} described multilocal observables of vector-valued fields $\varphi: M \to E$ governed by a Lagrangian $\mathcal{L}$ as distributional sections of a vector bundle $P_{\mathcal{L}}(E)$ carrying a Poisson algebra structure. This approach is based on the category of vector bundles over the configuration space $\mathrm{Conf}(M) = \bigsqcup (M^n \setminus \Delta^{(n)}) / S_n$, equipped with two tensor products: the fiberwise tensor product $\otimes$ and the symmetric external tensor product $\boxtimes$. Off-shell observables are modeled as sections of $P_{\mathcal{L}}(E) = S^{\boxtimes}S^{\otimes}(JE)^* \otimes \mathrm{Dens}(\mathrm{Conf}(M))$, with a Poisson bracket induced by the causal propagator associated with $\mathcal{L}$. This framework is compatible with both Lagrangian and multisymplectic formalisms and supports deformation quantization. However, its extension to the orbifold $\bigsqcup M^n / S_n$, particularly in the context of renormalization, remains an open question.
+
+
+
+
+\paragraph{Research questions}
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+    \item How can $L_\infty$-algebras of observables in multisymplectic geometry be reconciled with classical conserved charges in the covariant phase space framework? Can this reconciliation provide a concrete comparison for field-theoretic models, such as Klein–Gordon or sine–Gordon fields?
+    \item What reduction schemes are most suitable for multisymplectic manifolds, particularly multicotangent bundles, and how can these accommodate field-theoretic systems? How does this relate to higher multisymplectic brackets and the localization of Poisson structures?
+        \item Can physically meaningful observables, such as energy-momentum tensors, be recovered from homotopy comomentum maps in multisymplectic settings? How does this recovery inform the structure of on-shell observables as quotients of off-shell ones?
+	\item Can the Poisson algebra bundles over $\mathrm{Conf}(M)$, as described in \cite{Frabetti2024}, be extended to gauge and fermionic fields by incorporating spinor and connection bundles? Furthermore, how can the $L_\infty$-algebra of observables associated with a multisymplectic manifold be related to these Poisson algebra bundles?
+
+    \item How can geometric prequantization schemes for $n$-plectic manifolds be explicitly constructed, and what connections exist with reduction procedures and the Fiorenza–Rogers–Schreiber framework \cite{Fiorenza2014a}?
+    \item What deformation theory applies to Poisson algebras over configuration spaces, and how does it compare to existing quantization methods, such as those in \cite{Herscovich-2019} and \cite{Dito:1990}?
+\end{itemize}
+
+\paragraph{Goals:}
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+    \item \it Develop a comprehensive reduction scheme for multisymplectic manifolds, particularly multicotangent bundles, that accommodates field-theoretic systems, integrates homotopy moment maps, and extends the level-set method to multisymplectic observables. Ensure compatibility with higher multisymplectic brackets and localization of Poisson structures \cite{Blacker2020}.
+    
+    \item Establish explicit connections between $L_\infty$-algebras of observables in multisymplectic geometry and classical conserved charges within the covariant phase space framework. Validate these connections with concrete examples, such as Klein–Gordon and sine–Gordon fields \cite{Rogers2010}. Recover physically meaningful observables, such as energy-momentum tensors and stress tensors, from homotopy comomentum maps in multisymplectic settings, and characterize the algebra of on-shell observables as a quotient of the off-shell algebra \cite{Forger2005}.
+    
+    \item Extend the Poisson algebra bundles over $\mathrm{Conf}(M)$, described in \cite{Frabetti2024}, to include gauge and fermionic fields by incorporating spinor and connection bundles. Relate these bundles to the $L_\infty$-algebra of observables and explore their deformation quantization.
+    
+    
+    \item Investigate the geometric prequantization of $n$-plectic manifolds, with symmetries and chosen Hamiltonians, extending methods from \cite{Sevestre2021}. Apply these prequantization schemes to gauge fields through 3-groupoids associated with Yang-Mills bundles \cite{FischerPhd} and compare with existing quantization methods.
+    
+\end{itemize}
+
+
+\paragraph{Innovative perspectives}
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]	
+	\item \it This research builds on cutting-edge developments, drawing from recent and forthcoming works by Frabetti and collaborators \cite{Frabetti2024,Frabetti2025}.
+    \item \it Establish a unified approach to multisymplectic reduction and prequantization, advancing the geometric mechanics of classical field theories and providing new tools for theoretical physics and higher geometry.
+    \item Extend $L_\infty$-observable frameworks to incorporate conserved charges and symmetries, enhancing the understanding of algebraic structures in multisymplectic geometry and their connections to field-theoretic models.
+    \item Link reduction and prequantization schemes to further the "quantization commutes with reduction" programme, bridging classical and quantum theories in higher geometric contexts.
+    \item Develop deformation theories for Poisson algebras over $\mathrm{Conf}(M)$ and explore their applications to singularities, renormalization, and the quantization of interacting fields, integrating configuration spaces and higher Poisson structures into practical field-theoretic models.
+\end{itemize}
+
+
+
+
+%#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#%
+% Bibliography (Biber)
+% https://arxiv.org/hypertex/bibstyles/
+%#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#%
+\begin{multicols}{2}
+\footnotesize
+
+\printbibliography
+
+%\input{build/Research-Proposal-Online.bbl}
+\end{multicols}
 
 
     
