@@ -1,0 +1,180 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xurl}
+
+\hypersetup{
+colorlinks=true,
+urlcolor=blue,
+linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{leftmargin=1.4em,topsep=2pt,itemsep=2pt}
+
+\newcommand{\relevance}[1]{\textbf{Industry relevance.} #1}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Quantum and Computational Portfolio}} \\[3pt] 
+{\large Antonio Michele Miti} \\[3pt]
+\parbox{0.9\textwidth}{\centering
+\textit{Selected projects and research outputs relevant to the
+Quantum Data Scientist position at BIP AI Lab}}
+\end{center}
+
+\vspace{0.5em}
+
+\section*{Profile}
+
+I am a researcher with a background in \textbf{physics, mathematics, quantum algorithms, and scientific computing},
+currently transitioning toward an industry-oriented role. My experience combines mathematical modelling with
+\textbf{algorithm design, implementation, simulation, resource analysis, and quantitative comparison of alternative approaches}.
+
+I am particularly interested in applying this background to \textbf{Quantum Computing Proofs of Concept, optimization,
+simulation, and hybrid quantum--classical workflows}, where theoretical models must be translated into implementable
+solutions and evaluated against practical constraints.
+
+\section*{Core Quantum and Computational Experience}
+
+\subsection*{1. Quantum arithmetic and resource optimization}
+
+\textbf{A. Luongo, A. M. Miti, V. Narasimhachar, A. Sireesh,}\
+\textit{Measurement-based uncomputation of quantum circuits for modular arithmetic},\
+Proceedings of the 62nd ACM/IEEE Design Automation Conference (DAC '25), 2025.\
+DOI: \href{https://doi.org/10.1109/DAC63849.2025.11132981}{10.1109/DAC63849.2025.11132981}.\\
+arXiv: \href{https://arxiv.org/abs/2407.20167}{2407.20167}.
+
+This work studies measurement-based uncomputation for modular-arithmetic circuits, focusing on reducing the resources
+required by quantum arithmetic primitives.
+
+\relevance{Direct experience with \textbf{quantum circuit design, uncomputation, modular arithmetic, resource estimation,
+and implementation trade-offs}. The work required comparing alternative circuit constructions according to quantitative
+costs.}
+
+\subsection*{2. Hybrid CPU--GPU numerical implementation}
+
+\textbf{Condensation Algorithm in CUDA}\
+Public repository:
+\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Condensation\%20Algorithm\%20in\%20CUDA}
+{\texttt{Computational-Physics-Exercise / Condensation Algorithm in CUDA}}.
+
+I developed a \textbf{hybrid CPU--GPU implementation of a determinant algorithm}, including a CUDA-based matrix library,
+dedicated kernel tests, numerical validation, pivoting strategies, and comparison with CPU implementations.
+
+\relevance{Hands-on experience with \textbf{C++, CUDA, GPU kernels, numerical algorithms, testing, and performance-oriented
+implementation}. The project demonstrates the ability to translate a mathematical method into executable software,
+validate its numerical behaviour, and compare alternative computational strategies.}
+
+\subsection*{3. Monte Carlo simulation and algorithm comparison}
+
+\textbf{Metropolis and cluster algorithms for the Ising model}\
+Public repository:
+\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Ising\%20simulation\%20Metropolis\%20vs\%20Cluster}
+{\texttt{Computational-Physics-Exercise / Ising simulation}}.
+
+This C++ project implements numerical experiments for the Ising model using \textbf{Metropolis and cluster-based
+Monte Carlo algorithms}, together with supporting classes and numerical analysis.
+
+\relevance{Experience with \textbf{simulation, stochastic algorithms, scientific programming, and benchmarking}.
+In particular, it involved implementing alternative methods for the same physical problem and comparing their behaviour,
+a useful basis for quantum--classical benchmarking and simulation-oriented projects.}
+
+\section*{Mathematical Modelling and Problem Reduction}
+
+\subsection*{4. Constraint handling and reduced models}
+
+\textbf{A. M. Miti, L. Ryvkin,}\
+\textit{Multisymplectic observable reduction using constraint triples},\
+Differential Geometry and its Applications \textbf{100} (2025), 102272.\
+DOI: \href{https://doi.org/10.1016/j.difgeo.2025.102272}{10.1016/j.difgeo.2025.102272}.\\
+arXiv: \href{https://arxiv.org/abs/2506.00234}{2506.00234}.
+
+The paper develops a systematic framework for reducing observables in constrained mathematical systems.
+
+\relevance{Experience in \textbf{constraint analysis, symmetry reduction, and identification of effective degrees of
+freedom}. These methods are transferable to optimization and simulation problems where reducing the dimensionality or
+representation size can improve computational tractability.}
+
+\subsection*{5. Structure-preserving model reduction}
+
+\textbf{C. Blacker, A. M. Miti, L. Ryvkin,}\
+\textit{Reduction of $L_\infty$-algebras of observables on multisymplectic manifolds},\
+SIGMA \textbf{20} (2024), 061.\
+DOI: \href{https://doi.org/10.3842/SIGMA.2024.061}{10.3842/SIGMA.2024.061}.\\
+arXiv: \href{https://arxiv.org/abs/2206.03137}{2206.03137}.
+
+This work studies how structured mathematical models behave under symmetry reduction.
+
+\relevance{It demonstrates the ability to simplify a model while preserving the relations required for its interpretation.
+In an industrial setting, this translates into identifying which variables, constraints, and dependencies must be retained
+when moving from a theoretical formulation to an implementable model.}
+
+\subsection*{6. Comparing alternative mathematical representations}
+
+\textbf{A. M. Miti, M. Zambon,}\
+\textit{Observables on multisymplectic manifolds and higher Courant algebroids},\
+Communications in Contemporary Mathematics \textbf{27} (2025), no.~8, 2550006.\
+DOI: \href{https://doi.org/10.1142/S0219199725500063}{10.1142/S0219199725500063}.\\
+arXiv: \href{https://arxiv.org/abs/2209.05836}{2209.05836}.
+
+The paper compares different mathematical descriptions of the same class of observables and establishes precise
+relations between them.
+
+\relevance{Experience in \textbf{representation choice and model comparison}. This is relevant when deciding how a
+problem should be encoded for classical or quantum algorithms and when comparing alternative formulations according
+to computational requirements.}
+
+\section*{Additional Research Experience}
+
+\textbf{D. Fiorenza, A. M. Miti,}\
+\textit{$L_\infty$-morphisms between twisted Courant $r$-Lie algebras and untwisted Courant $(r+1)$-Lie algebroids},\
+preprint, 2026.\
+arXiv: \href{https://arxiv.org/abs/2602.14702}{2602.14702}.
+
+This work develops explicit mappings between two higher-algebraic formulations and further demonstrates experience
+with formal modelling and translation between mathematical representations.
+
+\vspace{0.3em}
+
+My broader peer-reviewed research also includes work on \textbf{symmetries, geometric quantization, conserved quantities,
+and mathematical physics}. These projects document sustained experience in independent research, collaborative problem
+solving, and the development of rigorous mathematical models.
+
+\section*{Technical Skills and Industry Direction}
+
+\textbf{Programming and computing:} Python, C++, CUDA, Linux, numerical methods, parallel computing, scientific software.
+
+\textbf{Technical strengths:} algorithm design, numerical validation, simulation, resource analysis, benchmarking,
+constraint handling, model reduction, and comparison of alternative computational approaches.
+
+\textbf{Research and communication:} peer-reviewed publications, international collaborations, technical presentations,
+seminars, teaching, and scientific documentation.
+
+I am now intentionally moving toward an industrial environment where this combination of \textbf{quantum algorithms,
+mathematical modelling, and scientific computing} can be applied to concrete technical problems. I am particularly
+interested in projects where solutions are evaluated through \textbf{implementation, benchmarking, scalability,
+resource constraints, and measurable performance} rather than only through theoretical analysis.
+
+The Quantum Data Scientist role at BIP AI Lab is therefore a natural fit for my transition: it would allow me to apply
+my current expertise to \textbf{Proof-of-Concept development, quantum--classical comparison, optimization, simulation,
+and Data \& AI applications}, while further developing experience in industry-oriented project delivery.
+
+\vfill
+
+\noindent
+\href{https://www.antoniomiti.it/}{www.antoniomiti.it}
+\hfill
+\href{https://orcid.org/0000-0002-8829-1943}{ORCID: 0000-0002-8829-1943}
+
+\end{document}
