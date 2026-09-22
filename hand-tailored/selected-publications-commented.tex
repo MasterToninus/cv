@@ -1,0 +1,82 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Antonio Michele Miti}
+\lhead{Selected publications}
+\lfoot{}
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+\setlength\parindent{0pt}
+
+\usepackage{bibentry}
+\usepackage{natbib}
+
+\usepackage[hyphens]{url}
+\urlstyle{same}
+
+\usepackage[
+	hidelinks,
+	colorlinks = true,
+	linkcolor = blue,
+	urlcolor  = blue,
+	citecolor = blue,
+	anchorcolor = blue
+]{hyperref}
+
+\hypersetup{breaklinks=true}
+
+\title{SELECTED PUBLICATIONS}
+\date{\today}
+\author{
+	\href{www.antoniomiti.it}{Antonio Michele Miti},\\
+	\emph{orcid: \href{https://orcid.org/0000-0002-8829-1943}
+	{0000-0002-8829-1943}}.
+}
+
+\begin{document}
+
+\nobibliography{../data/publications.bib}
+\bibliographystyle{plainnat}
+
+\maketitle
+
+\noindent
+The following publications can also be retrieved at:
+\\
+\url{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}.
+
+
+
+\begin{enumerate}
+	\item \bibentry{Miti2025};
+	\item \bibentry{Blacker2024};
+	\item \bibentry{Miti2024};
+	\item \bibentry{Miti2021c};
+	\item \bibentry{Miti2020}.
+\end{enumerate}
+
+\section*{Motivation for the selection}
+
+The publications below have been selected to highlight the part of my research
+most directly related to the present position. Together, they develop a coherent
+research line in \textbf{multisymplectic geometry}, from symmetries and homotopy
+momentum maps to higher algebras of observables and geometric reduction.
+These structures provide the geometric formulation of conservation laws,
+constraints, and reduced dynamics in classical field theories, and are closely
+connected with the foundations of \textbf{structure-preserving numerical methods}
+and multisymplectic integration. In particular, my recent work on reduction and
+higher observables provides tools for investigating how geometric information
+can be retained when passing from continuous models to reduced or discretized
+dynamical systems.
+
+\end{document}

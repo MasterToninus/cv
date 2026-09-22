@@ -1,0 +1,166 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{leftmargin=1.4em,topsep=2pt,itemsep=2pt}
+
+\newcommand{\relevance}[1]{\textbf{Relevance to the Quantum Application Developer role.} #1}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Scientific Portfolio}}\\[3pt]
+    {\large Antonio Michele Miti}\\[3pt]
+    \textit{Selected research outputs relevant to the Quantum Application Developer position at Classiq}
+\end{center}
+
+\vspace{0.5em}
+
+\section*{Profile}
+
+My research portfolio combines \textbf{quantum algorithms, mathematical physics, differential geometry, and higher algebra}. 
+Across these areas, a common theme is the formulation of complex physical or mathematical problems in terms of suitable
+high-level structures, followed by the analysis of constraints, symmetries, reductions, and alternative representations.
+For the Quantum Application Developer role, I regard this combination as particularly relevant to the development of
+quantum applications: it brings together direct research experience on quantum circuits with a broader ability to
+formalize technical problems, identify effective degrees of freedom, and communicate advanced concepts across disciplines.
+
+\section*{Selected Research Outputs}
+
+\subsection*{1. Quantum algorithms and resource-efficient arithmetic}
+
+\textbf{A. Luongo, A. M. Miti, V. Narasimhachar, A. Sireesh,}\\
+\textit{Measurement-based uncomputation of quantum circuits for modular arithmetic},\\
+Proceedings of the 62nd ACM/IEEE Design Automation Conference (DAC '25), 2025.\\
+DOI: \href{https://doi.org/10.1109/DAC63849.2025.11132981}{10.1109/DAC63849.2025.11132981}.\\
+arXiv: \href{https://arxiv.org/abs/2407.20167}{2407.20167}.
+
+This work investigates measurement-based uncomputation techniques for quantum circuits implementing modular arithmetic,
+with particular attention to the computational resources required by arithmetic primitives and to the cost of reversing
+intermediate computations.
+
+\relevance{This is the most direct connection between my research and Classiq's activity. It demonstrates research
+experience at the quantum algorithm/circuit level, including uncomputation, modular arithmetic, circuit-resource
+trade-offs, and the analysis of implementation constraints. These are closely related to the problems encountered when
+designing, synthesizing, and optimizing quantum applications at a high level.}
+
+\subsection*{2. Reduction of constrained mathematical systems}
+
+\textbf{A. M. Miti, L. Ryvkin,}\\
+\textit{Multisymplectic observable reduction using constraint triples},\\
+Differential Geometry and its Applications \textbf{100} (2025), 102272.\\
+DOI: \href{https://doi.org/10.1016/j.difgeo.2025.102272}{10.1016/j.difgeo.2025.102272}.\\
+arXiv: \href{https://arxiv.org/abs/2506.00234}{2506.00234}.
+
+The paper develops a systematic framework for reducing observables in multisymplectic systems subject to constraints,
+combining geometric structure with an explicit treatment of the data required for reduction.
+
+\relevance{Although the setting is mathematical physics rather than quantum computing, the underlying methodology is
+highly transferable: identify constraints and symmetries, isolate the effective structure, and construct a reduced
+description that preserves the information relevant to the problem. This type of abstraction is useful when translating
+scientific problems into compact and efficient quantum formulations.}
+
+\subsection*{3. Structure-preserving simplification of higher algebraic models}
+
+\textbf{C. Blacker, A. M. Miti, L. Ryvkin,}\\
+\textit{Reduction of $L_\infty$-algebras of observables on multisymplectic manifolds},\\
+SIGMA \textbf{20} (2024), 061.\\
+DOI: \href{https://doi.org/10.3842/SIGMA.2024.061}{10.3842/SIGMA.2024.061}.\\
+arXiv: \href{https://arxiv.org/abs/2206.03137}{2206.03137}.
+
+This work studies how a complex algebraic model of physical observables behaves under symmetry reduction, with emphasis
+on retaining the algebraic relations that encode the original system.
+
+\relevance{The work demonstrates experience in decomposing and simplifying complex mathematical structures while
+preserving their essential relations. For an application-oriented quantum role, this supports the ability to reason about
+high-level representations, dependencies, constraints, and transformations before moving to a lower-level implementation.}
+
+\subsection*{4. High-level modelling of observables and alternative representations}
+
+\textbf{A. M. Miti, M. Zambon,}\\
+\textit{Observables on multisymplectic manifolds and higher Courant algebroids},\\
+Communications in Contemporary Mathematics \textbf{27} (2025), no.~8, 2550006.\\
+DOI: \href{https://doi.org/10.1142/S0219199725500063}{10.1142/S0219199725500063}.\\
+arXiv: \href{https://arxiv.org/abs/2209.05836}{2209.05836}.
+
+The paper compares and connects different algebraic descriptions of observables arising in higher geometric mechanics,
+clarifying how information can be encoded in distinct but related mathematical structures.
+
+\relevance{This work reflects a recurring aspect of application development: choosing an appropriate representation of
+a problem and understanding how different representations encode the same underlying information. It also demonstrates
+the ability to work with sophisticated abstractions and explain the relation between them rigorously.}
+
+\subsection*{5. Mappings between complex algebraic structures}
+
+\textbf{D. Fiorenza, A. M. Miti,}\\
+\textit{$L_\infty$-morphisms between twisted Courant $r$-Lie algebras and untwisted Courant $(r+1)$-Lie algebroids},\\
+preprint, 2026.\\
+arXiv: \href{https://arxiv.org/abs/2602.14702}{2602.14702}.
+
+This work constructs and studies explicit higher-algebraic mappings between two different formulations of related
+geometric structures.
+
+\relevance{Its relevance lies primarily in the methodology: translating between abstract representations while keeping
+track of the structural information that must be preserved. This is complementary to my quantum-computing work and
+illustrates the level of mathematical abstraction and formal reasoning I can bring to application development.}
+
+\section*{Additional Peer-Reviewed Research}
+
+My broader publication record establishes a sustained background in mathematical physics, symmetry, quantization, and
+geometric modelling. Selected additional papers include:
+
+\begin{itemize}
+    \item \textbf{A. M. Miti, L. Ryvkin,}
+    \textit{Multisymplectic actions of compact Lie groups on spheres},
+    Journal of Symplectic Geometry \textbf{18} (2020), no.~6, 1751--1785.
+    DOI: \href{https://doi.org/10.4310/JSG.2020.v18.n6.a6}{10.4310/JSG.2020.v18.n6.a6}.
+
+    \item \textbf{A. M. Miti, M. Spera,}
+    \textit{Derivation of the HOMFLYPT knot polynomial via helicity and geometric quantization},
+    Bollettino dell'Unione Matematica Italiana \textbf{14} (2021), 269--284.
+    DOI: \href{https://doi.org/10.1007/s40574-020-00254-5}{10.1007/s40574-020-00254-5}.
+
+    \item \textbf{A. M. Miti, M. Spera,}
+    \textit{A Hydrodynamical Homotopy Co-momentum Map and a Multisymplectic Interpretation of Higher-order Linking Numbers},
+    Journal of the Australian Mathematical Society (2021).
+    DOI: \href{https://doi.org/10.1017/S1446788720000518}{10.1017/S1446788720000518}.
+\end{itemize}
+
+These works are less directly connected to quantum software, but they document the breadth of my experience in
+\textbf{mathematical modelling, symmetries, conserved quantities, quantization, and collaborative research}.
+
+\section*{Complementary Technical Perspective}
+
+The scientific portfolio is complemented by experience with \textbf{C++, Python, CUDA, Linux, parallel computing, and
+scientific software}. I have also worked on GPU-oriented implementations and performance analysis of mathematical
+algorithms. Together with my quantum-circuit research, this gives me a profile that connects theoretical modelling with
+the computational considerations involved in implementing advanced scientific applications.
+
+My academic activity has additionally involved teaching, research seminars, international collaborations, and the
+presentation of technically demanding material to audiences with different backgrounds. I therefore see the
+Quantum Application Developer role as a natural setting in which to combine \textbf{quantum algorithms, scientific
+computing, mathematical abstraction, and technical communication}.
+
+\vfill
+
+\noindent
+\href{https://www.antoniomiti.it/}{www.antoniomiti.it}
+\hfill
+\href{https://orcid.org/0000-0002-8829-1943}{ORCID: 0000-0002-8829-1943}
+
+\end{document}
