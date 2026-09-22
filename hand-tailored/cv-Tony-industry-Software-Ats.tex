@@ -1,0 +1,151 @@
+% Industry CV
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\definecolor{accent}{HTML}{17365D}
+\definecolor{muted}{HTML}{4A4A4A}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdfauthor={Antonio Michele Miti},
+  pdftitle={Antonio Michele Miti - Industry CV}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\footnotesize\textcolor{muted}{Antonio Michele Miti \enspace | \enspace Page \thepage\ of \pageref{LastPage}}}
+\setlength{\footskip}{18pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=2.5pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{0.85em}%
+  {\large\bfseries\color{accent} #1}\par
+  \vspace{0.18em}\hrule\vspace{0.45em}%
+}
+
+\newcommand{\role}[4]{%
+  \Needspace{6\baselineskip}%
+  \textbf{#1}\hfill\textbf{#2}\par
+  \textit{#3}\par
+  \begin{itemize}#4\end{itemize}
+  \vspace{0.3em}%
+}
+
+\newcommand{\project}[3]{%
+  \textbf{#1}\hfill\textbf{#2}\par
+  #3\par\vspace{0.7em}%
+}
+
+\begin{document}
+
+{\Huge\bfseries Antonio Michele Miti}\par
+\vspace{0.15em}
+{\large\color{accent} Mathematician | Scientific Computing and Software Development}\par
+\vspace{0.4em}
+\small
+\href{mailto:antoniomichele.miti@gmail.com}{antoniomichele.miti@gmail.com}
+\enspace | \enspace +39 333 9825 418
+\enspace | \enspace \href{https://www.antoniomiti.it/}{antoniomiti.it}
+\enspace | \enspace \href{https://github.com/MasterToninus}{github.com/MasterToninus}\par
+Italian citizen \enspace | \enspace Based in Lyon, France \enspace | \enspace Open to relocation or remote work
+
+\cvsection{Profile}
+
+Mathematician with an international research background and a longstanding interest in scientific programming. My work has trained me to organise difficult problems, make assumptions explicit, and develop arguments that can be checked in detail. Alongside research, I have developed a practical background in programming and Linux systems, which I am now looking to deepen in a professional software environment.
+
+\cvsection{Technical Background}
+
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.6cm}>{\raggedright\arraybackslash}X@{}}
+Programming languages & C++, CUDA, Haskell, Java, Mathematica, Python \\
+Scientific computing & Algorithm implementation and optimisation, numerical experiments, quantum-circuit design \\
+Systems and tools & Linux administration, Git, computer-cluster maintenance, operating-system installation and configuration \\
+Research practice & Mathematical modelling, proof-based validation, technical writing, peer review, teaching, international collaboration
+\end{tabularx}
+
+\cvsection{Selected Technical Work}
+
+\project{Quantum Algorithms for Modular Arithmetic}{DAC 2025}{
+Co-developed a family of quantum circuits for arithmetic operations and proved the corresponding constructions. The proposed measurement-based uncomputation method reduced Toffoli count and depth by 10--25\%, depending on the circuit architecture. \href{https://arxiv.org/abs/2407.20167}{Paper and technical details}.}
+
+\project{Functional Programming and Domain-Specific Languages}{KU Leuven, 2019}{
+Attended a two-day industry course combining lectures with practical Haskell exercises. The programme covered higher-order functions, recursive programming, algebraic data types, pattern matching, and the construction of small embedded DSLs.}
+
+\project{Linux Systems Administration}{Universit\`a Cattolica and LCM, 2014--2018}{
+Maintained departmental Linux systems and a teaching computer cluster. The work included operating-system installation and configuration, user support, and assistance during computational-physics courses.}
+
+\project{GPU Algorithm Implementation and Optimisation}{C++ / CUDA}{
+Implemented a hybrid C++/CUDA version of a condensation algorithm for determinant computation. Analysed memory-access patterns, compared GPU kernels with a sequential CPU implementation across matrix sizes, and investigated the trade-off between performance and numerical stability.}
+
+\cvsection{Professional Experience}
+
+\role{Postdoctoral Fellow, CIVIS3i MSCA COFUND}{02/2024--03/2026}{Sapienza Universit\`a di Roma, Italy}{
+  \item Led the MultiSymORI research project on multisymplectic geometry, observables, reduction, and their connections with mathematical physics.
+  \item Managed the scientific work, international collaborations, research visits, reporting, publications, and conference presentations associated with the fellowship.
+}
+
+
+\role{Postdoctoral Researcher}{10/2022--01/2024}{Universit\`a Cattolica del Sacro Cuore, Brescia, Italy}{
+  \item Worked on symplectic and multisymplectic geometry, collaborated on international research projects, and taught graduate-level mathematics.
+}
+
+\role{Research Fellow}{10/2021--09/2022}{Max Planck Institute for Mathematics, Bonn, Germany}{
+  \item Studied higher algebraic structures in geometry and mathematical physics within an international research institute.
+}
+
+\role{Doctoral Researcher}{01/2017--04/2021}{KU Leuven, Belgium, and Universit\`a Cattolica del Sacro Cuore, Italy}{
+  \item Completed a joint PhD on homotopy comomentum maps in multisymplectic geometry, spending extended periods at both institutions.
+  \item Combined research with graduate teaching and departmental IT support.
+}
+
+\role{Java Developer Intern}{03/2016--07/2016}{CST s.r.l., Milan, Italy}{
+  \item Trained in Java, object-oriented programming, and professional software-development tools and workflows.
+}
+
+\role{Computer Cluster and Linux Support Assistant}{05/2014--02/2015}{LCM, Universit\`a degli Studi di Milano, Italy}{
+  \item Maintained the laboratory computer cluster and supported Linux installation, configuration, and computational-physics teaching.
+}
+
+\cvsection{Education}
+
+\textbf{PhD in Mathematics}, Universit\`a Cattolica del Sacro Cuore and KU Leuven \hfill 2021\par
+Joint international doctoral programme; thesis in differential geometry and mathematical physics.\par\vspace{0.25em}
+
+\textbf{MSc in Theoretical Physics}, Universit\`a degli Studi di Milano \hfill 2015\par
+Mathematical methods in physics, geometric mechanics, and computational methods.\par\vspace{0.25em}
+
+\textbf{BSc in Physics}, Universit\`a degli Studi di Milano-Bicocca \hfill 2010
+
+\cvsection{Selected Technical Training}
+
+\begin{tabularx}{\textwidth}{@{}Xr@{}}
+Functional Programming and Domain-Specific Languages, KU Leuven & 2019 \\
+Scientific Computing with Python, Universit\`a Cattolica & 2018 \\
+Python for Computational Science, CINECA-SCAI & 2017 \\
+Introduction to Scientific and Technical Computing in C++, CINECA-SCAI & 2016 \\
+Scientific Programming with GPGPU and CUDA, CINECA-SCAI & 2014
+\end{tabularx}
+
+\cvsection{Additional Information}
+
+\textbf{Languages:} Italian (native), English (professional proficiency; TOEFL iBT 102/120), French (basic).\par
+\textbf{Research output:} 8 scientific publications, including work on quantum algorithms; 20+ conference talks; experience reviewing technical research and mentoring students.
+
+\end{document}
