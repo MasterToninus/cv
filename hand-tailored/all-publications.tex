@@ -9,104 +9,105 @@
 \usepackage{lastpage}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage[hyphens]{url}
+\urlstyle{same}
+
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none,
+  doi=true,
+  eprint=true,
+  url=true,
+  isbn=false,
+  giveninits=false,
+  maxbibnames=99
+]{biblatex}
+\addbibresource{../data/publications.bib}
+
+% The source file contains the convenient non-standard entry types
+% @preprint and @draft.  Biber maps both to @unpublished.
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{\step[typesource=preprint, typetarget=unpublished]}
+    \map{\step[typesource=draft, typetarget=unpublished]}
+  }
+}
+
+\usepackage[
+  hidelinks,
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue,
+  anchorcolor=blue
+]{hyperref}
+\hypersetup{breaklinks=true}
+
+% Explicit clickable DOI and arXiv identifiers.
+\DeclareFieldFormat{doi}{%
+  \mkbibacro{DOI}\addcolon\space
+  \href{https://doi.org/#1}{\nolinkurl{#1}}}
+\DeclareFieldFormat{eprint:arxiv}{%
+  \mkbibacro{arXiv}\addcolon\space
+  \href{https://arxiv.org/abs/#1}{\nolinkurl{#1}}}
+
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Antonio Michele Miti}
 \lhead{Publication list}
 \lfoot{}
-\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+\rfoot{\thepage\hspace{1pt}/\pageref{LastPage}}
 \setlength\parindent{0pt}
-
-
-\usepackage{bibentry}
-\usepackage{natbib}
-
-\usepackage[hyphens]{url}
-
-\urlstyle{same}
-\usepackage[
-				hidelinks,
-				colorlinks = true,
-            linkcolor = blue,
-            urlcolor  = blue,
-            citecolor = blue,
-            anchorcolor = blue]{hyperref}
-\hypersetup{breaklinks=true}
 
 \title{PUBLICATION LIST}
 \date{\today}
 \author{
-	Antonio Michele Miti,\\
-	\emph{orcid: \href{https://orcid.org/0000-0002-8829-1943}{0000-0002-8829-1943}},
-	\\
-	%Max Planck Institute for Mathematics
-	Department of Mathematics,\\
-	Sapienza Universit\'a di Roma.
+  Antonio Michele Miti,\\
+  \emph{ORCID: \href{https://orcid.org/0000-0002-8829-1943}{0000-0002-8829-1943}},\\
+  Department of Mathematics,\\
+  Sapienza Universit\'a di Roma.
 }
 
-
 \begin{document}
-  \nobibliography{../data/publications.bib}
-  \bibliographystyle{plainnat}
 
-	\maketitle
+\maketitle
 
-	\noindent
-  The following publications can be also retrieved at the web address:
-  \\ 
-  \url{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}
-  .
-  \nocite{*}
+\noindent
+An updated overview of citations and bibliometric indicators is available at
+\href{https://antoniomiti.it/bibliometrics/}{\texttt{antoniomiti.it/bibliometrics/}}.
+\\
+The publications can also be retrieved from the
+\href{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}{online publication archive}.
 
+\section*{Published}
+\begin{enumerate}
+  \item \fullcite{Luongo2025}\footnote{This is a reduced version of \cite{Luongo2024} adapted to the conference proceedings format.}
+  \item \fullcite{Miti2025}
+  \item \fullcite{Blacker2024}
+  \item \fullcite{Miti2024}
+  \item \fullcite{Miti2021c}
+  \item \fullcite{Miti2021a}
+  \item \fullcite{Miti2020}
+\end{enumerate}
 
-  \section*{Published}
-	  \begin{enumerate}
-		\item \bibentry{Luongo2025}\footnote{This is a reduced version of \cite{Luongo2024} adapted to the conference proceedings format.}
-    	\item \bibentry{Miti2025};
-		\item \bibentry{Blacker2024};		
- 		\item \bibentry{Miti2024};
- 		\item \bibentry{Miti2021c};
- 		\item \bibentry{Miti2021a};
- 		\item \bibentry{Miti2020};
-	  \end{enumerate}
+\section*{Theses}
+\begin{enumerate}
+  \setcounter{enumi}{7}
+  \item \fullcite{Miti2021b}
+\end{enumerate}
 
-  \section*{Theses}
-	  \begin{enumerate}
-		\setcounter{enumi}{7}
- 	   \item \bibentry{Miti2021b}.
-	  \end{enumerate}
+\section*{Submitted to Peer-review}
+\begin{itemize}
+  \item \fullcite{Fiorenza2026}
+  \item \fullcite{Luongo2024}
+\end{itemize}
 
-%  \section*{Accepted for Publication}
-%	  \begin{enumerate}
-%		\setcounter{enumi}{7}
-%		\item.
-%	  \end{enumerate}
+\section*{In Preparation}
+\begin{itemize}
+  \item \fullcite{Basu2026}
+  \item \fullcite{Miti2026}
+  \item \fullcite{DAgostino2026}
+\end{itemize}
 
-  \section*{Submitted to Peer-review}
-	  \begin{itemize}
-		\item \bibentry{Fiorenza2026};
-	   	\item \bibentry{Luongo2024}.
-	  \end{itemize}
-
-%  \section*{Preprints}
-%	  \begin{itemize}
-%    	   \item \bibentry{Luongo2024}.
-%	  \end{itemize}
-  
-  \section*{In Preparation}
-	  \begin{itemize}
- 	   %\item \bibentry{Miti2020a};
-    	\item \bibentry{Miti2026};
-    	\item \bibentry{Dagostino2026}.
-	  \end{itemize}
-
-
-  
 \end{document}
-
-
-\vspace{25mm}
-\begin{tabular}{@{}p{2.5in}p{2in}p{2in}@{}}
-\hrulefill && Rome: _________________ \\
-Antonio Michele MITI &&
-\end{tabular}	  
