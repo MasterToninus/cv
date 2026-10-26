@@ -1,0 +1,9 @@
+# Stockholm Lerheden CV — source and completeness
+
+26 October 2026. Tailored from the repository’s academic CV, cv.yaml and publications.bib. New research-profile prose is red AI text for author review. Appointments, qualifications and activities retain their documented status; CIVIS-3i ends April 2026. No current employment, unconfirmed 2026 stay, formal supervision or host agreement is invented.
+
+The publication list is complete: all seven published journal/conference papers; the distinct Fiorenza–Miti public preprint; the expanded quantum-circuit preprint linked with its conference version; the doctoral thesis; all three manuscripts in preparation. Bachelor’s and master’s theses remain in education, rather than being counted as research articles. Nothing is removed to tailor the research focus. Current journal issue years are retained from the verified shared CV rather than outdated BibTeX years. No new publication status was inferred.
+
+Order is adapted to the call: comparison morphisms and reduction lead the publications, followed by the remaining geometry work and the quantum-circuit paper. The quantum-circuit paper and its expanded preprint remain present. The CV gives neither a claim of expertise in homological perturbation nor a completed twisted Dirac theorem. Grants and the Seal of Excellence remain distinct types of record.
+
+Research visits, organisation and research reading activities are given prominence; teaching experience is retained as documented experience, not a promise to teach during the fellowship. CV contact uses the repository’s Gmail address; the author-approved cover retains its Sapienza address. No private referee contact list is included. No Git publication of this new Stockholm CV is authorised by the earlier request limited to the two archived calls.

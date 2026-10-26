@@ -14,7 +14,7 @@ nationality: "Italian"
 site: "https://www.antoniomiti.it/"
 github: MasterToninus
 orcid: "0000-0002-8829-1943"
-titleinfo: "MSCA fellow in mathematics focussing on differential geometry, higher structures, and their applications to physics."
+titleinfo: "Researcher in mathematics focussing on differential geometry, higher structures, and their applications to physics."
 coverstatement: "I am a differential geometer specializing in higher geometric methods, particularly in symplectic and multisymplectic geometry. My research interests include geometric mechanics, classical field theories, quantization, and homotopical algebra, with a focus on exploring geometric and up-to-homotopy structures inspired by theoretical physics."
 oldstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and structures up to homotopy inspired by theoretical physics."
 sectors: 
@@ -118,18 +118,18 @@ awd:
     info: "Money prize (1200 euros) awarded to members of the BCC bank who graduated with full marks in the academic year 15-16."
     url: "https://web.archive.org/web/20191207203437/https://www.bccmilano.it/news/dettaglio_news_div.asp?i_menuID=54872&hNewsID=132411"
 
-# Current position
-currentjobs:
-  - what: Postdoctoral fellow (CIVIS-3i)
-    when: 02/2024 -- Now
-    where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
-    info: "Research grant (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories.\\vspace{-0.25cm}"
-    url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
+# Current position: no current employment, author-confirmed 23 October 2026.
+currentjobs: []
 
 
 #Professional Experiences (work and postdoc)  (Hint Scinawa: postdocs are jobs, merge work and postdoc together)
 previousjobs:
 #postdoc: # Postdoctoral experiences 
+  - what: Postdoctoral fellow (CIVIS-3i)
+    when: 02/2024 -- 04/2026
+    where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
+    info: "Research grant (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories.\\vspace{-0.25cm}"
+    url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
   - what: Postdoctoral fellow (Assegno di ricerca)
     when: 10/2022 -- 01/2024
     where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
@@ -321,7 +321,7 @@ comp:
 # Affiliations
 affil:
   - what: MSCA researcher (assegnista)
-    when: 02/2024
+    when: 02/2024 -- 04/2026
     where: Universit\'a di Roma la Sapienza, Department of Mathematics - Rome, Italy;
     url: https://www.mat.uniroma1.it/persone/miti
     info: "\\vspace{-0.5cm}"
