@@ -1,0 +1,332 @@
+%=======================================================================%
+%      CV - Quantum Application Engineer | Barrington James
+%=======================================================================%
+%  Author:       Antonio Michele Miti
+%  Description:  CV mirato alla posizione Quantum Application Engineer
+%                pubblicata da Barrington James, Napoli.
+%  Last updated: 2026-10-29
+%  Language:     English.
+%  Build:        pdflatex main.tex (due passaggi).
+%  Dependencies: Pacchetti standard; nessun file .bib o asset esterno.
+%
+%  --- VERSIONE PERSONALIZZATA; MODIFICABILE A MANO ---
+%
+%  Convenzioni del sorgente:
+%    - intestazioni di sezione delimitate e commenti sulle macro;
+%    - indentazione di quattro spazi, senza tabulazioni;
+%    - argomenti lunghi su righe separate;
+%    - contenuto separato dalle impostazioni tipografiche.
+%
+%  Fonti personali: cv-dossier-pubblications.tex, cv-Tony-industry.tex,
+%    cv-Tony-industry-Software-Ats.tex, Scientifi-Portofolio-bip.tex,
+%    gen/cv.tex, forniti dall'autore.
+%  Posizione di riferimento:
+%    https://www.barringtonjames.com/job/quantum-application-engineer/
+%
+%  Note editoriali per l'autore (non compaiono nel PDF):
+%    - La motivazione e una proposta da personalizzare prima dell'invio.
+%    - Fine CIVIS3i: marzo/aprile 2026 nei diversi CV; si usa l'anno.
+%    - Dottorato: si riporta l'anno del titolo, non la durata del contratto.
+%    - TOEFL: punteggio storico di aprile 2018, non attestazione corrente.
+%    - Classe e voto di laurea non sono dedotti; aggiungerli da certificato
+%      se richiesti dalla scheda titoli della procedura.
+%    - Nessuna competenza in MPI, OpenMP, Qiskit o QML viene presunta.
+%=======================================================================%
+
+\documentclass[10pt,a4paper]{article}
+
+
+%=======================================================================%
+%      1. PREAMBOLO - PACCHETTI E IMPAGINAZIONE
+%=======================================================================%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[margin=1.7cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{17365D}
+\definecolor{muted}{HTML}{4A4A4A}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent,
+    pdfauthor={Antonio Michele Miti},
+    pdftitle={Antonio Michele Miti - Quantum Application Engineer}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{
+    leftmargin=1.3em,
+    itemsep=2pt,
+    topsep=3pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{%
+    \footnotesize\textcolor{muted}{%
+        Antonio Michele Miti \enspace | \enspace
+        Page \thepage\ of \pageref{LastPage}%
+    }%
+}
+
+
+%=======================================================================%
+%      2. MACRO - ELEMENTI RIUTILIZZABILI
+%=======================================================================%
+
+% Titolo di sezione con filetto e spazio minimo per il contenuto.
+% Usage: \cvsection{Title}
+\newcommand{\cvsection}[1]{%
+    \Needspace{4\baselineskip}%
+    \vspace{0.8em}%
+    {\large\bfseries\color{accent} #1}\par
+    \vspace{0.2em}\hrule\vspace{0.45em}%
+}
+
+% Voce con titolo, data, istituzione e descrizione.
+% Usage: \entry{Title}{Date}{Institution}{Description}
+\newcommand{\entry}[4]{%
+    \Needspace{4\baselineskip}%
+    \textbf{#1}\hfill #2\par
+    \textit{#3}\par
+    #4\par\vspace{0.45em}%
+}
+
+% Titolo di studio con voto sotto la data, nella colonna destra.
+% Usage: \education{Title}{Date}{Grade}{Institution}{Description}
+\newcommand{\education}[5]{%
+    \Needspace{5\baselineskip}%
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+        \textbf{#1} & #2 \\
+        \textit{#4} & #3
+    \end{tabularx}\par
+    #5\par\vspace{0.45em}%
+}
+
+% Progetto con rimando alle evidenze e lista dei contributi.
+% Usage: \project{Title}{Evidence link}{Items}
+\newcommand{\project}[3]{%
+    \Needspace{5\baselineskip}%
+    \textbf{#1}\par
+    #2\par
+    \begin{itemize}
+        #3
+    \end{itemize}
+    \vspace{0.25em}%
+}
+
+
+%=======================================================================%
+%      3. DOCUMENTO - PROFILO E PERCORSO PROFESSIONALE
+%=======================================================================%
+
+\begin{document}
+
+    {\Huge\bfseries Antonio Michele Miti}\par
+    \vspace{0.25em}
+    {\large\color{accent} Mathematics, Quantum Algorithms and Scientific Computing}\par
+    \vspace{0.1em}
+    \begin{center}
+        \href{mailto:antoniomichele.miti@gmail.com}{%
+                \faEnvelope\enspace antoniomichele.miti@gmail.com}  |
+        \href{tel:+393339825418}{\faPhone\enspace +39 333 9825 418} \\[3pt]
+        \href{https://www.antoniomiti.it/}{\faGlobe\enspace antoniomiti.it} |
+        \href{https://github.com/MasterToninus}{\faGithub\enspace MasterToninus} |
+        \href{https://orcid.org/0000-0002-8829-1943}{%
+            \faOrcid\enspace ORCID: 0000-0002-8829-1943}
+    \end{center}
+    \vspace{0.1em}
+    \textit{Application: Quantum Application Engineer}\par
+    \textit{Barrington James -- Naples, Italy}
+
+    \cvsection{Profile and Motivation}
+
+    I am a mathematician with a joint PhD and a master's degree in theoretical physics.
+My experience includes international research in mathematical physics, as well as work on
+quantum arithmetic circuits and scientific programming using C++ and CUDA.
+I aim to apply this background to quantum application development, technical support and
+demonstrations, combining analytical problem-solving with teaching and international collaboration.
+
+    \cvsection{Education}
+
+    \education{PhD in Science: Mathematics}{April 2021}{Excellent}
+        {Universit\`a Cattolica del Sacro Cuore, Italy, and KU Leuven, Belgium}
+        {Joint international doctorate. Supervisors: Mauro Spera and Marco Zambon.
+        \\Focus: Symplectic geometry, higher structures, classical field theory.
+        \\Thesis: \emph{Homotopy comomentum maps
+        in multisymplectic geometry}. }
+
+    \education{Master's Degree in Theoretical Physics}{November 2015}{110/110}
+        {Universit\`a degli Studi di Milano, Italy}
+        {Focus: mathematical methods in physics, geometric mechanics, and scientific computing.
+        \\
+        Thesis: \emph{Algebraic quantization of Jacobi fields and geometric
+        approach to Peierls brackets}.}
+
+    \education{Bachelor's Degree in Physics}{October 2010}{99/110}
+        {Universit\`a degli Studi di Milano-Bicocca, Italy}
+        {Thesis: Lie group theory and its application to rigid-body mechanics.}
+
+    \cvsection{Selected Quantum and Computational Work}
+
+    \project{Quantum arithmetic and circuit resource optimisation}
+        {A. Luongo, A. M. Miti, V. Narasimhachar, A. Sireesh.
+        \emph{Measurement-based uncomputation of quantum circuits for modular
+        arithmetic}. DAC 2025.
+        \href{https://doi.org/10.1109/DAC63849.2025.11132981}{Publication}
+        \enspace | \enspace
+        \href{https://arxiv.org/abs/2407.20167}{arXiv:2407.20167}.}
+        {
+            \item Co-developed quantum arithmetic circuit constructions and
+                their mathematical proofs, studying measurement-based
+                uncomputation and resource costs.
+            \item Compared alternative constructions through Toffoli counts
+                and circuit depth, linking algorithm design to implementation
+                constraints.
+        }
+
+    \project{Hybrid CPU--GPU determinant computation in C++/CUDA}
+        {\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Condensation\%20Algorithm\%20in\%20CUDA}
+        {Source code: Condensation Algorithm in CUDA}.}
+        {
+            \item Implemented a determinant condensation algorithm with a
+                CUDA matrix library, GPU kernels, tests and pivoting strategies.
+            \item Compared CPU and GPU implementations across matrix sizes;
+                investigated memory-access patterns, performance and numerical
+                stability.
+        }
+
+    \project{Monte Carlo simulation of the Ising model in C++}
+        {\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Ising\%20simulation\%20Metropolis\%20vs\%20Cluster}
+        {Source code: Metropolis and cluster algorithms}.}
+        {
+            \item Implemented and compared Metropolis and cluster-based
+                algorithms for the same physical system through numerical
+                experiments and analysis.
+        }
+
+    \cvsection{Technical and Mathematical Background}
+
+    \begin{tabularx}{\textwidth}{%
+        @{}>{\raggedright\arraybackslash\bfseries}p{2.8cm}%
+        >{\raggedright\arraybackslash}X@{}%
+    }
+        Programming &
+            C++, CUDA, Python, Mathematica, Haskell and Java. \\[3pt]
+        Systems / tools &
+            Linux administration, computer-cluster maintenance, Git and \LaTeX. \\[3pt]
+        Quantum &
+            Arithmetic circuits, measurement-based uncomputation,
+            resource estimation and mathematical verification. \\[3pt]
+        Maths / physics &
+            Differential geometry, geometric mechanics, classical field
+            theories, quantization, symmetry and constraint reduction.
+    \end{tabularx}
+
+    \newpage
+
+    \cvsection{Selected Computing Courses and Workshops}
+
+    \begin{tabularx}{\textwidth}{@{}p{1.3cm}X@{}}
+        12/2024 & \textbf{High Performance Computing and Quantum Computing},
+            seventh edition -- CINECA, Bologna (workshop). \\[4pt]
+        11/2019 & \textbf{Functional Programming and Domain-Specific Languages}
+            -- KU Leuven; lectures and practical Haskell exercises. \\[4pt]
+        06/2018 & \textbf{Scientific Computing with Python}
+            -- Universit\`a Cattolica del Sacro Cuore (doctoral course). \\[4pt]
+        02/2017 & \textbf{Python for Computational Science}
+            -- CINECA-SCAI. \\[4pt]
+        03/2016 & \textbf{Introduction to Scientific and Technical Computing in C++}
+            -- CINECA-SCAI. \\[4pt]
+        03/2014 & \textbf{Introduction to Scientific Programming using GPGPU and CUDA}
+            -- CINECA-SCAI.
+    \end{tabularx}
+
+    \cvsection{Research and Technical Experience}
+
+    \entry{Postdoctoral Fellow -- CIVIS3i, MSCA COFUND}{February 2024--April 2026}
+        {Sapienza Universit\`a di Roma, Italy}
+        {MultiSymORI: multisymplectic geometry, observables, reduction and
+        numerical integrators. Conducted mathematical research and coordinated
+        international collaborations, research visits, reporting and scientific
+        dissemination within the fellowship.}
+
+    \entry{Postdoctoral Researcher}{October 2022--January 2024}
+        {Universit\`a Cattolica del Sacro Cuore, Brescia, Italy}
+        {Research on symplectic and multisymplectic geometry and applications
+        to mathematical physics; international collaboration and graduate teaching.}
+
+    \entry{Research Fellow}{October 2021--September 2022}
+        {Max Planck Institute for Mathematics, Bonn, Germany}
+        {Research on higher algebraic structures and multisymplectic geometry
+        in an international research environment.}
+
+    \entry{Java Developer Intern}{March--July 2016}
+        {CST s.r.l., Milan, Italy}
+        {Training in Java, object-oriented programming and professional
+        software-development tools.}
+
+    \entry{Computer Cluster and Linux Support Assistant}{May 2014--February 2015}
+        {Laboratorio di Calcolo e Multimedia, Universit\`a degli Studi di Milano}
+        {Maintained the laboratory computer cluster; supported Linux
+        installation and configuration and computational-physics teaching.}
+
+    \cvsection{Selected Publications}
+
+    \begin{itemize}[itemsep=5pt]
+        \item D. Fiorenza, A. M. Miti.
+            \emph{$L_\infty$-morphisms between twisted Courant $r$-Lie
+            algebras and untwisted Courant $(r+1)$-Lie algebroids}.
+            Preprint (2026).
+            \href{https://arxiv.org/abs/2602.14702}{arXiv:2602.14702}.
+        \item A. M. Miti, L. Ryvkin.
+            \emph{Multisymplectic observable reduction using constraint triples}.
+            Differential Geometry and its Applications \textbf{100} (2025), 102272.
+            \href{https://doi.org/10.1016/j.difgeo.2025.102272}{DOI}.
+        \item A. M. Miti, M. Zambon.
+            \emph{Observables on multisymplectic manifolds and higher Courant
+            algebroids}. Communications in Contemporary Mathematics
+            \textbf{27} (2025), no.~8, 2550006.
+            \href{https://doi.org/10.1142/S0219199725500063}{DOI}.
+        \item A. M. Miti, M. Spera.
+            \emph{Derivation of the HOMFLYPT knot polynomial via helicity
+            and geometric quantization}.
+            Bollettino dell'Unione Matematica Italiana \textbf{14} (2021), 269--284.
+            \href{https://doi.org/10.1007/s40574-020-00254-5}{DOI}.
+        \item A. M. Miti, M. Spera.
+            \emph{A hydrodynamical homotopy co-momentum map and a
+            multisymplectic interpretation of higher-order linking numbers}.
+            Journal of the Australian Mathematical Society
+            (published online in 2021).
+            \href{https://doi.org/10.1017/S1446788720000518}{DOI}.
+    \end{itemize}
+
+    \cvsection{Languages and Scientific Communication}
+
+    \textbf{Italian:} native.
+    \hfill
+    \textbf{English:} fluent; TOEFL iBT 102/120 (April 2018).
+    \hfill
+    \textbf{French:} basic.\par
+    Experience in graduate teaching, scientific peer review and international
+    conference presentations, with a focus on explaining complex technical concepts.
+
+\end{document}
