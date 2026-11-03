@@ -1,5 +1,6 @@
-% Bozza AI Eni 33545 - formato CV Barrington James 64a44d2, 29/10/2026.
-% Contenuti Eni mantenuti; aggiornamento di formato richiesto il 02/11/2026.
+% Documento approvato il 03/11/2026; colori di revisione rimossi su richiesta.
+% Preparato con assistenza AI; provenienza conservata nelle note della candidatura.
+% Competenze documentate, bibliografia selettiva, verifica estrazione testo.
 \documentclass[10pt,a4paper]{article}
 
 
@@ -20,6 +21,7 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{fontawesome5}
+
 \usepackage{hyperref}
 
 \definecolor{accent}{HTML}{17365D}
@@ -30,7 +32,7 @@
     urlcolor=accent,
     linkcolor=accent,
     pdfauthor={Antonio Michele Miti},
-    pdftitle={Antonio Michele Miti - Eni HPC 33545 - Bozza}
+    pdftitle={Antonio Michele Miti - Eni HPC 33545}
 }
 
 \setlength{\parindent}{0pt}
@@ -105,13 +107,20 @@
 %      3. DOCUMENTO - PROFILO E PERCORSO PROFESSIONALE
 %=======================================================================%
 
-\definecolor{reviewred}{HTML}{B00020}
-\newcommand{\AI}[1]{{\color{reviewred}#1}}
+% Unicode mapping and explicit interword spaces for PDF text extraction.
+\input{glyphtounicode}
+% Text equivalents for decorative contact icons.
+\pdfglyphtounicode{envelope}{0045 006D 0061 0069 006C 003A}
+\pdfglyphtounicode{phone}{0054 0065 006C 003A}
+\pdfglyphtounicode{globe}{0057 0065 0062 003A}
+\pdfglyphtounicode{github}{0047 0069 0074 0048 0075 0062 003A}
+\pdfglyphtounicode{orcid}{0020}
+\pdfgentounicode=1
+\pdfinterwordspaceon
 \begin{document}
-
-    {\Huge\bfseries Antonio Michele Miti}\par
-    \vspace{0.25em}
-    {\large\color{accent} Fisica matematica e calcolo scientifico}\par
+{\Huge\bfseries Antonio Michele Miti}\par
+\vspace{0.25em}
+{\large\color{accent} Fisica matematica e calcolo scientifico}\par
     \vspace{0.1em}
     \begin{center}
         \href{mailto:antoniomichele.miti@gmail.com}{%
@@ -123,65 +132,123 @@
             \faOrcid\enspace ORCID: 0000-0002-8829-1943}
     \end{center}
     \vspace{0.1em}
-    \textit{Candidatura: Junior Architetture Hardware di Supercalcolo-HPC}\par
-    \textit{Eni -- San Donato Milanese -- posizione 33545}
+\textit{Candidatura: Junior Architetture Hardware di Supercalcolo-HPC}\par
+\textit{Eni -- San Donato Milanese -- posizione 33545}\par
 
-{\footnotesize\color{reviewred} Bozza di revisione: rosso = nuova formulazione AI.}
 \cvsection{Profilo}
-\AI{Laureato magistrale in Fisica teorica e dottore di ricerca in Matematica, con un percorso internazionale nella fisica matematica. Affianco alla ricerca teorica esperienze universitarie di programmazione C++/CUDA e mantenimento di sistemi Linux e di un cluster didattico.}
-\AI{Desidero applicare l’esperienza maturata nella fisica matematica a contesti industriali, attraverso un percorso di formazione continua e apprendimento sul campo delle tecnologie HPC.}
+Ricercatore in fisica matematica con esperienza post-dottorale internazionale e formazione in Fisica teorica. Unisco ricerca autonoma e collaborazione scientifica a esperienze universitarie di programmazione C++/CUDA e mantenimento Linux. Desidero trasferire questa base alle applicazioni del calcolo scientifico, attraverso un percorso di aggiornamento continuo sulle tecnologie HPC.
+
 \cvsection{Competenze pertinenti}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\bfseries}p{3.5cm}>{\raggedright\arraybackslash}X@{}}
-Calcolo scientifico & C++ e CUDA in progetti universitari: implementazione di algoritmi, confronto CPU--GPU, analisi delle prestazioni e stabilità numerica.\\[4pt]
-Sistemi e strumenti & Linux, mantenimento di sistemi dipartimentali e cluster didattico; supporto agli utenti; Git e \LaTeX.\\[4pt]
-Altri linguaggi & Python, Mathematica, Java e Haskell, utilizzati in contesti di studio, formazione e ricerca.\\[4pt]
-Metodo e comunicazione & Formalizzazione dei problemi, verifica matematica, documentazione tecnica, didattica e collaborazione scientifica internazionale.
-\end{tabularx}
+\begin{itemize}
+    \item \textbf{Calcolo scientifico:} C++ e CUDA in progetti universitari; implementazione e confronto di algoritmi, analisi delle prestazioni e stabilità numerica.
+    \item \textbf{Sistemi e supporto:} mantenimento di sistemi Linux e di un cluster didattico; supporto agli utenti e alle attività di fisica computazionale.
+    \item \textbf{Strumenti:} Git e \LaTeX; Python, Mathematica, Java e Haskell utilizzati in contesti di studio, formazione e ricerca.
+\end{itemize}
+
 \cvsection{Progetti di calcolo scientifico}
-\entry{Calcolo di determinanti su CPU e GPU}{Progetto universitario}{C++ / CUDA}
-{Implementazione ibrida di un algoritmo di condensazione per il calcolo del determinante. Confronto tra implementazione sequenziale e kernel GPU al variare della dimensione delle matrici; studio degli accessi alla memoria e del rapporto tra prestazioni e stabilità numerica.
-\href{https://github.com/MasterToninus/Computational-Physics-Exercise}{Codice: Computational-Physics-Exercise}.}
-\entry{Simulazione Monte Carlo del modello di Ising}{Progetto universitario}{C++}
-{Implementazione e confronto degli algoritmi di Metropolis e a cluster mediante esperimenti numerici sullo stesso sistema fisico.}
+\entry{Calcolo di determinanti su CPU e GPU}{Progetto universitario}{C++ / CUDA}{%
+\begin{itemize}
+    \item Implementato un algoritmo di condensazione con una libreria di matrici CUDA, kernel GPU, test e strategie di pivoting.
+    \item Confrontato l'implementazione GPU con quella sequenziale CPU al variare delle dimensioni delle matrici, studiando accessi alla memoria, prestazioni e stabilità numerica.
+\end{itemize}
+\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Condensation\%20Algorithm\%20in\%20CUDA}{Codice del progetto}.}
+\entry{Simulazione Monte Carlo del modello di Ising}{Progetto universitario}{C++}{%
+\begin{itemize}
+    \item Implementato e confrontato gli algoritmi di Metropolis e a cluster mediante esperimenti numerici sullo stesso sistema fisico.
+\end{itemize}
+\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Ising\%20simulation\%20Metropolis\%20vs\%20Cluster}{Codice del progetto}.}
+
 \cvsection{Esperienze di supporto informatico}
-\entry{Collaborazione studentesca -- mantenimento cluster}{05/2014--02/2015}{Laboratorio di Calcolo e Multimedia, Università degli Studi di Milano}
-{Mantenimento del cluster del laboratorio e supporto agli utenti e alle attività didattiche di fisica computazionale in ambiente Linux.}
-\entry{Supporto ai sistemi informatici dipartimentali}{03/2017--10/2018}{Università Cattolica del Sacro Cuore, Brescia}
-{Attività di assistenza al mantenimento dei sistemi informatici del Dipartimento di Matematica e Fisica, durante il dottorato.}
-\entry{Stage di programmazione Java}{03/2016--07/2016}{CST s.r.l., Milano}
-{Formazione in Java, programmazione orientata agli oggetti e strumenti per lo sviluppo software professionale.}
+\entry{Supporto ai sistemi informatici dipartimentali}{2017--2018}{Università Cattolica del Sacro Cuore, Brescia}{%
+Attività di assistenza al mantenimento dei sistemi informatici del Dipartimento di Matematica e Fisica, durante il dottorato.}
+\entry{Stage di programmazione Java}{2016}{CST s.r.l., Milano}{%
+Formazione in Java, programmazione orientata agli oggetti e strumenti per lo sviluppo software professionale.}
+\entry{Collaborazione studentesca -- mantenimento cluster}{2014--2015}{Laboratorio di Calcolo e Multimedia, Università degli Studi di Milano}{%
+Mantenimento del cluster del laboratorio e supporto agli utenti e alle attività didattiche di fisica computazionale in ambiente Linux.}
+
+\cvsection{Lingue}
+\begin{itemize}
+    \item \textbf{Italiano:} madrelingua.
+    \item \textbf{Inglese:} uso professionale nella ricerca e nella didattica; TOEFL iBT 102/120 (2018, risultato storico).
+    \item \textbf{Francese:} base.
+\end{itemize}
+
 \newpage
-\cvsection{Esperienza nella ricerca}
-\entry{Postdoctoral Fellow -- CIVIS3i, MSCA COFUND}{2024--2026}{Sapienza Università di Roma}
-{Progetto MultiSymORI su geometria multisimplettica, osservabili e riduzione, nell'ambito della fisica matematica. Ricerca, collaborazioni internazionali, visite scientifiche, pubblicazioni e rendicontazione.}
-\entry{Assegnista di ricerca}{10/2022--01/2024}{Università Cattolica del Sacro Cuore, Brescia}
-{Ricerca in geometria simplettica e multisimplettica con applicazioni alla fisica matematica; collaborazione internazionale e didattica universitaria.}
-\entry{Research Fellow}{10/2021--09/2022}{Max Planck Institute for Mathematics, Bonn}
-{Ricerca sulle strutture algebriche superiori in geometria e fisica matematica, in un ambiente internazionale.}
-\entry{Dottorando in Matematica}{2016--2021}{Università Cattolica del Sacro Cuore e KU Leuven}
-{Dottorato internazionale con periodi di ricerca in Italia e Belgio; geometria differenziale, meccanica geometrica e teorie classiche dei campi.}
+\cvsection{Esperienza professionale nella ricerca}
+\entry{Postdoctoral Fellow -- CIVIS3i, MSCA COFUND}{2024--2026}{Sapienza Università di Roma}{%
+Ricerca nel progetto MultiSymORI su geometria multisimplettica, osservabili e riduzione, nell'ambito della fisica matematica.
+Curato il lavoro scientifico, le collaborazioni internazionali, le visite di ricerca, le pubblicazioni e la rendicontazione del progetto.
+}
+\entry{Assegnista di ricerca}{2022--2024}{Università Cattolica del Sacro Cuore, Brescia}{%
+Ricerca in geometria simplettica e multisimplettica con applicazioni alla fisica matematica; collaborazione internazionale e didattica universitaria.}
+\entry{Research Fellow}{2021--2022}{Max Planck Institute for Mathematics, Bonn}{%
+Ricerca sulle strutture algebriche superiori in geometria e fisica matematica, in un ambiente internazionale.}
+
 \cvsection{Formazione}
-\education{Dottorato in Science: Mathematics}{04/2021}{}{Università Cattolica del Sacro Cuore / KU Leuven}
-{Titolo congiunto internazionale. Tesi: \emph{Homotopy comomentum maps in multisymplectic geometry}.}
-\education{Laurea magistrale in Fisica -- curriculum teorico}{11/2015}{110/110}{Università degli Studi di Milano}
-{Metodi matematici della fisica, meccanica geometrica e metodi computazionali.}
-\education{Laurea in Fisica}{10/2010}{99/110}{Università degli Studi di Milano-Bicocca}{}
-\cvsection{Transizione professionale e formazione tecnica}
-\AI{Iscritto alla selezione del Master universitario di II livello in \emph{High-Performance and Quantum Computing}, Università di Bologna, a.a.\ 2026/2027 (codice 6162).}\par
-\begin{tabularx}{\textwidth}{@{}p{1.2cm}X@{}}
-2024 & Workshop \emph{High Performance Computing and Quantum Computing}, VII edizione, CINECA.\\[3pt]
-2019 & \emph{Functional Programming and Domain-Specific Languages}, KU Leuven (Haskell).\\[3pt]
-2018 & \emph{Scientific Computing with Python}, Università Cattolica.\\[3pt]
-2017 & \emph{Python for Computational Science}, CINECA-SCAI.\\[3pt]
-2016 & \emph{Introduction to Scientific and Technical Computing in C++}, CINECA-SCAI.\\[3pt]
-2014 & \emph{Scientific Programming using GPGPU and CUDA}, CINECA-SCAI.
+\education{Dottorato in Science: Mathematics}{2021}{}{Università Cattolica del Sacro Cuore / KU Leuven}{%
+Dottorato internazionale in Matematica (2016--2021), con periodi di ricerca in Italia e Belgio; specializzazione in geometria differenziale e fisica matematica.}
+\education{Laurea magistrale in Fisica -- curriculum teorico}{2015}{110/110}{Università degli Studi di Milano}{%
+Metodi matematici della fisica, meccanica geometrica e metodi computazionali.}
+\education{Laurea in Fisica}{2010}{99/110}{Università degli Studi di Milano-Bicocca}{}
+
+\cvsection{Aggiornamento professionale}
+\begin{itemize}
+    \item \textbf{2026} -- Iscritto alla selezione del Master universitario di II livello in \emph{High-Performance and Quantum Computing}, Università di Bologna, a.a.\ 2026/2027 (codice 6162).
+    \item \textbf{2024} -- Workshop \emph{High Performance Computing and Quantum Computing}, CINECA.
+    \item \textbf{2018} -- \emph{Scientific Computing with Python}, Università Cattolica.
+    \item \textbf{2017} -- \emph{Python for Computational Science}, CINECA-SCAI.
+    \item \textbf{2016} -- \emph{Introduction to Scientific and Technical Computing in C++}, CINECA-SCAI.
+    \item \textbf{2014} -- \emph{Scientific Programming using GPGPU and CUDA}, CINECA-SCAI.
+\end{itemize}
+
+\cvsection{Pubblicazioni selezionate}
+\begin{itemize}[itemsep=4pt]
+    \item A. Luongo, A. M. Miti, V. Narasimhachar, A. Sireesh.
+    \emph{Measurement-based uncomputation of quantum circuits for modular arithmetic}.
+    DAC (2025).
+    \href{https://doi.org/10.1109/DAC63849.2025.11132981}{DOI}.
+    Contributo congiunto alle costruzioni di circuiti e alla loro verifica matematica, con confronto dei costi in risorse.
+    \item A. M. Miti, L. Ryvkin.
+    \emph{Multisymplectic observable reduction using constraint triples}.
+    Differential Geometry and its Applications \textbf{100} (2025), 102272.
+    \href{https://doi.org/10.1016/j.difgeo.2025.102272}{DOI}.
+    \item A. M. Miti, M. Zambon.
+    \emph{Observables on multisymplectic manifolds and higher Courant algebroids}.
+    Communications in Contemporary Mathematics \textbf{27} (2025), 2550006.
+    \href{https://doi.org/10.1142/S0219199725500063}{DOI}.
+    \item C. Blacker, A. M. Miti, L. Ryvkin.
+    \emph{Reduction of $L_\infty$-algebras of observables on multisymplectic manifolds}.
+    SIGMA \textbf{20} (2024), 061.
+    \href{https://doi.org/10.3842/SIGMA.2024.061}{DOI}.
+    \item A. M. Miti, M. Spera.
+    \emph{A hydrodynamical homotopy co-momentum map and a multisymplectic interpretation of higher-order linking numbers}.
+    Journal of the Australian Mathematical Society (2021, pubblicazione online).
+    \href{https://doi.org/10.1017/S1446788720000518}{DOI}.
+\end{itemize}
+\href{https://orcid.org/0000-0002-8829-1943}{Profilo scientifico e pubblicazioni: ORCID}.\par
+
+\cvsection{Attività scientifica e didattica in numeri}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Ricerca}\par\vspace{3pt}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|r|}
+\hline
+Pubblicazioni scientifiche & 7 \\ \hline
+Preprint non ancora pubblicati & 1 \\ \hline
+Lavori in preparazione & 3 \\ \hline
+Anni di esperienza postdoc (circa) & 5 \\ \hline
 \end{tabularx}
-\cvsection{Pubblicazione selezionata}
-A. Luongo, A. M. Miti, V. Narasimhachar, A. Sireesh.
-\emph{Measurement-based uncomputation of quantum circuits for modular arithmetic}. DAC 2025.
-\href{https://doi.org/10.1109/DAC63849.2025.11132981}{DOI}.\par
-Contributo congiunto a costruzioni di circuiti aritmetici quantistici e alla loro verifica matematica; confronto dei costi in risorse. Esperienza complementare al calcolo classico CPU--GPU.
-\cvsection{Lingue e disponibilità}
-Italiano: madrelingua. Inglese: uso professionale nella ricerca e nella didattica; TOEFL iBT 102/120 (aprile 2018, risultato storico). Francese: base.\par
-Disponibile a lavorare a San Donato Milanese e alla mobilità nazionale e internazionale.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Comunicazione e attività internazionale}\par\vspace{3pt}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|r|}
+\hline
+Interventi su invito & 17 \\ \hline
+Comunicazioni e poster & 20 \\ \hline
+Conferenze frequentate & 62 \\ \hline
+Soggiorni di ricerca & 12 \\ \hline
+\end{tabularx}
+\end{minipage}
+\par\vspace{5pt}
+\textbf{Didattica e organizzazione:} 5 corsi di livello magistrale/dottorale, 58 ore di didattica; 4 conferenze organizzate.
+
 \end{document}
