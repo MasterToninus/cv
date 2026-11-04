@@ -1,0 +1,4 @@
+# Optional formatting tools; normal CV generation uses requirements.txt only.
+-r requirements.txt
+black==25.1.0
+isort==6.0.1

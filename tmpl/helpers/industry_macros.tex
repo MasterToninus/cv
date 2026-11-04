@@ -1,0 +1,36 @@
+%+------------------------------------------------------------------------+
+%| NOTE: Jinja2 entry macros for the Industry CV.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Credits: Repository CV sources; original credits retained in source.
+%+------------------------------------------------------------------------+
+~{ macro url(value) -}~
+~{{ value | default('') | replace('\\&', '&') | replace('&', '\\&') | replace('\\%', '%') | replace('%', '\\%') | replace('\\#', '#') | replace('#', '\\#') }}~
+~{- endmacro }~
+
+~{ macro voice(entry) -}~
+\voice{~{{ entry.what }}~}
+    {~{{ entry.when | default('') }}~}
+    {~{{ entry.where | default('') }}~}
+    {~{{ url(entry.url) }}~}
+    {~{{ entry.info | default('') }}~}
+~{- endmacro }~
+
+~{ macro voices(entries) -}~
+~{ for entry in entries -}~
+~{{ voice(entry) }}~
+~{ endfor }~
+~{- endmacro }~
+
+~{ macro activities(entries) -}~
+~{ for entry in entries -}~
+\longvoice{~{{ entry.Event_Title }}~}
+    {~{{ entry.Type }}~}
+    {~{{ url(entry.Url) }}~}
+    {~{{ entry.Approx_Date }}~}
+    {~{{ entry.Organization }}~}
+    {~{{ entry.Location }}~}
+    {~{{ entry.Country }}~}
+    {~{{ entry.Scheduled }}~}
+~{ endfor }~
+~{- endmacro }~

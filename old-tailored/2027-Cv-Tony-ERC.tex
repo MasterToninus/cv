@@ -1,0 +1,768 @@
+%+------------------------------------------------------------------------+
+%| NOTE: CV and track record extracted from ERC Starting Grant 2027 HiDRA.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Tools: ChatGPT (GPT-6) + Codex.
+%| Credits: template alexfikl/erc-stg; original HiDRA B1 source, 2026-10-13.
+%+------------------------------------------------------------------------+
+
+% Standalone archival copy. The ERC call year is 2027; the CV snapshot is 2026.
+% The source CV block below is retained verbatim, including provenance comments.
+% Scientific proposal, abstract and proposal bibliography are excluded.
+% Compile with pdfLaTeX; no Biber run or project-local package is required.
+% Compatibility definitions reproduce the original untagged PDF presentation.
+
+%------------------------------- D0cum3nt -------------------------------%
+\documentclass[a4paper,fontsize=11bp]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgtermes}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{needspace}
+\usepackage{scrlayer-scrpage}
+\usepackage{setspace}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\singlespacing
+\typearea{14}
+\geometry{top=1.75cm,bottom=1.5cm,left=2cm,right=2cm,footskip=0.5cm,headsep=0.5cm}
+\addtokomafont{disposition}{\rmfamily}
+\hypersetup{colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black,
+  pdftitle={Antonio Michele Miti -- ERC Starting Grant 2027 CV and Track Record},
+  pdfauthor={Antonio Michele Miti}}
+\pagestyle{plain}
+\clearpairofpagestyles
+\ihead[Miti]{Miti}
+\chead[Part B1]{Part B1}
+\ohead[HiDRA]{HiDRA}
+\cfoot[\thepage]{\thepage}
+
+% These lightweight definitions retain the original provenance markup without
+% loading Tony-Ai, the proposal class, its bibliography or its review workflow.
+\definecolor{ERCRevisionRed}{RGB}{180,0,0}
+\definecolor{HiDRAAccent}{HTML}{003366}
+\DeclareRobustCommand{\ERCauthor}[1]{{\color{black}#1}}
+\DeclareRobustCommand{\ERCrevision}[1]{{\color{ERCRevisionRed}#1}}
+\newcommand{\ProjectAcronym}{HiDRA}
+\newif\ifERCCleanCopy
+\ERCCleanCopyfalse
+\newif\ifHiDRACleanHeadings
+\HiDRACleanHeadingsfalse
+\providecommand{\tagstructbegin}[1]{}
+\providecommand{\tagstructend}{}
+\newenvironment{erccvitem}{}{}
+% No CV entry uses a citation: refsection is a grouping boundary here.
+\newenvironment{refsection}{\begingroup}{\endgroup}
+
+% Heading spacing and paragraph treatment copied from erc-math-writing.sty.
+% Keeping them inline makes this archived document independent of that project.
+\makeatletter
+\let\HiDRAOriginalStartSection\@startsection
+\renewcommand{\@startsection}[6]{%
+  \def\HiDRAStartSectionCall{\HiDRAOriginalStartSection{#1}{#2}{#3}{#4}}%
+  \ifnum#2>0\relax
+    \ifnum#2<3\relax
+      \if@nobreak\else
+        \@tempskipa #4\relax
+        \@tempskipa=0.6\@tempskipa
+        \edef\HiDRAStartSectionCall{%
+          \unexpanded{\HiDRAOriginalStartSection{#1}{#2}{#3}}{\the\@tempskipa}}%
+      \fi
+    \fi
+  \fi
+  \HiDRAStartSectionCall{#5}{#6}%
+}
+\newif\ifHiDRAAfterHeading
+\HiDRAAfterHeadingfalse
+\let\HiDRAOriginalXsect\@xsect
+\renewcommand{\@xsect}[1]{%
+  \@tempskipa #1\relax
+  \ifdim\@tempskipa>\z@
+    \@tempskipa=0.25\@tempskipa
+    \edef\HiDRAHeadingSkip{\the\@tempskipa}%
+    \global\HiDRAAfterHeadingtrue
+    \expandafter\HiDRAOriginalXsect\expandafter{\HiDRAHeadingSkip}%
+  \else
+    \HiDRAOriginalXsect{#1}%
+  \fi
+  \ignorespaces
+}
+\AddToHook{para/begin}[hidra-heading-gap]{%
+  \ifHiDRAAfterHeading
+    \global\HiDRAAfterHeadingfalse
+    \ifdim\parskip>\z@
+      \vadjust pre{\vskip -0.75\parskip}%
+    \fi
+  \fi
+}
+\AddToHook{cmd/@trivlist/before}[hidra-heading-list-gap]{%
+  \ifHiDRAAfterHeading
+    \parskip=0.25\parskip
+  \fi
+}
+\newcommand{\HiDRAHeadingFormat}{%
+  \normalfont\normalsize\bfseries\color{HiDRAAccent}%
+  \ifHiDRACleanHeadings
+    \let\ERCauthor\@firstofone
+    \let\ERCrevision\@firstofone
+  \fi
+}
+% The selected-output heading and the first topic form one visual unit.
+% Add a page guard in the wrapper, leaving the archived source block untouched.
+\newcommand{\ERCArchiveSubsection}{%
+  \Needspace{5\baselineskip}\@startsection{subsection}{2}{\z@}%
+    {0.7\baselineskip}{0.4\baselineskip}{\HiDRAHeadingFormat}}
+\newcommand{\ERCArchiveStarredSubsection}[1]{%
+  \def\ERCArchiveHeading{#1}%
+  \def\ERCArchiveOutputHeading{10 SELECTED RESEARCH OUTPUTS}%
+  \ifx\ERCArchiveHeading\ERCArchiveOutputHeading
+    \Needspace{18\baselineskip}%
+  \fi
+  \ERCArchiveSubsection*{#1}}
+\newcommand{\HiDRAApplyScientificStyle}{%
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0.45\baselineskip}%
+  \clubpenalty=10000\relax
+  \@clubpenalty=10000\relax
+  \widowpenalty=10000\relax
+  \renewcommand\section{\Needspace{9\baselineskip}\@startsection{section}{1}{\z@}%
+    {0.8\baselineskip}{0.45\baselineskip}{\HiDRAHeadingFormat}}%
+  \renewcommand\subsection{%
+    \@ifstar{\ERCArchiveStarredSubsection}{\ERCArchiveSubsection}}%
+  \renewcommand\subsubsection{\Needspace{5\baselineskip}\@startsection{subsubsection}{3}{\z@}%
+    {0.6\baselineskip}{0.35\baselineskip}{\HiDRAHeadingFormat}}%
+}
+\makeatother
+
+\begin{document}
+% BEGIN VERBATIM CV BLOCK: supplied ERC B1 source.
+% R08 PI correction, 2026-10-03: postdoc mentors supplied; parental chronology
+% removed. Blohmann spelling checked against the official MPIM staff page.
+% CV sources: three attachments and the PI's Sapienza-affiliation clarification,
+% all supplied on 30 September 2026. Reading limits remain in the source ledger.
+% New narrative stays red; Human review retains unresolved personal facts.
+% 2026-10-09: PI reopens presentation only; wording/order/provenance are retained.
+
+%+------------------------------------------------------------------------+
+%| NOTE: CV presentation aligned with the proposal; content remains frozen.
+%| DATE: 2026-10-09
+%| Author: Antonio Michele Miti
+%| Tools: ChatGPT (GPT-6) + Codex.
+%+------------------------------------------------------------------------+
+% Reuse P1D, heading hierarchy and positive paragraph spacing locally.
+\begingroup
+\ifERCCleanCopy\HiDRACleanHeadingstrue\fi
+\HiDRAApplyScientificStyle
+% Date/description rows align at the top and occupy exactly the text width.
+% No font reduction, decorative background or change to the entry content.
+\renewenvironment{erccvitem}{%
+  \tagstructbegin{tag=erc-stg-cvitem}%
+  \noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.16\linewidth}%
+    @{\hspace{1em}}p{\dimexpr0.84\linewidth-1em\relax}@{}}%
+}{\end{tabular}\tagstructend\par}
+% Paragraph spacing already separates lists from surrounding text.
+% Avoid adding the default list top spacing a second time.
+\renewenvironment{itemize}{%
+  \begin{list}{\labelitemi}{%
+    \setlength{\leftmargin}{\leftmargini}%
+    \setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}\setlength{\itemsep}{0.15\baselineskip}}%
+}{\end{list}}
+
+%==================================================================================%
+%===== Curriculum Vitae and Track Record (max. 4 pages)
+%==================================================================================%
+\section*{CURRICULUM VITAE AND TRACK RECORD}
+\label{sc:cv}
+\begin{refsection}
+
+
+%----------------------------------------------------------------------------------%
+
+%\subsection*{PERSONAL DETAILS}
+%\noindent Family name, First name: \ERCauthor{Miti, Antonio Michele}\par
+
+\noindent
+\textbf{Antonio Michele MITI}
+\hfill 
+\ERCauthor{\href{https://orcid.org/0000-0002-8829-1943}{ORCID 0000-0002-8829-1943}}
+\hfill  
+\ERCauthor{\url{https://antoniomiti.it}}\hfill
+
+\par
+%\noindent \ERCrevision{Current affiliation: Sapienza Universit\`a di Roma, Italy, as a beneficiary of an \emph{Avvio alla Ricerca} research grant.}
+%\smallskip
+%\emph{\noindent \ERCrevision{Current position: parental leave, research guest at ICJ Lyon, France.}}
+\subsection*{Current position:}
+  Parental career-break \quad/\quad research guest at ICJ Lyon, France.
+
+
+%----------------------------------------------------------------------------------%
+\subsection*{Education}
+
+\noindent
+An interdisciplinary educational path spanning a foundation in theoretical physics and scientific computing to advanced graduate studies in differential geometry, higher structures, and algebraic methods, punctuated by health-related career breaks (see section below).
+\par
+
+\begin{erccvitem}
+  04/2021 & \textbf{PhD in Mathematics}, Dual doctoral degree,
+  \\
+  & Universit\`a Cattolica del Sacro Cuore, Italy, and KU Leuven, Belgium.
+  \\
+  & Thesis: \emph{Homotopy comomentum maps in multisymplectic geometry}.
+  \\
+  & Supervisors: Mauro Spera (Cattolica) and Marco Zambon (KU Leuven).
+\end{erccvitem}\par
+\begin{erccvitem}
+  11/2015 & \textbf{Master's degree in Theoretical Physics},
+  \\
+  & Universit\`a degli Studi di Milano, Italy.
+  \\
+  & Thesis: \emph{Algebraic quantisation of Jacobi fields and geometric approach to Peierls brackets}.
+    \\
+  & Supervisors: Claudio Dappiaggi (Milano) and Livio Pizzocchero (Pavia).
+
+\end{erccvitem}\par
+\begin{erccvitem}
+  11/2010 & \textbf{Bachelor's degree in Physics},
+  \\
+  & Universit\`a degli Studi di Milano-Bicocca, Italy.
+  \\
+  & Thesis: \emph{Lie groups and rigid-body mechanics}.
+  \\
+    & Supervisor: Franco Magri. 
+\end{erccvitem}
+
+
+%----------------------------------------------------------------------------------%
+\subsection*{Research experience and positions}
+
+  \noindent 
+  Five years of international postdoctoral experience across three different institutions.
+    All positions were funded by competitive grants.
+    I served as an independent PI, autonomously developing my research project and collaboration network within the host departments.
+   \par
+
+\begin{erccvitem}
+02/2024 -- & \textbf{Postdoctoral fellow}, Sapienza
+Universit\`a di Roma, Italy; 
+\\
+04/2026  & Civis-3I, MSCA-H2020 COFUND.\\
+%& Project: \emph{Multisymplectic geometry: observables, reduction, and numerical integrators} (MultiSymORI).\\
+& Mentors: Domenico Fiorenza (Sapienza) and Alessandra Frabetti (Lyon).
+\end{erccvitem}\par
+\begin{erccvitem}
+10/2022 -- & \textbf{Postdoctoral fellow},
+Universit\`a Cattolica del Sacro Cuore, Brescia, Italy.\\
+%& Research on symplectic and multisymplectic geometry and applications.\\
+01/2024 & Mentor: Mauro Spera.
+\end{erccvitem}\par
+\begin{erccvitem}
+10/2021 --  & \textbf{Postdoctoral fellow},
+Max Planck Institute for Mathematics, Bonn, Germany.\\
+%& Research on higher structures and multisymplectic geometry.\\
+09/2022& Mentor: Christian Blohmann.
+\end{erccvitem}
+
+%----------------------------------------------------------------------------------%
+\subsection*{Relevant professional experience}
+
+\noindent
+Prior experience in IT and software development, preparatory to implementing the project's numerical side.
+\par
+
+\begin{erccvitem}
+01/2016 -- & \textbf{Java developer}, CST Tech., Milano, Italy; 
+\\
+07/2016 & Object-oriented programming, professional software development tools.
+\end{erccvitem}\par
+\begin{erccvitem}
+05/2014 -- & \textbf{Sys admin}, LCM laboratory, Università di Milano, Italy;
+\\
+02/2015  & Linux cluster maintenance, user and student support, GPU computing (CUDA).
+\end{erccvitem}\par
+
+
+
+%----------------------------------------------------------------------------------%
+\subsection*{Competitive fellowships and awards}
+%
+
+  %
+\noindent 
+Obtained over EUR~250,000 in competitive personal fellowships and research grants, as PI or named fellow.
+\par
+%
+\begin{erccvitem}
+  07/2026 & Finalist in Sapienza University's BE-FOR-ERC 2025 internal selection supporting ERC proposal to be hosted at Sapienza. (Ranked 1st in the PE\_1 panel)
+\end{erccvitem}
+\par
+%
+\begin{erccvitem}
+  02/2026 & Recipient of the MSCA Seal of Excellence for \emph{GROCOMO-CFT: Groupoid Covariance and Multilocal Observables in Classical Field Theories on Curved Backgrounds}, submitted to the MSCA Postdoctoral Fellowships 2025 call with Universit\'e  Lyon 1.
+\end{erccvitem}
+\par
+%
+\begin{erccvitem}
+  02/2026 & Recipient of the Sapienza \emph{Avvio alla Ricerca 2025} research grant for \emph{GroCO}, Universit\`a di Roma ``Sapienza'', Italy.
+  \\
+  & $\sim$ EUR~3,000 for travel and research expenses.
+\end{erccvitem}
+\par
+%
+\begin{erccvitem}
+  07/2023 & Recipient of an MSCA COFUND CIVIS3i fellowship for \emph{MultiSymORI: Multisymplectic Geometry: Observables, Reduction, and Numerical Integrators}, Universit\`a di Roma ``Sapienza'', Italy.
+  \\
+  & $\sim$ EUR~100,000 for salary, mobility, and research expenses.
+\end{erccvitem}
+\par
+%
+\begin{erccvitem}
+  2017--2023 & Recipient of 5 INdAM travel and visiting grants, supporting conference participation and research visits in Leuven, \c{S}irince, Paris, Marseille, and Lyon.
+  \\
+  & $\sim$ EUR~5,500 gross total, (EUR~3,000 for visiting the ICJ in Lyon).
+\end{erccvitem}
+\par
+%
+\begin{erccvitem}
+  2017--2025 & Recipient of competitive doctoral and postdoctoral fellowships at
+  Universit\`a Cattolica del Sacro Cuore, and the Max Planck
+  Institute for Mathematics (Bonn). 
+  Visiting grant from the Istitut Mittag Leffler (Stockholm), Erwin Schr\"odinger Institute (Vienna), and the
+  Fields Institute (Toronto). 
+  \\
+  & $\sim$ EUR~150,000 gross total for salary, mobility, and research expenses.
+\end{erccvitem}
+\par
+
+
+
+
+
+%\begin{erccvitem}
+%  09/2022 & Postdoctoral research fellowship at Universit\`a Cattolica del Sacro Cuore, Italy.
+%  \\
+%  & 16-month fellowship, approximately EUR~30,000 gross total.
+%\end{erccvitem}
+%\par\medskip
+%
+%\begin{erccvitem}
+%  02/2022 & Qualified for appointment as \emph{ma\^itre de conf\'erences} in France, CNU section~25 (Mathematics).
+%\end{erccvitem}
+%\par\medskip
+%
+%\begin{erccvitem}
+%  10/2021 & Visiting grant at the Max Planck Institute for Mathematics, Bonn, Germany.
+%  \\
+%  & Approximately EUR~32,000, covering salary and travel expenses.
+%\end{erccvitem}
+%\par\medskip
+%
+%\begin{erccvitem}
+%  05/2018 & Fields Institute invitation and travel grant to participate in the \emph{Focus Program on Poisson Geometry and Physics}, Toronto, Canada (06--07/2018).
+%  \\
+%  & CAD~1,000 for travel, accommodation, and per-diem expenses.
+%\end{erccvitem}
+%\par\medskip
+%
+%\begin{erccvitem}
+%  01/2017 & PhD fellowship at Universit\`a Cattolica del Sacro Cuore, Italy.
+%  \\
+%  & Approximately EUR~80,000 for four years, including the COVID-related %extension.
+%\end{erccvitem}
+%\par\medskip
+%
+%\noindent\textit{Additional competitive offers declined due to incompatibilities:}
+%\par\smallskip
+%
+%\begin{erccvitem}
+%  10/2016--05/2021 & Five competitive fellowship offers: a four-year MAP-PDMA PhD scholarship at the University of Minho; a three-year PhD scholarship at the University of Udine; a two-year postdoctoral fellowship at EIMI, Saint Petersburg; a two-year postdoctoral fellowship at the Institute of Mathematics of the Polish Academy of Sciences, Warsaw; and a one-year Mathematical Physics fellowship at the University of Milano-Bicocca.
+%  \\
+%  & Estimated value of the declined offers: approximately EUR~236,000, corresponding to seven PhD years at EUR~18,000/year and five postdoctoral years at EUR~22,000/year.
+%\end{erccvitem}
+
+
+%----------------------------------------------------------------------------------%
+
+\subsection*{SCIENTIFIC OUTPUT}
+
+%----------------------------------------------------------------------------------%
+%\paragraph{Career breaks and major life events}
+
+\begin{itemize}
+\setlength{\itemsep}{0.1\baselineskip}
+\setlength{\parsep}{0pt}
+\item \textbf{Publications and manuscripts.} My research has produced \href{https://www.antoniomiti.it/research/}{\textbf{7 published articles}}, \textbf{2 preprints under peer review}, and \textbf{3 manuscripts in final preparation}, spanning multisymplectic geometry, higher Courant structures, geometric mechanics, and quantum algorithms.
+
+\item \textbf{MultiSymORI (Civis-3I H2020 COFUND) project.} It provided a field-theoretic and multisymplectic testbed for concrete questions on observables, reduction, and structure-preserving integration. \ProjectAcronym{} starts from a new structural insight: whether reduction of the defining DGLAs and morphisms is compatible with recovering observables as homotopy fibres. 
+%It develops universal constructions for higher Dirac structures beyond closed-form models; the MSCA project supplies expertise and motivating examples, rather than a blueprint for the proposed research.
+
+
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------%
+%+------------------------------------------------------------------------+
+%| NOTE: Invited talks, conference teaching and research collaborations.
+%| DATE: 2026-10-06
+%| Author: Antonio Michele Miti
+%| Tools: ChatGPT (GPT-6) + Codex.
+%| Credits: supplied CV.
+%+------------------------------------------------------------------------+
+%------------------------------- C0ntent ---------------------------------%
+\subsection*{Peer-Recognition}
+
+% Source audit, 2026-10-06: the CV's individual entries list 17 invited talks,
+% 18 contributed talks and 2 posters (20 contributed presentations in total).
+% Its 12 research stays total 11 stated months + 9 weeks, approximately 13 months.
+% Use stated durations, including 2 months for the late-2024 Lyon secondment;
+% do not infer duration from calendar endpoints or include salaried appointments.
+\begin{itemize}
+\setlength{\itemsep}{0.15\baselineskip}
+\setlength{\parsep}{0pt}
+%
+\item \textbf{Scientific dissemination.} I have consistently presented original research at international conferences, workshops, and seminars, delivering \textbf{17} invited talks, \textbf{18} contributed talks, and \textbf{2} poster presentations. Selected institutions include NYU Abu Dhabi, INdAM, INFN, Institut \'Elie Cartan Lorraine in Metz, and the Universities of W\"urzburg and Luxembourg.
+
+\item \textbf{International mobility.} \textbf{12} research visits, totalling \textbf{approximately 13 months}, have supported sustained international collaborations. These include repeated stays at Institut Camille Jordan in Lyon, visits to the Universities of G\"ottingen and Salerno and to KU Leuven, and participation in thematic programmes at the Mittag-Leffler Institute and the Erwin Schr\"odinger Institute.
+
+
+\item \textbf{Peer-review service.} I served as a referee for \emph{SIGMA}, \emph{Geometriae Dedicata}, and \emph{Differential Geometry and its Applications}, and as a reviewer for \emph{Mathematical Reviews} (MathSciNet).
+
+\end{itemize}
+%----------------------------------------------------------------------------------%
+
+\subsection*{Scientific organisation}
+
+\begin{itemize}
+\setlength{\itemsep}{0.1\baselineskip}
+\setlength{\parsep}{0pt}
+\item \textbf{Two international workshops.} I co-organised the
+\emph{Workshop on Multisymplectic Structures in Geometry and Physics}
+(ICJ, Lyon, January 2024; with Leonid Ryvkin and Casey Blacker) and the
+\emph{Workshop on Multisymplectic Geometry}
+(KU Leuven, September 2020; with Marco Zambon), both held online.
+
+\item \textbf{Research courses and seminars.} I co-organised the month-long PhD-level course \emph{Introduction to pAQFT on flat spacetime} (Sapienza, December 2025), and the two-month reading seminar \emph{Diffeological structure of Lagrangian field theories} (ICJ, Lyon, November--December 2024). With Leonid Ryvkin, I also jointly delivered the conference mini-course \emph{Reduction of (multi)-symplectic observables} at the Universit\`a degli Studi di Salerno (May 2024).
+\end{itemize}
+
+
+
+%----------------------------------------------------------------------------------%
+
+\subsection*{ADDITIONAL INFORMATION}
+
+%----------------------------------------------------------------------------------%
+%\paragraph{Career breaks and major life events}
+
+\begin{itemize}
+\setlength{\itemsep}{0.1\baselineskip}
+\setlength{\parsep}{0pt}
+\item
+  My career path encountered several \textbf{health-related breaks} due to chronic depression, only very recently associated with an undiagnosed autism-spectrum condition -- now appropriately treated.
+  \item
+  During my most recent appointment, I took a paid \textbf{parental leave} following the birth of my daughter, followed by a six-month unpaid career break associated with my family's relocation to France.
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------%
+%+------------------------------------------------------------------------+
+%| NOTE: Additional information selected from the supplied CV and Karlin guide.
+%| DATE: 2026-10-06
+%| Author: Antonio Michele Miti
+%| Tools: ChatGPT (GPT-6) + Codex.
+%+------------------------------------------------------------------------+
+%------------------------------- C0ntent ---------------------------------%
+% Career-break wording is preserved verbatim. Prioritise scientific
+% organisation and advanced training; omit routine departmental service.
+% Invited talks, conference teaching and research visits appear above in Peer-Recognition.
+% QA: supplied CV entries checked; source boundaries and career text compared.
+% Compilation and visual page-fit checks not performed, as requested by the PI.
+
+
+
+%----------------------------------------------------------------------------------%
+
+
+
+%----------------------------------------------------------------------------------%
+
+
+%----------------------------------------------------------------------------------%
+%+------------------------------------------------------------------------+
+%| NOTE: Research achievements organised by contribution and method.
+%| DATE: 2026-10-06
+%| Author: Antonio Michele Miti
+%| Tools: ChatGPT (GPT-6) + Codex.
+%+------------------------------------------------------------------------+
+%------------------------------- C0ntent ---------------------------------%
+% Source audit, 2026-10-06 (selected passages, not a full proof audit):
+% Miti--Zambon, arXiv:2209.05836, introduction, Thms. 4.20 and 5.3.
+% Ritter--Saemann, arXiv:1507.00972, Thm. 4.10: theorem statement and
+% recursive argument, not formally labelled a conjecture in that preprint.
+% Zambon, arXiv:1003.1004, Section 9.1: morphisms P and D.
+% Fiorenza--Miti, arXiv:2602.14702, Thm. B, Sections 3--4 and outlook:
+% twisted-to-untwisted morphism established; general higher Dirac questions
+% remain prospective. Existing bibliography keys retained; external
+% Ritter--Saemann reference linked directly below.
+% QA: source-only edit; compilation and page-fit checks not performed,
+% as requested by the PI. Scientific reformulation retains red provenance.
+\subsection*{RESEARCH ACHIEVEMENTS}
+\noindent
+My research explores how physical systems can be understood through their geometry and their observables. 
+I study the algebraic structures underlying symmetries and reduction in the context of mutlisymplectic geometry and higher structures. 
+My guiding principle comes from classical mechanics: a geometric space describes the possible states of a system, while its observables provide a complementary algebraic description. 
+I seek to carry this correspondence into classical field theory, identifying what each description retains and under which conditions one can be reconstructed from the other.
+
+
+%----------------------------------------------------------------------------------%
+\subsubsection*{Ground-breaking research}
+\begin{itemize}
+\setlength{\itemsep}{0.15\baselineskip}
+\setlength{\parsep}{0pt}
+
+\item \textbf{Resolving the higher observable embedding problem.}
+With Zambon, I constructed an explicit $L_\infty$-embedding of
+multisymplectic observables into higher Courant algebras in arbitrary
+degree, without integrality assumptions (Output~[IV]).
+\textbf{My independent contribution was to adapt Nijenhuis--Richardson
+calculus from deformation theory to this problem.}
+This provided the method for obtaining closed Bernoulli-number formulae,
+clarifying \href{https://arxiv.org/abs/1507.00972}{Ritter--S\"amann's recursive construction}.
+We also established compatibility with gauge transformations in the
+presence of homotopy comomentum maps. The resulting comparison supports O1.
+
+\item \textbf{Resolving Zambon's higher Courant morphism conjecture.}
+With Fiorenza, I constructed Zambon's proposed morphism from twisted
+to untwisted higher Courant algebras and placed it alongside the multisymplectic
+observable embedding in a common homotopical framework (Output~[V]). I initiated the investigation of whether
+the higher Courant construction could encompass the other observable
+algebras. Fiorenza identified its homotopy-fibre interpretation;
+\textbf{I proposed reconstructing the comparison morphisms from the
+universal property of homotopy fibres.}
+Together, we developed homotopy-commutative diagrams relating the
+observable embedding to this morphism, giving a conceptual explanation of the
+earlier explicit construction in the multisymplectic case.
+\end{itemize}
+
+%----------------------------------------------------------------------------------%
+\subsubsection*{Independent thinking and creativity}
+\begin{itemize}
+\setlength{\itemsep}{0.15\baselineskip}
+\setlength{\parsep}{0pt}
+
+\item \textbf{A new reduction scheme in symplectic geometry.}
+With Blacker and Ryvkin, I developed multisymplectic observable reduction
+beyond smooth geometric quotients (Output~[II]). I independently extended
+the analysis to the 1-plectic case and compared it with established
+algebraic reductions, showing that our construction yields a new scheme
+even in symplectic geometry. This comparison informs O1.
+
+\item \textbf{Combining Cartan calculus and constraint reduction.}
+With Ryvkin, I combined Cartan calculus on BV-modules with
+constraint triples (Output~[I]). Our joint construction places higher
+observables and their reduction in a common algebraic framework,
+extending the differential-form construction. This supplies concrete
+models for O1's comparison of reduction with homotopy fibres.
+
+\item \textbf{Connecting knot theory and multisymplectic geometry through hydrodynamics.}
+I focused on formulating the dynamics of closed, knotted vortices in
+ideal fluids using multisymplectic geometry. With Spera, I explored the
+knot-theoretic consequences: higher-order linking numbers and the
+derivation of HOMFLYPT through helicity and geometric quantization
+(Outputs~[VII, VIII]). These works connect higher observables with concrete
+topological questions.
+\end{itemize}
+%----------------------------------------------------------------------------------%
+% Keep this short two-item group together at the current working length.
+\Needspace{13\baselineskip}
+\subsubsection*{Scientific adaptability}
+
+\begin{itemize}
+\setlength{\itemsep}{0.15\baselineskip}
+\setlength{\parsep}{0pt}
+
+\item \textbf{From group actions to field theory.}
+From homotopy comomentum maps for sphere actions (Output~[III]), I moved
+to symmetry groupoids on curved spacetime with D'Agostino and Frabetti,
+and to moment maps and conserved quantities for gauge-natural field
+theories with Zanello (Output~[IX]). Both manuscripts are in preparation;
+the latter provides field-theoretic input for O2.
+
+\item \textbf{Quantum algorithms and resource accounting.}
+Drawing on my theoretical-physics training, I entered quantum algorithms
+through collaboration with Luongo, Narasimhachar and Sireesh.
+We developed a measurement-based stand-alone routine to uncompute garbage data and applied it to modular arithmetic
+circuits (Output~[X]). Working with explicit circuit gave me the
+practical experience for O3's assessment of whether geometric reduction
+can yield smaller quantum registers.
+\end{itemize} 
+
+
+
+
+%----------------------------------------------------------------------------------%
+%+------------------------------------------------------------------------+
+%| NOTE: Selected research outputs; layout adapted from the supplied image.
+%| DATE: 2026-10-06
+%| Author: Antonio Michele Miti
+%| Tools: ChatGPT (GPT-6) + Codex.
+%+------------------------------------------------------------------------+
+%------------------------------- C0ntent ---------------------------------%
+\subsection*{10 SELECTED RESEARCH OUTPUTS}
+
+% No empty paragraph between this heading and the first output-group heading.
+% Local formatting only: numbering is independent of the proposal bibliography.
+% Sequential numbering follows the displayed order across the four topic groups.
+% PI request, 2026-10-12: Roman [I]--[X] labels distinguish outputs from bibliography.
+\begingroup
+% Links inherit the proposal hyperlink style.
+\newcounter{ERCselectedoutput}
+\newenvironment{ERCoutputlist}{%
+  \begin{list}{[\Roman{ERCselectedoutput}]}{%
+    \usecounter{ERCselectedoutput}%
+    \setlength{\leftmargin}{0.09\linewidth}%
+    \setlength{\labelwidth}{0.06\linewidth}%
+    \setlength{\labelsep}{0.015\linewidth}%
+    \setlength{\itemsep}{0.4\baselineskip}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}}%
+}{\end{list}}
+% PI request, 2026-10-12: output notes displayed in black; wording unchanged.
+% Only the final group break guards are reduced to match its actual height.
+% Item/heading spacing, fonts, margins and baselines are unchanged.
+\newcommand{\ERCoutputnote}[1]{\par\ERCauthor{-- #1}}
+
+\Needspace{12\baselineskip}
+\subsubsection*{Multisymplectic geometry}
+
+\begin{ERCoutputlist}
+\setcounter{ERCselectedoutput}{0}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}, Ryvkin L.
+Multisymplectic observable reduction using constraint triples.
+\emph{Differential Geometry and its Applications} 100, 102272, 2025.
+\href{https://arxiv.org/abs/2506.00234}{arXiv:2506.00234}.
+\ERCoutputnote{Extends the observable construction to BV-modules and develops
+algebraic reduction through constraint triples. Provides a starting point for Objective 1.}
+
+\setcounter{ERCselectedoutput}{1}
+\Needspace{9\baselineskip}
+\item Blacker C., \textbf{Miti A.M.}, Ryvkin L.
+Reduction of $L_\infty$-algebras of observables on multisymplectic manifolds.
+\emph{SIGMA} 20, 061, 2024.
+\href{https://arxiv.org/abs/2206.03137}{arXiv:2206.03137}.
+\ERCoutputnote{Develops multisymplectic observable reduction even when a smooth geometric
+quotient is unavailable. Supports the comparison of algebraic and geometric reduction in Objective 1.}
+
+\setcounter{ERCselectedoutput}{2}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}, Ryvkin L.
+Multisymplectic actions of compact Lie groups on spheres.
+\emph{Journal of Symplectic Geometry} 18(6), 1751--1785, 2020.
+\href{https://arxiv.org/abs/1906.08790}{arXiv:1906.08790}.
+\ERCoutputnote{Studies the existence and construction of homotopy comomentum
+maps for compact Lie group actions on spheres. 
+Supplies concrete symmetry
+examples for higher observables.}
+
+\end{ERCoutputlist}
+
+\Needspace{12\baselineskip}
+\subsubsection*{Higher Courant structures}
+
+%
+\begin{ERCoutputlist}
+\setcounter{ERCselectedoutput}{3}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}, Zambon M.
+Observables on multisymplectic manifolds and higher Courant algebroids.
+\emph{Communications in Contemporary Mathematics} 27(8), 2550006, 2025.
+\href{https://arxiv.org/abs/2209.05836}{arXiv:2209.05836}.
+\ERCoutputnote{Constructs an explicit $L_\infty$-embedding between multisymplectic and
+higher Courant observables, with gauge compatibility in the presence of homotopy
+comomentum maps. Supports the comparison problem in Objective 1.}
+
+\setcounter{ERCselectedoutput}{4}
+\Needspace{9\baselineskip}
+\item Fiorenza D., \textbf{Miti A.M.}
+$L_\infty$-morphisms between twisted Courant $r$-Lie algebras and untwisted
+Courant $(r{+}1)$-Lie algebroids. Preprint submitted for peer review, 2026.
+\href{https://arxiv.org/abs/2602.14702}{arXiv:2602.14702}.
+\ERCoutputnote{Constructs canonical $L_\infty$-morphisms between higher Courant observables through a
+homotopical framework. Motivates the homotopy-fibre approach of Objective 1.}
+
+\setcounter{ERCselectedoutput}{5}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}
+\emph{Homotopy comomentum maps in multisymplectic geometry}.
+Doctoral thesis, Universit\`a Cattolica del Sacro Cuore and KU Leuven, 2021.
+\href{https://arxiv.org/abs/2105.05645}{arXiv:2105.05645}.
+\ERCoutputnote{Includes extended treatments of earlier papers and drafts, with a detailed development of Richardson--Nijenhuis calculus for explicit $L_\infty$-algebra computations.}
+
+\end{ERCoutputlist}
+
+\Needspace{12\baselineskip}
+\subsubsection*{Geometric mechanics}
+
+%
+\begin{ERCoutputlist}
+\setcounter{ERCselectedoutput}{6}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}, Spera M.
+A hydrodynamical homotopy co-momentum map and a multisymplectic interpretation
+of higher-order linking numbers.
+\emph{Journal of the Australian Mathematical Society} 112(3), 335--354, 2022
+(first published online in 2021).
+\href{https://arxiv.org/abs/1805.01696}{arXiv:1805.01696}.
+\ERCoutputnote{Constructs a homotopy comomentum map associated with an ideal hydrodynamical system and
+connects the multisymplectic formalism with higher-order linking numbers.}
+
+\setcounter{ERCselectedoutput}{7}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}, Spera M.
+Derivation of the HOMFLYPT knot polynomial via helicity and geometric quantization.
+\emph{Bollettino dell'Unione Matematica Italiana} 14(2), 269--284, 2021.
+\href{https://doi.org/10.1007/s40574-020-00254-5}{DOI:10.1007/s40574-020-00254-5}.
+\ERCoutputnote{Connects helicity and geometric quantization with the
+HOMFLYPT knot polynomial. Documents experience at the interface of geometry
+and mathematical physics.}
+
+\setcounter{ERCselectedoutput}{8}
+\Needspace{9\baselineskip}
+\item \textbf{Miti A.M.}, Zanello F.
+Multisymplectic approach to Gauge Natural Lagrangian Field Theories and the
+Stress-Energy-Momentum tensor.
+\emph{In final preparation, 2026.}
+\ERCoutputnote{Work in progress on a multisymplectic approach to
+gauge natural Lagrangian field theories and how to retrieve the stress-energy-momentum tensor from a canonical homotopy comomentum map.}
+
+\end{ERCoutputlist}
+
+\Needspace{7\baselineskip}
+\subsubsection*{Quantum algorithms}
+
+%
+\begin{ERCoutputlist}
+\setcounter{ERCselectedoutput}{9}
+\Needspace{5\baselineskip}
+\item Luongo A., \textbf{Miti A.M.}, Narasimhachar V., Sireesh A.
+Measurement-based uncomputation of quantum circuits for modular arithmetic.
+\emph{2025 62nd ACM/IEEE Design Automation Conference (DAC)}, 2025.
+\href{https://doi.org/10.1109/DAC63849.2025.11132981}{DOI:10.1109/DAC63849.2025.11132981}.
+\href{https://arxiv.org/abs/2407.20167}{Extended preprint: arXiv:2407.20167}.
+\ERCoutputnote{Develops measurement-based uncomputation for modular
+arithmetic circuits with explicit resource accounting. Provides practical
+experience for the quantum-register direction in Objective 3.}
+
+\end{ERCoutputlist}
+
+\endgroup
+
+\end{refsection}
+\par\clearpage
+\endgroup % End CV presentation; wording and provenance remain unchanged.
+% END VERBATIM CV BLOCK.
+\end{document}

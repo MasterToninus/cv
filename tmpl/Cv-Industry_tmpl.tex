@@ -1,0 +1,113 @@
+%+------------------------------------------------------------------------+
+%| NOTE: Jinja2 template for the Industry CV.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Credits: Repository CV sources; original credits retained in source.
+%+------------------------------------------------------------------------+
+~{ import 'helpers/industry_macros.tex' as entries }~
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{~{{ cv.name.first }}~ ~{{ cv.name.last }}~}
+\lhead{Curriculum Vitae}
+\lfoot{\footnotesize\href{https://github.com/~{{ cv.github }}~/cv}{Generated on ~{{ today_long }}~} }
+\rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+\setlength\parindent{0pt}
+
+\newcommand{\crule}[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\newcommand{\progbar}[4][black]{\crule[#1]{#3}{#4}\crule[#1!10!white!90]{#2}{#4}}
+\newcommand{\block}[1]{\hrule \vspace{0.2cm} \textbf{\Large #1} \vspace{0.2cm}}
+\newcommand{\Block}[1]{\hrule \vspace{0.2cm} \textbf{\huge #1} \vspace{0.2cm}}
+\newcommand{\blockNp}[1]{\newpage \textbf{\Large #1} \vspace{0.2cm}}
+\newcommand{\longvoice}[8]{
+    \voice{#2: #1}
+        {#4}
+        {#5, #6, #7}
+        {#3}
+        {#8 \vspace{-\baselineskip}}
+    }
+\newcommand{\voice}[5]{\href{#4}{\textbf{#1}} \hfill #2 \\ \textit{#3} \\ {\small #5} \vspace{0.2cm} \\}
+\newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
+\newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
+\newcommand{\txt}[1]{#1\\}
+
+\begin{document}
+
+% Header: same column widths and contact layout as the supplied industry CV.
+\begin{minipage}[c]{0.6\columnwidth}
+    \center{\huge \textbf{~{{ cv.name.first }}~ ~{{ cv.name.last }}~}}
+    \\
+    \flushleft{\normalsize \textit{~{{ industry.titleinfo }}~}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    \vspace{-1.5em}
+    \skill{\faPhone~ Phone}{~{{ cv.phone }}~}
+    \skill{\faEnvelope~ Mail}{\href{mailto:~{{ cv.email }}~}{~{{ cv.email }}~}}
+    \skill{\faGlobe~ Website}{\href{~{{ cv.site }}~}{~{{ industry.website_label }}~}}
+    \skill{\faGithub~ GitHub}{\href{https://github.com/~{{ cv.github }}~}{~{{ cv.github }}~}}
+\end{minipage}
+\vspace{-0.25em}
+
+% Work experience and the compact sidebar share the reference's first row.
+\begin{minipage}[t]{0.6\columnwidth}
+    \block{Work Experiences}
+
+~{{ entries.voices(industry.work_experiences) }}~
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.375\columnwidth}
+    \block{Bio}
+
+    \skill{Born}{~{{ cv.birthdate[-4:] }}~ in ~{{ cv.birthplace }}~}
+    \skill{Citizenship}{~{{ cv.nationality }}~}
+    \skill{Marital Status}{~{{ cv.maritalstatus }}~}
+
+    \block{Languages}
+
+~{ for skill in cv.lang -}~
+    \skill{~{{ skill.what }}~}{~{{ skill.score }}~}
+~{ endfor }~
+
+    \block{Computer Skills}
+
+~{ for skill in cv.comp -}~
+    \skillbar{~{{ skill.what }}~}
+        {~{{ 2 - skill.score * 2 }}~cm}
+        {~{{ skill.score * 2 }}~cm}
+        {0.25cm}
+~{ endfor }~
+
+    \block{Academic Track}
+
+~{ for metric in industry.academic_track -}~
+    \skill{~{{ metric.type }}~}{~{ if metric.url }~\href{~{{ entries.url(metric.url) }}~}{~{{ metric.value }}~}~{ else }~~{{ metric.value }}~~{ endif }~}
+~{ endfor }~
+\end{minipage}
+
+\bigskip
+\block{Education}
+
+~{{ entries.voices(industry.education) }}~
+
+\clearpage
+\block{Honors \& Awards}
+
+~{{ entries.voices(industry.honors) }}~
+
+\block{Technical Training}
+
+~{{ entries.activities(industry.training) }}~
+
+\end{document}

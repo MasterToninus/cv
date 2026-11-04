@@ -1,24 +1,35 @@
-# Makefile for compiling LaTeX CV
-# Usage:
-#   make       - Compile the CV
-#   make clean - Remove generated files
+# Python owns the build on every platform. Override with make PYTHON=python.
+PYTHON ?= python3
+.DEFAULT_GOAL := all
+DATE_ARG = $(if $(DATE),--date $(DATE),)
+FORMAT ?= all
+FORMAT_ARG = --format $(FORMAT)
+PYTHON_SOURCES = build.py generate.py getactivities.py cvgen tests
 
-# Default target to generate the PDF
-all: gen/cv.pdf
+.PHONY: all tex clean refresh-activities check test format format-check
 
-# Clean target to remove generated files
-clean: 
-	rm -r gen/*
+all:
+	$(PYTHON) build.py $(DATE_ARG) $(FORMAT_ARG)
 
-# Target to generate the LaTeX file from the YAML data
-gen/cv.tex: data/cv.yaml generate.py \
-	tmpl/home_tmpl.tex tmpl/section_tmpl.tex
-	./generate.py
+tex:
+	$(PYTHON) build.py --tex-only $(DATE_ARG) $(FORMAT_ARG)
 
-# Target to compile the LaTeX file to PDF
-gen/cv.pdf: gen/cv.tex
-	cd gen && \
-	latexmk cv.tex -interaction=batchmode && \
-	biber cv && \
-	latexmk cv.tex -interaction=batchmode && \
-	latexmk cv.tex -interaction=batchmode
+clean:
+	$(PYTHON) build.py --clean
+
+refresh-activities:
+	$(PYTHON) build.py --refresh-activities
+
+check:
+	$(PYTHON) build.py --check-tools $(FORMAT_ARG)
+
+test:
+	$(PYTHON) -m unittest discover -s tests -v
+
+format:
+	$(PYTHON) -m isort $(PYTHON_SOURCES)
+	$(PYTHON) -m black $(PYTHON_SOURCES)
+
+format-check:
+	$(PYTHON) -m isort --check-only $(PYTHON_SOURCES)
+	$(PYTHON) -m black --check $(PYTHON_SOURCES)

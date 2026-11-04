@@ -15,3 +15,15 @@ Check the subject before committing and retain the appropriate tag in any newly 
 
 This prospective rule supersedes older tag spellings; preserve historical commit messages and records. Continue to respect the current task's scope and existing commit/push permissions. This labeling policy does not itself require a commit or push.
 <!-- END USER COMMIT PROVENANCE POLICY -->
+
+## CV tailoring workflow
+
+For every request to tailor a CV to a position, read and follow the mandatory
+workflow in [AGENTS.md](../AGENTS.md#tailoring-a-cv-for-a-position). Validate
+`getactivities` and YAML loading, regenerate the CV, then adapt a copy of the
+newly generated TeX in `ai-tailored/`.
+
+Use the [AI filename and version convention](../AGENTS.md#ai-document-filenames-and-versions)
+for those sources, and preserve useful review notes under `docs/ai-tailored/`.
+
+Before generating a CV for tailoring, verify the entire shared BibTeX file using the [primary-source metadata checklist](../AGENTS.md#bibliography-metadata-checks), including authors, identifiers, publication details, and current manuscript status. Record sources, verification date, and unresolved conflicts.

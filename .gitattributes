@@ -1,0 +1,6 @@
+*.py text eol=lf
+Makefile text eol=lf
+requirements.txt text eol=lf
+Pipfile text eol=lf
+# Preserve the exact downloaded snapshot bytes across platforms.
+data/activities.csv -text

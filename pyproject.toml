@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+required-version = "25.1.0"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+py_version = 310
+known_first_party = ["cvgen", "build", "generate", "getactivities"]

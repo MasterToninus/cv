@@ -1,14 +1,18 @@
 # Ignore output
 gen
+gen-*/
+.venv/
 
-# Ignore pychace
+# Ignore Python caches
 __pycache__
 *pyc
 Pipfile.lock
 
 
+# Bibliography inputs are source files; ignore only BibLaTeX's generated helper.
+*-blx.bib
+
 ## Generated Template
-tmpl/*.bib
 tmpl/*.aux
 tmpl/*.bbl
 tmpl/*.blg
@@ -25,9 +29,8 @@ tmpl/**.synctex*
 .log
 
 ## Texmaker folder
-*build*
+*build*/
 data/**.bak
-data/*.bib
 data/*.aux
 data/*.bbl
 data/*.blg
@@ -41,7 +44,6 @@ data/*.gz
 data/**.synctex*
 
 hand-tailored/**.bak
-hand-tailored/**.bib
 hand-tailored/**.aux
 hand-tailored/**.bbl
 hand-tailored/**.blg
@@ -54,6 +56,36 @@ hand-tailored/**.xml
 hand-tailored/**.gz
 hand-tailored/**.toc
 hand-tailored/**.synctex*
+
+# Biber control files are build products wherever a document is compiled.
+*.bcf
+
+# Build products for independent and archived CV variants.
+# Keep their .tex sources, bibliography inputs, and review notes visible.
+ai-tailored/**/*.aux
+ai-tailored/**/*.bbl
+ai-tailored/**/*.bcf
+ai-tailored/**/*.blg
+ai-tailored/**/*.fdb_latexmk
+ai-tailored/**/*.fls
+ai-tailored/**/*.log
+ai-tailored/**/*.out
+ai-tailored/**/*.pdf
+ai-tailored/**/*.run.xml
+ai-tailored/**/*.toc
+ai-tailored/**/*.synctex*
+old-tailored/**/*.aux
+old-tailored/**/*.bbl
+old-tailored/**/*.bcf
+old-tailored/**/*.blg
+old-tailored/**/*.fdb_latexmk
+old-tailored/**/*.fls
+old-tailored/**/*.log
+old-tailored/**/*.out
+old-tailored/**/*.pdf
+old-tailored/**/*.run.xml
+old-tailored/**/*.toc
+old-tailored/**/*.synctex*
 
 .vscode
 

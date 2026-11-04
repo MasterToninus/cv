@@ -1,0 +1,127 @@
+%+------------------------------------------------------------------------+
+%| NOTE: Jinja2 template for the complete BibTeX publication list.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Tools: OpenAI ChatGPT/Codex
+%| Credits: User-provided all-publications LaTeX layout.
+%+------------------------------------------------------------------------+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[hyphens]{url}
+\urlstyle{same}
+
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none,
+  doi=true,
+  eprint=true,
+  url=true,
+  isbn=false,
+  giveninits=false,
+  maxbibnames=~{{ max_name_count }}~,
+  minbibnames=~{{ max_name_count }}~,
+  maxcitenames=~{{ max_name_count }}~,
+  mincitenames=~{{ max_name_count }}~
+]{biblatex}
+\addbibresource{~{{ bibliography_path }}~}
+
+% Let BibLaTeX break long publisher URLs and DOI strings between characters.
+\setcounter{biburllcpenalty}{100}
+\setcounter{biburlucpenalty}{200}
+\setcounter{biburlnumpenalty}{100}
+
+% The source uses convenient non-standard types; Biber renders them using
+% its unpublished driver. Grouping was already determined from original types.
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{\step[typesource=preprint, typetarget=unpublished]}
+    \map{\step[typesource=draft, typetarget=unpublished]}
+  }
+}
+
+\usepackage[
+  hidelinks,
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue,
+  anchorcolor=blue
+]{hyperref}
+\hypersetup{breaklinks=true}
+
+% Explicit clickable DOI and arXiv identifiers.
+\DeclareFieldFormat{doi}{%
+  \mkbibacro{DOI}\addcolon\space
+  \href{https://doi.org/#1}{\nolinkurl{#1}}}
+\DeclareFieldFormat{eprint:arxiv}{%
+  \mkbibacro{arXiv}\addcolon\space
+  \href{https://arxiv.org/abs/#1}{\nolinkurl{#1}}}
+
+% Full citations replace a printed bibliography here. Give each entry a
+% public BibLaTeX hyperlink target so citations inside footnotes resolve.
+\DeclareFieldFormat{bibhyperref}{\bibhyperlink{\thefield{entrykey}}{#1}}
+\DeclareCiteCommand{\fullcite}
+  {\usebibmacro{prenote}}
+  {\bibhypertarget{\thefield{entrykey}}{}%
+   \usedriver
+     {\DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Antonio Michele Miti}
+\lhead{Publication list}
+\lfoot{}
+\rfoot{\thepage\hspace{1pt}/\pageref{LastPage}}
+\setlength\parindent{0pt}
+
+\title{PUBLICATION LIST}
+\date{~{{ today_long }}~}
+\author{
+  Antonio Michele Miti,\\
+  \emph{ORCID: \href{https://orcid.org/0000-0002-8829-1943}{0000-0002-8829-1943}},\\
+  Department of Mathematics,\\
+  Sapienza Universit\'a di Roma.
+}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+An updated overview of citations and bibliometric indicators is available at
+\href{https://antoniomiti.it/bibliometrics/}{\texttt{antoniomiti.it/bibliometrics/}}.
+\\
+The publications can also be retrieved from the
+\href{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}{online publication archive}.
+~{ for group in publication_groups if group.entries }~
+\section*{~{{ group.title }}~}
+~{ if group.numbered }~
+\begin{enumerate}
+  \setcounter{enumi}{~{{ group.start }}~}
+~{ else }~
+\begin{itemize}
+~{ endif }~
+~{ for publication in group.entries }~
+  \item \fullcite{~{{ publication.key }}~}~{ if publication.annotation }~\footnote{~{{ publication.annotation }}~}~{ endif }~
+~{ endfor }~
+~{ if group.numbered }~
+\end{enumerate}
+~{ else }~
+\end{itemize}
+~{ endif }~
+~{ endfor }~
+
+\end{document}

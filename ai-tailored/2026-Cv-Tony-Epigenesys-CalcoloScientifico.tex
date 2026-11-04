@@ -1,0 +1,260 @@
+%+------------------------------------------------------------------------+
+%| NOTE: LaTeX source: 2026-Cv-Tony-Epigenesys-CalcoloScientifico.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Credits: Original source and provenance notes retained below.
+%+------------------------------------------------------------------------+
+% CV approvato il 04/11/2026; colori di revisione rimossi su richiesta.
+% Preparato con assistenza AI; provenienza conservata nelle note della candidatura.
+% Competenze documentate, bibliografia selettiva, verifica estrazione testo.
+\documentclass[10pt,a4paper]{article}
+
+
+%=======================================================================%
+%      1. PREAMBOLO - PACCHETTI E IMPAGINAZIONE
+%=======================================================================%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{lmodern}
+\usepackage[margin=1.7cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{000000}
+\definecolor{muted}{HTML}{000000}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent,
+    pdfauthor={Antonio Michele Miti},
+    pdftitle={Antonio Michele Miti - Epigenesys Specialista in calcolo scientifico}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{
+    leftmargin=1.3em,
+    itemsep=2pt,
+    topsep=3pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{%
+    \footnotesize\textcolor{muted}{%
+        Antonio Michele Miti \enspace | \enspace
+        Pagina \thepage\ di \pageref{LastPage}%
+    }%
+}
+
+
+%=======================================================================%
+%      2. MACRO - ELEMENTI RIUTILIZZABILI
+%=======================================================================%
+
+% Titolo di sezione con filetto e spazio minimo per il contenuto.
+% Usage: \cvsection{Title}
+\newcommand{\cvsection}[1]{%
+    \Needspace{4\baselineskip}%
+    \vspace{0.8em}%
+    {\large\bfseries\color{accent} #1}\par
+    \vspace{0.2em}\hrule\vspace{0.45em}%
+}
+
+% Voce con titolo, data, istituzione e descrizione.
+% Usage: \entry{Title}{Date}{Institution}{Description}
+\newcommand{\entry}[4]{%
+    \Needspace{4\baselineskip}%
+    \textbf{#1}\hfill #2\par
+    \textit{#3}\par
+    #4\par\vspace{0.45em}%
+}
+
+% Titolo di studio con voto sotto la data, nella colonna destra.
+% Usage: \education{Title}{Date}{Grade}{Institution}{Description}
+\newcommand{\education}[5]{%
+    \Needspace{5\baselineskip}%
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+        \textbf{#1} & #2 \\
+        \textit{#4} & #3
+    \end{tabularx}\par
+    #5\par\vspace{0.45em}%
+}
+
+% Progetto con rimando alle evidenze e lista dei contributi.
+% Usage: \project{Title}{Evidence link}{Items}
+\newcommand{\project}[3]{%
+    \Needspace{5\baselineskip}%
+    \textbf{#1}\par
+    #2\par
+    \begin{itemize}
+        #3
+    \end{itemize}
+    \vspace{0.25em}%
+}
+
+
+%=======================================================================%
+%      3. DOCUMENTO - PROFILO E PERCORSO PROFESSIONALE
+%=======================================================================%
+
+% Unicode mapping and explicit interword spaces for PDF text extraction.
+\input{glyphtounicode}
+% Text equivalents for decorative contact icons.
+\pdfglyphtounicode{envelope}{0045 006D 0061 0069 006C 003A}
+\pdfglyphtounicode{phone}{0054 0065 006C 003A}
+\pdfglyphtounicode{globe}{0057 0065 0062 003A}
+\pdfglyphtounicode{github}{0047 0069 0074 0048 0075 0062 003A}
+\pdfglyphtounicode{orcid}{0020}
+\pdfgentounicode=1
+\pdfinterwordspaceon
+\begin{document}
+{\Huge\bfseries Antonio Michele Miti}\par
+\vspace{0.25em}
+{\large\color{accent} Fisica matematica e calcolo scientifico}\par
+    \vspace{0.1em}
+    \begin{center}
+        \href{mailto:antoniomichele.miti@gmail.com}{%
+                \faEnvelope\enspace antoniomichele.miti@gmail.com}  |
+        \href{tel:+393339825418}{\faPhone\enspace +39 333 9825 418} \\[3pt]
+        \href{https://www.antoniomiti.it/}{\faGlobe\enspace antoniomiti.it} |
+        \href{https://github.com/MasterToninus}{\faGithub\enspace MasterToninus} |
+        \href{https://orcid.org/0000-0002-8829-1943}{%
+            \faOrcid\enspace ORCID: 0000-0002-8829-1943}
+    \end{center}
+    \vspace{0.1em}
+\textit{Candidatura: Specialista in calcolo scientifico}\par
+\textit{Epigenesys -- Roma}\par
+
+
+
+
+\cvsection{Profilo}
+{Ricercatore in fisica matematica, con laurea magistrale in Fisica e dottorato internazionale in Matematica. Intendo trasferire le competenze maturate nella ricerca all'industria, collegando formulazione matematica, implementazione e verifica degli algoritmi. Affianco alla preparazione teorica esperienze universitarie di calcolo scientifico in C++/CUDA e di mantenimento GNU/Linux, su cui costruire rapidamente le competenze operative dei progetti.}
+
+\cvsection{Competenze pertinenti}
+\begin{itemize}
+    \item {\textbf{Algebra lineare numerica:} implementazione universitaria C++/CUDA di un algoritmo di condensazione per determinanti, con test e confronto CPU/GPU.}
+    \item {\textbf{Algoritmi e simulazione:} confronto di metodi numerici, analisi delle prestazioni e stabilità numerica; simulazione Monte Carlo del modello di Ising.}
+    \item {\textbf{GNU/Linux e strumenti:} mantenimento di sistemi e di un cluster didattico, supporto agli utenti; Git, \LaTeX\ e Mathematica.}
+    \item {\textbf{Metodo matematico:} formulazione di problemi, verifica delle ipotesi e dei risultati, confronto tra costruzioni e documentazione scientifica.}
+\end{itemize}
+
+\cvsection{Progetti di calcolo scientifico}
+\entry{Calcolo di determinanti su CPU e GPU}{Progetto universitario}{C++ / CUDA}{%
+\begin{itemize}
+    \item Implementato un algoritmo di condensazione con una libreria di matrici CUDA, kernel GPU, test e strategie di pivoting.
+    \item Confrontato l'implementazione GPU con quella sequenziale CPU al variare delle dimensioni delle matrici, studiando accessi alla memoria, prestazioni e stabilità numerica.
+\end{itemize}
+\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Condensation\%20Algorithm\%20in\%20CUDA}{Codice del progetto}.}
+\entry{Simulazione Monte Carlo del modello di Ising}{Progetto universitario}{C++}{%
+\begin{itemize}
+    \item Implementato e confrontato gli algoritmi di Metropolis e a cluster mediante esperimenti numerici sullo stesso sistema fisico.
+\end{itemize}
+\href{https://github.com/MasterToninus/Computational-Physics-Exercise/tree/master/Ising\%20simulation\%20Metropolis\%20vs\%20Cluster}{Codice del progetto}.}
+
+\cvsection{Formazione}
+\education{Dottorato in Science: Mathematics}{2021}{}{Università Cattolica del Sacro Cuore / KU Leuven}{%
+Dottorato internazionale in Matematica (2016--2021), con periodi di ricerca in Italia e Belgio; specializzazione in geometria differenziale e fisica matematica.}
+\education{Laurea magistrale in Fisica -- curriculum teorico}{2015}{110/110}{Università degli Studi di Milano}{%
+Metodi matematici della fisica, meccanica geometrica e metodi computazionali.}
+\education{Laurea in Fisica}{2010}{99/110}{Università degli Studi di Milano-Bicocca}{%
+Tesi sulle applicazioni dei gruppi di Lie alla meccanica del corpo rigido.}
+
+\cvsection{Lingue}
+\begin{itemize}
+    \item \textbf{Italiano:} madrelingua.
+    \item \textbf{Inglese:} uso professionale nella ricerca e nella didattica; TOEFL iBT 102/120 (2018, risultato storico).
+    \item \textbf{Francese:} base.
+\end{itemize}
+
+\newpage
+\cvsection{Esperienza professionale nella ricerca}
+\entry{Postdoctoral Fellow -- CIVIS3i, MSCA COFUND}{2024--2026}{Sapienza Università di Roma}{%
+Ricerca nel progetto MultiSymORI su geometria multisimplettica, osservabili e riduzione, nell'ambito della fisica matematica.
+Curato il lavoro scientifico, le collaborazioni internazionali, le visite di ricerca, le pubblicazioni e la rendicontazione del progetto.
+}
+\entry{Assegnista di ricerca}{2022--2024}{Università Cattolica del Sacro Cuore, Brescia}{%
+Ricerca in geometria simplettica e multisimplettica con applicazioni alla fisica matematica; collaborazione internazionale e didattica universitaria.}
+\entry{Research Fellow}{2021--2022}{Max Planck Institute for Mathematics, Bonn}{%
+Ricerca sulle strutture algebriche superiori in geometria e fisica matematica, in un ambiente internazionale.}
+
+\cvsection{Esperienze di supporto informatico}
+\entry{Supporto ai sistemi informatici dipartimentali}{2017--2018}{Università Cattolica del Sacro Cuore, Brescia}{%
+Attività di assistenza al mantenimento dei sistemi informatici del Dipartimento di Matematica e Fisica, durante il dottorato.}
+\entry{Stage di programmazione Java}{2016}{CST s.r.l., Milano}{%
+Formazione in Java, programmazione orientata agli oggetti e strumenti per lo sviluppo software professionale.}
+\entry{Collaborazione studentesca -- mantenimento cluster}{2014--2015}{Laboratorio di Calcolo e Multimedia, Università degli Studi di Milano}{%
+Mantenimento del cluster del laboratorio e supporto agli utenti e alle attività didattiche di fisica computazionale in ambiente Linux.}
+
+\cvsection{Aggiornamento professionale}
+\begin{itemize}
+    \item \textbf{2026} -- Iscritto alla selezione del Master universitario di II livello in \emph{High-Performance and Quantum Computing}, Università di Bologna, a.a.\ 2026/2027 (codice 6162).
+    \item \textbf{2024} -- Workshop \emph{High Performance Computing and Quantum Computing}, CINECA.
+    \item \textbf{2018} -- \emph{Scientific Computing with Python}, Università Cattolica.
+    \item \textbf{2017} -- \emph{Python for Computational Science}, CINECA-SCAI.
+    \item \textbf{2016} -- \emph{Introduction to Scientific and Technical Computing in C++}, CINECA-SCAI.
+    \item \textbf{2014} -- \emph{Scientific Programming using GPGPU and CUDA}, CINECA-SCAI.
+\end{itemize}
+
+\cvsection{Pubblicazioni selezionate}
+\begin{itemize}[itemsep=4pt]
+    \item A. Luongo, A. M. Miti, V. Narasimhachar, A. Sireesh.
+    \emph{Measurement-based uncomputation of quantum circuits for modular arithmetic}.
+    DAC (2025).
+    \href{https://doi.org/10.1109/DAC63849.2025.11132981}{DOI}.
+    \item A. M. Miti, L. Ryvkin.
+    \emph{Multisymplectic observable reduction using constraint triples}.
+    Differential Geometry and its Applications \textbf{100} (2025), 102272.
+    \href{https://doi.org/10.1016/j.difgeo.2025.102272}{DOI}.
+    \item C. Blacker, A. M. Miti, L. Ryvkin.
+    \emph{Reduction of $L_\infty$-algebras of observables on multisymplectic manifolds}.
+    SIGMA \textbf{20} (2024), 061.
+    \href{https://doi.org/10.3842/SIGMA.2024.061}{DOI}.
+    \item A. M. Miti, M. Spera.
+    \emph{A hydrodynamical homotopy co-momentum map and a multisymplectic interpretation of higher-order linking numbers}.
+    Journal of the Australian Mathematical Society (2021, pubblicazione online).
+    \href{https://doi.org/10.1017/S1446788720000518}{DOI}.
+\end{itemize}
+\href{https://orcid.org/0000-0002-8829-1943}{Profilo scientifico e pubblicazioni: ORCID}.\par
+
+\cvsection{Attività scientifica e didattica in numeri}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Ricerca}\par\vspace{3pt}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|r|}
+\hline
+Pubblicazioni scientifiche & 7 \\ \hline
+Preprint non ancora pubblicati & 1 \\ \hline
+Lavori in preparazione & 3 \\ \hline
+Anni di esperienza postdoc (circa) & 5 \\ \hline
+\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Comunicazione e attività internazionale}\par\vspace{3pt}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|r|}
+\hline
+Interventi su invito & 17 \\ \hline
+Comunicazioni e poster & 20 \\ \hline
+Conferenze frequentate & 62 \\ \hline
+Soggiorni di ricerca & 12 \\ \hline
+\end{tabularx}
+\end{minipage}
+\par\vspace{5pt}
+\textbf{Didattica e organizzazione:} 5 corsi di livello magistrale/dottorale, 58 ore di didattica; 4 conferenze organizzate.
+
+\end{document}

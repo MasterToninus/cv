@@ -1,0 +1,76 @@
+%+------------------------------------------------------------------------+
+%| NOTE: Shared Jinja2 section template for the Academic CV.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Credits: Repository CV sources; original credits retained in source.
+%+------------------------------------------------------------------------+
+
+~{ if kind == "voices" }~
+    % Block for listing voices (e.g., experiences, duties)
+    \block{~{{ name }}~}
+
+    ~{ for voice in contents }~
+    \voice{~{{voice.what}}~}
+        {~{{voice.when}}~}
+        {~{{voice.where}}~}
+        {~{{voice.url}}~}       
+        {~{{voice.info}}~}~{ endfor }~
+
+~{ elif kind == "skills" }~
+    % Block for listing skills with scores
+    \block{~{{ name }}~} 
+    
+    ~{ for voice in contents }~
+    \skill{~{{voice.what}}~}{~{{voice.score}}~}~{ endfor }~
+
+~{ elif kind == "numbers" }~
+    % Block for listing numerical data in a table
+    \block{~{{ name }}~} 
+    
+    \begin{tabularx}{\linewidth}{|X|c|}
+    \hline
+    ~{ for voice in contents }~
+    ~{{voice.type}}~ & ~{{voice.value}}~ \\
+    \hline
+    ~{ endfor }~
+    \end{tabularx}
+    \vspace{1em}
+
+~{ elif kind == "skills_bar" }~
+    % Block for listing skills with bar representation
+    \block{~{{ name }}~} 
+    
+    ~{ for voice in contents }~
+    \skillbar{~{{voice.what}}~}
+    {~{{2 - voice.score * 2}}~cm}
+    {~{{    voice.score * 2}}~cm}
+    {0.25cm}~{ endfor }~
+
+~{ elif kind == "detailed" }~
+    % Block for listing detailed information
+    \block{~{{ name }}~}
+
+    ~{ for voice in contents }~
+    \longvoice{~{{voice.Event_Title}}~}
+        {~{{voice.Type}}~}
+        {~{{voice.Url}}~}
+        {~{{voice.Approx_Date}}~}
+        {~{{voice.Organization}}~}
+        {~{{voice.Location}}~}
+        {~{{voice.Country}}~}
+        {~{{voice.Scheduled}}~}~{ endfor }~
+
+~{ elif kind == "plainlist" }~
+    % Block for plain itemize with -
+    \block{~{{ name }}~}
+    
+    \begin{itemize}[leftmargin=*, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+    ~{ for item in contents }~
+    \item[$\cdot$] ~{{item}}~
+    ~{ endfor }~
+    \end{itemize}
+    \vspace{1em}
+
+~{ endif }~
+
+

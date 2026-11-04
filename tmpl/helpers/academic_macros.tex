@@ -1,0 +1,63 @@
+%+------------------------------------------------------------------------+
+%| NOTE: Jinja2 entry macros for the Academic Dossier CV.
+%| DATE: 2026-11-04
+%| Author: Antonio Michele Miti
+%| Credits: Repository CV sources; original credits retained in source.
+%+------------------------------------------------------------------------+
+~{ macro url(value) -}~
+~{{ value | default('') | replace('\\&', '&') | replace('&', '\\&') | replace('\\%', '%') | replace('%', '\\%') | replace('\\#', '#') | replace('#', '\\#') }}~
+~{- endmacro }~
+
+~{ macro voice(entry) -}~
+\voice{~{{ entry.what }}~}
+    {~{{ entry.when | default('') }}~}
+    {~{{ entry.where | default('') }}~}
+    {~{{ url(entry.url) }}~}
+    {~{{ entry.info | default('') }}~}
+~{- endmacro }~
+
+~{ macro voices(title, entries) }~
+~{ if entries }~
+\block{~{{ title }}~}
+
+~{ for entry in entries }~~{{ voice(entry) }}~
+~{ endfor }~
+~{ endif }~
+~{ endmacro }~
+
+~{ macro numbers(entries, width='\\linewidth', teaching=False) -}~
+\begin{tabularx}{~{{ width }}~}{|X|c|}
+\hline
+~{ for entry in entries -}~
+~{ if teaching and entry.type == 'Courses Taught' }~Courses Delivered at Master's and Ph.D. Levels~{ else }~~{{ entry.type }}~~{ endif }~ & ~{{ entry.value }}~ \\
+\hline
+~{ endfor }~
+\end{tabularx}
+~{- endmacro }~
+
+~{ macro activities(entries) -}~
+~{ for entry in entries -}~
+\longvoice{~{{ entry.Event_Title }}~}
+    {~{{ entry.Type }}~}
+    {~{{ url(entry.Url) }}~}
+    {~{{ entry.Approx_Date }}~}
+    {~{{ entry.Organization }}~}
+    {~{{ entry.Location }}~}
+    {~{{ entry.Country }}~}
+    {~{{ entry.Scheduled }}~}
+~{ endfor }~
+~{- endmacro }~
+
+~{ macro publications(details) -}~
+~{ for kind, title in [('published', 'Published'), ('thesis', 'Theses'), ('preprints', 'Preprints'), ('drafts', 'In preparation')] -}~
+~{ set group = details | selectattr('type', 'equalto', kind) | list -}~
+~{ if group -}~
+\subsection*{~{{ title }}~}
+\begin{itemize}
+~{ for entry in group -}~
+\item \fullcite{~{{ entry.key }}~}
+~{ endfor }~
+\end{itemize}
+~{ endif -}~
+~{ endfor }~
+~{- endmacro }~

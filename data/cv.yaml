@@ -1,7 +1,8 @@
+# yaml-language-server: $schema=./cv.schema.json
 # CV Configuration File
 # Author: Antonio Miti
 # Description: This file contains the structured data for generating a professional LaTeX CV.
-# Last Updated: 08-01-2025
+# Last Updated: 2026-11-04
 name:
     first: Antonio Michele
     last: Miti
@@ -14,6 +15,11 @@ nationality: "Italian"
 site: "https://www.antoniomiti.it/"
 github: MasterToninus
 orcid: "0000-0002-8829-1943"
+address:
+  - "Dipartimento di Matematica Guido Castelnuovo,"
+  - "Sapienza Università di Roma,"
+  - "Piazzale Aldo Moro, 5,"
+  - "00185 Roma RM, Italy."
 titleinfo: "Researcher in mathematics focussing on differential geometry, higher structures, and their applications to physics."
 coverstatement: "I am a differential geometer specializing in higher geometric methods, particularly in symplectic and multisymplectic geometry. My research interests include geometric mechanics, classical field theories, quantization, and homotopical algebra, with a focus on exploring geometric and up-to-homotopy structures inspired by theoretical physics."
 oldstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and structures up to homotopy inspired by theoretical physics."
@@ -69,7 +75,7 @@ dept:
   - what: "Peer-reviewer"
     when: "06/2023 -- Now"
     where: "Referee for:"
-    info: "SIGMA. Symmetry, Integrability and Geometry: Methods and Applications (ISSN 1815-0659),Geometriae Dedicata (ISSN 0046-5755)."
+    info: "SIGMA. Symmetry, Integrability and Geometry: Methods and Applications (ISSN 1815-0659); Geometriae Dedicata (ISSN 0046-5755); Differential Geometry and its Applications (DGA; ISSN 0926-2245)."
     url: ""
   - what: "Exams supervision"
     when: "01/2020 -- 09/2020"
@@ -187,7 +193,7 @@ diplomas:
         institution: Universit\'a degli Studi di Milano
         url: "http://users.mat.unimi.it/users/pizzocchero/" 
   - what: Bachelor degree in Physics
-    when: 10/2010
+    when: "30/11/2010"
     where: "Universit\\'a degli Studi di Milano - Bicocca;"
     info: "Supervisor: \\href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}. \\par Thesis: \\href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}."
     assessment: "final grade 99/110"
@@ -222,7 +228,7 @@ edu:
     info: "\\vspace{-0.25cm}"
     url: ""
   - what: Bachelor in Physics
-    when: 10/2005 -- 10/2010
+    when: 10/2005 -- 11/2010
     where: "Universit\\'a degli Studi di Milano - Bicocca;"
     info: "Theoretical Physics curriculum with emphases on: Mathematical-Physics, Classical and Quantum Mechanics."
 
@@ -266,7 +272,7 @@ edublended:
     info: "\\vspace{-0.25cm}"
     url: ""
   - what: Bachelor degree in Physics
-    when: 10/2010
+    when: "30/11/2010"
     where: "Universit\\'a degli Studi di Milano - Bicocca;"
     info: "Theoretical Physics curriculum with emphases on: Mathematical-Physics, Classical and Quantum Mechanics. \\par Supervisor: \\href{http://staff.matapp.unimib.it/~/magri/}{Franco Magri}. \\par Thesis: \\href{https://github.com/MasterToninus/TesiTriennale/blob/master/tesi.pdf}{Lie group theory and application to the rigid body mechanics}."
     assessment: "final grade 99/110"
@@ -399,26 +405,26 @@ teach:
     when: 10/2017 -- 01/2018
     where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
     info: "Teaching assistant for the master-level course led by Prof. Mauro Spera."
-    load: 5
+    load: 15
     url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D9B/75017/2017/21065/MIH341/ita"
   - what: "Differential Topology and Geometry"
     when: 03/2018 -- 6/2018
     where: Universit\'a Cattolica del Sacro Cuore, Brescia, Italy;
     info: "Teaching assistant for the master-level course led by Prof. Mauro Spera."
-    load: 15
+    load: 5
     url: "http://docenti.unicatt.it/web/html/index.html\\#/programmi/BS/2D8B/75017/2017/21065/MGH344/ita"
 
 # Events organization
 org:
   - what: "Introduction to pAQFT on flat spacetime"
     when: "12/2025"
-    date: "01/12/2025 -- 19/12/2025"
-    where: "Dipartimento di Matematica, Sapienza Università di Roma, Ialy;" 
+    date: "01/12/2025 -- 20/12/2025"
+    where: "Dipartimento di Matematica, Sapienza Università di Roma, Italy;"
     url: https://www.antoniomiti.it/teaching/aqft-2025/
     info: "Co-organization of a 1 month phd-level course by Fabrizio Zanello."
   - what: "Diffeological structure of Lagrangian field theories"
     when: "11/2024 -- 12/2024"
-    date: "06/11/2024 -- 12/12/2024"
+    date: "06/11/2024 -- 19/12/2024"
     where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
     url: https://www.antoniomiti.it/teaching/LFT-2024/
     info: "2 months local seminar series."
@@ -443,14 +449,14 @@ visit:
     where: Lyon, France;
     info: "Scientific collaboration with the ICJ mathematical physics group within the \"CIVIS-3i secondment\" period (5 months)."
     url: https://physmath.pages.math.cnrs.fr/
-    tbc: "(Scheduled)"
+    tbc: ""
   - what: "Department of Mathematics, Universit\\'a degli studi di Salerno"
     when: "02/2026"
     date: "09/02/2026 - 15/02/2026"
     where: Fisciano, Italy;
     info: "Scientific collaboration with the Geometry research group and workshop (1 week)."
     url: http://geometria.dipmat.unisa.it/events.html
-    tbc: "(Scheduled)"
+    tbc: ""
   - what: "Institut Mittag-Leffler"
     when: "03/2025"
     date: "10/03/2025 - 28/03/2025"

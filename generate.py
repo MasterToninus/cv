@@ -1,156 +1,149 @@
 #!/usr/bin/env python3
+# +---------------------------------------------------------------------------
+# | Project           : CV generator
+# |
+# | Program name      : generate.py
+# |
+# | Author            : Antonio Michele Miti
+# |
+# | Date created      : not recorded; first tracked 2019-09-05
+# |
+# | Purpose           : Generate the CV from local inputs; importing this module performs no I/O.
+# |
+# | Revision History  :
+# | Date      Author       Revision
+# | 20261104  Miti/Codex   Document pipeline and standardize source headers.
+# | Tools             : OpenAI ChatGPT/Codex
+# +---------------------------------------------------------------------------
+"""Generate the CV from local inputs; importing this module performs no I/O."""
 
-###############################################################Generate CV Script
-# Author: Antonio Miti
-# Description:
-#    Combines YAML, website activities, and publications data to produce a professional LaTeX CV.
-#
-###############################################################
+from __future__ import annotations
 
-
-
-import yaml
+import argparse
+import csv
 import os
+import sys
 from datetime import date
-from jinja2 import Environment, FileSystemLoader
-from getactivities import readmywebsite, readmybibfile, readmyconfigurations #, readmyscopus
-#from pybliometrics.scopus import init
+from pathlib import Path
 
-# Initialize pybliometrics configuration
-#init()
+from jinja2 import TemplateError
 
-# Initialize the Jinja2 environment with custom delimiters for LaTeX compatibility
-env = Environment(
-    loader=FileSystemLoader("tmpl"),
-    block_start_string='~{',
-    block_end_string='}~',
-    variable_start_string='~{{',
-    variable_end_string='}}~',
-    comment_start_string="~{#",
-    comment_end_string="#}~"
+from cvgen.acquisition import load_activities, load_bibliography, load_config
+from cvgen.helpers.clock import resolve_date
+from cvgen.helpers.formats import (
+    DEFAULT_FORMAT,
+    FORMAT_CHOICES,
+    OUTPUT_STEMS,
+    selected_formats,
 )
+from cvgen.helpers.paths import resolve_project_path
+from cvgen.helpers.publications import prepare_publications
+from cvgen.processing import assemble_cv
+from cvgen.rendering import render_cv
 
-# Load CV data from YAML file
-with open("data/cv.yaml", 'r', encoding='utf-8') as f:
-    yaml_contents = yaml.safe_load(f)
+ROOT = Path(__file__).resolve().parent
 
-# Merge activities from the website into the YAML data
-activities = readmywebsite()
-yaml_contents.update(activities)
 
-# Read and update publication counts and details from the BibTeX file
-bib_data = readmybibfile()
-pubsnum = bib_data['pubsnum']
-pub_details = bib_data['pub_details']
-yaml_contents.update({'pubsnum': pubsnum, 'pub_details': pub_details})
+def project_path(value: str | Path) -> Path:
+    """Resolve CLI paths from the repository, independent of the caller's cwd."""
+    # Keep this wrapper for existing callers while sharing the path policy.
+    return resolve_project_path(value, root=ROOT)
 
-# Read and update teaching counts from the YAML file
-teachnum = readmyconfigurations()
-yaml_contents.update({'teachnum': teachnum})
 
-# Move "Conferences Organized" and "Research Stays" from teachnum to talksnum
-for item in teachnum:
-    if item['type'] == 'Conferences Organized' or item['type'] == 'Research Stays':
-        yaml_contents['talksnum'].append(item)
-        teachnum.remove(item)
+def generate(
+    ext: str = "tex",
+    *,
+    output: str | Path | None = None,
+    activities: str | Path = "data/activities.csv",
+    as_of: date | None = None,
+    format: str = "current",
+) -> Path:
+    """Acquire, process, and render one document using an explicit build date.
 
-# Optionally read and update Scopus data
-# scopus_data = readmyscopus()
-# yaml_contents.update(scopus_data)
-
-# Ensure the output directory exists
-if not os.path.exists("gen"):
-    os.makedirs("gen")
-
-def generate(ext):
+    Keep the single-layout API default for existing Python callers; the CLI
+    expands its own ``all`` default into separate calls to this function.
     """
-    Generates the CV in the specified format.
-
-    Args:
-        ext (str): The file extension for the output format (e.g., 'tex').
-
-    Returns:
-        None
-    """
-    body1, body2, body3 = "", "", ""  # Initialize content for the three columns
-
-    # Process each section defined in the YAML order
-    for section in yaml_contents['order']:
-        name = section[0]          # Section title
-        contents = yaml_contents[section[1]]  # Section content
-        kind = section[2]          # Section type (e.g., list, table)
-        column = section[3]        # Target column for this section
-
-        # Render the section using the appropriate template
-        parsed = env.get_template("section_tmpl." + ext).render(
-            name=name,
-            contents=contents,
-            kind=kind
+    if ext != "tex":
+        raise ValueError("Only the tex output format is supported")
+    if format not in OUTPUT_STEMS:
+        raise ValueError(f"Unknown CV format: {format}")
+    as_of = as_of if as_of is not None else resolve_date()
+    destination = project_path(
+        output if output is not None else f"gen/{OUTPUT_STEMS[format]}.tex"
+    )
+    bibliography = ROOT / "data/publications.bib"
+    # File I/O belongs to acquisition; processing receives loaded objects and
+    # one shared date, so templates never fetch data or consult the clock.
+    bibliography_data = load_bibliography(bibliography)
+    if format == "publications":
+        # A standalone list depends only on its BibTeX source, not CV data or
+        # the activities snapshot. Entry types determine the visible sections.
+        data = prepare_publications(bibliography_data)
+    else:
+        data = assemble_cv(
+            load_config(ROOT / "data/cv.yaml"),
+            load_activities(project_path(activities)),
+            bibliography_data,
+            as_of,
         )
-
-        # Assign the rendered section to the appropriate column
-        if column == 1:
-            body1 += parsed
-        elif column == 2:
-            body2 += parsed
-        else:
-            body3 += parsed
-
- #   # Generate the cover statement
-    coverstatement = yaml_contents['coverstatement'] 
-    coverstatement += "\\vspace{0.25em}"
-#   coverstatement += \n\n\\textbf{Keywords: }\\it "
- #   for line in yaml_contents['keywords']:
- #       coverstatement += line + ", "
- #   coverstatement = coverstatement[:-2] + "."
-
-    # Generate the Publications Page
-
-    publications_page = "\\block{Publications}"
-    #publications_page += coverstatement
-#    publications_page +="""
-#    The following publications can retrieved online at:
-#    \\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-#        \item[-] {dropbox: \\url{https://www.dropbox.com/sh/asop74adf1c0gbi/AADDEeq-8XCf3IISOMzrlbroa?dl=0}},
-#        \item[-] {orcid: \\href{https://orcid.org/0000-0002-8829-1943}{0000-0002-8829-1943}}.
-#    \\end{itemize}
-#    """
-    publication_types = {
-        'published': 'Published',
-        'thesis': 'Theses',
-        'preprints': 'Preprints',
-        'drafts': 'In preparation'
-    }
-
-    for pub_type, section_title in publication_types.items():
-        publications_page += f"\\subsection*{{{section_title}}}\n\\begin{{itemize}}\n"
-        for pub in pub_details:
-            if pub['type'] == pub_type:
-                publications_page += f"\\item \\fullcite{{{pub['key']}}}\n"
-        publications_page += "\\end{itemize}\n"
-
-    # Write the CV to the output file
-    with open(f"gen/cv.{ext}", 'w+', encoding='utf-8') as f_cv:
-        f_cv.write(env.get_template("home_tmpl." + ext).render(
-            name=yaml_contents['name'],
-            phone=yaml_contents['phone'],
-            email=yaml_contents['email'],
-            site=yaml_contents['site'],
-            github=yaml_contents['github'],
-            titleinfo=yaml_contents['titleinfo'],
-            coverstatement=coverstatement,
-            body1=body1,
-            body2=body2,
-            body3=body3,
-            pubsnum=pubsnum,
-            pub_details=pub_details,
-            talksnum=activities['talksnum'],
-            teachnum=teachnum,
-            today=date.today().strftime("%d/%m/%y"),
-            publications_page=publications_page
-        ))
-
-# Generate the CV in LaTeX format
-generate("tex")
+    # TeX resolves bibliography paths from the output directory, not ROOT.
+    try:
+        bibliography_path = Path(
+            os.path.relpath(bibliography, destination.parent)
+        ).as_posix()
+    except ValueError:  # An explicitly selected output on a different Windows drive.
+        bibliography_path = bibliography.as_posix()
+    document = render_cv(data, ROOT / "tmpl", as_of, bibliography_path, format=format)
+    # Generation is the write boundary: earlier stages only return data
+    # or text, so validation/rendering errors do not leave partial TeX.
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(document, encoding="utf-8", newline="\n")
+    return destination
 
 
+def main(argv: list[str] | None = None) -> int:
+    """Generate the selected layouts and return a shell-friendly exit status."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--date", help="CV reference date, YYYY-MM-DD (or SOURCE_DATE_EPOCH)"
+    )
+    parser.add_argument(
+        "--activities", default="data/activities.csv", help="Local CSV snapshot"
+    )
+    parser.add_argument(
+        "--format",
+        choices=FORMAT_CHOICES,
+        default=DEFAULT_FORMAT,
+        help="Document format (default: all four)",
+    )
+    parser.add_argument("--output-dir", default="gen", help="Output directory")
+    parser.add_argument(
+        "--output", help="Output TeX filename (requires a single --format)"
+    )
+    args = parser.parse_args(argv)
+    if args.output is not None and args.format == "all":
+        parser.error("--output requires a single --format; use --output-dir for all")
+    try:
+        # Resolve once: a multi-layout invocation must use the same date.
+        as_of = resolve_date(args.date)
+        for format in selected_formats(args.format):
+            destination = (
+                args.output
+                if args.output is not None
+                else project_path(args.output_dir) / f"{OUTPUT_STEMS[format]}.tex"
+            )
+            output = generate(
+                output=destination,
+                activities=args.activities,
+                as_of=as_of,
+                format=format,
+            )
+            print(f"Generated {output}")
+    except (OSError, ValueError, KeyError, csv.Error, TemplateError) as error:
+        print(f"Generation failed: {error}", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

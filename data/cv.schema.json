@@ -1,0 +1,277 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Antonio Miti CV configuration",
+  "description": "Local input format for this repository's Python/Jinja CV generator.",
+  "$comment": "LaTeX text and free-form display dates are intentional. Additional fields are allowed for custom sections.",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "type": "object",
+      "required": [
+        "first",
+        "last"
+      ],
+      "properties": {
+        "first": {
+          "type": "string"
+        },
+        "last": {
+          "type": "string"
+        }
+      }
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "maritalstatus": {
+      "type": "string"
+    },
+    "birthplace": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "orcid": {
+      "type": "string"
+    },
+    "titleinfo": {
+      "type": "string"
+    },
+    "coverstatement": {
+      "type": "string"
+    },
+    "oldstatement": {
+      "type": "string"
+    },
+    "address": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ssd": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "order": {
+      "description": "Section title, data key, rendering kind, and column/group.",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 4,
+        "maxItems": 4,
+        "items": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "enum": [
+              "voices",
+              "skills",
+              "numbers",
+              "skills_bar",
+              "detailed",
+              "plainlist"
+            ]
+          },
+          {
+            "type": "integer",
+            "minimum": 1
+          }
+        ]
+      }
+    },
+    "dept": {
+      "$ref": "#/definitions/entries"
+    },
+    "awd": {
+      "$ref": "#/definitions/entries"
+    },
+    "currentjobs": {
+      "$ref": "#/definitions/entries"
+    },
+    "previousjobs": {
+      "$ref": "#/definitions/entries"
+    },
+    "diplomas": {
+      "$ref": "#/definitions/entries"
+    },
+    "edu": {
+      "$ref": "#/definitions/entries"
+    },
+    "edublended": {
+      "$ref": "#/definitions/entries"
+    },
+    "lang": {
+      "$ref": "#/definitions/entries"
+    },
+    "comp": {
+      "$ref": "#/definitions/entries"
+    },
+    "affil": {
+      "$ref": "#/definitions/entries"
+    },
+    "ref": {
+      "$ref": "#/definitions/entries"
+    },
+    "teach": {
+      "$ref": "#/definitions/entries"
+    },
+    "org": {
+      "$ref": "#/definitions/entries"
+    },
+    "visit": {
+      "$ref": "#/definitions/entries"
+    },
+    "habil": {
+      "$ref": "#/definitions/entries"
+    },
+    "students": {
+      "$ref": "#/definitions/entries"
+    },
+    "industry": {
+      "type": "object",
+      "properties": {
+        "titleinfo": {
+          "type": "string"
+        },
+        "award_titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "training_titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true,
+  "definitions": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "what": {
+            "type": "string"
+          },
+          "when": {
+            "type": "string"
+          },
+          "where": {
+            "type": "string"
+          },
+          "info": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "assessment": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "who": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "string"
+          },
+          "load": {
+            "type": "number",
+            "minimum": 0
+          },
+          "score": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "tbc": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "thesis": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "info": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "supervisors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "institution": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

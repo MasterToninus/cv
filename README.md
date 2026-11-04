@@ -1,168 +1,171 @@
 # LaTeX CV Generator
 
-A customizable, data-driven LaTeX CV generator built with Python and Jinja2. This project streamlines CV creation by combining structured data sources with LaTeX templates to produce a professional, dynamic CV.
+Generate Antonio Michele Miti's academic CV, academic dossier, industry CV, and standalone publication list from local data. Python and Jinja2 render the LaTeX sources; pdfLaTeX compiles the PDFs, with Biber for the academic formats and publication list.
 
-- [Link to my Cv](https://www.dropbox.com/scl/fi/fy1xy3re0xixm8ejwhitt/cv.pdf?rlkey=jtdw6jw8bmh3ctr7u0xwj0kzh&dl=0)
+View the [published CV (PDF)](https://www.dropbox.com/scl/fi/w6l4vkwenl8780v0kewal/cv.pdf?dl=0&rlkey=dggzb4t7h76nsqts71qt80oyi&st=kvtie7my) linked from [my webpage](https://www.antoniomiti.it/).
 
----
+## Quick start
 
-## Features
-- **Dynamic Content Integration**: Automatically updates activities from online CSV files and integrates publication data from BibTeX files.
-- **Web Scraping**: Fetches author information and metrics from Scopus using the pybliometrics API.
-- **Customizable Layout**: Multi-column LaTeX templates powered by Jinja2.
-- **Automation**: Simple `make` command compiles everything into a polished PDF.
-- **Extensible**: Easily add new sections or customize templates to suit your needs.
+Requirements: Python 3.10 or later, and TeX Live or MiKTeX with `pdflatex` and `biber` on `PATH`.
 
----
-
-## Installation
-
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/username/latex-cv-generator.git
-    cd latex-cv-generator
-    ```
-
-2. **Install the required Python packages**:
-    ```bash
-    pip3 install -r requirements.txt
-    ```
-
-    The `requirements.txt` file includes:
-    - `pyyaml>=5.4`
-    - `Jinja2>=3.1.4`
-    - `pybtex>=0.24.0,<1.0`
-    - `pybliometrics>=3.4.0`
-
-3. **Configure pybliometrics**:
-    Follow the instructions in the [pybliometrics documentation](https://pybliometrics.readthedocs.io/en/stable/configuration.html) to set up your API key.
-
-4. **Prepare your data**:
-    - Edit `data/cv.yaml` with your personal details, sections, and layout.
-    - Place your publications in `data/publications.bib`.
-    - Host your activities CSV file online or adjust the URL in `getactivities.py`.
-
----
-
-## Folder Structure
-
+```sh
+git clone https://github.com/MasterToninus/cv.git
+cd cv
+python -m venv .venv
 ```
-latex-cv-generator/
-├── data/
-│   ├── cv.yaml
-│   ├── publications.bib
-├── gen/
-│   ├── cv.pdf
+
+Activate the environment:
+
+- PowerShell: `.venv\Scripts\Activate.ps1`
+- POSIX shell: `. .venv/bin/activate`
+
+Then install the pinned dependencies, check the toolchain, and build:
+
+```sh
+python -m pip install -r requirements.txt
+python build.py --check-tools
+python build.py
+```
+
+The default command builds all four documents in `gen/`. Use `python generate.py` for all four TeX sources without compiling, or `make` as an optional build wrapper. No format option is needed. To fix the reference date, use `python build.py --date 2026-11-04` or set `SOURCE_DATE_EPOCH`; otherwise today's date is used.
+
+The generator uses local inputs and works offline. A TeX installation may need network access for its initial package setup. Make, Perl, `latexmk`, Scopus credentials, and `pybliometrics` are not required.
+
+## Generated documents
+
+`python build.py` generates and compiles all four formats:
+
+| Format option | LaTeX source | PDF |
+| --- | --- | --- |
+| `current` | `gen/Cv-Academic.tex` | `gen/Cv-Academic.pdf` |
+| `academic-dossier` | `gen/Cv-Academic-Dossier.tex` | `gen/Cv-Academic-Dossier.pdf` |
+| `industry` | `gen/Cv-Industry.tex` | `gen/Cv-Industry.pdf` |
+| `publications` | `gen/All-Publications.tex` | `gen/All-Publications.pdf` |
+
+The capitalization in these filenames is intentional. `current` remains the command-line/API name of the academic format; its output is named `Cv-Academic`.
+
+```sh
+python build.py --format current
+python build.py --format academic-dossier
+python build.py --format industry
+python build.py --format publications
+python build.py --tex-only
+python build.py --output-dir gen-review --date 2026-11-04
+python build.py --clean
+```
+
+Every build regenerates the selected TeX sources. Each document has its own auxiliary files and `*.build.log`. The academic dossier preserves the reference's style and postal-address box, uses updated local data, and automatically suppresses pages with no body content. The industry format compiles without Biber.
+
+The `publications` format reads only `data/publications.bib`; it does not load YAML or activities. It automatically includes the bibliography entries in published, theses, submitted, and in-preparation groups, using the standalone reference's layout without a hardcoded list of citation keys.
+
+Treat `gen/` as disposable output: edit the data or templates, then rebuild. The build does not compile the standalone documents in the tailored folders. See [build details](docs/build.md) for reproducibility, compilation passes, legacy output cleanup, and Make commands.
+
+## What to edit
+
+| Change | Location |
+| --- | --- |
+| Personal information, employment, education, sections, and format options | [`data/cv.yaml`](data/cv.yaml) |
+| Publications and citation keys | [`data/publications.bib`](data/publications.bib) |
+| Activities snapshot | [`data/activities.csv`](data/activities.csv) |
+| Layout and reusable LaTeX/Jinja macros | [`tmpl/`](tmpl/README.md) |
+| Data loading, transformations, and rendering | [`cvgen/`](cvgen/) |
+| Shared Python support and format-specific presentation helpers | [`cvgen/helpers/`](cvgen/helpers/) |
+| Reusable Jinja sections and entry macros | [`tmpl/helpers/`](tmpl/helpers/) |
+| Standalone application-specific variants | [`hand-tailored/`](hand-tailored/README.md), [`ai-tailored/`](ai-tailored/README.md) |
+| Historical/reference CVs and the extracted ERC CV | [`old-tailored/`](old-tailored/README.md) |
+
+Normal generation never downloads the activities. Refresh the snapshot explicitly:
+
+```sh
+python build.py --refresh-activities
+```
+
+The download has a timeout and is validated before replacement. Failure preserves the previous snapshot. Review the CSV diff and rebuild before keeping an update. See [data documentation](data/README.md) for the input contract.
+
+## Repository structure
+
+```text
+cv/
+├── data/                    # Shared, versioned CV inputs
+├── cvgen/                   # The three pipeline stages
+│   ├── acquisition.py
+│   ├── processing.py
+│   ├── rendering.py
+│   └── helpers/             # Python support modules
+│       ├── __init__.py
+│       ├── clock.py         # Reference date and reproducible build epoch
+│       ├── formats.py       # Format registry and default selection
+│       ├── industry.py      # Industry presentation data
+│       ├── pagination.py    # Conservative empty-page detection
+│       ├── paths.py         # Shared repository-relative path resolution
+│       └── publications.py  # Bibliography-only presentation data
 ├── tmpl/
-│   ├── home_tmpl.tex
-│   ├── section_tmpl.tex
-├── getactivities.py
-├── Makefile
-├── README.md
-├── requirements.txt
+│   ├── Cv-Academic_tmpl.tex
+│   ├── Cv-Academic-Dossier_tmpl.tex
+│   ├── Cv-Industry_tmpl.tex
+│   ├── All-Publications_tmpl.tex
+│   └── helpers/             # Reusable Jinja sections and macros
+│       ├── academic_macros.tex
+│       ├── industry_macros.tex
+│       └── section_tmpl.tex
+├── tests/                   # Regression and behavior checks
+├── generate.py              # Generate TeX only; reusable Python entry point
+├── build.py                 # Generate and compile PDFs; maintenance commands
+├── getactivities.py         # Small compatibility adapter for older callers
+├── Makefile                 # Optional wrapper around Python commands
+├── requirements.txt         # Authoritative pinned build dependencies
+├── Pipfile                  # Optional Pipenv package declarations
+├── gen/                     # Generated files; ignored by Git
+├── hand-tailored/            # Independently maintained standalone sources
+├── ai-tailored/              # AI-assisted application document sources
+├── old-tailored/             # Historical and reference documents
+└── docs/                    # Build documentation, author confirmations, reviews
 ```
 
----
+The three CVs share acquisition and processing, then select a renderer. The publication list follows a separate bibliography-only path. Tailored and archived documents remain independent snapshots. Their contents do not automatically enter the generated CVs.
 
+For a new application, follow the [CV-tailoring workflow](AGENTS.md#tailoring-a-cv-for-a-position): validate YAML and `getactivities`, regenerate the current CV, and adapt a copy of its generated TeX in `ai-tailored/`.
 
-## Usage
+Python support modules live in `cvgen/helpers/`; reusable template fragments live in `tmpl/helpers/`. The root keeps the two command-line entry points and the legacy `getactivities.py` adapter.
 
-1. **Generate the CV**:
-    Run the Makefile to process your data and generate a LaTeX CV:
-    ```bash
-    make
-    ```
+See the [documentation index](docs/README.md), [template contracts](tmpl/README.md), and the [roadmap](docs/roadmap.md).
 
-2. **View the Output**:
-    - The compiled PDF will be available in the `gen/` directory:
-      ```bash
-      open gen/cv.pdf
-      ```
+## Development and verification
 
----
+```sh
+python -m unittest discover -s tests -v
+python build.py --date 2026-11-04
+```
 
-## Roadmap
-Perspective features:
-- [ ] Add ATS-friendly formatting.
-- [ ] Develop a localized Italian version.
-- [x] Introduce summary tables for teaching and other activities.
-    - [x] Publications: published, preprints, in preparations
-    - [x] Dissemination: invited, contributed, posters, organizations
-    - [x] Teaching: corsi, ore di frontale
-    - [ ] Others: supervised students, citations, h-index, referee reports, research stay,commitees/jury
-- [ ] Autogenerate `publications.tex` from the BibTeX file with a CV-compatible style, import as a standalone in `gen`.
-- [x] Create a splashpage with "at glance" numeric information.
-    - [x] Move affiliation and awards.
-- [x] Suitable entry for career break 2010-2013.
-- [ ] Scrape bibliometrics through APIs.
-    - [ ] Scopus
-    - [ ] Researchgate: https://laccei.org/LEIRD2024-VirtualEdition/papers/Contribution_721_a.pdf
-- [ ] [Secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) with signatures and phone number (Italy format) 
-- [ ] [Github action](https://github.com/marketplace/actions/github-action-for-latex) to generate last version
+The tests cover the processing pipeline, format selection, build behavior, dossier pagination, and the original academic-content regression. After a template or data change, inspect the affected PDFs as well. Review intentional content changes before updating any expected regression fingerprint.
 
-Suggestions:
-- Remove "departmental duties"
-- Remove the meaningless, keep the meaningful. (e.g. don't need to specify KU Leuven, Leuven, Belgium.)
+Python sources use four-space indentation, Black formatting, and isort import ordering, configured in `pyproject.toml`. The optional development tools are separate from the runtime dependencies:
 
+```sh
+python -m pip install -r requirements-dev.txt
+python -m isort build.py generate.py getactivities.py cvgen tests
+python -m black build.py generate.py getactivities.py cvgen tests
+python -m isort --check-only build.py generate.py getactivities.py cvgen tests
+python -m black --check build.py generate.py getactivities.py cvgen tests
+```
 
+With GNU Make, `make format` and `make format-check` run those same commands. The default `make` target still generates and compiles all four documents.
 
+The generator can also run independently:
 
----
+```sh
+python generate.py --date 2026-11-04
+python generate.py --format academic-dossier --date 2026-11-04
+python generate.py --format publications --date 2026-11-04
+python generate.py --format current --output gen/Cv-Academic.tex
+```
+
+Both CLIs default to `--format all`; the Python `generate()` API defaults to one `current` document. `--output` selects a filename for a single format, while `--output-dir` selects a shared directory. Paths passed to the scripts are relative to the repository, so the scripts can be invoked by full path from another working directory.
 
 ## Acknowledgments
+
 - Early versions due to [VittorioErba](https://github.com/vittorioerba).
 - Inspired by [bamos/cv](https://github.com/bamos/cv).
-- Thanks to **ChatGPT** for helping to improve the project documentation and providing suggestions for better code structuring.
+- Thanks to ChatGPT for help improving documentation and code structure.
 
----
-
-## Troubleshooting
-
-### Scopus 401 Error
-
-If you encounter the following error:
-```
-pybliometrics.scopus.exception.Scopus401Error: The requestor is not authorized to access the requested view or fields of the resource
-```
-This indicates that the API key you are using does not have the necessary permissions to access the requested data from Scopus.
-
-To resolve this issue, follow these steps:
-
-1. **Verify API Key**:
-   Ensure that you have a valid API key from Scopus. You can obtain an API key by registering on the [Elsevier Developer Portal](https://dev.elsevier.com/).
-
-2. **Check API Key Permissions**:
-   Make sure that your API key has the necessary permissions to access the Scopus data. Some API keys may have restricted access based on the subscription level.
-
-3. **Configure pybliometrics**:
-   Ensure that you have correctly configured `pybliometrics` with your API key. You can do this by creating a configuration file as described in the [pybliometrics documentation](https://pybliometrics.readthedocs.io/en/stable/configuration.html).
-
-   Here is an example of how to configure `pybliometrics`:
-
-   - Create a file named `config.ini` in the `.pybliometrics` directory in your home directory.
-   - Add the following content to the `config.ini` file:
-
-     ```ini
-     [Authentication]
-     API_KEY = your_api_key_here
-     ```
-
-4. **Check API Usage Limits**:
-   Ensure that you have not exceeded the usage limits for your API key. The Scopus API has rate limits, and exceeding these limits can result in authorization errors.
-
-5. **Test API Key**:
-   Test your API key with a simple request to ensure that it is working correctly. You can use the following code snippet to test your API key:
-
-   ```python
-   from pybliometrics.scopus import AuthorRetrieval
-
-   author_id = '57218509273'
-   author = AuthorRetrieval(author_id)
-   print(author.given_name, author.surname)
-   ```
-
-If you have verified all the above steps and are still encountering the error, you may need to contact Elsevier support for further assistance with your API key and permissions.
-
-For more detailed information, refer to the [pybliometrics access documentation](https://pybliometrics.readthedocs.io/en/stable/access.html).
-
----
+AI document names follow the [shared naming convention](AGENTS.md#ai-document-filenames-and-versions); their [review notes](docs/ai-tailored/README.md) live under `docs/ai-tailored/`. Historical document prefixes record their [first Git introduction](docs/document-origins.md).
