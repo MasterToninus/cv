@@ -1,14 +1,19 @@
 # Documentation
 
-- [Architecture and build details](build.md): pipeline responsibilities, reproducibility, compilation, cleanup, and optional Make commands.
-- [Author-confirmed CV data](confirmed-data.md): corrections and date clarifications supplied on 4 November 2026, including the doctoral-scholarship competition and contract dates.
-- [AI document notes](ai-tailored/README.md): preserved author answers, sources, and application-review context.
-- [Document origins](document-origins.md): Git-derived creation-year prefixes and their supporting commits.
-- [Roadmap](roadmap.md): future features and editorial ideas.
-- [AI-policy disclosure reviews](AI-policy-disclosure/reviews/): application-specific records of the document versions reviewed. These records are separate from current build instructions.
+## Using and maintaining the generator
 
-Input and template contracts live next to their sources in [`data/README.md`](../data/README.md) and [`tmpl/README.md`](../tmpl/README.md).
+- [Build and development guide](build.md): setup, CLI commands, reproducible builds, tests, CI, standalone documents, and link reports.
+- [Data contract](data.md): YAML schema, activity snapshots, and bibliography inputs.
+- [Template reference](templates.md): Jinja delimiters, rendering fields, position fallback, and citation rules.
+- [Author-confirmed data](confirmed-data.md): approved factual corrections and date clarifications.
+- [Document origins](document-origins.md): Git-derived filename years and supporting commits.
+- [Roadmap](roadmap.md): completed milestones and future ideas.
 
-Historical review links can refer to ignored local PDFs or context files in sibling repositories, which are not bundled with a checkout. The recorded hashes identify the reviewed versions; rebuilding current sources does not recreate those historical records.
+## Application records
 
-[Repository guide](../README.md)
+- [AI-assisted document notes](ai-tailored/README.md): preparation notes, author responses, metadata sources, and historical review context.
+- [AI-policy disclosure records](AI-policy-disclosure/README.md): application-specific versions, fingerprints, review limits, and provenance.
+
+Historical records describe the versions and dates they identify. They are not approval of later edits or evidence that an application was submitted. Ignored build outputs and separate local repositories are identified as local references rather than offered as public downloads.
+
+[Repository guide](../README.md) · [Agent instructions](../AGENTS.md)

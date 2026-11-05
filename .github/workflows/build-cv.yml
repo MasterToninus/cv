@@ -89,8 +89,9 @@ jobs:
         id: academic
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: Cv-Academic
+          name: Cv-Academic.pdf
           path: gen/Cv-Academic.pdf
+          archive: false
           if-no-files-found: error
           retention-days: 90
 
@@ -98,8 +99,9 @@ jobs:
         id: dossier
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: Cv-Academic-Dossier
+          name: Cv-Academic-Dossier.pdf
           path: gen/Cv-Academic-Dossier.pdf
+          archive: false
           if-no-files-found: error
           retention-days: 90
 
@@ -107,8 +109,9 @@ jobs:
         id: industry
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: Cv-Industry
+          name: Cv-Industry.pdf
           path: gen/Cv-Industry.pdf
+          archive: false
           if-no-files-found: error
           retention-days: 90
 
@@ -116,8 +119,23 @@ jobs:
         id: publications
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: All-Publications
+          name: All-Publications.pdf
           path: gen/All-Publications.pdf
+          archive: false
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload all four PDFs as a ZIP
+        id: all_pdfs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Cv-All-PDFs
+          path: |
+            gen/Cv-Academic.pdf
+            gen/Cv-Academic-Dossier.pdf
+            gen/Cv-Industry.pdf
+            gen/All-Publications.pdf
+          archive: true
           if-no-files-found: error
           retention-days: 90
 
@@ -127,6 +145,7 @@ jobs:
           DOSSIER_URL: ${{ steps.dossier.outputs.artifact-url }}
           INDUSTRY_URL: ${{ steps.industry.outputs.artifact-url }}
           PUBLICATIONS_URL: ${{ steps.publications.outputs.artifact-url }}
+          BUNDLE_URL: ${{ steps.all_pdfs.outputs.artifact-url }}
         run: |
           {
             echo '## Generated PDFs'
@@ -134,12 +153,13 @@ jobs:
             printf 'Source commit: `%s`\n\n' "$GITHUB_SHA"
             echo '| Artifact | Download |'
             echo '| --- | --- |'
-            printf '| Cv-Academic | [Download ZIP](%s) |\n' "$ACADEMIC_URL"
-            printf '| Cv-Academic-Dossier | [Download ZIP](%s) |\n' "$DOSSIER_URL"
-            printf '| Cv-Industry | [Download ZIP](%s) |\n' "$INDUSTRY_URL"
-            printf '| All-Publications | [Download ZIP](%s) |\n' "$PUBLICATIONS_URL"
+            printf '| Cv-Academic.pdf | [Download PDF](%s) |\n' "$ACADEMIC_URL"
+            printf '| Cv-Academic-Dossier.pdf | [Download PDF](%s) |\n' "$DOSSIER_URL"
+            printf '| Cv-Industry.pdf | [Download PDF](%s) |\n' "$INDUSTRY_URL"
+            printf '| All-Publications.pdf | [Download PDF](%s) |\n' "$PUBLICATIONS_URL"
+            printf '| Cv-All-PDFs.zip | [Download ZIP](%s) |\n' "$BUNDLE_URL"
             echo ''
-            echo 'Each ZIP contains one PDF. Sign in to GitHub to download; artifacts are retained for 90 days.'
+            echo 'The four individual downloads are PDFs. The ZIP bundle contains all four. Sign in to GitHub to download; artifacts are retained for 90 days.'
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Save diagnostic logs if the build fails

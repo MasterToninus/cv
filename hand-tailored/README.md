@@ -1,17 +1,9 @@
-# Standalone tailored documents
+# Independently maintained documents
 
-This folder contains independently maintained sources:
-
-- [Personal CV variant](2025-Cv-Giusy.tex), concerning a different person from the shared Antonio Miti data.
+- [Personal CV variant](2025-Cv-Giusy.tex): a different person from the shared Antonio Miti data.
 - [Selected publications](2025-Selected-Publications.tex).
-- [Selected publications with a motivation](2026-Selected-Publications-Commented.tex).
+- [Selected publications with motivation](2026-Selected-Publications-Commented.tex).
 
-They are separate from the four generated outputs: `python build.py` does not compile or overwrite them. Compile each source with its required packages and bibliography, keeping auxiliary files under `build/`.
+These sources are separate from the shared-data build. Keep standalone output in `build/`; see the [compilation guide](../docs/build.md#standalone-documents).
 
-The earlier full publication list, analytical MCF CV and other historical references are archived in [`old-tailored/`](../old-tailored/README.md). AI-assisted application sources live in [`ai-tailored/`](../ai-tailored/README.md), with their notes under [`docs/ai-tailored/`](../docs/ai-tailored/README.md).
-
-Document filename prefixes record the [first Git introduction year](../docs/document-origins.md). They do not indicate the last revision or approval date.
-
-For the current complete publication list, use `python build.py --format publications`, which produces `gen/All-Publications.tex/pdf` directly from the shared BibTeX file.
-
-[Repository guide](../README.md)
+Filename years record the [first Git introduction](../docs/document-origins.md). AI-assisted variants live in [`ai-tailored/`](../ai-tailored/README.md); historical references live in [`old-tailored/`](../old-tailored/README.md).

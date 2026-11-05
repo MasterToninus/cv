@@ -12,6 +12,8 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Document pipeline and standardize source headers.
+# | 20261105  Miti/Codex   Show the last position when no current job exists.
+# | 20261105  Miti/Codex   Share optional information across academic layouts.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Render processed CV data without loading its sources or writing output."""
@@ -95,10 +97,32 @@ def render_cv(
         )
     # The YAML order assigns sections to the two cover columns or the
     # continuation body. Preserve both source order and the legacy placement.
+    # As in the dossier, previous jobs are authored newest first. Promote the
+    # latest only when a current-position slot exists, without changing the
+    # shared employment lists used by the other formats.
+    previous_jobs = data.get("previousjobs", [])
+    promote_last_position = (
+        not data.get("currentjobs")
+        and bool(previous_jobs)
+        and any(section[1] == "currentjobs" for section in data["order"])
+    )
     bodies = ["", "", ""]
     section_template = env.get_template("helpers/section_tmpl.tex")
     for name, key, kind, column in data["order"]:
-        section = section_template.render(name=name, contents=data[key], kind=kind)
+        contents = data[key]
+        if key == "currentjobs":
+            if promote_last_position:
+                name, contents = "Last Position", previous_jobs[:1]
+            elif not contents:
+                continue
+        elif key == "previousjobs":
+            if promote_last_position:
+                contents = contents[1:]
+            # A sole previous job is already visible in Last Position; an
+            # empty employment history does not need an empty section header.
+            if not contents:
+                continue
+        section = section_template.render(name=name, contents=contents, kind=kind)
         bodies[column - 1 if column in (1, 2) else 2] += section
 
     # Full citations are emitted as TeX; Biber resolves them during compilation.
@@ -141,6 +165,7 @@ def render_cv(
         body1=bodies[0],
         body2=bodies[1],
         body3=bodies[2],
+        additional_information=data.get("additional_information", []),
         today=as_of.strftime("%d/%m/%y"),
         publications_page=publications_page,
         bibliography_path=bibliography_path,

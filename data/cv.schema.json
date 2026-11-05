@@ -59,6 +59,13 @@
     "oldstatement": {
       "type": "string"
     },
+    "additional_information": {
+      "description": "Optional author-provided LaTeX paragraphs shared by the academic CV formats.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "address": {
       "type": "array",
       "items": {

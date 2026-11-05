@@ -1,10 +1,11 @@
 %+------------------------------------------------------------------------+
 %| NOTE: Jinja2 template for the Academic Dossier CV.
-%| DATE: 2026-11-04
+%| DATE: 2026-11-05
 %| Author: Antonio Michele Miti
 %| Credits: Repository CV sources; original credits retained in source.
 %+------------------------------------------------------------------------+
 ~{ import 'helpers/academic_macros.tex' as academic }~
+~{ import 'helpers/additional_information.tex' as additional }~
 \documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -218,6 +219,8 @@
 ~{ endfor }~
 ~{{ academic.voices('Habilitations', cv.habil) }}~
 ~{{ academic.voices('Honors \\& Awards', cv.awd) }}~
+
+~{{ additional.section(cv.additional_information | default([])) }}~
 
 	\clearpage
 	\section*{Teaching \& Administrative Activities}

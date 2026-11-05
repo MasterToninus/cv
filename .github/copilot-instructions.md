@@ -16,6 +16,12 @@ Check the subject before committing and retain the appropriate tag in any newly 
 This prospective rule supersedes older tag spellings; preserve historical commit messages and records. Continue to respect the current task's scope and existing commit/push permissions. This labeling policy does not itself require a commit or push.
 <!-- END USER COMMIT PROVENANCE POLICY -->
 
+## Commit messages and documentation
+
+Write all new or proposed commit subjects and bodies in English, including newly authored squash and merge messages. Preserve the required `[AI]` or `[AI-Human]` provenance prefix and pass this rule to delegated agents. Do not rewrite historical commits to translate them. See the [commit-language policy](../AGENTS.md#commit-message-language).
+
+Keep public documentation in English, with concise folder READMEs and working links. Operational instructions belong in the [build guide](../docs/build.md); follow the [public-documentation policy](../AGENTS.md#public-documentation).
+
 ## CV tailoring workflow
 
 For every request to tailor a CV to a position, read and follow the mandatory

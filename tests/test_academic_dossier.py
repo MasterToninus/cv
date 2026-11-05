@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Document pipeline and standardize source headers.
+# | 20261105  Miti/Codex   Cover the shared optional academic-information layout.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Offline checks for the academic dossier and selection of CV output formats."""
@@ -347,6 +348,121 @@ class AcademicDossierRenderingTests(unittest.TestCase):
             "Earlier position sentinel",
         ):
             self.assertEqual(rendered.count(title), 1)
+
+    def assert_additional_section(self, rendered, paragraphs):
+        """Check the rendered list spacing and symbols rather than macro filenames."""
+        heading = r"\block{Additional Information}"
+        self.assertEqual(rendered.count(heading), 1)
+        section = re.search(
+            r"\\par\s*\\vfill\s*"
+            + re.escape(heading)
+            + r"\s*\\begin\{itemize\}\[(?P<options>[^\]]+)\]"
+            + r"(?P<items>.*?)\\end\{itemize\}",
+            rendered,
+            re.S,
+        )
+        self.assertIsNotNone(section, "Expected fill, heading, and adjacent list")
+        options = re.sub(r"\s+", "", section.group("options")).split(",")
+        for option in (
+            "leftmargin=*",
+            "topsep=0pt",
+            "partopsep=0pt",
+            r"itemsep=0.1\baselineskip",
+            "parsep=0pt",
+        ):
+            self.assertIn(option, options)
+        items = section.group("items")
+        self.assertEqual(items.count(r"\item[$\cdot$]"), len(paragraphs))
+        self.assertNotRegex(items, r"\\item\s")
+        self.assertNotIn(r"\textbullet", items)
+        self.assertNotIn(r"\bullet", items)
+        for paragraph in paragraphs:
+            self.assertEqual(items.count(paragraph), 1)
+        return section
+
+    def test_both_academic_formats_share_the_layout_and_preserve_raw_latex(self):
+        paragraphs = [
+            r"An author-provided \textbf{career context} statement.",
+            r"An author's approved 50\% statement with $x \in X$ and \&.",
+        ]
+        for format in ("current", "academic-dossier"):
+            with self.subTest(format=format):
+                data = deepcopy(self.data)
+                data["additional_information"] = paragraphs[:]
+                original = deepcopy(data)
+                rendered = render_cv(data, ROOT / "tmpl", AS_OF, format=format)
+                self.assert_additional_section(rendered, paragraphs)
+                self.assertEqual(data, original)
+
+    def test_dossier_additional_information_follows_awards_before_teaching(self):
+        data = deepcopy(self.data)
+        paragraphs = ["An author-provided context statement."]
+        data["additional_information"] = paragraphs
+        rendered = self.render(data)
+        section = self.assert_additional_section(rendered, paragraphs)
+        self.assertLess(rendered.index(r"\block{Honors \& Awards}"), section.start())
+        self.assertLess(
+            section.end(),
+            rendered.index(r"\section*{Teaching \& Administrative Activities}"),
+        )
+
+    def test_current_additional_information_is_the_final_block_after_body_three(self):
+        data = deepcopy(self.data)
+        data["order"].append(
+            ["Final body section sentinel", "final_body_sentinel", "plainlist", 3]
+        )
+        data["final_body_sentinel"] = ["Final body content sentinel."]
+        paragraphs = [r"Final author-provided \emph{context} statement."]
+        data["additional_information"] = paragraphs
+        original = deepcopy(data)
+        rendered = render_cv(data, ROOT / "tmpl", AS_OF, format="current")
+        section = self.assert_additional_section(rendered, paragraphs)
+        self.assertLess(rendered.index("Final body content sentinel."), section.start())
+        self.assertEqual(rendered[section.end() :].strip(), r"\end{document}")
+        self.assertEqual(data, original)
+
+    def test_absent_or_empty_additional_information_omits_heading_and_fill(self):
+        for format in ("current", "academic-dossier"):
+            for present in (False, True):
+                with self.subTest(format=format, present=present):
+                    data = deepcopy(self.data)
+                    data.pop("additional_information", None)
+                    if present:
+                        data["additional_information"] = []
+                    original = deepcopy(data)
+                    rendered = render_cv(data, ROOT / "tmpl", AS_OF, format=format)
+                    self.assertNotIn(r"\block{Additional Information}", rendered)
+                    # The dossier cover has independent standalone fills;
+                    # only the optional section's paragraph fill must disappear.
+                    self.assertIsNone(re.search(r"\\par\s*\\vfill", rendered))
+                    self.assertNotRegex(
+                        rendered, r"\\begin\{itemize\}\s*\\end\{itemize\}"
+                    )
+                    self.assertEqual(data, original)
+
+    def test_additional_information_is_not_emitted_by_industry(self):
+        data = deepcopy(self.data)
+        data["additional_information"] = [
+            r"Private test-only \textbf{disclosure sentinel}."
+        ]
+        original = deepcopy(data)
+        rendered = render_cv(data, ROOT / "tmpl", AS_OF, format="industry")
+        self.assertNotIn(r"\block{Additional Information}", rendered)
+        self.assertNotIn("disclosure sentinel", rendered)
+        self.assertEqual(data, original)
+
+    def test_publication_rendering_does_not_use_additional_information(self):
+        # Publication-list rendering receives its own bibliography-only context.
+        data = {
+            "publication_groups": [],
+            "max_name_count": 99,
+            "additional_information": ["Private test-only disclosure sentinel."],
+        }
+        original = deepcopy(data)
+        rendered = render_cv(data, ROOT / "tmpl", AS_OF, format="publications")
+        self.assertNotIn(r"\block{Additional Information}", rendered)
+        self.assertNotIn("disclosure sentinel", rendered)
+        self.assertEqual(data, original)
 
     def test_explicit_current_format_matches_the_legacy_default(self):
         default = render_cv(self.data, ROOT / "tmpl", AS_OF)

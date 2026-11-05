@@ -2,7 +2,7 @@
 # CV Configuration File
 # Author: Antonio Miti
 # Description: This file contains the structured data for generating a professional LaTeX CV.
-# Last Updated: 2026-11-04
+# Last Updated: 2026-11-05
 name:
     first: Antonio Michele
     last: Miti
@@ -23,6 +23,17 @@ address:
 titleinfo: "Researcher in mathematics focussing on differential geometry, higher structures, and their applications to physics."
 coverstatement: "I am a differential geometer specializing in higher geometric methods, particularly in symplectic and multisymplectic geometry. My research interests include geometric mechanics, classical field theories, quantization, and homotopical algebra, with a focus on exploring geometric and up-to-homotopy structures inspired by theoretical physics."
 oldstatement: "I am a differential geometer mainly working with higher geometry methods in symplectic and multisymplectic geometry. I am interested in geometric mechanics, classical field theories, quantization and homotopical algebra. Most of all, I am interested in geometrical and structures up to homotopy inspired by theoretical physics."
+# Optional author-provided information for both academic CV formats.
+additional_information:
+  - >-
+    My career path encountered several \emph{health-related breaks} due to chronic
+    depression, only very recently associated with an undiagnosed autism-spectrum
+    condition -- now appropriately treated.
+  - >-
+    During my most recent appointment, I took a paid \emph{parental leave}
+    following the birth of my daughter, followed by a six-month unpaid career break
+    associated with my family's relocation to France.
+
 sectors: 
   - Geometry
   - Mathematical-Physics

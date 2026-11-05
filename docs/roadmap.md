@@ -1,6 +1,6 @@
 # Roadmap
 
-These are future ideas, not requirements of the current build.
+Completed milestones and future ideas are listed separately from current build requirements.
 
 - [x] Share local inputs between the academic, academic-dossier, and industry layouts.
 - [x] Separate acquisition, processing, and rendering; provide a portable, date-controlled build.
@@ -13,7 +13,9 @@ These are future ideas, not requirements of the current build.
 - [ ] Extend summaries for supervised students, citations, h-index, referee reports, research stays, and committees/juries.
 - [ ] Evaluate bibliometrics APIs, including Scopus, as an explicit acquisition step.
 - [ ] Keep signatures and phone numbers outside public source files where appropriate.
-- [ ] Add a GitHub Action to generate the CV.
+- [x] Build all four PDFs in GitHub Actions and publish downloadable artifacts.
+- [x] Check generated PDF links with a separate helper, workflow, and downloadable report.
+- [x] Show the last appointment when the current-position section is empty.
 
 Editorial suggestions retained for separate review:
 

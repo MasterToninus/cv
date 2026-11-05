@@ -1,55 +1,62 @@
-# CV e dati comuni — revisione delle tre candidature attive
+# Shared CV data — historical review of three applications
 
-> Archived on 4 November 2026. The historical review and original author answers below are retained; only filenames and links have been updated. For subsequent corrections, see [author-confirmed data](../confirmed-data.md).
+> Archived on 4 November 2026. This English translation preserves the historical review, the meaning of the author's responses, prompt identifiers, and unanswered fields. The [original Italian record](https://github.com/MasterToninus/cv/blob/253111488e3f439b26ce0eadce27c1d9a703281a/docs/ai-tailored/2026-Cv-Tony-Academic-Review.md) remains available in Git history. For later corrections, see [author-confirmed data](../confirmed-data.md).
 
-**Call:** AIAS–AUFF, Mathematics Münster e Stockholm–Lerheden.  
-**Stato:** risposte ricevute il 23 ottobre 2026. Contratto concluso ad aprile 2026 e assenza di impiego recepiti; nessun aggiornamento scientifico riferito. Certificati e referee di Stoccolma gestiti dall’autore. Le risposte sotto sono conservate integralmente.
+**Applications:** AIAS–AUFF, Mathematics Münster, and Stockholm–Lerheden.
 
-Scrivi in italiano negli spazi `PROMPT_PI`, mantenendo gli identificativi. Un campo vuoto resta aperto. Questa scheda raccoglie una sola volta i controlli fattuali condivisi; le scelte scientifiche restano nelle schede delle singole call. Nessuna risposta, firma o dichiarazione è precompilata.
+**Status recorded on 23 October 2026:** the author's responses confirmed that the contract ended in April 2026 and that the author was not currently employed. No scientific updates were reported. The author was handling certificates and Stockholm referees. The responses below are English translations, not verbatim quotations.
 
-**Documenti da confrontare:** [CV comune](../../ai-tailored/build/2026-Cv-Tony-Academic-Draft.pdf), [pubblicazioni comuni](../../ai-tailored/build/2026-Publications-Tony-Academic-Draft.pdf).
+This historical form collected shared factual checks once; scientific choices remained in the application-specific records. Responses were originally requested in Italian in the `PROMPT_PI` fields, retaining their identifiers. Blank fields remained unresolved. No response, signature, or declaration was prefilled.
 
-## COMUNI-CV-01 — Posizione, affiliazione, disponibilità e contatto
+**Reviewed sources:** [shared CV](../../ai-tailored/2026-Cv-Tony-Academic-Draft.tex) and [shared publication list](../../ai-tailored/2026-Publications-Tony-Academic-Draft.tex). Their corresponding PDFs, `ai-tailored/build/2026-Cv-Tony-Academic-Draft.pdf` and `ai-tailored/build/2026-Publications-Tony-Academic-Draft.pdf`, were local build outputs and are not versioned.
 
-**Nei sorgenti:** il CV comune indica «February 2024–present», CIVIS-3i postdoctoral fellow, Dipartimento di Matematica, Sapienza; il dottorato in matematica risulta conseguito il 1° aprile 2021, titolo congiunto Cattolica–KU Leuven. Il CV usa Gmail. La lettera di Stoccolma già approvata conserva il contatto istituzionale: non viene modificata automaticamente.
+## COMUNI-CV-01 — Position, affiliation, availability, and contact
 
-**Da confermare:** quale posizione e affiliazione dobbiamo indicare oggi, quale data di fine contratto e disponibilità all’inizio delle fellowship, e quale indirizzo email preferisci per queste candidature? Segnala eventuali correzioni anche al titolo/data del dottorato. Distingui informazioni confermate da date ancora previste; le dichiarazioni di eleggibilità specifiche restano da controllare per ogni call.
+**In the sources at the time:** the shared CV stated “February 2024–present”, CIVIS-3i postdoctoral fellow, Department of Mathematics, Sapienza. The joint Cattolica–KU Leuven doctorate in mathematics was recorded as awarded on 1 April 2021. The CV used Gmail. The already approved Stockholm letter retained the institutional contact and was not to be changed automatically.
+
+**Confirmation requested:** which position and affiliation should be stated, when the contract ended, availability at the start of the fellowships, and the preferred email address for these applications. Corrections to the doctorate's title or date were also requested. Confirmed information had to be distinguished from expected dates; eligibility statements still required separate checks for each call.
+
+**Author response — English translation:**
 
 ```text
 <PROMPT_PI id="COMUNI-CV-01">
-Il contratto è terminato ad aprile 2026. Tecnicamente ora sono disoccupato.
+The contract ended in April 2026. Technically, I am currently unemployed.
 
 
 </PROMPT_PI>
 ```
 
-## COMUNI-CV-02 — Pubblicazioni, manoscritti e attività 2026
+## COMUNI-CV-02 — Publications, manuscripts, and 2026 activities
 
-**Nei sorgenti:** sette pubblicazioni, un preprint pubblico Fiorenza–Miti (arXiv:2602.14702), tesi separata e tre manoscritti in preparazione: Basu–Fiorenza–Miti; D’Agostino–Frabetti–Miti; Miti–Zanello. Un preprint esteso non è contato di nuovo come articolo distinto. I soggiorni 2026 soltanto programmati non sono presentati come effettuati; il proposal ERC non è indicato come finanziamento assegnato.
+**In the sources at the time:** seven publications, one public Fiorenza–Miti preprint (arXiv:2602.14702), the thesis listed separately, and three manuscripts in preparation: Basu–Fiorenza–Miti; D’Agostino–Frabetti–Miti; and Miti–Zanello. An extended preprint was not counted again as a distinct paper. Research stays recorded only as planned were not presented as completed; the ERC proposal was not listed as awarded funding.
 
-**Da confermare:** quali stati, titoli o riferimenti sono cambiati? Quali soggiorni o attività 2026 si sono effettivamente svolti, con quali date e ruolo? Indica un riferimento/documento per le aggiunte; non occorre ripetere i risultati scientifici già discussi nei proposal.
+**Confirmation requested:** any changes to statuses, titles, or references; which 2026 stays or activities had taken place, including dates and roles; and a reference or document supporting additions. Scientific results already discussed in the proposals did not need to be repeated.
+
+**Author response — English translation:**
 
 ```text
 <PROMPT_PI id="COMUNI-CV-02">
-Nulla di nuovo
+Nothing new.
 
 
 </PROMPT_PI>
 ```
 
-## COMUNI-CV-03 — Certificati e referee
+## COMUNI-CV-03 — Certificates and referees
 
-**Da decidere:** quali certificati di laurea/dottorato e transcript sono disponibili, e dove possiamo reperirli? Per le call che richiedono riferimenti, quali referee vuoi indicare, con quale email professionale e quale stato di disponibilità già confermato? Distingui la proposta di un nome da un consenso effettivamente ricevuto. Per Stoccolma segnala separatamente lo stato dell’endorsement richiesto. Non viene dedotto alcun impegno e non partiranno contatti o invii.
+**Decision requested:** which degree certificates and transcripts were available and where to find them; which referees to name for calls requiring references, their professional email addresses, and whether their availability had been confirmed. Proposing a name was to be distinguished from receiving consent. Stockholm's required endorsement needed a separate status. No commitment, contact, or submission was inferred.
+
+**Author response — English translation:**
 
 ```text
 <PROMPT_PI id="COMUNI-CV-03">
 
-Ci penso io a reperire i certificati. Per stoccolma ho ricevuto l'endorsement da Alexander Backlund
+I will obtain the certificates myself. For Stockholm, I have received the endorsement from Alexander Backlund.
 
 </PROMPT_PI>
 ```
 
-## Note facoltative
+## Optional notes
 
 ```text
 <PROMPT_PI id="COMUNI-CV-NOTE">
@@ -59,10 +66,10 @@ Ci penso io a reperire i certificati. Per stoccolma ho ricevuto l'endorsement da
 </PROMPT_PI>
 ```
 
-**Base documentale:** `Cv/ai-tailored/2026-Cv-Tony-Academic-Draft.tex`, `2026-Publications-Tony-Academic-Draft.tex` e relative note, consultati il 23 ottobre 2026. Le risposte effettive sono state implementate nei dati e nei draft indicati; i campi non risposti restano aperti.
+**Documentary basis:** the shared CV and publication-list sources linked above, with their corresponding notes, were consulted on 23 October 2026. The historical record states that the received responses were implemented in the indicated data and drafts; unanswered fields remained open. This does not establish approval of later document versions.
 
-## Esito e follow-up corrente
+## Recorded outcome and subsequent clarification
 
-Le risposte sopra sono conservate senza modifiche. [Interventi applicati, approfondimenti e nuovi slot](2026-Cv-Tony-Academic-FollowUp.md). I campi vuoti non sono approvazioni e rimangono aperti.
+The translated responses preserve their original meaning. See the [applied changes, follow-up questions, and remaining fields](2026-Cv-Tony-Academic-FollowUp.md). Blank fields are not approvals and remain unresolved.
 
-**Correzione esplicita dell’autore:** il nome corretto è Alexander Berglund; «Backlund» nella risposta originale sopra era un refuso. Disponibilità: da subito per accettare e lavorare, possibile trasferimento dopo gennaio. Risposte originali preservate.
+**Explicit author correction:** the correct name is **Alexander Berglund**; “Backlund” in the original response, retained in the translation above, was a typo. The author was available immediately to accept and start work, with a possible relocation after January. The original Italian wording remains available through the immutable history link above.

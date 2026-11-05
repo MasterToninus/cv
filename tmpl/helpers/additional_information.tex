@@ -1,0 +1,17 @@
+%+------------------------------------------------------------------------+
+%| NOTE: Shared Jinja2 additional-information block for academic CVs.
+%| DATE: 2026-11-05
+%| Author: Antonio Michele Miti
+%| Credits: CV generator; shared academic presentation.
+%+------------------------------------------------------------------------+
+~{ macro section(paragraphs) -}~
+~{ if paragraphs -}~
+\par\vfill
+\block{Additional Information}
+\begin{itemize}[leftmargin=*, topsep=0pt, partopsep=0pt, itemsep=0.1\baselineskip, parsep=0pt]
+~{ for paragraph in paragraphs -}~
+\item[$\cdot$] ~{{ paragraph }}~
+~{ endfor -}~
+\end{itemize}
+~{ endif -}~
+~{- endmacro }~

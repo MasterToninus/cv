@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Document pipeline and standardize source headers.
+# | 20261105  Miti/Codex   Record approved position and final-information displays.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Offline checks for data acquisition and the preserved CV semantics."""
@@ -259,7 +260,12 @@ class ProcessingTests(unittest.TestCase):
         )
 
     def test_assembly_moves_summary_rows_without_mutating_inputs(self):
-        config = {"org": [{}, {}], "teach": [{"load": 10}, {}], "visit": [{}, {}, {}]}
+        config = {
+            "org": [{}, {}],
+            "teach": [{"load": 10}, {}],
+            "visit": [{}, {}, {}],
+            "additional_information": [r"An author-provided \emph{context} statement."],
+        }
         rows = [activity()]
         original_config, original_rows = deepcopy(config), deepcopy(rows)
         result = processing.assemble_cv(config, rows, BibliographyData(), AS_OF)
@@ -276,6 +282,9 @@ class ProcessingTests(unittest.TestCase):
                 {"type": "Courses Taught", "value": 2},
                 {"type": "Teaching hours", "value": 10},
             ],
+        )
+        self.assertEqual(
+            result["additional_information"], config["additional_information"]
         )
         self.assertEqual(config, original_config)
         self.assertEqual(rows, original_rows)
@@ -354,10 +363,14 @@ class ImportAndRenderingTests(unittest.TestCase):
                 as_of,
             )
         rendered = render_cv(data, ROOT / "tmpl", as_of).replace("\r\n", "\n")
-        # Header metadata is editorial; preserve the original rendered TeX,
+        # Header metadata is editorial; fingerprint the approved rendered TeX,
         # including whitespace and inline comments, outside full comment lines.
         # This baseline includes the author-approved data corrections recorded
-        # in docs/confirmed-data.md. Review further intentional content changes.
+        # in docs/confirmed-data.md, the requested Last Position display, and
+        # the author-requested final Additional Information block. The reviewed
+        # diff adds only that final block and editorial whitespace; other CV
+        # facts remain unchanged. See the local before/after review before
+        # changing this expectation for further data or presentation changes.
         content = "\n".join(
             line for line in rendered.splitlines() if not line.lstrip().startswith("%")
         )
@@ -365,7 +378,7 @@ class ImportAndRenderingTests(unittest.TestCase):
         # first inspect the CV diff and obtain approval for factual changes.
         self.assertEqual(
             hashlib.sha256(content.encode("utf-8")).hexdigest(),
-            "31b88271381e7aaf0e8f104bcbd80f414a1eb10f4ecf61c9d722b661c954d885",
+            "e8ce1f689f5509c68ea0a0d83b429b30b685077ac03d98ba316d1a6a479aadec",
         )
 
 

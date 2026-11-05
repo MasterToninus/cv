@@ -16,6 +16,18 @@ Check the subject before committing and retain the appropriate tag in any newly 
 This prospective rule supersedes older tag spellings; preserve historical commit messages and records. Continue to respect the current task's scope and existing commit/push permissions. This labeling policy does not itself require a commit or push.
 <!-- END USER COMMIT PROVENANCE POLICY -->
 
+## Commit message language
+
+Write every new or proposed Git commit message in English, including its subject and optional body, regardless of the conversation language. This also applies to newly authored squash and merge messages and to messages suggested by delegated agents or commit-message generators.
+
+Retain the required provenance tag before any conventional-commit prefix, for example `[AI] docs: simplify public documentation`. Check both language and provenance before committing. Preserve historical messages; do not amend or rewrite commits merely to translate them. This rule does not authorize a commit or push on its own.
+
+## Public documentation
+
+Write documentation and explanatory folder READMEs in English. Use concise guides for a public reader, with working repository-relative links. Put setup, compilation, development, and link-checking commands in `docs/build.md`; keep detailed data and template contracts in `docs/data.md` and `docs/templates.md`.
+
+Add a short README when introducing a versioned source or documentation directory. Generated output, caches, virtual environments, and Git internals do not need READMEs. Clearly distinguish historical application records from current build instructions; identify translations and preserve recorded hashes, dates, factual limits, and provenance. Do not present local build files or external local repositories as public downloads.
+
 ## Tailoring a CV for a position
 
 Whenever the user asks to adapt a CV to a job, call, or academic position, start
@@ -144,8 +156,8 @@ concise comments or docstrings; avoid narrating obvious statements.
 Apply the Black and isort settings in `pyproject.toml` to every Python source,
 including tests. Install the optional tools with
 `python -m pip install -r requirements-dev.txt`, then run `make format` and
-`make format-check`, or the equivalent Python commands documented in the README.
-Keep formatting changes separate from behavior changes and run the test suite.
+`make format-check`, or the equivalent Python commands in the build and development guide.
+Keep formatting changes separate from behavior changes and run the test suite. See the [build and development guide](docs/build.md#development) for the commands and checks.
 
 ## Historical document filename years
 

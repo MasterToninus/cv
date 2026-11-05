@@ -19,7 +19,7 @@ The year prefix of existing documents in `hand-tailored/` and `old-tailored/` re
 | [old-tailored/2024-Teaching.tex](../old-tailored/2024-Teaching.tex) | 2024 | `2024-11-13T16:11:12+01:00` | `a4a33a7b4c8c59a63a32782166b0df1e18ecc54b` | `A` |
 | [old-tailored/2025-Titoli.tex](../old-tailored/2025-Titoli.tex) | 2025 | `2025-07-05T20:46:42+02:00` | `6d378b9e60de4eb9b3d5a8a232c6fed3ddb0d1ef` | `A` |
 
-The new `old-tailored/2027-Cv-Tony-ERC.tex` has no Git introduction yet. Its existing `2027` prefix identifies the ERC call, not a Git-derived creation year. It is retained as an explicit exception; no creation timestamp has been invented. The extracted CV body remains verbatim.
+At the naming review on 4 November 2026, `old-tailored/2027-Cv-Tony-ERC.tex` had no Git introduction from which to derive a year. Its `2027` prefix was therefore retained as an explicit call-year exception. The source was subsequently introduced in commit `f5051eeb2ee050c51544c7b4377d4349a8b0aec2` on 4 November 2026 (`2026-11-04T22:16:35+01:00`). The filename continues to identify the call rather than a Git-derived year; the extracted CV body remains verbatim.
 
 README files, generated auxiliaries and build directories are not dated documents. The MCF bibliography sources have their own first-introduction prefixes and the TeX resource references were updated accordingly.
 
