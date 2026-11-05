@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Test grouping, editorial annotations, and independence.
+# | 20261105  Miti/Codex   Check the Final Preparation section heading.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Checks for a standalone publication list sourced only from BibTeX."""
@@ -63,7 +64,7 @@ class PublicationPreparationTests(unittest.TestCase):
                 "Published",
                 "Theses",
                 "Submitted to Peer-review",
-                "In Preparation",
+                "Final Preparation",
                 "Other Publications",
             ],
         )
@@ -109,6 +110,8 @@ class PublicationPreparationTests(unittest.TestCase):
                 "DAgostino2026",
             ],
         )
+        self.assertIn(r"\section*{Final Preparation}", rendered)
+        self.assertNotIn(r"\section*{In Preparation}", rendered)
         self.assertIn(r"\setcounter{enumi}{7}", rendered)
         self.assertIn(
             r"\footnote{This is a reduced version of \cite{Luongo2024}", rendered

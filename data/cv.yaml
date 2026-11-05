@@ -145,7 +145,7 @@ previousjobs:
   - what: Postdoctoral fellow (CIVIS-3i)
     when: 02/2024 -- 04/2026
     where: "Sapienza Universit\\'a di Roma, Rome, Italy;"
-    info: "Research grant (MSCA-H2020 cofund) on multisymplectic geometry and classical field theories.\\vspace{-0.25cm}"
+    info: "Research project MultiSymORI - Multisymplectic geometry: observables, reduction, and numerical integrators (MSCA-H2020 cofund).\\vspace{-0.25cm}"
     url: https://civis3i.univ-amu.fr/en/civis3i-alliance-programme
   - what: Postdoctoral fellow (Assegno di ricerca)
     when: 10/2022 -- 01/2024
@@ -438,19 +438,19 @@ org:
     date: "06/11/2024 -- 19/12/2024"
     where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
     url: https://www.antoniomiti.it/teaching/LFT-2024/
-    info: "2 months local seminar series."
+    info: "2 months reading seminar co-organized with Prof. Marco D'Agostino."
   - what: "Workshop on Multisymplectic Structures in Geometry and Physics"
     when: "01/2024"
     date: "10/01/2024"
     where: "Institut Camille Jordan, Université Claude-Bernard Lyon 1, France;"
     url: https://math.gmu.edu/~cblacke/lyon.html
-    info: "1 day international workshop."
+    info: "Online 1 day international workshop co-organized with Prof. Leonid Ryvkin and Dr. Casey Blacker."
   - what: "Workshop on multisymplectic geometry"
     when: "09/2020"
     date: "10/09/2020 -- 11/09/2020"
     where: "KU Leuven, Leuven, Belgium;"
     url: https://wis.kuleuven.be/events/multisymplectic
-    info: "2 days international workshop, held online due to COVID."
+    info: "2 days international workshop co-organized with Prof. Marco Zambon, held online due to COVID restrictions."
 
 # Research stays
 visit:

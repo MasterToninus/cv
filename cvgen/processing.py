@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Document pipeline and standardize source headers.
+# | 20261105  Miti/Codex   Count attended conferences and schools through the reference date.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Transform already-loaded CV data without reading files or accessing the network."""
@@ -63,13 +64,13 @@ def format_approximate_date(value: str) -> str:
 
 
 def process_activities(rows: list[dict[str, str]], as_of: date) -> dict:
-    """Preserve the legacy activity order, categories, counts, and date horizon."""
+    """Preserve activity lists and count attendance through the reference date."""
     schools, conferences, talks = [], [], []
     unused = set()
     talksnum = [
         {"type": "Invited Talks", "value": 0},
         {"type": "Contributed Talks and Posters", "value": 0},
-        {"type": "Attended Conferences", "value": 0},
+        {"type": "Conferences and Schools Attended", "value": 0},
     ]
     school_types = {
         "Training Course",
@@ -93,12 +94,13 @@ def process_activities(rows: list[dict[str, str]], as_of: date) -> dict:
         item["Scheduled"] = "(scheduled)" if start > as_of else ""
         item["Approx_Date"] = format_approximate_date(item["Approx_Date"])
 
-        # Counts intentionally include all source rows, as in the existing CV.
+        # Preserve all-source talk counters. Attendance includes workshops and
+        # schools, but future events remain scheduled rather than attended.
         if event == "Invited Talk":
             talksnum[0]["value"] += 1
         elif event in {"Contributed Talk", "Poster"}:
             talksnum[1]["value"] += 1
-        elif event in {"Workshop", "Conference", "School"}:
+        elif event in {"Workshop", "Conference", "School"} and start <= as_of:
             talksnum[2]["value"] += 1
 
         if event not in school_types | talk_types | conference_types:

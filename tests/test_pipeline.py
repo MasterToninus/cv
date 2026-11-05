@@ -175,9 +175,9 @@ class ProcessingTests(unittest.TestCase):
             result["talks"][0]["Url"], r"https://example.org/talk?q=10\%23\#details"
         )
 
-    def test_preserves_future_count_and_scheduled_event_rules(self):
-        # Established counters include all rows, while displayed event lists
-        # apply the 200-day horizon. Keep those two behaviors distinct.
+    def test_preserves_future_talk_counts_and_scheduled_event_rules(self):
+        # Talk counters retain all source rows, while displayed event lists
+        # apply the 200-day horizon. Attendance counts have their own cutoff.
         rows = [
             activity(start="01-Mar-24", title="soon", Approx_Date="March 2024"),
             activity(start="01-Jan-25", title="distant", Approx_Date="January 2025"),
@@ -189,13 +189,53 @@ class ProcessingTests(unittest.TestCase):
             [
                 {"type": "Invited Talks", "value": 2},
                 {"type": "Contributed Talks and Posters", "value": 0},
-                {"type": "Attended Conferences", "value": 1},
+                {"type": "Conferences and Schools Attended", "value": 1},
             ],
         )
         self.assertEqual([row["Event_Title"] for row in result["talks"]], ["soon"])
         self.assertEqual(result["talks"][0]["Scheduled"], "(scheduled)")
         self.assertEqual(result["schools"][0]["Scheduled"], "")
         self.assertEqual(result["conferences"], [])
+
+    def test_attendance_includes_schools_and_only_started_events(self):
+        rows = [
+            activity(kind=kind, start=start, title=f"{kind} {start}")
+            for kind in ("Workshop", "Conference", "School")
+            for start in ("14-Feb-24", "15-Feb-24", "16-Feb-24", "01-Jan-25")
+        ]
+        # Other training categories are displayed but are not conferences or schools.
+        rows.append(activity(kind="Training Course", title="A training course"))
+        original = deepcopy(rows)
+        for reference, expected in (
+            (date(2024, 2, 14), 3),
+            (AS_OF, 6),
+            (date(2024, 2, 16), 9),
+        ):
+            with self.subTest(reference=reference):
+                result = processing.process_activities(rows, reference)
+                counts = {item["type"]: item["value"] for item in result["talksnum"]}
+                self.assertEqual(counts["Conferences and Schools Attended"], expected)
+
+        result = processing.process_activities(rows, AS_OF)
+        self.assertEqual(len(result["conferences"]), 6)
+        self.assertEqual(len(result["schools"]), 4)
+        displayed = result["conferences"] + result["schools"]
+        self.assertFalse(any("01-Jan-25" in row["Event_Title"] for row in displayed))
+        for kind in ("Workshop", "Conference", "School"):
+            with self.subTest(kind=kind):
+                tomorrow = next(
+                    row
+                    for row in displayed
+                    if row["Event_Title"] == f"{kind} 16-Feb-24"
+                )
+                today = next(
+                    row
+                    for row in displayed
+                    if row["Event_Title"] == f"{kind} 15-Feb-24"
+                )
+                self.assertEqual(tomorrow["Scheduled"], "(scheduled)")
+                self.assertEqual(today["Scheduled"], "")
+        self.assertEqual(rows, original)
 
     def test_english_dates_work_under_an_italian_locale(self):
         original = locale.setlocale(locale.LC_TIME)
@@ -366,11 +406,11 @@ class ImportAndRenderingTests(unittest.TestCase):
         # Header metadata is editorial; fingerprint the approved rendered TeX,
         # including whitespace and inline comments, outside full comment lines.
         # This baseline includes the author-approved data corrections recorded
-        # in docs/confirmed-data.md, the requested Last Position display, and
-        # the author-requested final Additional Information block. The reviewed
-        # diff adds only that final block and editorial whitespace; other CV
-        # facts remain unchanged. See the local before/after review before
-        # changing this expectation for further data or presentation changes.
+        # in docs/confirmed-data.md, Last Position, and Additional Information.
+        # The reviewed 5 November diff restores the approved project/organizer
+        # details, standardizes date displays, counts only attended conferences
+        # and schools, and uses the requested Final Preparation heading.
+        # Inspect the rendered diff before accepting further content changes.
         content = "\n".join(
             line for line in rendered.splitlines() if not line.lstrip().startswith("%")
         )
@@ -378,7 +418,7 @@ class ImportAndRenderingTests(unittest.TestCase):
         # first inspect the CV diff and obtain approval for factual changes.
         self.assertEqual(
             hashlib.sha256(content.encode("utf-8")).hexdigest(),
-            "e8ce1f689f5509c68ea0a0d83b429b30b685077ac03d98ba316d1a6a479aadec",
+            "28b7769ece00f5306842f9e3dff4a79c43a46f99cdfc651283f7d2fd5b76175b",
         )
 
 

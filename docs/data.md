@@ -31,6 +31,8 @@ CSV column names must be unique. Duplicate headers are rejected before reading r
 
 The processing layer preserves the existing activity selection, list order, and publication classification. Data corrections and classification changes should be reviewed separately from the pipeline refactoring.
 
+The **Conferences and Schools Attended** counter includes `Workshop`, `Conference`, and `School` records whose `Start_Date` is on or before the build's reference date. Other training-course types are excluded. Future activities remain visible within the 200-day display horizon and are marked scheduled, but do not increase the attendance counter. Talk counters retain their existing all-source-record behavior. These totals are derived from `activities.csv`, not configured in YAML.
+
 See [author-confirmed CV data](confirmed-data.md) for the corrections approved on 4 November 2026. It also distinguishes the doctoral-scholarship competition won in November 2016 from the contract beginning in January 2017; the existing YAML scholarship period remains unchanged.
 
 The complete publication list is generated directly from `publications.bib`. Use `python build.py --format publications` to produce `gen/All-Publications.tex/pdf`.

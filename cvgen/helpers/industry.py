@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Document pipeline and standardize source headers.
+# | 20261105  Miti/Codex   Use shared month-level entry-date formatting.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Prepare the industry presentation from already-loaded CV data."""
@@ -20,6 +21,8 @@ from __future__ import annotations
 
 import re
 from copy import deepcopy
+
+from .dates import format_entry_date
 
 DEFAULT_TITLEINFO = (
     "Former researcher in pure mathematics transitioning to tech, with interests "
@@ -43,33 +46,11 @@ TRAINING_TITLES = (
     "B2 General English Intensive course",
     "Introduction to Scientific Programming using GPGPU and CUDA",
 )
-_MONTHS = (
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-)
 
 
 def _long_month(value: str) -> str:
-    """Expand numeric month/year labels and retain free-form date ranges."""
-    match = re.fullmatch(r"(\d{1,2})/(\d{4})", str(value).strip())
-    if match is None:
-        # Exact day/month/year dates and descriptive ranges are already
-        # valid display values; do not discard their additional precision.
-        return value
-    month, year = map(int, match.groups())
-    if not 1 <= month <= 12:
-        raise ValueError(f"Invalid month in CV entry date: {value}")
-    return f"{_MONTHS[month - 1]} {year}"
+    """Keep named months while matching the academic month-level precision."""
+    return format_entry_date(value, long_month=True)
 
 
 def _brief_entry(entry: dict, *, long_date: bool = False) -> dict:

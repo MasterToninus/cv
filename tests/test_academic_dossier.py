@@ -252,7 +252,7 @@ class AcademicDossierRenderingTests(unittest.TestCase):
             ("published", "Published"),
             ("thesis", "Theses"),
             ("preprints", "Preprints"),
-            ("drafts", "In preparation"),
+            ("drafts", "Final Preparation"),
         )
         for format in ("current", "academic-dossier"):
             # None removes every group; each other case removes only one.

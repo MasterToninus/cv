@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261104  Miti/Codex   Add automatic publication-list presentation.
+# | 20261105  Miti/Codex   Use the author-requested Final Preparation heading.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Prepare publication-list sections directly from loaded BibTeX records."""
@@ -22,7 +23,7 @@ _SECTIONS = (
     ("Published", {"article", "book", "inproceedings", "proceedings"}, True),
     ("Theses", {"phdthesis", "mastersthesis"}, True),
     ("Submitted to Peer-review", {"preprint", "unpublished"}, False),
-    ("In Preparation", {"draft"}, False),
+    ("Final Preparation", {"draft"}, False),
 )
 
 

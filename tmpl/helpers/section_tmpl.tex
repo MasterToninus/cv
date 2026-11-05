@@ -1,6 +1,6 @@
 %+------------------------------------------------------------------------+
 %| NOTE: Shared Jinja2 section template for the Academic CV.
-%| DATE: 2026-11-04
+%| DATE: 2026-11-05
 %| Author: Antonio Michele Miti
 %| Credits: Repository CV sources; original credits retained in source.
 %+------------------------------------------------------------------------+
@@ -11,7 +11,7 @@
 
     ~{ for voice in contents }~
     \voice{~{{voice.what}}~}
-        {~{{voice.when}}~}
+        {~{{ voice.when | default('') | entry_date }}~}
         {~{{voice.where}}~}
         {~{{voice.url}}~}       
         {~{{voice.info}}~}~{ endfor }~

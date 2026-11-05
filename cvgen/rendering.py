@@ -14,6 +14,7 @@
 # | 20261104  Miti/Codex   Document pipeline and standardize source headers.
 # | 20261105  Miti/Codex   Show the last position when no current job exists.
 # | 20261105  Miti/Codex   Share optional information across academic layouts.
+# | 20261105  Miti/Codex   Format dates and use the Final Preparation heading.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Render processed CV data without loading its sources or writing output."""
@@ -23,6 +24,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
+from .helpers.dates import format_entry_date
 from .helpers.formats import OUTPUT_STEMS
 
 _MONTH_NAMES = (
@@ -67,6 +69,8 @@ def render_cv(
         comment_start_string="~{#",
         comment_end_string="#}~",
     )
+    # Entry dates share one display policy while retaining source precision.
+    env.filters["entry_date"] = format_entry_date
     # New layouts fail on missing fields; the current layout retains the
     # original undefined-value behavior to preserve its established rendering.
     if format == "publications":
@@ -131,7 +135,7 @@ def render_cv(
         ("published", "Published"),
         ("thesis", "Theses"),
         ("preprints", "Preprints"),
-        ("drafts", "In preparation"),
+        ("drafts", "Final Preparation"),
     )
     for kind, title in publication_types:
         publications = [entry for entry in data["pub_details"] if entry["type"] == kind]

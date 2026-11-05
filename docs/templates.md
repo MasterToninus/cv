@@ -23,6 +23,8 @@ The renderer configures delimiters that do not collide with normal LaTeX braces:
 | Statement | `~{ if condition }~ ... ~{ endif }~` |
 | Comment | `~{# comment #}~` |
 
+The `entry_date` filter displays numeric entry dates as `MM/YYYY` and ranges as `MM/YYYY -- MM/YYYY`, with zero-padded months. It validates complete day/month/year dates before hiding the day; the original precision remains in the YAML and render context. Descriptive labels such as `Now` are retained. Both academic entry macros use this policy; industry degrees and awards retain named months at the same month-level precision. Birth dates, document dates, and bibliography metadata are unaffected.
+
 Standard Jinja filters, loops, macros, imports, and whitespace controls remain available. Data values already contain intentional LaTeX commands, so the renderer does not HTML-escape them. A new data field must use valid LaTeX, just like the existing YAML fields.
 
 ## Current layout
@@ -113,7 +115,7 @@ The pure helper in `cvgen/helpers/publications.py` groups entries by BibTeX type
 | Published | `article`, `book`, `inproceedings`, `proceedings` |
 | Theses | `phdthesis`, `mastersthesis` |
 | Submitted to Peer-review | `preprint`, `unpublished` |
-| In Preparation | `draft` |
+| Final Preparation | `draft` |
 | Other publications | Any other entry type |
 
 Entries use reverse bibliography-file order within each group, matching the supplied publication list. All entries are included, including bachelor/master/doctoral theses represented by the supported types; an unfamiliar type is retained in the fallback group. The template iterates over these groups instead of maintaining a hardcoded selection. The existing CV classification remains unchanged. Optional editorial notes belong in the bibliography's `annotation` field. All authors are printed: the maximum name-list size in the bibliography sets both citation and bibliography limits, so `\fullcite` does not shorten author lists to ‘et al.’.

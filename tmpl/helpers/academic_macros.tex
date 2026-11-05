@@ -1,6 +1,6 @@
 %+------------------------------------------------------------------------+
 %| NOTE: Jinja2 entry macros for the Academic Dossier CV.
-%| DATE: 2026-11-04
+%| DATE: 2026-11-05
 %| Author: Antonio Michele Miti
 %| Credits: Repository CV sources; original credits retained in source.
 %+------------------------------------------------------------------------+
@@ -10,7 +10,7 @@
 
 ~{ macro voice(entry) -}~
 \voice{~{{ entry.what }}~}
-    {~{{ entry.when | default('') }}~}
+    {~{{ entry.when | default('') | entry_date }}~}
     {~{{ entry.where | default('') }}~}
     {~{{ url(entry.url) }}~}
     {~{{ entry.info | default('') }}~}
@@ -49,7 +49,7 @@
 ~{- endmacro }~
 
 ~{ macro publications(details) -}~
-~{ for kind, title in [('published', 'Published'), ('thesis', 'Theses'), ('preprints', 'Preprints'), ('drafts', 'In preparation')] -}~
+~{ for kind, title in [('published', 'Published'), ('thesis', 'Theses'), ('preprints', 'Preprints'), ('drafts', 'Final Preparation')] -}~
 ~{ set group = details | selectattr('type', 'equalto', kind) | list -}~
 ~{ if group -}~
 \subsection*{~{{ title }}~}

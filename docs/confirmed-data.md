@@ -49,4 +49,23 @@ The referee-journal list uses semicolons between journals and consistent ISSN
 labels. DGA's ISSN **0926-2245** comes from the existing journal metadata in
 `data/publications.bib`; no journal-specific referee start date is inferred.
 
+## Restored project and organizer details — 5 November 2026
+
+The author approved restoring the MultiSymORI project name and its focus on
+multisymplectic observables, reduction, and numerical integrators, together
+with the MSCA-H2020 cofund acknowledgement.
+
+The author also approved restoring the named co-organizers in the shared
+event descriptions: Marco D'Agostino for the 2024 reading seminar; Leonid
+Ryvkin and Casey Blacker for the January 2024 workshop; and Marco Zambon for
+the September 2020 workshop. The January 2024 workshop retains its online
+format, and the September 2020 workshop retains the explanation of the
+COVID restrictions.
+
+Generated academic entries display dates at month/year precision, including
+**11/2010** for the bachelor's degree. The exact author-confirmed award date,
+**30 November 2010**, remains in the source data; formatting does not change
+that historical fact. Research-stay ranges and single-digit months use the
+same numeric display convention.
+
 [Data documentation](../data/README.md) · [Documentation index](README.md)
