@@ -20,7 +20,7 @@ This prospective rule supersedes older tag spellings; preserve historical commit
 
 Write all new or proposed commit subjects and bodies in English, including newly authored squash and merge messages. Preserve the required `[AI]` or `[AI-Human]` provenance prefix and pass this rule to delegated agents. Do not rewrite historical commits to translate them. See the [commit-language policy](../AGENTS.md#commit-message-language).
 
-Keep public documentation in English, with concise folder READMEs and working links. Operational instructions belong in the [build guide](../docs/build.md); follow the [public-documentation policy](../AGENTS.md#public-documentation).
+Keep public documentation in English, with concise folder READMEs and working links. Keep the `.github/` folder guide in `GUIDE.md` so the root README remains the repository landing page. Operational instructions belong in the [build guide](../docs/build.md); follow the [public-documentation policy](../AGENTS.md#public-documentation).
 
 ## CV tailoring workflow
 

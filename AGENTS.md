@@ -26,7 +26,7 @@ Retain the required provenance tag before any conventional-commit prefix, for ex
 
 Write documentation and explanatory folder READMEs in English. Use concise guides for a public reader, with working repository-relative links. Put setup, compilation, development, and link-checking commands in `docs/build.md`; keep detailed data and template contracts in `docs/data.md` and `docs/templates.md`.
 
-Add a short README when introducing a versioned source or documentation directory. Generated output, caches, virtual environments, and Git internals do not need READMEs. Clearly distinguish historical application records from current build instructions; identify translations and preserve recorded hashes, dates, factual limits, and provenance. Do not present local build files or external local repositories as public downloads.
+Add a short README when introducing a versioned source or documentation directory. Use `.github/GUIDE.md` for the `.github/` folder instead: GitHub otherwise gives that folder's README precedence over the root README on the repository home page. Generated output, caches, virtual environments, and Git internals do not need READMEs. Clearly distinguish historical application records from current build instructions; identify translations and preserve recorded hashes, dates, factual limits, and provenance. Do not present local build files or external local repositories as public downloads.
 
 ## Tailoring a CV for a position
 

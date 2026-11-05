@@ -5,3 +5,5 @@ This folder holds repository workflows and Copilot guidance.
 
 - [Workflows](workflows/README.md): PDF builds and generated-CV link checks.
 - [Agent instructions](../AGENTS.md): shared editing, provenance, and commit conventions.
+
+This guide uses `GUIDE.md` so the repository home page displays the [main README](../README.md).
