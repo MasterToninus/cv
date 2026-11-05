@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261105  Miti/Codex   Cover annotation sources, HTTP fallbacks, and error reports.
+# | 20261105  Miti/Codex   Exercise HEAD redirects with older urllib behavior.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Check link auditing with synthetic PDFs and mocked HTTP; never use the network."""
@@ -253,6 +254,51 @@ class HttpLinkTests(unittest.TestCase):
         ):
             with self.subTest(url=url), self.assertRaises(links.ManualReviewRedirect):
                 handler.redirect_request(request, None, 302, "Found", {}, url)
+
+    def test_head_redirect_preserves_method_when_inherited_urllib_defaults_to_get(self):
+        handler = links.ReadOnlyRedirectHandler()
+        original = urllib.request.Request(URL, method="HEAD")
+        destination = "https://destination.test/paper"
+        for code in (301, 302, 303, 307, 308):
+            with self.subTest(code=code):
+                # Python 3.11's inherited redirect handler omits method. Force
+                # that public behavior even when the local interpreter is newer.
+                inherited = urllib.request.Request(
+                    destination, headers={"User-Agent": "Preserved probe header"}
+                )
+                self.assertEqual(inherited.get_method(), "GET")
+                with patch.object(
+                    urllib.request.HTTPRedirectHandler,
+                    "redirect_request",
+                    return_value=inherited,
+                ):
+                    redirected = handler.redirect_request(
+                        original, None, code, "Redirect", {}, destination
+                    )
+                self.assertEqual(redirected.get_method(), "HEAD")
+                self.assertEqual(redirected.full_url, destination)
+                self.assertEqual(
+                    redirected.get_header("User-agent"), "Preserved probe header"
+                )
+
+    def test_get_redirect_preserves_the_limited_range_request(self):
+        handler = links.ReadOnlyRedirectHandler()
+        original = urllib.request.Request(
+            URL, headers={"Range": "bytes=0-0"}, method="GET"
+        )
+        destination = "https://destination.test/paper"
+        inherited = urllib.request.Request(destination, headers={"Range": "bytes=0-0"})
+        with patch.object(
+            urllib.request.HTTPRedirectHandler,
+            "redirect_request",
+            return_value=inherited,
+        ):
+            redirected = handler.redirect_request(
+                original, None, 302, "Redirect", {}, destination
+            )
+        self.assertEqual(redirected.get_method(), "GET")
+        self.assertEqual(redirected.get_header("Range"), "bytes=0-0")
+        self.assertEqual(redirected.full_url, destination)
 
     def test_a_redirect_to_capture_is_reported_as_manual_review(self):
         result, opener = self.inspect(

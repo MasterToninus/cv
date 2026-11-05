@@ -12,6 +12,7 @@
 # | Revision History  :
 # | Date      Author       Revision
 # | 20261105  Miti/Codex   Add explicit network checks and portable link reports.
+# | 20261105  Miti/Codex   Preserve HEAD across supported urllib redirect versions.
 # | Tools             : OpenAI ChatGPT/Codex
 # +---------------------------------------------------------------------------
 """Inspect generated PDF annotations and report HTTP link availability.
@@ -91,9 +92,15 @@ class ReadOnlyRedirectHandler(urllib.request.HTTPRedirectHandler):
             raise ManualReviewRedirect(
                 new_url, "Redirect target is not an HTTP(S) destination."
             )
-        return super().redirect_request(
+        redirected = super().redirect_request(
             request, response, code, message, headers, new_url
         )
+        # Older supported urllib versions create redirected Requests without
+        # an explicit method, which turns HEAD into GET. Retain HEAD so the
+        # probe remains body-free; leave the inherited GET behavior unchanged.
+        if redirected is not None and request.get_method() == "HEAD":
+            redirected.method = "HEAD"
+        return redirected
 
 
 def _request_status(url: str, method: str, timeout: float) -> tuple[int, str]:
