@@ -54,6 +54,18 @@ The dossier preserves the reference's cover, contact labels, link borders, title
 
 Existing layout or bibliography-driver warnings may appear even when compilation succeeds. Consult the log when reviewing a change; a successful exit alone does not replace visual inspection.
 
+## GitHub Actions
+
+The [Build CV PDFs workflow](../.github/workflows/build-cv.yml) runs on pushes to `master`, pull requests targeting `master`, and manual dispatch. It uses Ubuntu 24.04 and Python 3.11, installs the exact runtime pins, runs the test suite, and invokes the normal `python build.py` entry point. It does not refresh activities or compile tailored application documents.
+
+Its TeX packages are installed from Ubuntu: `biber`, `cm-super`, `texlive-bibtex-extra`, `texlive-fonts-extra`, `texlive-fonts-recommended`, and `texlive-latex-extra`. These provide the template fonts, IEEE bibliography style, and dossier packages. `SOURCE_DATE_EPOCH` comes from the checked-out commit's committer timestamp, including the tested merge commit on pull requests. The date is therefore fixed to the source rather than the runner's clock. Ubuntu package revisions can change; matching the exact PDF bytes also requires matching the TeX installation.
+
+All Actions are official GitHub Actions pinned to full commit SHAs. The token has only `contents: read`, and checkout does not persist credentials. The workflow does not push, publish a release, or modify the inputs. New runs cancel an older run for the same ref.
+
+After all four PDFs compile and pass a text/readability check, each PDF is uploaded as its own artifact: `Cv-Academic`, `Cv-Academic-Dossier`, `Cv-Industry`, and `All-Publications`. Each ZIP contains only that document's PDF. The run summary provides direct GitHub download links. PDF artifacts have a 90-day retention; failed-build logs are uploaded separately as `Cv-Build-Logs` for 7 days when available.
+
+The [README download links](../README.md#download-generated-pdfs) open successful runs on `master`. Select the latest run and its artifact; GitHub requires signing in to download. Direct artifact URLs contain the run and artifact IDs and expire with the artifact, so they cannot be hardcoded as permanent links to the latest build. No third-party download service is used. Artifacts become available only after the workflow is pushed and succeeds on GitHub.
+
 ## Output cleanup
 
 `python build.py --clean` removes only known generated CV files in the selected output directory. It does not recursively delete the directory or tailored documents.

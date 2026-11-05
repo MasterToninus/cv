@@ -4,6 +4,23 @@ Generate Antonio Michele Miti's academic CV, academic dossier, industry CV, and 
 
 View the [published CV (PDF)](https://www.dropbox.com/scl/fi/w6l4vkwenl8780v0kewal/cv.pdf?dl=0&rlkey=dggzb4t7h76nsqts71qt80oyi&st=kvtie7my) linked from [my webpage](https://www.antoniomiti.it/).
 
+## Download generated PDFs
+
+The [Build CV PDFs workflow](https://github.com/MasterToninus/cv/actions/workflows/build-cv.yml) runs the tests and compiles all four documents on pushes to `master`, pull requests targeting `master`, or a manual **Run workflow** request.
+
+Open the [successful builds on `master`](https://github.com/MasterToninus/cv/actions/workflows/build-cv.yml?query=branch%3Amaster+is%3Asuccess), choose the latest run, and download the matching artifact from its **Artifacts** section or the links in its summary:
+
+| Generated document | Artifact download page |
+| --- | --- |
+| Academic CV | [Cv-Academic](https://github.com/MasterToninus/cv/actions/workflows/build-cv.yml?query=branch%3Amaster+is%3Asuccess) |
+| Academic dossier | [Cv-Academic-Dossier](https://github.com/MasterToninus/cv/actions/workflows/build-cv.yml?query=branch%3Amaster+is%3Asuccess) |
+| Industry CV | [Cv-Industry](https://github.com/MasterToninus/cv/actions/workflows/build-cv.yml?query=branch%3Amaster+is%3Asuccess) |
+| Complete publication list | [All-Publications](https://github.com/MasterToninus/cv/actions/workflows/build-cv.yml?query=branch%3Amaster+is%3Asuccess) |
+
+Each artifact is a ZIP containing the corresponding PDF. Downloads use GitHub only and require signing in. Artifacts are retained for 90 days, subject to repository retention settings; run the workflow again if they expire. These links become usable after the workflow has been pushed and its first successful run has completed. They open the successful-run list because GitHub's direct artifact URLs change for every run.
+
+The reference date is the source commit's UTC date, so rerunning the same commit retains its date. Builds use the committed data without refreshing the website snapshot. See [CI details](docs/build.md#github-actions).
+
 ## Quick start
 
 Requirements: Python 3.10 or later, and TeX Live or MiKTeX with `pdflatex` and `biber` on `PATH`.
@@ -86,6 +103,8 @@ The download has a timeout and is validated before replacement. Failure preserve
 
 ```text
 cv/
+├── .github/workflows/
+│   └── build-cv.yml          # Test, compile, and upload all four PDFs
 ├── data/                    # Shared, versioned CV inputs
 ├── cvgen/                   # The three pipeline stages
 │   ├── acquisition.py

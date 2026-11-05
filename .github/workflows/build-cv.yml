@@ -1,0 +1,155 @@
+# Build the four versioned CV formats; publish PDFs only after validation.
+name: Build CV PDFs
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUTF8: "1"
+  TZ: UTC
+
+jobs:
+  build:
+    name: Test and build all four PDFs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out the source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Fix the reference date to the source commit
+        run: echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+
+      - name: Install Python dependencies
+        run: python -m pip install --requirement requirements.txt
+
+      - name: Run the test suite
+        run: python -m unittest discover -s tests -v
+
+      - name: Install pdfLaTeX, Biber, and the template packages
+        # Fonts-extra supplies fontawesome/academicons; bibtex-extra supplies IEEE.
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends \
+            biber \
+            cm-super \
+            texlive-bibtex-extra \
+            texlive-fonts-extra \
+            texlive-fonts-recommended \
+            texlive-latex-extra
+
+      - name: Check the TeX toolchain
+        run: python build.py --check-tools
+
+      - name: Generate and compile all four documents
+        # Uses only the committed YAML, bibliography, and activities snapshot.
+        run: python build.py
+
+      - name: Check the generated PDFs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          from pypdf import PdfReader
+
+          from cvgen.helpers.formats import OUTPUT_STEMS
+
+          for stem in OUTPUT_STEMS.values():
+              path = Path("gen") / f"{stem}.pdf"
+              reader = PdfReader(path, strict=True)
+              if not reader.pages or not any(
+                  (page.extract_text() or "").strip() for page in reader.pages
+              ):
+                  raise RuntimeError(f"The generated PDF has no text: {path}")
+              print(f"{path}: {len(reader.pages)} pages")
+          PY
+
+      - name: Upload Academic CV
+        id: academic
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Cv-Academic
+          path: gen/Cv-Academic.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Academic Dossier
+        id: dossier
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Cv-Academic-Dossier
+          path: gen/Cv-Academic-Dossier.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Industry CV
+        id: industry
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Cv-Industry
+          path: gen/Cv-Industry.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload publication list
+        id: publications
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: All-Publications
+          path: gen/All-Publications.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Link the downloads in the run summary
+        env:
+          ACADEMIC_URL: ${{ steps.academic.outputs.artifact-url }}
+          DOSSIER_URL: ${{ steps.dossier.outputs.artifact-url }}
+          INDUSTRY_URL: ${{ steps.industry.outputs.artifact-url }}
+          PUBLICATIONS_URL: ${{ steps.publications.outputs.artifact-url }}
+        run: |
+          {
+            echo '## Generated PDFs'
+            echo ''
+            printf 'Source commit: `%s`\n\n' "$GITHUB_SHA"
+            echo '| Artifact | Download |'
+            echo '| --- | --- |'
+            printf '| Cv-Academic | [Download ZIP](%s) |\n' "$ACADEMIC_URL"
+            printf '| Cv-Academic-Dossier | [Download ZIP](%s) |\n' "$DOSSIER_URL"
+            printf '| Cv-Industry | [Download ZIP](%s) |\n' "$INDUSTRY_URL"
+            printf '| All-Publications | [Download ZIP](%s) |\n' "$PUBLICATIONS_URL"
+            echo ''
+            echo 'Each ZIP contains one PDF. Sign in to GitHub to download; artifacts are retained for 90 days.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save diagnostic logs if the build fails
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Cv-Build-Logs
+          path: |
+            gen/*.build.log
+            gen/*.log
+            gen/*.blg
+          if-no-files-found: ignore
+          retention-days: 7
