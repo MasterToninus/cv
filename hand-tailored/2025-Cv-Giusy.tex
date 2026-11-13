@@ -10,8 +10,9 @@
 %  --- VERSIONE PRELIMINARE ---
 %
 %   Grafica e impaginazione del sorgente originale; contenuti aggiornati.
-%   Ipotesi provvisorie autorizzate dall'utente, da confermare con Giusy.
-%   Chiarimenti aperti: ../Chiarimenti-per-Giusy-CV.md.
+%   Conferme recepite dal modulo compilato il 13 novembre 2026.
+%   Da verificare: denominazione esatta dell'Ordine territoriale italiano.
+%   Risposte e stato dei chiarimenti: ../Chiarimenti-per-Giusy-CV.md.
 %
 %
 %
@@ -34,7 +35,7 @@
 \fancyhf{}
 \rhead{Giuseppa Simioli}
 \lhead{Curriculum Vitae}
-\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Aggiornato al 13 novembre 2026} }
+\lfoot{\footnotesize\href{https://github.com/MasterToninus/cv}{Aggiornato a 11/2026} }
 \rfoot{\thepage \hspace{1pt} / \pageref{LastPage}}
 
 %\usepackage[backend=bibtex, style=nature]{biblatex}
@@ -70,6 +71,50 @@
 \newcommand{\skill}[2]{\textbf{#1} \hfill #2 \\}
 \newcommand{\skillbar}[4]{\textbf{#1} \hfill \progbar{#2}{#3}{#4} \\}
 \newcommand{\txt}[1]{#1\\}
+
+%second page: sezioni e voci con spaziatura e gerarchia comuni
+\newlength{\cvsectionbefore}
+\newlength{\cvsectionafter}
+\newlength{\cventryafter}
+\setlength{\cvsectionbefore}{12pt}
+\setlength{\cvsectionafter}{6pt}
+\setlength{\cventryafter}{8pt}
+
+\newcommand{\cvsection}[1]{%
+    \par\addvspace{\cvsectionbefore}%
+    \hrule\nobreak\vspace{0.2cm}%
+    {\Large\bfseries #1\par}%
+    \nobreak\vspace{\cvsectionafter}%
+}
+
+%expected: what, when, where, url (anche vuoto), info
+\newcommand{\cventry}[5]{%
+    \par\noindent
+    \begin{minipage}{\linewidth}
+        \begin{minipage}[t]{\dimexpr\linewidth-3.3cm\relax}
+            \raggedright\bfseries
+            \if\relax\detokenize{#4}\relax
+                #1%
+            \else
+                \href{#4}{#1}%
+            \fi
+        \end{minipage}\hfill
+        \begin{minipage}[t]{3cm}
+            \raggedleft\small\mbox{#2}%
+        \end{minipage}\par
+        {\itshape\raggedright #3\par}%
+        {\small\raggedright #5\par}%
+    \end{minipage}\par
+    \addvspace{\cventryafter}%
+}
+
+%training: stessa voce, con durata e crediti sempre nella medesima posizione
+%expected: what, when, where, url, info, durata, crediti ECM
+\newcommand{\cvtraining}[7]{%
+    \cventry{#1}{#2}{%
+        #3\quad{\normalfont\small\textbf{Durata:} #6\quad\textbf{ECM:} #7}%
+    }{#4}{#5}%
+}
 
 
 %---------- Document -----------
@@ -126,20 +171,21 @@
     }
     %
     %
-    \voice{Fisioterapista (Libera professione)}
+    % Tutte le attività di libera professione sono con partita IVA (confermato).
+    \voice{Fisioterapista (Libera professione, P. IVA)}
     {12/2017 -- 09/2018}
     {Istituto geriatrico Milanese (IGM), Milano (MI)}
     {https://www.igm-care.it/service/istituto-geriatrico-milanese/}
     {Responsabile della riabilitazione in un intero reparto di degenza geriatrica (circa 57 pazienti), con gestione autonoma dei programmi terapeutici, della documentazione clinica e delle attività amministrative correlate.}
     %
-    \voice{Fisioterapista (Libera professione)}
+    \voice{Fisioterapista (Libera professione, P. IVA)}
     {09/2014 -- 11/2017}
     {Centro I.R.M.I. (Istituto Riabilitativo del Mezzogiorno d'Italia), Giugliano in Campania (NA)}
     {https://www.aiopcampania.it/mostrascheda.asp?id=1425}
     {Attività fisioterapica, comprendente interventi di terapia occupazionale, per pazienti in convitto ex articolo 26.}
     %
-    % Provvisorio: partita IVA nella scheda Notion; da confermare con Giusy.
-    \voice{Fisioterapista (Libera professione)}
+    % Rapporto con partita IVA confermato nel modulo compilato.
+    \voice{Fisioterapista (Libera professione, P. IVA)}
     {07/2014 -- 08/2014}
     {Clinic Center, Fuorigrotta (NA)}
     {https://cliniccenter.eu/}
@@ -147,8 +193,8 @@
     %avendo la possibilità di lavorare con i pazienti in piena libertà e in qualsiasi campo riabilitativo.
     }
     %
-    % Provvisorio: partita IVA nella scheda Notion; da confermare con Giusy.
-    \voice{Fisioterapista (Libera professione)}
+    % Rapporto con partita IVA confermato nel modulo compilato.
+    \voice{Fisioterapista (Libera professione, P. IVA)}
     {02/2014 -- 04/2015}
     {Centro Golia, Aversa (CE)}
     {https://centrogolia.com/}
@@ -156,7 +202,7 @@
         Riabilitazione ortopedica e posturale presso il Centro Golia.
         Trattamenti con mezzi fisici: Tecar, magnetoterapia, elettroterapia.}
     %
-    % Provvisorio: stage nella scheda Notion; da confermare con Giusy.
+    % Stage/tirocinio confermato nel modulo compilato.
     \voice{Fisioterapista (Stage)}
     {10/2013 -- 11/2013}
     {Centro Aequilibrium, Caserta (CE)}
@@ -165,7 +211,7 @@
     Trattamenti con mezzi fisici: Tecarterapia, TENS, magnetoterapia.}
  %
 %
-    % Denominazione descrittiva del ruolo, senza una qualifica aggiuntiva.
+    % Confermato: fisioterapista con attività di massaggio e trattamenti posturali.
     \voice{Fisioterapista in ambito wellness}
     {02/2013 -- 06/2013}
     {Angelo Caroli – Wellness and Beauty Spa, Milano (MI)}
@@ -237,16 +283,18 @@
 
     \block{Albi Professionali}
 
-    % Il Rhône è il registro attuale; la decorrenza del trasferimento è da chiarire.
+    % Prima iscrizione confermata il 20/08/2020; domanda all'avvio a Valenciennes.
+    % Trasferimento al Rhône richiesto all'avvio a Lione; non è nota la conferma.
     \voice{Albo Francese}
-    {2020 -- Oggi}
+    {08/2020 -- Oggi}
     {Ordre des masseurs-kinésithérapeutes}
     {https://www.ordremk.fr/}
     {Registro attuale: Rhône, n.~131974.}
-    % Ordine territoriale da confermare; nessuna provincia presunta.
+    % Campania/provincia di Napoli indicata nel modulo; nome dell'Ordine da verificare.
+    % Mesi di iscrizione e cancellazione italiani non disponibili: conservati gli anni.
     \voice{Albo Italiano}
     {2019 -- 2021}
-    {Albo dei fisioterapisti presso l'Ordine TSRM e PSTRP}
+    {Albo dei fisioterapisti -- Ordine TSRM e PSTRP (area di Napoli)}
     {https://www.tsrm-pstrp.org/}
     {Cancellazione dall'albo italiano per l'impossibilità di conciliare gli obblighi di formazione continua previsti dagli albi professionali italiano e francese.}
 
@@ -302,123 +350,150 @@
     }
 
 %Formazione Post-Laurea
-    \blockNp{Formazione Post-Laurea (corsi selezionati)}
+% ECM dalla domanda ASL Viterbo Id 5882841, confermata il 09/11/2026, pp. 2--3.
+% Durate individuali senza la dicitura "stima", come richiesto dall'utente.
+% Formazioni francesi: n/a al posto di 0 ECM, su indicazione dell'utente.
+    \clearpage
+    \cvsection{Formazione Post-Laurea (corsi selezionati)}
 
-    \voice{Aides instrumentales -- Ausili strumentali per la fisioterapia respiratoria}
-    {05--06/10/2026}
+    \cvtraining{Aides instrumentales -- Ausili strumentali per la fisioterapia respiratoria}
+    {10/2026}
     {P2R Formation, Bondues, Francia}
     {https://www.p2r-formation.fr/aides-instrumentales/}
     {%
-        Formazione teorico-pratica sull'impiego degli ausili strumentali nella fisioterapia
-        respiratoria. \textbf{Durata: 14 ore.}%
+        Formazione teorico-pratica sull'impiego degli ausili strumentali nella fisioterapia respiratoria.%
     }
+    {14 ore}
+    {n/a}
     %
 
-    \voice{Drenaggio autogeno (tecnica di Jean Chevaillier)}
+    \cvtraining{Drenaggio autogeno (tecnica di Jean Chevaillier)}
     {05/2024 -- 09/2024}
     {P2R Formation, Lyon, Francia}
     {https://www.p2r-formation.fr/drainage-autogene/}
     {%
-        Formazione sul drenaggio autogeno nella gestione delle patologie respiratorie, con attenzione
-        alla consapevolezza respiratoria e all'aderenza terapeutica del paziente.%
+        Formazione sul drenaggio autogeno nella gestione delle patologie respiratorie, con attenzione alla consapevolezza respiratoria e all'aderenza terapeutica del paziente.%
     }
+    {54 ore}
+    {n/a}
     %
 
-    \voice{Frequenza del percorso DU in Fisioterapia Respiratoria e Cardiovascolare}
+    \cvtraining{Frequenza del percorso DU in Fisioterapia Respiratoria e Cardiovascolare}
     {09/2022 -- 05/2023}
     {Université Claude Bernard Lyon 1, Francia}
     {https://offre-de-formations.univ-lyon1.fr/parcours-794/kinesitherapie-respiratoire-et-cardio-vasculaire.html}
     {%
-        Frequenza del percorso universitario in riabilitazione cardiorespiratoria, con approccio basato
-        sulla letteratura scientifica e sull'applicazione clinica.%
+        Frequenza del percorso universitario in riabilitazione cardiorespiratoria, con approccio basato sulla letteratura scientifica e sull'applicazione clinica.%
     }
+    {235 ore complessive}
+    {n/a}
     %
 
-    \voice{Fisioterapia respiratoria in rianimazione e ventilazione meccanica}
-    {06--09/12/2021}
+    \cvtraining{Fisioterapia respiratoria in rianimazione e ventilazione meccanica}
+    {12/2021}
     {Alister, Mulhouse, Francia}
     {https://alister.org/categorie-formation/kinesitherapie-respiratoire/}
     {%
-        Formazione su valutazione respiratoria, gestione del paziente in terapia intensiva, ventilazione
-        invasiva e non invasiva e ossigenoterapia. \textbf{Durata: 24,5 ore.}%
+        Formazione su valutazione respiratoria, gestione del paziente in terapia intensiva, ventilazione invasiva e non invasiva e ossigenoterapia.%
     }
+    {24,5 ore}
+    {n/a}
     %
 
-    \voice{Corso pratico di fisioterapia respiratoria in rianimazione}
-    {01--03/12/2020}
+    \cvtraining{Corso pratico di fisioterapia respiratoria in rianimazione}
+    {12/2020}
     {Alister, Mulhouse, Francia}
     {https://alister.org/categorie-formation/kinesitherapie-respiratoire/}
     {%
-        Tecniche manuali e strumentali di disostruzione bronchiale, ventilazione e tosse assistita;
-        valutazione funzionale e lavoro multidisciplinare. \textbf{Durata: 20 ore.}%
+        Tecniche manuali e strumentali di disostruzione bronchiale, ventilazione e tosse assistita; valutazione funzionale e lavoro multidisciplinare.%
     }
+    {20 ore}
+    {n/a}
     %
 
-    \voice{ETC -- Esercizio Terapeutico Conoscitivo e Confronto tra Azioni, I livello}
+    \cvtraining{ETC -- Esercizio Terapeutico Conoscitivo e Confronto tra Azioni, I livello}
     {05/2018 -- 06/2018}
     {Centro Studi di Riabilitazione Neurocognitiva -- Villa Miari, Santorso (VI)}
     {https://riabilitazioneneurocognitiva.it/wp-content/uploads/2018/11/rn-formazione-base-corso_1_liv-2018.pdf}
     {%
-        Formazione nell'osservazione del paziente neurologico e nella progettazione del trattamento
-        riabilitativo attraverso il confronto tra azioni. \textbf{Sessione teorica: 44 ore (7--12 maggio
-        2018); formazione pratica: due settimane.}%
+        Formazione nell'osservazione del paziente neurologico e nella progettazione del trattamento riabilitativo attraverso il confronto tra azioni. Percorso con 44 ore di teoria e due settimane di pratica.%
     }
+    % Totale di teoria e pratica confermato dall'utente: 90 ore.
+    {90 ore complessive}
+    {25}
     %
 
-    \voice{Metodo Ticchi e Trigger Point}
+    \cvtraining{Metodo Ticchi e Trigger Point}
     {10/2016 -- 12/2016}
     {Metodo Ticchi -- Francesco Ticchi, Napoli}
     {https://www.metodoticchi.com/}
     {%
-        Riconoscimento e trattamento della sindrome miofasciale dolorosa mediante disattivazione dei
-        trigger point; valutazione funzionale e applicazioni cliniche.%
+        Riconoscimento e trattamento della sindrome miofasciale dolorosa mediante disattivazione dei trigger point; valutazione funzionale e applicazioni cliniche.%
     }
+    {30 ore}
+    {20}
     %
 
-    \voice{Ginnastica Ortopedica Morfologica Mézières (GOMM)}
+    \cvtraining{Ginnastica Ortopedica Morfologica Mézières (GOMM)}
     {02/2016}
     {Scuola di Formazione Jean-Marc Cittone, Napoli}
     {https://mezieresacademy.com/}
     {%
-        Formazione basata sul metodo Mézières, dedicata al lavoro posturale e alla ginnastica
-        morfologica.%
+        Formazione basata sul metodo Mézières, dedicata al lavoro posturale e alla ginnastica morfologica.%
     }
+    {6 ore}
+    {7}
     %
 
-    \voice{Diploma internazionale di formazione completa al metodo Françoise Mézières}
+    \cvtraining{Diploma internazionale di formazione completa al metodo Françoise Mézières}
     {01/2016}
     {Scuola di Formazione Jean-Marc Cittone, Napoli}
     {https://mezieresacademy.com/}
     {%
-        Perfezionamento avanzato nel metodo Mézières, con approfondimento delle disfunzioni cervicali,
-        delle scoliosi e delle problematiche posturali.%
+        Perfezionamento avanzato nel metodo Mézières, con approfondimento delle disfunzioni cervicali, delle scoliosi e delle problematiche posturali.%
     }
+    {12 ore del modulo avanzato}
+    {25}
     %
 
-    \voice{Corso Mézières Plus}
+    \cvtraining{Corso Mézières Plus}
     {05/2015 -- 11/2015}
     {Scuola di Formazione Jean-Marc Cittone, Napoli}
     {https://mezieresacademy.com/}
     {%
         Tecniche di riequilibrio morfologico e correzione delle asimmetrie strutturali.%
     }
+    {75 ore}
+    {100}
     %
 
 
 %Contributi scientifici e congressuali
-    \block{Contributi Scientifici e Congressuali}
+    \cvsection{Contributi Scientifici e Congressuali}
 
-    {\small
-        \textbf{Coautrice} di \emph{“Non-Invasive Mechanical Ventilation implementation for lung SBRT: Workflow validation on healthy volunteers”}.\par
-        Comunicazione congressuale \href{https://2026.js-sfpm.fr/communications/non-invasive-mechanical-ventilation-implementation-for-lung-sbrt-workflow-validation-on-healthy-volunteers-1168}{SFPM}, Lione, \textbf{17 giugno 2026}; contributo corrispondente come e-poster \textbf{PO19\_161} al congresso \href{https://www.sfro-congres.fr/}{SFRO}, Parigi, \textbf{4--6 novembre 2026}.\par
+    \cventry{Coautrice}
+    {06/2026; 11/2026}
+    {“Non-Invasive Mechanical Ventilation implementation for lung SBRT: Workflow validation on healthy volunteers”}
+    {}
+    {%
+        Comunicazione congressuale \href{https://2026.js-sfpm.fr/communications/non-invasive-mechanical-ventilation-implementation-for-lung-sbrt-workflow-validation-on-healthy-volunteers-1168}{SFPM},
+        Lione, \textbf{06/2026}; contributo corrispondente come e-poster
+        \textbf{PO19\_161} al congresso \href{https://www.sfro-congres.fr/}{SFRO},
+        Parigi, \textbf{11/2026}.%
     }
 
 
 %Volontariato
-    \block{Volontariato}
+    \cvsection{Volontariato}
 
-    {\small\textbf{Associazione Tribunale del Malato}, Ospedale San Paolo, Napoli \hfill 09/2005 -- 05/2006\par
-    Supporto ai pazienti e collaborazione con il personale sanitario nell'assistenza ospedaliera.\par}
+    \cventry{Associazione Tribunale del Malato}
+    {09/2005 -- 05/2006}
+    {Ospedale San Paolo, Napoli}
+    {}
+    {%
+        Supporto ai pazienti e collaborazione con il personale sanitario
+        nell'assistenza ospedaliera.%
+    }
 
 %Privacy
     \vfill
